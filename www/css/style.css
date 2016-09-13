@@ -1,0 +1,92 @@
+/* Empty. Add your own CSS if you like */
+
+/*iComPAsS color scheme*/
+.bg-orange,
+.bar.bg-orange{
+  background-color: #FF8300;
+}
+
+.text-orange{
+  color: #FF8300;
+}
+
+.bg-light-orange{
+	background-color: #FFFFDE;
+}
+
+.text-light-orange{
+  color: #FFFFDE;
+}
+
+/* Horizontally align on ion-content */
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* login form design */
+.item-input{
+  width: 92%;
+}
+
+.curve-top{
+  border-radius: 6px 6px 0px 0px;
+}
+
+.curve-bottom{
+  border-radius: 0px 0px 6px 6px;
+}
+
+.curve-all{
+  border-radius: 6px 6px 6px 6px;
+}
+
+/*Alert popup design*/
+.popup-head{
+  background-color: #FFFFDE;
+}
+.popup-body{
+  background-color: #FFFFDE;
+}
+.popup-buttons{
+  background-color: #FFFFDE;
+}
+.popup-buttons .button{
+  background-color: #FF8300;
+  border-radius: 6px 6px 6px 6px;
+}
+.popup-buttons .button.button-positive.activated {
+  border-color: #a2a2a2;
+  background-color: #a2a2a2;
+}
+
+/*Profile Design*/
+.profile-head{
+  height:35%;
+}
+
+.profile-pic{
+  height:55%;
+  border-radius:100%
+}
+
+.tabs.tabs-top{
+  position: relative;
+  top: 0%;
+  color: black;
+}
+
+/*Make fonts larger*/
+.larger {
+    font-size: larger;
+}
+
+/*Make padding bigger*/
+.padding-top,
+.padding-bottom,
+.padding-vertical {
+  padding-top: 20px; }
+
+.hidden{
+  display: none;
+}

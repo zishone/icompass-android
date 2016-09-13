@@ -1,0 +1,49 @@
+<ion-view view-title="Doctor's Profile">
+  <ion-content class="bg-light-orange">
+    <div class="bg-orange text-center profile-head">
+      <br>
+      <img src="img/user.png" alt="" class="profile-pic"/>
+      <h2 class="light">{{doctor_profile.username}}</h2>
+    </div>
+
+    <div class="tabs tabs-striped tabs-top bg-light-orange">
+      <a class="tab-item" ng-class="classes.basic_info_tab" ng-click="showBasicInfo()">
+        <strong>Basic Info</strong>
+      </a>
+      <a class="tab-item" ng-class="classes.more_tab" ng-click="showMore()">
+        <strong>More</strong>
+      </a>
+    </div>
+
+    <ion-list ng-class="classes.basic_info">
+      <ion-item class="row item-borderless bg-light-orange" ng-repeat="info in doctor_profile.basic_info">
+        <div class="col col-offset-20 col-10 padding-vertical">
+          <ion-icon class="icon {{info.icon}} larger"></ion-icon>
+        </div>
+        <div class="col padding-vertical">
+          {{info.data}}
+        </div>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-list ng-class="classes.more">
+      <span ng-repeat="info in doctor_profile.more">
+        <ion-item class="row item-borderless bg-light-orange">
+          <div class="col col-offset-10 col-20 padding-top">
+            <label><strong>{{info.label}}</strong></label>
+          </div>
+        </ion-item>
+        <ion-item class="row item-borderless bg-light-orange">
+          <div class="col col-offset-20">
+            <ion-list>
+              <ion-item class="row item-borderless bg-light-orange" ng-repeat="sub_info in info.data track by $index">
+                {{sub_info}}
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-item>
+      </span>
+    </ion-list>
+  </ion-content>
+</ion-view>
