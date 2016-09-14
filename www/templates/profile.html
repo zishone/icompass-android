@@ -3,10 +3,10 @@
     <div class="bg-orange text-center profile-head">
       <br>
       <img src="img/user.png" alt="" class="profile-pic"/>
-      <h2 class="light">{{user_profile.username}}</h2>
+      <h2 class="light">{{user_profile.fullname}}</h2>
     </div>
 
-    <div class="tabs tabs-striped tabs-top bg-light-orange">
+    <div class="tabs tabs-striped tabs-top">
       <a class="tab-item" ng-class="classes.basic_info_tab" ng-click="showBasicInfo()">
         <strong>Basic Info</strong>
       </a>
@@ -15,29 +15,30 @@
       </a>
     </div>
 
-    <ion-list ng-class="classes.basic_info">
-      <ion-item class="row item-borderless bg-light-orange" ng-repeat="info in user_profile.basic_info">
-        <div class="col col-offset-20 col-10 padding-vertical">
-          <ion-icon class="icon {{info.icon}} larger"></ion-icon>
-        </div>
-        <div class="col padding-vertical">
-          {{info.data}}
-        </div>
-      </ion-item>
-    </ion-list>
+    <div class="card" ng-class="classes.basic_info">
+      <div class="item item-text-wrap">
+        <ion-list >
+          <ion-item class="row item-borderless" ng-repeat="info in user_profile.basic_info">
+            <div class="col col-offset-10 col-10 padding-vertical">
+              <ion-icon class="icon {{info.icon}} larger"></ion-icon>
+            </div>
+            <div class="col padding-vertical">
+              {{info.data}}
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
 
-
-    <ion-list ng-class="classes.more">
+    <div ng-class="classes.more">
       <span ng-repeat="info in user_profile.more">
-        <ion-item class="row item-borderless bg-light-orange">
-          <div class="col col-offset-10 col-20 padding-top">
+        <div class="card">
+          <div class="item item-divider bg-orange light">
             <label><strong>{{info.label}}</strong></label>
           </div>
-        </ion-item>
-        <ion-item class="row item-borderless bg-light-orange">
-          <div class="col col-offset-20">
+          <div class="item item-text-wrap">
             <ion-list>
-              <ion-item class="row item-borderless bg-light-orange" ng-repeat="sub_info in info.data track by $index">
+              <ion-item class="row item-borderless" ng-repeat="sub_info in info.data track by $index">
                 <span ng-if="info.label === 'Weight'">
                   <div class="row">
                     <div class="col col-33">
@@ -46,7 +47,6 @@
                     <div class="col">
                       {{sub_info.date}}
                     </div>
-
                   </div>
                 </span>
                 <span ng-if="info.label !== 'Weight'">
@@ -55,8 +55,8 @@
               </ion-item>
             </ion-list>
           </div>
-        </ion-item>
+        </div>
       </span>
-    </ion-list>
+    </div>
   </ion-content>
 </ion-view>

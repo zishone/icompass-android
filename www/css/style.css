@@ -81,12 +81,7 @@
     font-size: larger;
 }
 
-/*Make padding bigger*/
-.padding-top,
-.padding-bottom,
-.padding-vertical {
-  padding-top: 20px; }
-
+/*Hide things*/
 .hidden{
   display: none;
 }

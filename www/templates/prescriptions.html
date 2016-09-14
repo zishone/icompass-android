@@ -1,13 +1,13 @@
 <ion-view view-title="Prescriptions">
-  <ion-content class="bg-orange">
+  <ion-content class="bg-light-orange">
     <div class="card" ng-repeat="prescription in prescriptions">
-      <div class="item item-divider bg-light-orange">
+      <div class="item item-divider bg-orange light text-center">
         {{prescription.fullname}}
       </div>
       <div class="item item-text-wrap">
         {{prescription.prescription}}
       </div>
-      <div class="item item-divider bg-light-orange">
+      <div class="item item-divider text-right">
         {{prescription.dateadded}}
       </div>
     </div>

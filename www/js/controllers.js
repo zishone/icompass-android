@@ -18,6 +18,103 @@ angular.module('iComPAsS.controllers', [])
     $ionicHistory.clearCache();
     $ionicHistory.clearHistory();
   };
+
+  $scope.getBasicInfo = function(data) {
+    return {
+      'image': data.image,
+      'fullname': data.fname + ' ' + data.mname + ' ' + data.lname,
+      'basic_info': [
+        {
+          'icon': 'ion-person',
+          'data': data.username
+        },
+        {
+          'icon': 'ion-ios-telephone',
+          'data': data.contactnumber
+        },
+        {
+          'icon': 'ion-email',
+          'data': data.email
+        },
+        {
+          'icon': 'ion-calendar',
+          'data': data.bday
+        },
+        {
+          'icon': 'ion-person',
+          'data': data.age
+        },
+        {
+          'icon': 'ion-transgender',
+          'data': data.gender === 'm'? 'Male' : 'Female'
+        }
+      ]
+    };
+  };
+
+  $scope.getPatientMore = function(data, weights) {
+    return [
+      {
+        'label': 'Diagnosis',
+        'data': [data.diagnosis]
+      },
+      {
+        'label': 'Allergies',
+        'data': data.allergies.split(', ')
+      },
+      {
+        'label': 'Initial Height',
+        'data': [data.height + ' cm']
+      },
+      {
+        'label': 'Weight',
+        'data': weights
+      }
+    ];
+  };
+
+  $scope.getDoctorMore = function(data) {
+    return [
+      {
+        'label': 'Specialty',
+        'data': [data.specialty]
+      },
+      {
+        'label': 'Availability',
+        'data': [data.available]
+      }
+    ];
+  };
+
+  // Tab functionalities
+  $scope.resetTabs = function(){
+    $scope.classes = {};
+    $scope.classes.basic_info_tab = ['active'];
+    $scope.classes.more_tab = [];
+    $scope.classes.basic_info = [];
+    $scope.classes.more = ['hidden'];
+  };
+  $scope.resetTabs();
+  $scope.showBasicInfo = function () {
+    if($scope.classes.basic_info_tab.length < 1){
+      $scope.classes.basic_info_tab.push('active');
+    }
+    $scope.classes.basic_info.pop('hidden');
+    $scope.classes.more_tab.pop('active');
+    if($scope.classes.more.length < 1){
+      $scope.classes.more.push('hidden');
+    }
+  };
+  $scope.showMore = function () {
+    $scope.classes.basic_info_tab.pop('active');
+    if($scope.classes.basic_info.length < 1){
+      $scope.classes.basic_info.push('hidden');
+    }
+    if($scope.classes.more_tab.length < 1){
+      $scope.classes.more_tab.push('active');
+    }
+    $scope.classes.more.pop('hidden');
+  };
 })
 
 .controller('LoginCtrl', function($scope, $state, $ionicPopup, AuthService, USER_ROLES) {
@@ -156,46 +253,14 @@ angular.module('iComPAsS.controllers', [])
 })
 
 .controller('ProfileCtrl', function($scope, AuthService, USER_ROLES, APIService){
+  $scope.resetTabs();
 
   $scope.user_profile = {};
-
-  var setBasicInfo = function(data){
-    $scope.user_profile.image = data.image;
-
-    $scope.user_profile.username = data.username;
-
-    $scope.user_profile.basic_info = [
-      {
-        'icon': 'ion-person',
-        'data': data.fname + ' ' + data.mname + ' ' + data.lname
-      },
-      {
-        'icon': 'ion-ios-telephone',
-        'data': '(+63) ' + data.contactnumber
-      },
-      {
-        'icon': 'ion-email',
-        'data': data.email
-      },
-      {
-        'icon': 'ion-calendar',
-        'data': data.bday
-      },
-      {
-        'icon': 'ion-person',
-        'data': data.age
-      },
-      {
-        'icon': 'ion-transgender',
-        'data': data.gender === 'm'? 'Male' : 'Female'
-      }
-    ];
-  };
 
   if(AuthService.role() === USER_ROLES.patient){
     APIService.get_patient_profile().then(function(data) {
 
-      setBasicInfo(data);
+      $scope.user_profile = $scope.getBasicInfo(data);
 
       // Parse JSON form data.weights
       var weights = [];
@@ -203,29 +268,12 @@ angular.module('iComPAsS.controllers', [])
         weights.push(JSON.parse(data.weights[i]));
       }
 
-      $scope.user_profile.more = [
-        {
-          'label': 'Diagnosis',
-          'data': [data.diagnosis]
-        },
-        {
-          'label': 'Allergies',
-          'data': data.allergies.split(', ')
-        },
-        {
-          'label': 'Initial Height',
-          'data': [data.height + ' cm']
-        },
-        {
-          'label': 'Weight',
-          'data': weights
-        }
-      ];
+      $scope.user_profile.more = $scope.getPatientMore(data, weights);
     });
   }else if(AuthService.role() === USER_ROLES.doctor){
     APIService.get_doctor_profile().then(function(data) {
 
-      setBasicInfo(data);
+      $scope.user_profile = $scope.getBasicInfo(data);
 
       $scope.user_profile.more = [
         {
@@ -239,33 +287,6 @@ angular.module('iComPAsS.controllers', [])
       ];
     });
   }
-
-  // Tab functionalities
-  $scope.classes = {};
-  $scope.classes.basic_info_tab = ['active'];
-  $scope.classes.more_tab = [];
-  $scope.classes.basic_info = [];
-  $scope.classes.more = ['hidden'];
-  $scope.showBasicInfo = function () {
-    if($scope.classes.basic_info_tab.length < 1){
-      $scope.classes.basic_info_tab.push('active');
-    }
-    $scope.classes.basic_info.pop('hidden');
-    $scope.classes.more_tab.pop('active');
-    if($scope.classes.more.length < 1){
-      $scope.classes.more.push('hidden');
-    }
-  };
-  $scope.showMore = function () {
-    $scope.classes.basic_info_tab.pop('active');
-    if($scope.classes.basic_info.length < 1){
-      $scope.classes.basic_info.push('hidden');
-    }
-    if($scope.classes.more_tab.length < 1){
-      $scope.classes.more_tab.push('active');
-    }
-    $scope.classes.more.pop('hidden');
-  };
 })
 
 .controller('PrescriptionsCtrl', function($scope, APIService){
@@ -281,77 +302,14 @@ angular.module('iComPAsS.controllers', [])
 })
 
 .controller('DoctorProfileCtrl', function($scope, $stateParams, APIService){
+  $scope.resetTabs();
+
   $scope.doctor_profile = {};
 
   APIService.get_doctor_info($stateParams.doctorId).then(function(data) {
 
-    $scope.doctor_profile.image = data.image;
+    $scope.doctor_profile = $scope.getBasicInfo(data);
 
-    $scope.doctor_profile.username = data.username;
-
-    $scope.doctor_profile.basic_info = [
-      {
-        'icon': 'ion-person',
-        'data': data.fname + ' ' + data.mname + ' ' + data.lname
-      },
-      {
-        'icon': 'ion-ios-telephone',
-        'data': '(+63) ' + data.contactnumber
-      },
-      {
-        'icon': 'ion-email',
-        'data': data.email
-      },
-      {
-        'icon': 'ion-calendar',
-        'data': data.bday
-      },
-      {
-        'icon': 'ion-person',
-        'data': data.age
-      },
-      {
-        'icon': 'ion-transgender',
-        'data': data.gender === 'm'? 'Male' : 'Female'
-      }
-    ];
-
-    $scope.doctor_profile.more = [
-      {
-        'label': 'Specialty',
-        'data': [data.specialty]
-      },
-      {
-        'label': 'Availability',
-        'data': [data.available]
-      }
-    ];
+    $scope.doctor_profile.more = $scope.getDoctorMore(data);
   });
-
-  // Tab functionalities
-  $scope.classes = {};
-  $scope.classes.basic_info_tab = ['active'];
-  $scope.classes.more_tab = [];
-  $scope.classes.basic_info = [];
-  $scope.classes.more = ['hidden'];
-  $scope.showBasicInfo = function () {
-    if($scope.classes.basic_info_tab.length < 1){
-      $scope.classes.basic_info_tab.push('active');
-    }
-    $scope.classes.basic_info.pop('hidden');
-    $scope.classes.more_tab.pop('active');
-    if($scope.classes.more.length < 1){
-      $scope.classes.more.push('hidden');
-    }
-  };
-  $scope.showMore = function () {
-    $scope.classes.basic_info_tab.pop('active');
-    if($scope.classes.basic_info.length < 1){
-      $scope.classes.basic_info.push('hidden');
-    }
-    if($scope.classes.more_tab.length < 1){
-      $scope.classes.more_tab.push('active');
-    }
-    $scope.classes.more.pop('hidden');
-  };
 });
