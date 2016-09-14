@@ -1,13 +1,15 @@
 <ion-view view-title="List of Doctors">
   <ion-content class="bg-light-orange">
-    <ion-list>
-      <ion-item class="item-avatar item-icon-right bg-light-orange" ng-repeat="doctor in assign_doctors" href="#/menu/doctor-profile/{{doctor.doc_id}}">
-        <img ng-src="img/user.png">
-        <h2>{{doctor.fullname}}</h2>
-        <p>{{doctor.specialty}}</p>
+    <div class="card" ng-repeat="doctor in assign_doctors">
+      <a href="#/menu/doctor-profile/{{doctor.doc_id}}" class="noline">
+        <div class="item item-text-wrap item-avatar item-icon-right">
+          <img ng-src="{{doctor_profile.image}}">
+          <h2>{{doctor.fullname}}</h2>
+          <p>{{doctor.specialty}}</p>
 
-        <i class="icon ion-chevron-right icon-accessory"></i>
-      </ion-item>
-    </ion-list>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </div>
+      </a>
+    </div>
   </ion-content>
 </ion-view>

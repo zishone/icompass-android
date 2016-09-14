@@ -195,4 +195,9 @@ angular.module('iComPAsS', ['ionic', 'iComPAsS.controllers', 'iComPAsS.services'
   admin: 'admin_role',
   patient: 'patient_role',
   doctor: 'doctor_role'
+})
+
+.constant('SOURCES', {
+  api_src: 'http://urag.co/bci_api/api/',
+  profile_pic_src: 'http://csa.usthbci-icompass.com/images/profile-images/'
 });

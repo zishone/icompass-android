@@ -1,6 +1,6 @@
 angular.module('iComPAsS.services', [])
 
-.factory('AuthService', function($q, $http, USER_ROLES){
+.factory('AuthService', function($q, $http, USER_ROLES, SOURCES){
   var LOCAL_TOKEN_KEY = 'yourTokenKey';
   var userID;
   var isAuthenticated = false;
@@ -47,7 +47,7 @@ angular.module('iComPAsS.services', [])
         'password': pw
       };
 
-      $http.post('http://urag.co/bci_api/api/auth', data)
+      $http.post(SOURCES.api_src + 'auth', data)
       .then(function successCallback(response) {
         storeUserCredentials(response.data.id + ' ' + response.data.data.user_type + ' ' +  response.data.meta.token);
         resolve('Login success.');
@@ -78,10 +78,10 @@ angular.module('iComPAsS.services', [])
   };
 })
 
-.factory('APIService', function($http, AuthService){
+.factory('APIService', function($http, AuthService, SOURCES){
   return {
     get_user_profile: function() {
-      return $http.get('http://urag.co/bci_api/api/users/profile/' + AuthService.userID())
+      return $http.get(SOURCES.api_src + 'users/profile/' + AuthService.userID())
       .then(function successCallback(response) {
         return response.data[0];
       }, function errorCallback(response) {
@@ -89,7 +89,7 @@ angular.module('iComPAsS.services', [])
       });
     },
     get_patient_profile: function() {
-      return $http.get('http://urag.co/bci_api/api/patients/profile/' + AuthService.userID())
+      return $http.get(SOURCES.api_src + 'patients/profile/' + AuthService.userID())
       .then(function successCallback(response) {
         return response.data[0];
       }, function errorCallback(response) {
@@ -97,7 +97,7 @@ angular.module('iComPAsS.services', [])
       });
     },
     get_doctor_profile: function() {
-      return $http.get('http://urag.co/bci_api/api/doctors/profile/' + AuthService.userID())
+      return $http.get(SOURCES.api_src + 'doctors/profile/' + AuthService.userID())
       .then(function successCallback(response) {
         return response.data[0];
       }, function errorCallback(response) {
@@ -105,7 +105,7 @@ angular.module('iComPAsS.services', [])
       });
     },
     get_patient_prescriptions: function() {
-      return $http.get('http://urag.co/bci_api/api/patients/prescriptions/' + AuthService.userID())
+      return $http.get(SOURCES.api_src + 'patients/prescriptions/' + AuthService.userID())
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -113,7 +113,7 @@ angular.module('iComPAsS.services', [])
       });
     },
     get_assigned_doctors: function() {
-      return $http.get('http://urag.co/bci_api/api/patients/assigned_doctors/' + AuthService.userID())
+      return $http.get(SOURCES.api_src + 'patients/assigned_doctors/' + AuthService.userID())
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -121,7 +121,7 @@ angular.module('iComPAsS.services', [])
       });
     },
     get_doctor_info: function(doctorId) {
-      return $http.get('http://urag.co/bci_api/api/doctors/profile/' + doctorId)
+      return $http.get(SOURCES.api_src + 'doctors/profile/' + doctorId)
       .then(function successCallback(response) {
         return response.data[0];
       }, function errorCallback(response) {

@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers', [])
 
-.controller('AppCtrl', function($scope, $state, $ionicHistory, AuthService) {
+.controller('AppCtrl', function($scope, $state, $ionicHistory, AuthService, SOURCES) {
 
   $scope.doLogout = function() {
     console.log('Doing logout');
@@ -21,7 +21,7 @@ angular.module('iComPAsS.controllers', [])
 
   $scope.getBasicInfo = function(data) {
     return {
-      'image': data.image,
+      'image': SOURCES.profile_pic_src + data.image,
       'fullname': data.fname + ' ' + data.mname + ' ' + data.lname,
       'basic_info': [
         {
@@ -41,7 +41,7 @@ angular.module('iComPAsS.controllers', [])
           'data': data.bday
         },
         {
-          'icon': 'ion-person',
+          'icon': 'ion-calculator',
           'data': data.age
         },
         {

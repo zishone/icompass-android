@@ -85,3 +85,8 @@
 .hidden{
   display: none;
 }
+
+/*Remove anchor tag underline*/
+.noline{
+  text-decoration: none;
+}
