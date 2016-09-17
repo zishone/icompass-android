@@ -1,7 +1,16 @@
 <ion-view view-title="Message Detail">
   <ion-content class="bg-light-orange">
-    <h3>{{message.fullname}}</h3>
-    <p>{{message.message}}</p>
-    <small>{{message.datesent}}</small>
+    <div class="card">
+      <div class="item item-text-wrap">
+        <h2>{{message.fullname}}: </h2>
+        <hr>
+        <br>
+        <h3>{{message.message}}</h3>
+        <small></small>
+      </div>
+      <div class="item item-divider text-right">
+        {{message.datesent}}
+      </div>
+    </div>
   </ion-content>
 </ion-view>
