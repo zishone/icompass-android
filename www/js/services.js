@@ -120,7 +120,7 @@ angular.module('iComPAsS.services', [])
         console.log(response.statusText);
       });
     },
-    get_doctor_info: function(doctorId) {
+    get_doctor_detail: function(doctorId) {
       return $http.get(SOURCES.api_src + 'doctors/profile/' + doctorId)
       .then(function successCallback(response) {
         return response.data[0];
@@ -129,9 +129,17 @@ angular.module('iComPAsS.services', [])
       });
     },
     get_received_messages: function() {
-      return $http.get(SOURCES.api_src + 'messages/received/5')
+      return $http.get(SOURCES.api_src + 'messages/received/?page_limit=99999')
       .then(function successCallback(response) {
         return response.data;
+      }, function errorCallback(response) {
+        console.log(response.statusText);
+      });
+    },
+    get_message: function(messageId) {
+      return $http.get(SOURCES.api_src + 'messages/message/' + messageId)
+      .then(function successCallback(response) {
+        return response.data[0];
       }, function errorCallback(response) {
         console.log(response.statusText);
       });

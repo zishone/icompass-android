@@ -290,21 +290,21 @@ angular.module('iComPAsS.controllers', [])
 .controller('ListOfDoctorCtrl', function($scope, APIService, SOURCES){
   $scope.profile_pic_src = SOURCES.profile_pic_src;
   APIService.get_assigned_doctors().then(function(data) {
-    $scope.assign_doctors = data;
+    $scope.assigned_doctors = data;
   });
 })
 
-.controller('DoctorProfileCtrl', function($scope, $stateParams, APIService, SOURCES){
+.controller('DoctorDetailCtrl', function($scope, $stateParams, APIService, SOURCES){
 
-  $scope.doctor_profile = {};
+  $scope.doctor_detail = {};
 
-  APIService.get_doctor_info($stateParams.doctorId).then(function(data) {
+  APIService.get_doctor_detail($stateParams.doctorId).then(function(data) {
 
-    $scope.doctor_profile.image = SOURCES.profile_pic_src + data.image + '.jpg';
+    $scope.doctor_detail.image = SOURCES.profile_pic_src + data.image + '.jpg';
 
-    $scope.doctor_profile.fullname = data.fname + ' ' + data.mname + ' ' + data.lname;
+    $scope.doctor_detail.fullname = data.fname + ' ' + data.mname + ' ' + data.lname;
 
-    $scope.doctor_profile.info = [
+    $scope.doctor_detail.info = [
       {
         'label': 'Specialty',
         'data': data.specialty
@@ -322,12 +322,14 @@ angular.module('iComPAsS.controllers', [])
   });
 })
 
-.controller('InboxCtrl', function($scope, APIService){
+.controller('InboxCtrl', function($scope, APIService, SOURCES){
   APIService.get_received_messages().then(function(data) {
     $scope.received_messages = data.messages;
   });
+})
 
-  $scope.remove = function(message) {
-    APIService.remove(message);
-  };
+.controller('MessageDetailCtrl', function($scope, $stateParams, APIService, SOURCES){
+  APIService.get_message($stateParams.messageId).then(function(data) {
+    $scope.message = data;
+  });
 });

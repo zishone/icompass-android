@@ -102,22 +102,22 @@ angular.module('iComPAsS', ['ionic', 'iComPAsS.controllers', 'iComPAsS.services'
     }
   })
 
-  .state('menu.doctor-profile', {
-    url: '/doctor-profile/:doctorId',
+  .state('menu.doctor-detail', {
+    url: '/doctor-detail/:doctorId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/doctor-profile.html',
-        controller: 'DoctorProfileCtrl'
+        templateUrl: 'templates/doctor-detail.html',
+        controller: 'DoctorDetailCtrl'
       }
     }
   })
 
-  .state('menu.patient-profile', {
-    url: '/patient-profile/:patientId',
+  .state('menu.patient-detail', {
+    url: '/patient-detail/:patientId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/patient-profile.html',
-        controller: 'PatientProfileCtrl'
+        templateUrl: 'templates/patient-detail.html',
+        controller: 'PatientDetailCtrl'
       }
     }
   })
@@ -137,6 +137,16 @@ angular.module('iComPAsS', ['ionic', 'iComPAsS.controllers', 'iComPAsS.services'
       'menuContent': {
         templateUrl: 'templates/inbox.html',
         controller: 'InboxCtrl'
+      }
+    }
+  })
+
+  .state('menu.message-detail', {
+    url: '/message-detail/:messageId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/message-detail.html',
+        controller: 'MessageDetailCtrl'
       }
     }
   })
