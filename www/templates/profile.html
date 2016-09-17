@@ -1,9 +1,9 @@
-<ion-view view-title="Profile">
+<ion-view view-title="{{view_title}}">
   <ion-content class="bg-light-orange">
-    <div class="bg-orange text-center profile-head">
+    <div class="bg-orange item-thumbnail-left">
+      <img src="{{user_profile.image}}" alt=""/>
+      <h3 class="light">{{user_profile.fullname}}</h3>
       <br>
-      <img src="{{user_profile.image}}" alt="" class="profile-pic"/>
-      <h2 class="light">{{user_profile.fullname}}</h2>
     </div>
 
     <div class="tabs tabs-striped tabs-top">
@@ -40,23 +40,21 @@
             {{info.label}}
           </div>
           <div class="item item-text-wrap">
-            <ion-list>
-              <ion-item class="row item-borderless" ng-repeat="sub_info in info.data track by $index">
-                <span ng-if="info.label === 'Weight'">
-                  <div class="row">
-                    <div class="col col-33">
-                      {{sub_info.weight}} kg
-                    </div>
-                    <div class="">
-                      {{sub_info.date}}
-                    </div>
-                  </div>
-                </span>
-                <span ng-if="info.label !== 'Weight'">
+            <div class="row" ng-repeat="sub_info in info.data track by $index">
+              <div class="row" ng-if="info.label !== 'Weight'">
+                <div class="col">
                   {{sub_info}}
-                </span>
-              </ion-item>
-            </ion-list>
+                </div>
+              </div>
+              <div class="row" ng-if="info.label === 'Weight'">
+                <div class="col col-33">
+                  {{sub_info.weight}} kg
+                </div>
+                <div class="col col-67">
+                  {{sub_info.date}}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </span>

@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers', [])
 
-.controller('AppCtrl', function($scope, $state, $ionicHistory, AuthService, SOURCES) {
+.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, AuthService, SOURCES) {
 
   $scope.doLogout = function() {
     console.log('Doing logout');
@@ -10,6 +10,7 @@ angular.module('iComPAsS.controllers', [])
 
     // Change state into login
     $state.go('login').then(function(){
+      $window.location.reload();
       $scope.clearBackView();
     });
   };
@@ -21,7 +22,7 @@ angular.module('iComPAsS.controllers', [])
 
   $scope.getBasicInfo = function(data) {
     return {
-      'image': SOURCES.profile_pic_src + data.image,
+      'image': SOURCES.profile_pic_src + data.image + '.jpg',
       'fullname': data.fname + ' ' + data.mname + ' ' + data.lname,
       'basic_info': [
         {
@@ -255,6 +256,8 @@ angular.module('iComPAsS.controllers', [])
 .controller('ProfileCtrl', function($scope, AuthService, USER_ROLES, APIService){
   $scope.resetTabs();
 
+  $scope.view_title = "Profile";
+
   $scope.user_profile = {};
 
   if(AuthService.role() === USER_ROLES.patient){
@@ -275,16 +278,7 @@ angular.module('iComPAsS.controllers', [])
 
       $scope.user_profile = $scope.getBasicInfo(data);
 
-      $scope.user_profile.more = [
-        {
-          'label': 'Specialty',
-          'data': [data.specialty]
-        },
-        {
-          'label': 'Availability',
-          'data': [data.available]
-        }
-      ];
+      $scope.user_profile.more = $scope.getDoctorMore(data);
     });
   }
 })
@@ -295,7 +289,8 @@ angular.module('iComPAsS.controllers', [])
   });
 })
 
-.controller('ListOfDoctorCtrl', function($scope, APIService){
+.controller('ListOfDoctorCtrl', function($scope, APIService, SOURCES){
+  $scope.profile_pic_src = SOURCES.profile_pic_src;
   APIService.get_assigned_doctors().then(function(data) {
     $scope.assign_doctors = data;
   });
@@ -304,12 +299,14 @@ angular.module('iComPAsS.controllers', [])
 .controller('DoctorProfileCtrl', function($scope, $stateParams, APIService){
   $scope.resetTabs();
 
-  $scope.doctor_profile = {};
+  $scope.view_title = "Doctor's Profile";
+
+  $scope.user_profile = {};
 
   APIService.get_doctor_info($stateParams.doctorId).then(function(data) {
 
-    $scope.doctor_profile = $scope.getBasicInfo(data);
+    $scope.user_profile = $scope.getBasicInfo(data);
 
-    $scope.doctor_profile.more = $scope.getDoctorMore(data);
+    $scope.user_profile.more = $scope.getDoctorMore(data);
   });
 });

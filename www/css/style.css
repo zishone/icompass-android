@@ -60,16 +60,7 @@
   background-color: #a2a2a2;
 }
 
-/*Profile Design*/
-.profile-head{
-  height:35%;
-}
-
-.profile-pic{
-  height:55%;
-  border-radius:100%
-}
-
+/*Profile Tabs Design*/
 .tabs.tabs-top{
   position: relative;
   top: 0%;

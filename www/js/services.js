@@ -83,7 +83,7 @@ angular.module('iComPAsS.services', [])
     get_user_profile: function() {
       return $http.get(SOURCES.api_src + 'users/profile/' + AuthService.userID())
       .then(function successCallback(response) {
-        return response.data[0];
+        return response.data;
       }, function errorCallback(response) {
         console.log(response.statusText);
       });

@@ -20,25 +20,10 @@ angular.module('iComPAsS', ['ionic', 'iComPAsS.controllers', 'iComPAsS.services'
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-
-    // Checks if there is Internet
-    if(window.Connection) {
-      if(navigator.connection.type == Connection.NONE) {
-        $ionicPopup.confirm({
-          title: "Internet Disconnected",
-          content: "The internet is disconnected on your device."
-        })
-        .then(function(result) {
-          if(!result) {
-              ionic.Platform.exitApp();
-          }
-        });
-      }
-    }
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, $translateProvider, USER_ROLES) {
+.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
   // Routes
   $stateProvider
 
@@ -121,7 +106,7 @@ angular.module('iComPAsS', ['ionic', 'iComPAsS.controllers', 'iComPAsS.services'
     url: '/doctor-profile/:doctorId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/doctor-profile.html',
+        templateUrl: 'templates/profile.html',
         controller: 'DoctorProfileCtrl'
       }
     }
@@ -174,16 +159,18 @@ angular.module('iComPAsS', ['ionic', 'iComPAsS.controllers', 'iComPAsS.services'
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('login');
+})
 
+.config(function($translateProvider){
   // Translate
   $translateProvider
   .useStaticFilesLoader({
     prefix: 'js/locales/',
     suffix: '.json'
   })
-  .registerAvailableLanguageKeys(['en', 'fil'], {
-    'en' : 'en', 'en_GB': 'en', 'en_US': 'en',
-    'fil' : 'fil'
+  .registerAvailableLanguageKeys(['en', 'tl'], {
+    'en' : 'en',
+    'tl' : 'tl'
   })
   .preferredLanguage('en')
   .fallbackLanguage('en')
@@ -199,5 +186,5 @@ angular.module('iComPAsS', ['ionic', 'iComPAsS.controllers', 'iComPAsS.services'
 
 .constant('SOURCES', {
   api_src: 'http://urag.co/bci_api/api/',
-  profile_pic_src: 'http://csa.usthbci-icompass.com/images/profile-images/'
+  profile_pic_src: 'http://urag.co/bci_api/images/profile-images/'
 });
