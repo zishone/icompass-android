@@ -1,5 +1,15 @@
 <ion-view view-title="Inbox">
   <ion-content class="bg-light-orange">
-    <h1>Inbox</h1>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in received_messages" type="item-text-wrap" href="#/menu/received-message/{{message.id}}">
+        <h2>{{message.fullname}}</h2>
+        <p>{{message.message}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(message)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

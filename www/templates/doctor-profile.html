@@ -1,0 +1,18 @@
+<ion-view view-title="Doctor's Profile">
+  <ion-content class="bg-light-orange">
+    <div class="bg-orange item-thumbnail-left">
+      <img src="{{doctor_profile.image}}" alt=""/>
+      <h3 class="light">{{doctor_profile.fullname}}</h3>
+      <br>
+    </div>
+
+    <div class="card" ng-repeat="info in doctor_profile.info">
+      <div class="item item-divider bg-orange light">
+        {{info.label}}
+      </div>
+      <div class="item item-text-wrap">
+        {{info.data}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

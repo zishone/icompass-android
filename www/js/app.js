@@ -1,11 +1,11 @@
-// Ionic ComPAssIon App
+// Ionic iComPAsS App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'ComPAssIon' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'iComPAsS' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'ComPAssIon.controllers' is found in controllers.js
-// 'ComPAssIon.sevices' is found in services.js
-angular.module('ComPAssIon', ['ionic', 'ComPAssIon.controllers', 'ComPAssIon.services', 'pascalprecht.translate'])
+// 'iComPAsS.controllers' is found in controllers.js
+// 'iComPAsS.sevices' is found in services.js
+angular.module('iComPAsS', ['ionic', 'iComPAsS.controllers', 'iComPAsS.services', 'pascalprecht.translate'])
 
 .run(function($ionicPlatform, $ionicPopup) {
   $ionicPlatform.ready(function() {
@@ -106,8 +106,18 @@ angular.module('ComPAssIon', ['ionic', 'ComPAssIon.controllers', 'ComPAssIon.ser
     url: '/doctor-profile/:doctorId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/profile.html',
+        templateUrl: 'templates/doctor-profile.html',
         controller: 'DoctorProfileCtrl'
+      }
+    }
+  })
+
+  .state('menu.patient-profile', {
+    url: '/patient-profile/:patientId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/patient-profile.html',
+        controller: 'PatientProfileCtrl'
       }
     }
   })
@@ -125,7 +135,8 @@ angular.module('ComPAssIon', ['ionic', 'ComPAssIon.controllers', 'ComPAssIon.ser
     url: '/inbox',
     views: {
       'menuContent': {
-        templateUrl: 'templates/inbox.html'
+        templateUrl: 'templates/inbox.html',
+        controller: 'InboxCtrl'
       }
     }
   })

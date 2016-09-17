@@ -1,4 +1,4 @@
-<ion-view view-title="{{view_title}}">
+<ion-view view-title="Profile">
   <ion-content class="bg-light-orange">
     <div class="bg-orange item-thumbnail-left">
       <img src="{{user_profile.image}}" alt=""/>
@@ -22,8 +22,8 @@
       <div class="item item-text-wrap">
         <ion-list >
           <ion-item class="row item-borderless" ng-repeat="info in user_profile.basic_info">
-            <div class="col col-offset-10 col-10 padding-vertical">
-              <ion-icon class="icon {{info.icon}} larger"></ion-icon>
+            <div class="col col-33 padding-vertical">
+              <h3>{{info.label}}:</h3>
             </div>
             <div class="col padding-vertical">
               {{info.data}}
@@ -34,30 +34,28 @@
     </div>
 
     <div ng-class="classes.more">
-      <span ng-repeat="info in user_profile.more">
-        <div class="card">
-          <div class="item item-divider bg-orange light">
-            {{info.label}}
-          </div>
-          <div class="item item-text-wrap">
-            <div class="row" ng-repeat="sub_info in info.data track by $index">
-              <div class="row" ng-if="info.label !== 'Weight'">
-                <div class="col">
-                  {{sub_info}}
-                </div>
+      <div class="card" ng-repeat="info in user_profile.more">
+        <div class="item item-divider bg-orange light">
+          {{info.label}}
+        </div>
+        <div class="item item-text-wrap">
+          <div class="row" ng-repeat="sub_info in info.data track by $index">
+            <div class="row" ng-if="info.label !== 'Weight'">
+              <div class="col">
+                {{sub_info}}
               </div>
-              <div class="row" ng-if="info.label === 'Weight'">
-                <div class="col col-33">
-                  {{sub_info.weight}} kg
-                </div>
-                <div class="col col-67">
-                  {{sub_info.date}}
-                </div>
+            </div>
+            <div class="row" ng-if="info.label === 'Weight'">
+              <div class="col col-33">
+                {{sub_info.weight}} kg
+              </div>
+              <div class="col col-67">
+                {{sub_info.date}}
               </div>
             </div>
           </div>
         </div>
-      </span>
+      </div>
     </div>
   </ion-content>
 </ion-view>

@@ -1,4 +1,4 @@
-angular.module('ComPAssIon.services', [])
+angular.module('iComPAsS.services', [])
 
 .factory('AuthService', function($q, $http, USER_ROLES, SOURCES){
   var LOCAL_TOKEN_KEY = 'yourTokenKey';
@@ -128,5 +128,13 @@ angular.module('ComPAssIon.services', [])
         console.log(response.statusText);
       });
     },
+    get_received_messages: function() {
+      return $http.get(SOURCES.api_src + 'messages/received/5')
+      .then(function successCallback(response) {
+        return response.data;
+      }, function errorCallback(response) {
+        console.log(response.statusText);
+      });
+    }
   };
 });

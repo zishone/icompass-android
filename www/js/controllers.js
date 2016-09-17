@@ -1,4 +1,4 @@
-angular.module('ComPAssIon.controllers', [])
+angular.module('iComPAsS.controllers', [])
 
 .controller('AppCtrl', function($scope, $window, $state, $ionicHistory, AuthService, SOURCES) {
 
@@ -26,27 +26,27 @@ angular.module('ComPAssIon.controllers', [])
       'fullname': data.fname + ' ' + data.mname + ' ' + data.lname,
       'basic_info': [
         {
-          'icon': 'ion-person',
+          'label': 'Username',
           'data': data.username
         },
         {
-          'icon': 'ion-ios-telephone',
+          'label': 'Contact No.',
           'data': data.contactnumber
         },
         {
-          'icon': 'ion-email',
+          'label': 'E-mail',
           'data': data.email
         },
         {
-          'icon': 'ion-calendar',
+          'label': 'Birthday',
           'data': data.bday
         },
         {
-          'icon': 'ion-calculator',
+          'label': 'Age',
           'data': data.age
         },
         {
-          'icon': 'ion-transgender',
+          'label': 'Sex',
           'data': data.gender === 'm'? 'Male' : 'Female'
         }
       ]
@@ -141,7 +141,7 @@ angular.module('ComPAssIon.controllers', [])
         AuthService.logout();
         var alertPopup = $ionicPopup.alert({
           title: 'Sorry!',
-          template: 'Android verion of ComPAssIon is not available to this type of user.',
+          template: 'Android verion of iComPAsS is not available to this type of user.',
           cssClass: 'alert-popup'
         });
       }else{
@@ -256,8 +256,6 @@ angular.module('ComPAssIon.controllers', [])
 .controller('ProfileCtrl', function($scope, AuthService, USER_ROLES, APIService){
   $scope.resetTabs();
 
-  $scope.view_title = "Profile";
-
   $scope.user_profile = {};
 
   if(AuthService.role() === USER_ROLES.patient){
@@ -296,17 +294,40 @@ angular.module('ComPAssIon.controllers', [])
   });
 })
 
-.controller('DoctorProfileCtrl', function($scope, $stateParams, APIService){
-  $scope.resetTabs();
+.controller('DoctorProfileCtrl', function($scope, $stateParams, APIService, SOURCES){
 
-  $scope.view_title = "Doctor's Profile";
-
-  $scope.user_profile = {};
+  $scope.doctor_profile = {};
 
   APIService.get_doctor_info($stateParams.doctorId).then(function(data) {
 
-    $scope.user_profile = $scope.getBasicInfo(data);
+    $scope.doctor_profile.image = SOURCES.profile_pic_src + data.image + '.jpg';
 
-    $scope.user_profile.more = $scope.getDoctorMore(data);
+    $scope.doctor_profile.fullname = data.fname + ' ' + data.mname + ' ' + data.lname;
+
+    $scope.doctor_profile.info = [
+      {
+        'label': 'Specialty',
+        'data': data.specialty
+      },
+      {
+        'label': 'Clinic Hours',
+        'data': data.available
+      },
+      {
+        'label': 'Contact Number',
+        'data': data.contactnumber
+      }
+    ];
+
   });
+})
+
+.controller('InboxCtrl', function($scope, APIService){
+  APIService.get_received_messages().then(function(data) {
+    $scope.received_messages = data.messages;
+  });
+
+  $scope.remove = function(message) {
+    APIService.remove(message);
+  };
 });
