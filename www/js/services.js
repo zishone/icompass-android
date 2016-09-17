@@ -1,4 +1,4 @@
-angular.module('iComPAsS.services', [])
+angular.module('ComPAssIon.services', [])
 
 .factory('AuthService', function($q, $http, USER_ROLES, SOURCES){
   var LOCAL_TOKEN_KEY = 'yourTokenKey';

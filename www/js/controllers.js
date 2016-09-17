@@ -1,4 +1,4 @@
-angular.module('iComPAsS.controllers', [])
+angular.module('ComPAssIon.controllers', [])
 
 .controller('AppCtrl', function($scope, $window, $state, $ionicHistory, AuthService, SOURCES) {
 
@@ -141,7 +141,7 @@ angular.module('iComPAsS.controllers', [])
         AuthService.logout();
         var alertPopup = $ionicPopup.alert({
           title: 'Sorry!',
-          template: 'Android verion of iComPAsS is not available to this type of user.',
+          template: 'Android verion of ComPAssIon is not available to this type of user.',
           cssClass: 'alert-popup'
         });
       }else{

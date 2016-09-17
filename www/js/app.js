@@ -1,11 +1,11 @@
-// Ionic iComPAsS App
+// Ionic ComPAssIon App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'iComPAsS' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'ComPAssIon' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'iComPAsS.controllers' is found in controllers.js
-// 'iComPAsS.sevices' is found in services.js
-angular.module('iComPAsS', ['ionic', 'iComPAsS.controllers', 'iComPAsS.services', 'pascalprecht.translate'])
+// 'ComPAssIon.controllers' is found in controllers.js
+// 'ComPAssIon.sevices' is found in services.js
+angular.module('ComPAssIon', ['ionic', 'ComPAssIon.controllers', 'ComPAssIon.services', 'pascalprecht.translate'])
 
 .run(function($ionicPlatform, $ionicPopup) {
   $ionicPlatform.ready(function() {
