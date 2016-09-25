@@ -1,9 +1,87 @@
+/*CUSTOM FONTS*/
+@font-face {
+  font-family: roboto;
+  src: url("../fonts/RobotoTTF/Roboto-Regular.ttf") format("opentype");
+}
+.roboto{
+  font-family: roboto !important;
+}
+/*GENERAL CSS*/
+h1{
+  font-size: 13vw;
+}
+h3{
+  font-size: 6vw;
+}
+h4{
+  font-size: 4.8vw;
+}
+/*MENU TITLE*/
+.platform-android .bar .title{
+  font-size: 7vw;
+}
+.bar-header{
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+/*TABS*/
+.tab-item{
+  max-width: 50%;
+}
+.bci-tab a.active{
+  background-color: #e65100 !important;
+  border: none !important;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.bci-tab a{
+  background-color: #ff9100 !important;
+  margin: 0 !important;
+  opacity: 10;
+}
+/*CUSTOM LOGIN CSS*/
+.bci-login .item-input{
+  width: 80%;
+  padding: 1.5% 0;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.bci-login .input-label{
+  font-size: 5vw;
+  color: rgba(0,0,0,0.3);
+  padding-left: 4vw;
+}
+.bci-login input{
+  font-size: 5vw;
+}
+.margin-auto{
+  margin: auto;
+}
+.button-color{
+  background-color: #00b8d4 !important;
+  color: white;
+}
+/*PROFILE*/
+.bci-profile .profile-header{
+  margin: 5% auto;
+}
+.bci-profile .profile-img{
+  width: 30%;
+  margin: auto;
+}
+.profile-img img{
+  width: 100%;
+}
+.profile-name{
+  text-align: center;
+}
 /* Empty. Add your own CSS if you like */
 
 /*iComPAsS color scheme*/
+.black{
+  color:black;
+}
 .bg-orange,
 .bar.bg-orange{
-  background-color: #FF8300;
+  background-color: #ff6d00;
 }
 
 .text-orange{
@@ -11,9 +89,11 @@
 }
 
 .bg-light-orange{
-	background-color: #FFFFDE;
+	background-color: #e0e0e0;
 }
-
+.bg-grey{
+	background-color: #e0e0e0;
+}
 .text-light-orange{
   color: #FFFFDE;
 }
