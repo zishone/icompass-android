@@ -1,11 +1,11 @@
 <ion-view view-title="Profile">
   <ion-content class="bci-profile bg-grey">
     <div class="bg-grey profile-header">
-      <div class="profile-img">
-        <img src="{{user_profile.image}}" alt=""/>
-      </div>
+      <!-- <div class="profile-img">
+        <!-- <img src="{{user_profile.image}}" alt=""/> -->
+      <!-- </div> -->
       <div class="profile-name">
-        <h3 class="black">{{user_profile.fullname}}</h3>
+        <h3 class="white">{{user_profile.fullname}}</h3>
       </div>
 
       <br>
@@ -13,10 +13,10 @@
 
     <div class="bci-tab tabs tabs-striped tabs-top">
       <a class="tab-item" ng-class="classes.basic_info_tab" ng-click="showBasicInfo()">
-        <i class="icon ion-person"></i>
+        <i class="white icon ion-person"></i>
       </a>
       <a class="tab-item" ng-class="classes.more_tab" ng-click="showMore()">
-        <i class="icon ion-more"></i>
+        <i class="white icon ion-more"></i>
       </a>
     </div>
 
@@ -26,11 +26,11 @@
       </div> -->
       <div class="item item-text-wrap">
         <ion-list >
-          <ion-item class="row item-borderless" ng-repeat="info in user_profile.basic_info">
-            <div class="col col-33 padding-vertical">
-              <h3>{{info.label}}:</h3>
+          <ion-item class="profile-row row item-borderless" ng-repeat="info in user_profile.basic_info">
+            <div class="info-label col col-33 padding-vertical">
+              <p>{{info.label}}:</p>
             </div>
-            <div class="col padding-vertical">
+            <div class="info-data col padding-vertical">
               {{info.data}}
             </div>
           </ion-item>

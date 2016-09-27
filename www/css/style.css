@@ -28,13 +28,21 @@ h4{
 .tab-item{
   max-width: 50%;
 }
+.bci-tab>.tab-item i{
+  font-size: 8vw;
+}
+.bci-tab{
+  z-index: -1;
+  height: 11.5vw;
+}
 .bci-tab a.active{
-  background-color: #e65100 !important;
+  background-color: #03A9F4 !important;
   border: none !important;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 2px 0px 5px rgba(0,0,0,0.3);
+  z-index: 100;
 }
 .bci-tab a{
-  background-color: #ff9100 !important;
+  background-color: #BDBDBD !important;
   margin: 0 !important;
   opacity: 10;
 }
@@ -62,10 +70,21 @@ h4{
 }
 /*PROFILE*/
 .bci-profile{
-  margin-top: 3.5%;
+  margin-top: 12.5%;
 }
-.bci-profile .profile-header{
-  margin: 5% auto;
+.info-data{
+  font-size: 4vw;
+}
+.info-label p{
+  font-size: 3.5vw;
+}
+.profile-row{
+  padding: 3% 5px;
+}
+.profile-header{
+  background-image: url(../img/tony.jpg);
+  background-size: cover;
+  height: 50vw;
 }
 .bci-profile .profile-img{
   width: 30%;
@@ -76,10 +95,18 @@ h4{
 }
 .profile-name{
   text-align: center;
+  padding-top: 35%;
+}
+.profile-name h3{
+  font-size: 7vw;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
 }
 /* Empty. Add your own CSS if you like */
 
 /*iComPAsS color scheme*/
+.white{
+  color: white;
+}
 .black{
   color:black;
 }
@@ -164,4 +191,7 @@ h4{
 /*Remove anchor tag underline*/
 .noline{
   text-decoration: none;
+}
+.has-header{
+  top: 0;
 }
