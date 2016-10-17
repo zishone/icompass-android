@@ -1,36 +1,31 @@
 <ion-view view-title="Profile">
-  <ion-content class="bci-profile bg-grey">
-    <div class="bg-grey profile-header">
-      <!-- <div class="profile-img">
-        <!-- <img src="{{user_profile.image}}" alt=""/> -->
-      <!-- </div> -->
-      <div class="profile-name">
-        <h3 class="white">{{user_profile.fullname}}</h3>
-      </div>
-
+  <ion-content class="bg-light-orange">
+    <div class="bg-orange item-thumbnail-left">
+      <img src="{{user_profile.image}}" alt=""/>
+      <h3 class="light">{{user_profile.fullname}}</h3>
       <br>
     </div>
 
-    <div class="bci-tab tabs tabs-striped tabs-top">
+    <div class="tabs tabs-striped tabs-top">
       <a class="tab-item" ng-class="classes.basic_info_tab" ng-click="showBasicInfo()">
-        <i class="white icon ion-person"></i>
+        <i class="icon ion-person"></i>
       </a>
       <a class="tab-item" ng-class="classes.more_tab" ng-click="showMore()">
-        <i class="white icon ion-more"></i>
+        <i class="icon ion-more"></i>
       </a>
     </div>
 
-    <div ng-class="classes.basic_info">
-      <!-- <div class="item item-divider bg-orange light">
+    <div class="card" ng-class="classes.basic_info">
+      <div class="item item-divider bg-orange light">
         Personal Info
-      </div> -->
+      </div>
       <div class="item item-text-wrap">
         <ion-list >
-          <ion-item class="profile-row row item-borderless" ng-repeat="info in user_profile.basic_info">
-            <div class="info-label col col-33 padding-vertical">
-              <p>{{info.label}}:</p>
+          <ion-item class="row item-borderless" ng-repeat="info in user_profile.basic_info">
+            <div class="col col-33 padding-vertical">
+              <h3>{{info.label}}:</h3>
             </div>
-            <div class="info-data col padding-vertical">
+            <div class="col padding-vertical">
               {{info.data}}
             </div>
           </ion-item>

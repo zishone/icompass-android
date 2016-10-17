@@ -1,118 +1,9 @@
-/*CUSTOM FONTS*/
-@font-face {
-  font-family: roboto;
-  src: url("../fonts/RobotoTTF/Roboto-Regular.ttf") format("opentype");
-}
-.roboto{
-  font-family: roboto !important;
-}
-/*GENERAL CSS*/
-h1{
-  font-size: 13vw;
-}
-h3{
-  font-size: 6vw;
-}
-h4{
-  font-size: 4.8vw;
-}
-/*MENU TITLE*/
-.platform-android .bar .title{
-  font-size: 7vw;
-}
-.bar-header{
-  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-  height: 8vh;
-}
-/*TABS*/
-.tab-item{
-  max-width: 50%;
-}
-.bci-tab>.tab-item i{
-  font-size: 8vw;
-}
-.bci-tab{
-  z-index: -1;
-  height: 11.5vw;
-}
-.bci-tab a.active{
-  background-color: #03A9F4 !important;
-  border: none !important;
-  box-shadow: 2px 0px 5px rgba(0,0,0,0.3);
-  z-index: 100;
-}
-.bci-tab a{
-  background-color: #BDBDBD !important;
-  margin: 0 !important;
-  opacity: 10;
-}
-/*CUSTOM LOGIN CSS*/
-.bci-login .item-input{
-  width: 80%;
-  padding: 1.5% 0;
-  border-radius: 5px;
-  margin-bottom: 5px;
-}
-.bci-login .input-label{
-  font-size: 5vw;
-  color: rgba(0,0,0,0.3);
-  padding-left: 4vw;
-}
-.bci-login input{
-  font-size: 5vw;
-}
-.margin-auto{
-  margin: auto;
-}
-.button-color{
-  background-color: #00b8d4 !important;
-  color: white;
-}
-/*PROFILE*/
-.bci-profile{
-  margin-top: 12.5%;
-}
-.info-data{
-  font-size: 4vw;
-}
-.info-label p{
-  font-size: 3.5vw;
-}
-.profile-row{
-  padding: 3% 5px;
-}
-.profile-header{
-  background-image: url(../img/tony.jpg);
-  background-size: cover;
-  height: 50vw;
-}
-.bci-profile .profile-img{
-  width: 30%;
-  margin: auto;
-}
-.profile-img img{
-  width: 100%;
-}
-.profile-name{
-  text-align: center;
-  padding-top: 35%;
-}
-.profile-name h3{
-  font-size: 7vw;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
-}
 /* Empty. Add your own CSS if you like */
 
 /*iComPAsS color scheme*/
-.white{
-  color: white;
-}
-.black{
-  color:black;
-}
 .bg-orange,
 .bar.bg-orange{
-  background-color: #ff6d00;
+  background-color: #FF8300;
 }
 
 .text-orange{
@@ -120,11 +11,9 @@ h4{
 }
 
 .bg-light-orange{
-	background-color: #e0e0e0;
+	background-color: #FFFFDE;
 }
-.bg-grey{
-	background-color: #e0e0e0;
-}
+
 .text-light-orange{
   color: #FFFFDE;
 }
@@ -191,7 +80,4 @@ h4{
 /*Remove anchor tag underline*/
 .noline{
   text-decoration: none;
-}
-.has-header{
-  top: 0;
 }
