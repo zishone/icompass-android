@@ -81,3 +81,16 @@
 .noline{
   text-decoration: none;
 }
+
+@media only screen and (min-device-width: 700px) {
+  .text{
+    font-size: 2em !important;
+  }
+
+  .menu.menu-left{
+  	width: 400px !important;
+  }
+  .menu-open .menu-content{
+  	transform: translate3d(400px, 0px, 0px) !important;
+  }
+}

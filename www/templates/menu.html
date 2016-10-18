@@ -16,14 +16,18 @@
     <ion-content>
       <ion-list>
         <ion-item menu-close href="{{menuItem.url}}" ng-repeat="menuItem in menuList">
-          <ion-icon class="icon {{menuItem.icon}} larger"></ion-icon>
-          &nbsp;
-          {{menuItem.text}}
+          <span class="text">
+            <ion-icon class="icon {{menuItem.icon}} larger"></ion-icon>
+            &nbsp;
+            {{menuItem.text}}
+          </span>
         </ion-item>
         <ion-item menu-close ng-click="doLogout()">
-          <ion-icon class="icon ion-log-out"></ion-icon>
-          &nbsp;
-          Logout
+          <span class="text">
+            <ion-icon class="icon ion-log-out larger"></ion-icon>
+            &nbsp;
+            Logout
+          </span>
         </ion-item>
       </ion-list>
     </ion-content>

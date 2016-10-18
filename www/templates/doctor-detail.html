@@ -2,16 +2,16 @@
   <ion-content class="bg-light-orange">
     <div class="bg-orange item-thumbnail-left">
       <img src="{{doctor_detail.image}}" alt=""/>
-      <h3 class="light">{{doctor_detail.fullname}}</h3>
+      <h3 class="light"><span class="text">{{doctor_detail.fullname}}</span></h3>
       <br>
     </div>
 
     <div class="card" ng-repeat="info in doctor_detail.info">
       <div class="item item-divider bg-orange light">
-        {{info.label}}
+        <span class="text">{{info.label}}</span>
       </div>
       <div class="item item-text-wrap">
-        {{info.data}}
+        <span class="text">{{info.data}}</span>
       </div>
     </div>
   </ion-content>

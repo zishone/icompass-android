@@ -2,8 +2,8 @@
   <ion-content class="bg-light-orange">
     <ion-list>
       <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in received_messages" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
-        <h2>{{message.fullname}}</h2>
-        <p>{{message.message}}</p>
+        <h2><span class="text">{{message.fullname}}</span></h2>
+        <p><span class="text">{{message.message}}</span></p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
