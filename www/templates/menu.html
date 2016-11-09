@@ -1,6 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-energized bg-orange" align-title="center">
+    <ion-nav-bar class="bar-energized bg-orange mynavbar" align-title="center">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
@@ -16,18 +16,14 @@
     <ion-content>
       <ion-list>
         <ion-item menu-close href="{{menuItem.url}}" ng-repeat="menuItem in menuList">
-          <span class="text">
-            <ion-icon class="icon {{menuItem.icon}} larger"></ion-icon>
-            &nbsp;
-            {{menuItem.text}}
-          </span>
+          <ion-icon class="icon {{menuItem.icon}} larger"></ion-icon>
+          &nbsp;
+          {{menuItem.text}}
         </ion-item>
         <ion-item menu-close ng-click="doLogout()">
-          <span class="text">
-            <ion-icon class="icon ion-log-out larger"></ion-icon>
-            &nbsp;
-            Logout
-          </span>
+          <ion-icon class="icon ion-log-out larger"></ion-icon>
+          &nbsp;
+          Logout
         </ion-item>
       </ion-list>
     </ion-content>

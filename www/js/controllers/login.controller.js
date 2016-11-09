@@ -14,9 +14,14 @@ angular.module('iComPAsS.controllers')
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
+
+    $scope.showLoading();
+
     console.log('Doing login', $scope.loginData);
 
     AuthService.login($scope.loginData.username, $scope.loginData.password).then(function(authenticated) {
+      $scope.hideLoading();
+
       // Prevent admin account from logging in
       if(AuthService.role() === USER_ROLES.admin){
         //destroy user credential becuase login was not really made
@@ -36,6 +41,8 @@ angular.module('iComPAsS.controllers')
       // Clear loginData
       $scope.loginData = {};
     }, function(err) {
+      $scope.hideLoading();
+
       var alertPopup = $ionicPopup.alert({
         title: 'Login failed!',
         template: 'Please check your credentials!',

@@ -839,7 +839,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *   };
      * });
      * </pre>
-     * <img src='../ngdoc_assets/StateGoExamples.png'/>
+     * <img src='../ngdoc_StateGoExamples.png'/>
      *
      * @param {string} to Absolute state name or relative state path. Some examples:
      *

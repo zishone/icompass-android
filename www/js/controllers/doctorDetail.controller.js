@@ -1,10 +1,12 @@
 angular.module('iComPAsS.controllers')
 
 .controller('DoctorDetailCtrl', function($scope, $stateParams, APIService, API){
+  $scope.showLoading();
 
   $scope.doctor_detail = {};
 
   APIService.get_doctor_detail($stateParams.doctorId).then(function(data) {
+    $scope.hideLoading();
 
     $scope.doctor_detail.image = API.profile_pic_src + data.image + '.jpg';
 

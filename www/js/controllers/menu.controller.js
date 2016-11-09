@@ -32,8 +32,8 @@ angular.module('iComPAsS.controllers')
       },
       {
         'icon': 'ion-email',
-        'text': 'Inbox',
-        'url': '#/menu/inbox'
+        'text': 'Messages',
+        'url': '#/menu/messages'
       },
       {
         'icon': 'ion-key',
@@ -59,19 +59,9 @@ angular.module('iComPAsS.controllers')
         'url': '#/menu/list-of-patients'
       },
       {
-        'icon': 'ion-ios-body',
-        'text': 'ESAS Results',
-        'url': '#/menu/esas-results'
-      },
-      {
         'icon': 'ion-email',
-        'text': 'Inbox',
-        'url': '#/menu/inbox'
-      },
-      {
-        'icon': 'ion-email',
-        'text': 'Message',
-        'url': '#/menu/message'
+        'text': 'Messages',
+        'url': '#/menu/messages'
       },
       {
         'icon': 'ion-key',

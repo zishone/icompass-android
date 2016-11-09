@@ -1,5 +1,15 @@
 <ion-view view-title="List of Patients">
   <ion-content class="bg-light-orange">
-    <h1><span class="text">List of Patients</span></h1>
+    <div class="card" ng-repeat="patient in assigned_patients">
+      <a href="#/menu/patient-detail/{{patient.p_id}}" class="noline">
+        <div class="item item-text-wrap item-avatar item-icon-right">
+          <img ng-src="{{profile_pic_src + patient.image + '.jpg'}}">
+          <h2><span class="text">{{patient.fullname}}</span></h2>
+          <p><span class="text">Diagnosis: {{patient.diagnosis}}</span></p>
+
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </div>
+      </a>
+    </div>
   </ion-content>
 </ion-view>

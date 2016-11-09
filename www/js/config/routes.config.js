@@ -51,21 +51,12 @@ angular.module('iComPAsS.config')
     }
   })
 
-  .state('menu.esas-results', {
-    url: '/esas-results',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/esas-results.html'
-      }
-    }
-  })
-
   .state('menu.list-of-doctors', {
     url: '/list-of-doctors',
     views: {
       'menuContent': {
         templateUrl: 'templates/list-of-doctors.html',
-        controller: 'ListOfDoctorCtrl'
+        controller: 'ListOfDoctorsCtrl'
       }
     }
   })
@@ -74,7 +65,8 @@ angular.module('iComPAsS.config')
     url: '/list-of-patients',
     views: {
       'menuContent': {
-        templateUrl: 'templates/list-of-patients.html'
+        templateUrl: 'templates/list-of-patients.html',
+        controller: 'ListOfPatientsCtrl'
       }
     }
   })
@@ -108,12 +100,12 @@ angular.module('iComPAsS.config')
     }
   })
 
-  .state('menu.inbox', {
-    url: '/inbox',
+  .state('menu.messages', {
+    url: '/messages',
     views: {
       'menuContent': {
-        templateUrl: 'templates/inbox.html',
-        controller: 'InboxCtrl'
+        templateUrl: 'templates/messages.html',
+        controller: 'MessagesCtrl'
       }
     }
   })
@@ -128,11 +120,12 @@ angular.module('iComPAsS.config')
     }
   })
 
-  .state('menu.message', {
-    url: '/message',
+  .state('menu.send-message', {
+    url: '/send-message',
     views: {
       'menuContent': {
-        templateUrl: 'templates/message.html'
+        templateUrl: 'templates/send-message.html',
+        controller: 'SendMessageCtrl'
       }
     }
   })
@@ -141,7 +134,8 @@ angular.module('iComPAsS.config')
     url: '/change-password',
     views: {
       'menuContent': {
-        templateUrl: 'templates/change-password.html'
+        templateUrl: 'templates/change-password.html',
+        controller: 'ChangePasswordCtrl'
       }
     }
   })

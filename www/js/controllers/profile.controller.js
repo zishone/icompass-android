@@ -1,6 +1,8 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ProfileCtrl', function($scope, API, USER_ROLES, AuthService, APIService){
+.controller('ProfileCtrl', function($scope, $ionicLoading, API, USER_ROLES, AuthService, APIService){
+  $scope.showLoading();
+
   // Tab functionalities
   $scope.resetTabs = function(){
     $scope.classes = {};
@@ -35,6 +37,7 @@ angular.module('iComPAsS.controllers')
 
   if(AuthService.role() === USER_ROLES.patient){
     APIService.get_patient_profile().then(function(data) {
+      $scope.hideLoading();
 
       $scope.user_profile = $scope.getBasicInfo(data);
 
@@ -65,6 +68,7 @@ angular.module('iComPAsS.controllers')
     });
   }else if(AuthService.role() === USER_ROLES.doctor){
     APIService.get_doctor_profile().then(function(data) {
+      $scope.hideLoading();
 
       $scope.user_profile = $scope.getBasicInfo(data);
 

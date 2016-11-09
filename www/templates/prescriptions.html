@@ -2,13 +2,13 @@
   <ion-content class="bg-light-orange">
     <div class="card" ng-repeat="prescription in prescriptions">
       <div class="item item-divider bg-orange light text-center">
-        <span class="text">{{prescription.fullname}}</span>
+        {{prescription.fullname}}
       </div>
       <div class="item item-text-wrap">
-        <span class="text">{{prescription.prescription}}</span>
+        {{prescription.prescription}}
       </div>
       <div class="item item-divider text-right">
-        <span class="text">{{prescription.dateadded}}</span>
+        {{prescription.dateadded}}
       </div>
     </div>
   </ion-content>
