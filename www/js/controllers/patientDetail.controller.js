@@ -1,11 +1,11 @@
 angular.module('iComPAsS.controllers')
 
-.controller('PatientDetailCtrl', function($scope, $stateParams, APIService, API){
+.controller('PatientDetailCtrl', function($scope, $stateParams, PatientDetailService, API){
   $scope.showLoading();
 
   $scope.patient_detail = {};
 
-  APIService.get_patient_detail($stateParams.patientId).then(function(data) {
+  PatientDetailService.get_patient_detail($stateParams.patientId).then(function(data) {
     $scope.hideLoading();
 
     $scope.patient_detail = {
@@ -52,12 +52,12 @@ angular.module('iComPAsS.controllers')
     };
   });
 
-  APIService.get_doctor_prescriptions($stateParams.patientId).then(function(data) {
+  PatientDetailService.get_doctor_prescriptions($stateParams.patientId).then(function(data) {
     $scope.hideLoading();
 
   });
 
-  APIService.get_esas_results($stateParams.patientId).then(function(data) {
+  PatientDetailService.get_esas_results($stateParams.patientId).then(function(data) {
     $scope.hideLoading();
   });
 });

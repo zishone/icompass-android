@@ -1,9 +1,9 @@
 angular.module('iComPAsS.controllers')
 
-.controller('PrescriptionsCtrl', function($scope, APIService){
+.controller('PrescriptionsCtrl', function($scope, PrescriptionsService){
   $scope.showLoading();
 
-  APIService.get_patient_prescriptions().then(function(data) {
+  PrescriptionsService.get_patient_prescriptions().then(function(data) {
     $scope.hideLoading();
 
     $scope.prescriptions = data;

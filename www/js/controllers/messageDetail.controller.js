@@ -1,9 +1,9 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MessageDetailCtrl', function($scope, $stateParams, APIService, API){
+.controller('MessageDetailCtrl', function($scope, $stateParams, MessageDetailService, API){
   $scope.showLoading();
 
-  APIService.get_message($stateParams.messageId).then(function(data) {
+  MessageDetailService.get_message($stateParams.messageId).then(function(data) {
     $scope.hideLoading();
 
     $scope.message = data;

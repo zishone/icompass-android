@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, API, AuthService) {
+.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, AuthService, API) {
 
   $scope.doLogout = function() {
     console.log('Doing logout');
