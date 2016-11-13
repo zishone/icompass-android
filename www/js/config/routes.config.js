@@ -130,6 +130,26 @@ angular.module('iComPAsS.config')
     }
   })
 
+  .state('menu.sent-messages', {
+    url: '/sent-messages',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/sent-messages.html',
+        controller: 'SentMessagesCtrl'
+      }
+    }
+  })
+
+  .state('menu.sent-message-detail', {
+    url: '/sent-message-detail/:messageId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/sent-message-detail.html',
+        controller: 'SentMessageDetailCtrl'
+      }
+    }
+  })
+
   .state('menu.change-password', {
     url: '/change-password',
     views: {

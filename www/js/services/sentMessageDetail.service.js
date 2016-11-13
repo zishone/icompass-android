@@ -1,13 +1,13 @@
 angular.module('iComPAsS.services')
 
-.factory('DoctorDetailService', function($http, API){
+.factory('SentMessageDetailService', function($http, API){
   // $http.defaults.cache = true;
 
   return {
-    get_doctor_detail: function(doctorId) {
-      return $http.get(API.src + 'doctors/profile/' + doctorId)
+    get_message: function(messageId) {
+      return $http.get(API.src + 'messages/message/' + messageId)
       .then(function successCallback(response) {
-        return response.data;
+        return response.data[0];
       }, function errorCallback(response) {
         console.log(response.statusText);
       });

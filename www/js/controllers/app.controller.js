@@ -15,7 +15,7 @@ angular.module('iComPAsS.controllers')
     });
   };
 
-  $scope.clearBackView = function() {
+  $scope.clearBackView = function(){
     $ionicHistory.clearCache();
     $ionicHistory.clearHistory();
   };

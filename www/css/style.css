@@ -25,7 +25,7 @@
 }
 
 /* login form design */
-.item-input{
+.login-input{
   width: 92%;
 }
 
@@ -80,6 +80,12 @@
 /*Remove anchor tag underline*/
 .noline{
   text-decoration: none;
+}
+
+/*spinner design*/
+.spinner svg {
+  stroke: #FF8300;
+  fill: #FF8300;
 }
 
 /*@media only screen and (min-device-width: 700px) {

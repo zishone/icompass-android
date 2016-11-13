@@ -1,5 +1,7 @@
 <ion-view view-title="Profile">
   <ion-content class="bg-light-orange">
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateProfile()"></ion-refresher>
+
     <div class="bg-orange item-thumbnail-left">
       <img src="{{user_profile.image}}" alt=""/>
       <h3 class="light">{{user_profile.fullname}}</h3>

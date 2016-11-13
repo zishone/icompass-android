@@ -1,9 +1,11 @@
 <ion-view view-title="List of Doctors">
   <ion-content class="bg-light-orange">
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateListOfDoctors()"></ion-refresher>
+
     <div class="card" ng-repeat="doctor in assigned_doctors">
       <a href="#/menu/doctor-detail/{{doctor.doc_id}}" class="noline">
         <div class="item item-text-wrap item-avatar item-icon-right">
-          <img ng-src="{{profile_pic_src + doctor.image + '.jpg'}}">
+          <img ng-src="{{doctor.image}}">
           <h2>{{doctor.fullname}}</h2>
           <p>{{doctor.specialty}}</p>
 

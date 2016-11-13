@@ -11,6 +11,14 @@ angular.module('iComPAsS.services')
       }, function errorCallback(response) {
         console.log(response.statusText);
       });
+    },
+    seen_message: function(messageId) {
+      return $http.put(API.src + 'messages/' + messageId + '/seen')
+      .then(function successCallback(response) {
+        return response.data[0];
+      }, function errorCallback(response) {
+        console.log(response.statusText);
+      });
     }
   };
 });

@@ -1,5 +1,5 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ChangePasswordCtrl', function($scope, AuthService, APIService, API){
+.controller('ChangePasswordCtrl', function($scope, AuthService, ChangePasswordService){
 
 });

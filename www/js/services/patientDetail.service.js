@@ -7,7 +7,7 @@ angular.module('iComPAsS.services')
     get_patient_detail: function(patientId) {
       return $http.get(API.src + 'patients/profile/' + patientId)
       .then(function successCallback(response) {
-        return response.data[0];
+        return response.data;
       }, function errorCallback(response) {
         console.log(response.statusText);
       });

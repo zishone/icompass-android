@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ProfileCtrl', function($scope, $ionicLoading, AuthService, ProfileService, API, USER_ROLES){
+.controller('ProfileCtrl', function($scope, $ionicLoading, AuthService, ProfileService, USER_ROLES){
   $scope.showLoading();
 
   // Tab functionalities
@@ -33,88 +33,100 @@ angular.module('iComPAsS.controllers')
     $scope.classes.more.pop('hidden');
   };
 
-  $scope.user_profile = {};
+  $scope.populateProfile = function(){
+    $scope.user_profile = {};
 
-  if(AuthService.role() === USER_ROLES.patient){
-    ProfileService.get_patient_profile().then(function(data) {
-      $scope.hideLoading();
+    if(AuthService.role() === USER_ROLES.patient){
+      ProfileService.get_patient_profile().then(function(data) {
+        $scope.hideLoading();
 
-      $scope.user_profile = $scope.getBasicInfo(data);
+        $scope.user_profile = $scope.getBasicInfo(data);
 
-      // Parse JSON form data.weights
-      var weights = [];
-      for (var i = 0; i < data.weights.length; i++) {
-        weights.push(JSON.parse(data.weights[i]));
-      }
-
-      $scope.user_profile.more = [
-        {
-          'label': 'Diagnosis',
-          'data': [data.diagnosis]
-        },
-        {
-          'label': 'Allergies',
-          'data': data.allergies.split(', ')
-        },
-        {
-          'label': 'Initial Height',
-          'data': [data.height + ' cm']
-        },
-        {
-          'label': 'Weight',
-          'data': weights
+        // Parse JSON form data.weights
+        var weights = [];
+        for (var i = 0; i < data.profile.weights.length; i++) {
+          weights.push(JSON.parse(data.profile.weights[i]));
         }
-      ];
-    });
-  }else if(AuthService.role() === USER_ROLES.doctor){
-    ProfileService.get_doctor_profile().then(function(data) {
-      $scope.hideLoading();
 
-      $scope.user_profile = $scope.getBasicInfo(data);
+        $scope.user_profile.more = [
+          {
+            'label': 'Diagnosis',
+            'data': [data.profile.diagnosis]
+          },
+          {
+            'label': 'Allergies',
+            'data': data.profile.allergies.split(', ')
+          },
+          {
+            'label': 'Initial Height',
+            'data': [data.profile.height + ' cm']
+          },
+          {
+            'label': 'Weight',
+            'data': weights
+          }
+        ];
+      })
+      .finally(function(){
+        // Stop the ion-refresher from spinning
+        $scope.$broadcast('scroll.refreshComplete');
+      });
+    }else if(AuthService.role() === USER_ROLES.doctor){
+      ProfileService.get_doctor_profile().then(function(data) {
+        $scope.hideLoading();
 
-      $scope.user_profile.more = [
-        {
-          'label': 'Specialty',
-          'data': [data.specialty]
-        },
-        {
-          'label': 'Availability',
-          'data': [data.available]
-        }
-      ];
-    });
-  }
+        $scope.user_profile = $scope.getBasicInfo(data);
 
-  $scope.getBasicInfo = function(data) {
-    return {
-      'image': API.profile_pic_src + data.image + '.jpg',
-      'fullname': data.fname + ' ' + data.mname + ' ' + data.lname,
-      'basic_info': [
-        {
-          'label': 'Username',
-          'data': data.username
-        },
-        {
-          'label': 'Contact No.',
-          'data': data.contactnumber
-        },
-        {
-          'label': 'E-mail',
-          'data': data.email
-        },
-        {
-          'label': 'Birthday',
-          'data': data.bday
-        },
-        {
-          'label': 'Age',
-          'data': data.age
-        },
-        {
-          'label': 'Sex',
-          'data': data.gender === 'm'? 'Male' : 'Female'
-        }
-      ]
+        $scope.user_profile.more = [
+          {
+            'label': 'Specialty',
+            'data': [data.profile.specialty]
+          },
+          {
+            'label': 'Availability',
+            'data': [data.profile.available]
+          }
+        ];
+      })
+      .finally(function(){
+        // Stop the ion-refresher from spinning
+        $scope.$broadcast('scroll.refreshComplete');
+      });
+    }
+
+    $scope.getBasicInfo = function(data) {
+      return {
+        'image': data.meta.profile_pic,
+        'fullname': data.profile.fname + ' ' + data.profile.mname + ' ' + data.profile.lname,
+        'basic_info': [
+          {
+            'label': 'Username',
+            'data': data.profile.username
+          },
+          {
+            'label': 'Contact No.',
+            'data': data.profile.contactnumber
+          },
+          {
+            'label': 'E-mail',
+            'data': data.profile.email
+          },
+          {
+            'label': 'Birthday',
+            'data': data.profile.bday
+          },
+          {
+            'label': 'Age',
+            'data': data.profile.age
+          },
+          {
+            'label': 'Sex',
+            'data': data.profile.gender === 'm'? 'Male' : 'Female'
+          }
+        ]
+      };
     };
   };
+
+  $scope.populateProfile();
 });

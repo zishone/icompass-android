@@ -15,7 +15,7 @@ angular.module('iComPAsS.services')
     get_patient_profile: function() {
       return $http.get(API.src + 'patients/profile/' + AuthService.userID())
       .then(function successCallback(response) {
-        return response.data[0];
+        return response.data;
       }, function errorCallback(response) {
         console.log(response.statusText);
       });
@@ -23,7 +23,7 @@ angular.module('iComPAsS.services')
     get_doctor_profile: function() {
       return $http.get(API.src + 'doctors/profile/' + AuthService.userID())
       .then(function successCallback(response) {
-        return response.data[0];
+        return response.data;
       }, function errorCallback(response) {
         console.log(response.statusText);
       });

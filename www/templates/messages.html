@@ -1,14 +1,29 @@
 <ion-view view-title="Messages">
   <ion-content class="bg-light-orange">
-    <div class="item item-borderless bg-orange">
-      <a class="button button-block bg-light-orange curve-all" type="button" href="#/menu/send-message">Send Message</a>
-    </div>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateMessages()"></ion-refresher>
     <ion-list>
       <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in received_messages" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
-        <h2>{{message.fullname}}</h2>
-        <p>{{message.message}}</p>
+        <span ng-if="message.is_read">
+          <h2>{{message.fullname}}</h2>
+          <p>{{message.message}}</p>
+        </span>
+        <span ng-if="message.is_read === 0">
+          <strong>
+            <h2>{{message.fullname}}</h2>
+            <p>{{message.message}}</p>
+          </strong>
+        </span>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
   </ion-content>
+  <ion-footer-bar align-title="center" class="bg-orange">
+    <div class="buttons">
+      <a class="button bg-light-orange curve-all" type="button" href="#/menu/sent-messages">Sent Messages</a>
+    </div>
+    <span class="title"></span>
+    <div class="buttons">
+      <a class="button bg-light-orange curve-all" type="button" href="#/menu/send-message">Send Message</a>
+    </div>
+  </ion-footer-bar>
 </ion-view>
