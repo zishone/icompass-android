@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('SendMessageCtrl', function($scope, SendMessageService, ListOfDoctorsService, AuthService, USER_ROLES, API){
+.controller('SendMessageCtrl', function($scope, $state, $ionicPopup, SendMessageService, ListOfDoctorsService, ListOfPatientsService, AuthService, USER_ROLES, API){
   $scope.showLoading();
 
   $scope.receivers = [];
@@ -9,25 +9,21 @@ angular.module('iComPAsS.controllers')
     ListOfDoctorsService.get_assigned_doctors().then(function(data) {
       $scope.hideLoading();
 
-      for(var i = 0; i < data.length; i++){
-        $scope.receivers.push({
-          'id': data[i].doc_id,
-          'name': data[i].fullname
-        });
-      }
+      $scope.id = "doc_id";
+
+      $scope.receivers = data;
     });
   }else if(AuthService.role() === USER_ROLES.doctor){
     ListOfPatientsService.get_assigned_patients().then(function(data) {
       $scope.hideLoading();
 
-      for(var i = 0; i < data.length; i++){
-        $scope.receivers.push({
-          'id': data[i].p_id,
-          'name': data[i].fullname
-        });
-      }
+      $scope.id = "p_id";
+
+      $scope.receivers = data;
     });
   }
+
+  $scope.messageData = {};
 
   $scope.sendMessage = function(){
     $scope.showLoading();
@@ -36,9 +32,12 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       var alertPopup = $ionicPopup.alert({
+        title: 'Success!',
         template: 'Sent!',
         cssClass: 'alert-popup'
       });
+
+      $state.go('menu.messages');
     }, function(err){
       $scope.hideLoading();
 

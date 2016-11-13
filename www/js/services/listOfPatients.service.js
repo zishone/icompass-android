@@ -1,6 +1,6 @@
 angular.module('iComPAsS.services')
 
-.factory('ListOfPatientsAPIService', function($http, AuthService, API){
+.factory('ListOfPatientsService', function($http, AuthService, API){
   // $http.defaults.cache = true;
 
   return {

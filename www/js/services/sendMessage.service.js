@@ -9,17 +9,17 @@ angular.module('iComPAsS.services')
         'data': {
           'type': 'messages',
           'attributes': {
-            'receiver': receiver,
+            'receiver': parseInt(receiver),
             'message': message
           }
         }
       };
-
-      $http.post(API.src + 'doctors/messages', data)
+      console.log(data);
+      $http.post(API.src + 'messages', data)
       .then(function successCallback(response) {
-        resolve('Login success.');
+        resolve('Sending success.');
       }, function errorCallback(response) {
-        reject('Login Failed.');
+        reject('Sending Failed.');
       });
     });
   };

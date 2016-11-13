@@ -14,4 +14,6 @@ angular.module('iComPAsS.controllers')
       $scope.$broadcast('scroll.refreshComplete');
     });
   };
+
+  $scope.populateListOfPatients();
 });

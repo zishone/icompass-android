@@ -86,7 +86,7 @@ angular.module('iComPAsS.services')
     get_unread_count: function(){
       return $http.get(API.src + 'messages/unread')
       .then(function successCallback(response) {
-        return response.data.data.attributes.number_of_unread;
+        return response.data;
       }, function errorCallback(response) {
         console.log(response.statusText);
       });
