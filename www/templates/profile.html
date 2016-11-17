@@ -1,6 +1,6 @@
 <ion-view view-title="Profile">
   <ion-content class="bg-light-orange">
-    <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateProfile()"></ion-refresher>
+    <!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateProfile()"></ion-refresher> -->
 
     <div class="bg-orange item-thumbnail-left">
       <img src="{{user_profile.image}}" alt=""/>
@@ -29,6 +29,14 @@
             </div>
             <div class="col padding-vertical">
               {{info.data}}
+            </div>
+          </ion-item>
+          <ion-item class="row item-borderless">
+            <div class="col col-33 padding-vertical">
+              <h3>Password:</h3>
+            </div>
+            <div class="col padding-vertical">
+              <a href="#/menu/change-password">Change Password</a>
             </div>
           </ion-item>
         </ion-list>

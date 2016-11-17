@@ -41,11 +41,6 @@ angular.module('iComPAsS.services')
             'url': '#/menu/messages'
           },
           {
-            'icon': 'ion-key',
-            'text': 'Change Password',
-            'url': '#/menu/change-password'
-          },
-          {
             'icon': 'ion-ios-help',
             'text': 'Help',
             'url': '#/menu/help'
@@ -67,11 +62,6 @@ angular.module('iComPAsS.services')
             'icon': 'ion-email',
             'text': 'Messages',
             'url': '#/menu/messages'
-          },
-          {
-            'icon': 'ion-key',
-            'text': 'Change Password',
-            'url': '#/menu/change-password'
           },
           {
             'icon': 'ion-ios-help',
