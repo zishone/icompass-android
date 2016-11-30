@@ -46,7 +46,8 @@ angular.module('iComPAsS.config')
     url: '/take-esas',
     views: {
       'menuContent': {
-        templateUrl: 'templates/take-esas.html'
+        templateUrl: 'templates/take-esas.html',
+        controller: 'TakeEsasCtrl'
       }
     }
   })
