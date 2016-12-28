@@ -2,7 +2,7 @@
   <ion-content class="bg-light-orange">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateEveryMessages()"></ion-refresher>
 
-    <div class="tabs tabs-striped tabs-top">
+    <div class="tabs tabs-striped tabs-top"  ng-show="isDoctor()">
       <a class="tab-item" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
         Inbox
       </a>
@@ -11,8 +11,12 @@
       </a>
     </div>
 
+    <div class="bar bar-header item-input-inset">
+      <input type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
+    </div>
+
     <ion-list ng-show="isSet(1)">
-      <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in received_messages" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
+      <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in received_messages | filter:search" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
         <span ng-if="message.is_read">
           <h2>{{message.fullname}}</h2>
           <p>{{message.message}}</p>
@@ -35,7 +39,7 @@
       </ion-item>
     </ion-list>
   </ion-content>
-  <ion-footer-bar align-title="center" class="bg-orange">
+  <ion-footer-bar align-title="center" class="bg-orange" ng-show="isDoctor()">
     <span class="title"></span>
     <div class="buttons">
       <a class="button bg-light-orange curve-all" type="button" href="#/menu/select-recipient">Send Message</a>

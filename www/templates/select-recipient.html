@@ -2,26 +2,29 @@
   <ion-content class="bg-light-orange">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateRecipients()"></ion-refresher>
 
-    <div class="card" ng-repeat="patient in assigned_patients" ng-show="isDoctor()">
+    <div class="bar bar-header item-input-inset">
+      <input type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
+    </div>
+
+    <div class="card" ng-repeat="patient in assigned_patients | filter:search" ng-show="isDoctor()">
       <a href="#/menu/send-message/{{patient.p_id}}" class="noline">
         <div class="item item-text-wrap item-avatar item-icon-right">
           <img ng-src="{{patient.image}}">
           <h2><span class="text">{{patient.fullname}}</span></h2>
-          <p><span class="text">Diagnosis: {{patient.diagnosis}}</span></p>
 
-          <i class="icon ion-chevron-right icon-accessory"></i>
+          <i class="icon ion-android-textsms icon-accessory"></i>
         </div>
       </a>
     </div>
 
-    <div class="card" ng-repeat="doctor in assigned_doctors" ng-show="isPatient()">
+    <div class="card" ng-repeat="doctor in assigned_doctors | filter:search" ng-show="isPatient()">
       <a href="#/menu/send-message/{{doctor.doc_id}}" class="noline">
         <div class="item item-text-wrap item-avatar item-icon-right">
           <img ng-src="{{doctor.image}}">
           <h2>{{doctor.fullname}}</h2>
           <p>{{doctor.specialty}}</p>
 
-          <i class="icon ion-chevron-right icon-accessory"></i>
+          <i class="icon ion-android-textsms icon-accessory"></i>
         </div>
       </a>
     </div>
