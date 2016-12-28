@@ -1,21 +1,19 @@
 <ion-view view-title="Send Message">
   <ion-content class="bg-light-orange">
     <form ng-submit="sendMessage()">
-
       <div class="list">
-        <label class="item item-input item-select">
-          <div class="input-label">
-            Pick A Recipient
-          </div>
-          <select ng-model="messageData.receiver">
-            <option ng-repeat="receiver in receivers" value="{{receiver[id]}}" required>{{receiver.fullname}}</option>
-          </select>
-        </label>
+        <ion-item class="item-remove-animate item-avatar item-icon-right bg-light-orange" type="item-text-wrap" href="#/menu/select-recipient">
+          <img ng-src="{{recipient.image}}">
+          <h2><span class="text">{{recipient.fullname}}</span></h2>
+          <i class="icon ion-close icon-accessory"></i>
+        </ion-item>
         <label class="item item-input">
           <textarea rows="10" placeholder="Write Message..." ng-model="messageData.message" required></textarea>
         </label>
+        <label class="item item-borderless bg-light-orange right">
+          <button class="button bg-orange curve-all light" type="submit">Send Message</button>
+        </label>
       </div>
-      <button class="button bg-orange curve-all light" type="submit">Log in</button>
     </form>
   </ion-content>
 </ion-view>

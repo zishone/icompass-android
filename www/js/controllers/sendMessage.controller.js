@@ -1,51 +1,44 @@
 angular.module('iComPAsS.controllers')
 
-.controller('SendMessageCtrl', function($scope, $state, $ionicPopup, SendMessageService, ListOfDoctorsService, ListOfPatientsService, AuthService, USER_ROLES, API){
+.controller('SendMessageCtrl', function($scope, $state, $stateParams, SendMessageService, DoctorDetailService, PatientDetailService){
   $scope.showLoading();
 
-  $scope.receivers = [];
-
-  if(AuthService.role() === USER_ROLES.patient){
-    ListOfDoctorsService.get_assigned_doctors().then(function(data) {
+  if($scope.isDoctor()){
+    PatientDetailService.get_patient_detail($stateParams.recipientId).then(function(data) {
       $scope.hideLoading();
 
-      $scope.id = "doc_id";
-
-      $scope.receivers = data;
+      $scope.setRecipient(data);
     });
-  }else if(AuthService.role() === USER_ROLES.doctor){
-    ListOfPatientsService.get_assigned_patients().then(function(data) {
+  }else if($scope.isPatient()) {
+    PatientDetailService.get_patient_detail($stateParams.recipientId).then(function(data) {
       $scope.hideLoading();
 
-      $scope.id = "p_id";
-
-      $scope.receivers = data;
+      $scope.setRecipient(data);
     });
   }
+
+  $scope.setRecipient = function(data) {
+    $scope.recipient = {
+      'image': data.meta.profile_pic,
+      'fullname': data.profile.fname + ' ' + data.profile.mname + ' ' + data.profile.lname
+    };
+  };
 
   $scope.messageData = {};
 
   $scope.sendMessage = function(){
     $scope.showLoading();
 
-    SendMessageService.send_message($scope.messageData.receiver, $scope.messageData.message).then(function(){
+    SendMessageService.send_message($stateParams.recipientId, $scope.messageData.message).then(function(){
       $scope.hideLoading();
 
-      var alertPopup = $ionicPopup.alert({
-        title: 'Success!',
-        template: 'Sent!',
-        cssClass: 'alert-popup'
-      });
+      $scope.alertPopup('Success!', 'Sent!');
 
-      $state.go('menu.messages');
+      $state.go('menu.select-recipient');
     }, function(err){
       $scope.hideLoading();
 
-      var alertPopup = $ionicPopup.alert({
-        title: 'Something Went Wrong!',
-        template: 'Message not sent.',
-        cssClass: 'alert-popup'
-      });
+      $scope.alertPopup('Something Went Wrong!', 'Message not sent.');
     });
   };
 

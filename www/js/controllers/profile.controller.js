@@ -1,42 +1,14 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ProfileCtrl', function($scope, $ionicLoading, AuthService, ProfileService, USER_ROLES){
+.controller('ProfileCtrl', function($scope, $ionicLoading, ProfileService){
   $scope.showLoading();
 
-  // Tab functionalities
-  $scope.resetTabs = function(){
-    $scope.classes = {};
-    $scope.classes.basic_info_tab = ['active'];
-    $scope.classes.more_tab = [];
-    $scope.classes.basic_info = [];
-    $scope.classes.more = ['hidden'];
-  };
-  $scope.resetTabs();
-  $scope.showBasicInfo = function () {
-    if($scope.classes.basic_info_tab.length < 1){
-      $scope.classes.basic_info_tab.push('active');
-    }
-    $scope.classes.basic_info.pop('hidden');
-    $scope.classes.more_tab.pop('active');
-    if($scope.classes.more.length < 1){
-      $scope.classes.more.push('hidden');
-    }
-  };
-  $scope.showMore = function () {
-    $scope.classes.basic_info_tab.pop('active');
-    if($scope.classes.basic_info.length < 1){
-      $scope.classes.basic_info.push('hidden');
-    }
-    if($scope.classes.more_tab.length < 1){
-      $scope.classes.more_tab.push('active');
-    }
-    $scope.classes.more.pop('hidden');
-  };
+  $scope.tab = 1;
 
   $scope.populateProfile = function(){
     $scope.user_profile = {};
 
-    if(AuthService.role() === USER_ROLES.patient){
+    if($scope.isPatient()){
       ProfileService.get_patient_profile().then(function(data) {
         $scope.hideLoading();
 
@@ -71,7 +43,7 @@ angular.module('iComPAsS.controllers')
         // Stop the ion-refresher from spinning
         $scope.$broadcast('scroll.refreshComplete');
       });
-    }else if(AuthService.role() === USER_ROLES.doctor){
+    }else if($scope.isDoctor()){
       ProfileService.get_doctor_profile().then(function(data) {
         $scope.hideLoading();
 

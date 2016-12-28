@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MessageDetailCtrl', function($scope, $stateParams, MessageDetailService, API){
+.controller('MessageDetailCtrl', function($scope, $stateParams, MessageDetailService){
   $scope.showLoading();
 
   $scope.populateMessageDetail = function(){

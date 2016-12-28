@@ -24,6 +24,10 @@
     margin-right: auto;
 }
 
+.right {
+  float: right;
+}
+
 /* login form design */
 .login-input{
   width: 92%;
@@ -88,6 +92,10 @@
   fill: #FF8300;
 }
 
+.body-diagram{
+  width: 100%;
+}
+
 /*@media only screen and (min-device-width: 700px) {
   *{
     font-size: 4vw !important;
@@ -107,7 +115,7 @@
   }
 }*/
 
-@media only screen and (min-device-width: 600px) {
+/*@media only screen and (min-device-width: 600px) {
   .logo {
     display: none;
   }
@@ -117,4 +125,4 @@
     margin-left: auto;
     margin-right: auto;
   }
-}
+}*/

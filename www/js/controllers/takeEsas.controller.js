@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('TakeEsasCtrl', function($scope, $ionicPopup, AuthService, TakeEsasService){
+.controller('TakeEsasCtrl', function($scope, TakeEsasService){
   var anteriorCounter = {};
   var posteriorCounter = {};
 
@@ -9,10 +9,6 @@ angular.module('iComPAsS.controllers')
     var opacity;
 
     switch (counter) {
-      case 0:
-        color = '#000000';
-        opacity = '0.0';
-        break;
       case 1:
         color = '#FFFF00';
         opacity = '0.8';

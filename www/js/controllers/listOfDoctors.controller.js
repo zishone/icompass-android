@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ListOfDoctorsCtrl', function($scope, ListOfDoctorsService, API){
+.controller('ListOfDoctorsCtrl', function($scope, ListOfDoctorsService){
   $scope.showLoading();
 
   $scope.populateListOfDoctors = function(){

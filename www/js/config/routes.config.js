@@ -121,22 +121,22 @@ angular.module('iComPAsS.config')
     }
   })
 
-  .state('menu.send-message', {
-    url: '/send-message',
+  .state('menu.select-recipient', {
+    url: '/select-recipient',
     views: {
       'menuContent': {
-        templateUrl: 'templates/send-message.html',
-        controller: 'SendMessageCtrl'
+        templateUrl: 'templates/select-recipient.html',
+        controller: 'SelectRecipientCtrl'
       }
     }
   })
 
-  .state('menu.sent-messages', {
-    url: '/sent-messages',
+  .state('menu.send-message', {
+    url: '/send-message/:recipientId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/sent-messages.html',
-        controller: 'SentMessagesCtrl'
+        templateUrl: 'templates/send-message.html',
+        controller: 'SendMessageCtrl'
       }
     }
   })
@@ -146,7 +146,7 @@ angular.module('iComPAsS.config')
     views: {
       'menuContent': {
         templateUrl: 'templates/sent-message-detail.html',
-        controller: 'SentMessageDetailCtrl'
+        controller: 'MessageDetailCtrl'
       }
     }
   })

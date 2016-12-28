@@ -31,14 +31,19 @@ angular.module('iComPAsS.services')
             'url': '#/menu/list-of-doctors'
           },
           {
-            'icon': 'ion-ios-book',
-            'text': 'Instructions',
-            'url': '#/menu/instructions'
-          },
-          {
             'icon': 'ion-email',
             'text': 'Messages',
             'url': '#/menu/messages'
+          },
+          {
+            'icon': 'ion-key',
+            'text': 'Change Password',
+            'url': '#/menu/change-password'
+          },
+          {
+            'icon': 'ion-ios-book',
+            'text': 'Instructions',
+            'url': '#/menu/instructions'
           },
           {
             'icon': 'ion-ios-help',
@@ -62,6 +67,11 @@ angular.module('iComPAsS.services')
             'icon': 'ion-email',
             'text': 'Messages',
             'url': '#/menu/messages'
+          },
+          {
+            'icon': 'ion-key',
+            'text': 'Change Password',
+            'url': '#/menu/change-password'
           },
           {
             'icon': 'ion-ios-help',

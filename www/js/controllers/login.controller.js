@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('LoginCtrl', function($scope, $state, $ionicPopup, AuthService, USER_ROLES) {
+.controller('LoginCtrl', function($scope, $state, AuthService, USER_ROLES) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -26,11 +26,8 @@ angular.module('iComPAsS.controllers')
       if(AuthService.role() === USER_ROLES.admin){
         //destroy user credential becuase login was not really made
         AuthService.logout();
-        var alertPopup = $ionicPopup.alert({
-          title: 'Sorry!',
-          template: 'Android verion of iComPAsS is not available to this type of user.',
-          cssClass: 'alert-popup'
-        });
+
+        $scope.alertPopup('Sorry!', 'Android verion of iComPAsS is not available to this type of user.');
       }else{
         //redirect to profile
         $state.go('menu.profile', {}, {reload: true}).then(function(){
@@ -43,11 +40,7 @@ angular.module('iComPAsS.controllers')
     }, function(err) {
       $scope.hideLoading();
 
-      var alertPopup = $ionicPopup.alert({
-        title: 'Login failed!',
-        template: 'Please check your credentials!',
-        cssClass: 'alert-popup'
-      });
+      $scope.alertPopup('Login Failed!', 'Please check your credentials!');
 
       // Clear loginData
       $scope.loginData = {};
