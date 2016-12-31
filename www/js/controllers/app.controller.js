@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, AuthService, API, USER_ROLES) {
+.controller('AppCtrl', function($scope, $rootScope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, $cordovaLocalNotification, AuthService, API, USER_ROLES) {
 
   $scope.doLogout = function() {
     console.log('Doing logout');
@@ -57,5 +57,22 @@ angular.module('iComPAsS.controllers')
 
   $scope.isPatient = function(){
     return AuthService.role() === USER_ROLES.patient;
+  };
+
+  $scope.notify = function(id, title, message) {
+    $cordovaLocalNotification.isPresent(id).then(function (present) {
+      if (!present) {
+        $cordovaLocalNotification.add({
+          id: id,
+          message: message,
+          title: title
+        }).then(function () {
+          console.log("The notification has been set");
+        });
+      }else{}
+      $rootScope.$on('$cordovaLocalNotification:click', function(event, notification, state) {
+        $state.go('menu.messages');
+      });
+    });
   };
 });

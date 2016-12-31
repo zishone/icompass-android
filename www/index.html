@@ -17,6 +17,7 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.min.js" charset="utf-8"></script>
     <script src="cordova.js"></script>
 
     <!-- materialize js -->
@@ -30,6 +31,7 @@
     <script src="js/constants/constants.js" charset="utf-8"></script>
     <script src="js/constants/api.constant.js" charset="utf-8"></script>
     <script src="js/constants/user_roles.constant.js" charset="utf-8"></script>
+    <script src="js/constants/sync.constants.js" charset="utf-8"></script>
 
     <!-- app config -->
     <script src="js/config/config.js" charset="utf-8"></script>
@@ -39,6 +41,8 @@
     <!-- app services -->
     <script src="js/services/services.js"></script>
     <script src="js/services/auth.service.js" charset="utf-8"></script>
+    <script src="js/services/forgotPassword.service.js" charset="utf-8"></script>
+    <script src="js/services/changePasswordWithKey.service.js" charset="utf-8"></script>
     <script src="js/services/menu.service.js" charset="utf-8"></script>
     <script src="js/services/profile.service.js" charset="utf-8"></script>
     <script src="js/services/prescriptions.service.js" charset="utf-8"></script>
@@ -56,6 +60,8 @@
     <script src="js/controllers/controllers.js"></script>
     <script src="js/controllers/app.controller.js" charset="utf-8"></script>
     <script src="js/controllers/login.controller.js" charset="utf-8"></script>
+    <script src="js/controllers/forgotPassword.controller.js" charset="utf-8"></script>
+    <script src="js/controllers/changePasswordWithKey.controller.js" charset="utf-8"></script>
     <script src="js/controllers/menu.controller.js" charset="utf-8"></script>
     <script src="js/controllers/profile.controller.js" charset="utf-8"></script>
     <script src="js/controllers/prescriptions.controller.js" charset="utf-8"></script>
@@ -73,7 +79,6 @@
     <!-- angular-translate:js -->
     <script src="lib/angular-translate/angular-translate.js"></script>
     <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
-
   </head>
 
   <body ng-app="iComPAsS" ng-controller="AppCtrl">

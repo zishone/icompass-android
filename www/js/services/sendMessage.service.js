@@ -14,7 +14,6 @@ angular.module('iComPAsS.services')
           }
         }
       };
-      console.log(data);
       $http.post(API.src + 'messages', data)
       .then(function successCallback(response) {
         resolve('Sending success.');

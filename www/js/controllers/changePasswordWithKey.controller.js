@@ -1,22 +1,27 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ChangePasswordCtrl', function($scope, ChangePasswordService){
+.controller('ChangePasswordWithKeyCtrl', function($scope, $state, ChangePasswordWithKeyService){
   $scope.password = {};
 
   $scope.doChangePassword = function() {
     $scope.showLoading();
 
     if($scope.password.new === $scope.password.confirm_new){
-      ChangePasswordService.change_password($scope.password).then(function(data) {
+      ChangePasswordWithKeyService.change_password($scope.password).then(function(data) {
         $scope.hideLoading();
         
         $scope.alertPopup('Success!', 'You have changed your password.');
+
+        $state.go('login').then(function(){
+          $scope.clearBackView();
+        });
       }, function(err) {
         $scope.hideLoading();
 
-        $scope.alertPopup('Something went wrong!', 'Please check your current password');
+        $scope.alertPopup('Something went wrong!', 'Please check your secret key.');
       });
     }else{
+      $scope.hideLoading();
       $scope.alertPopup('Something went wrong!', 'New passwords did not match.');
     }
   };

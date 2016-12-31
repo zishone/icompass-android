@@ -15,6 +15,18 @@ angular.module('iComPAsS.config')
     }
   })
 
+  .state('forgot-password', {
+    url: '/forgot-password',
+    templateUrl: 'templates/forgot-password.html',
+    controller: 'ForgotPasswordCtrl'
+  })
+
+  .state('change-password-with-key', {
+    url: '/change-password-with-key',
+    templateUrl: 'templates/change-password-with-key.html',
+    controller: 'ChangePasswordWithKeyCtrl'
+  })
+
   .state('menu', {
     url: '/menu',
     abstract: true,
