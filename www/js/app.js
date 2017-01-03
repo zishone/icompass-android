@@ -29,4 +29,9 @@ angular.module('iComPAsS', ['ionic', 'ngCordova', 'iComPAsS.constants', 'iComPAs
       cordova.plugins.backgroundMode.enable();
     }, false);
   });
+
+  $ionicPlatform.registerBackButtonAction(function (event) {
+    event.preventDefault();
+    window.plugins.appMinimize.minimize();
+  }, 100);  
 });

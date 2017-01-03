@@ -86,4 +86,5 @@ angular.module('iComPAsS.controllers')
 
     });
   };
+
 });

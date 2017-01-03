@@ -51,4 +51,5 @@
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
     <plugin name="de.appplant.cordova.plugin.local-notification" spec="~0.8.4" />
     <plugin name="cordova-plugin-background-mode" spec="~0.6.5" />
+    <plugin name="cordova-plugin-appminimize" spec="https://github.com/tomloprod/cordova-plugin-appminimize.git" />
 </widget>

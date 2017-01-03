@@ -18,13 +18,6 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.populateMenu();
-  // if(window.cordova && cordova.plugins.backgroundMode) {
-  //   cordova.plugins.backgroundMode.onactivate = function(){
-      // $interval(function() {
-      //   $scope.populateMenu();
-      // }, SYNC.interval);
-  //   };
-  // }
 
   document.addEventListener('deviceready', function () {
     cordova.plugins.backgroundMode.onactivate = function () {
