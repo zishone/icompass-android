@@ -9,7 +9,7 @@ angular.module('iComPAsS.controllers')
           if (data.data.attributes.number_of_unread > 0) {
             $scope.menuList[i].text += " (" + data.data.attributes.number_of_unread + ")";
 
-            $scope.notify('1' + data.data.attributes.number_of_unread, 'New Message!', 'You have ' + data.data.attributes.number_of_unread + ' unread messages.');
+            $scope.notify('1' + data.data.attributes.number_of_unread, 'New Message!', 'You have ' + data.data.attributes.number_of_unread + ' unread messages.', 'messages');
           }
           break;
         }
@@ -18,8 +18,19 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.populateMenu();
+  // if(window.cordova && cordova.plugins.backgroundMode) {
+  //   cordova.plugins.backgroundMode.onactivate = function(){
+      // $interval(function() {
+      //   $scope.populateMenu();
+      // }, SYNC.interval);
+  //   };
+  // }
 
-  var mess = $interval(function() {
-    $scope.populateMenu();
-  }, SYNC.interval);
+  document.addEventListener('deviceready', function () {
+    cordova.plugins.backgroundMode.onactivate = function () {
+        $interval(function() {
+          $scope.populateMenu();
+        }, SYNC.interval);
+    };
+  }, false);
 });

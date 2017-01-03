@@ -7,7 +7,7 @@
 // 'iComPAsS.sevices' is found in services.js
 angular.module('iComPAsS', ['ionic', 'ngCordova', 'iComPAsS.constants', 'iComPAsS.config', 'iComPAsS.services', 'iComPAsS.controllers'])
 
-.run(function($ionicPlatform, $ionicPopup) {
+.run(function($ionicPlatform, $ionicPopup, $window) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,5 +21,12 @@ angular.module('iComPAsS', ['ionic', 'ngCordova', 'iComPAsS.constants', 'iComPAs
       StatusBar.styleDefault();
     }
 
+    document.addEventListener('deviceready', function () {
+      cordova.plugins.backgroundMode.setDefaults({
+          title:  'iComPAsS',
+          text:   'Running. Tap to open.'
+      });
+      cordova.plugins.backgroundMode.enable();
+    }, false);
   });
 });

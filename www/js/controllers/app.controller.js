@@ -59,20 +59,31 @@ angular.module('iComPAsS.controllers')
     return AuthService.role() === USER_ROLES.patient;
   };
 
-  $scope.notify = function(id, title, message) {
+  $scope.previous = {};
+
+  $scope.notify = function(id, title, message, previous_id) {
     $cordovaLocalNotification.isPresent(id).then(function (present) {
       if (!present) {
         $cordovaLocalNotification.add({
           id: id,
           message: message,
-          title: title
-        }).then(function () {
-          console.log("The notification has been set");
+          title: title,
+          led: 'FFFFFF'
         });
-      }else{}
+      }else if ($scope.previous[previous_id] !== id) {
+        $cordovaLocalNotification.update({
+          id: id,
+          message: message,
+          title: title
+        });
+      }
+
+      $scope.previous[previous_id] = id;
+
       $rootScope.$on('$cordovaLocalNotification:click', function(event, notification, state) {
         $state.go('menu.messages');
       });
+
     });
   };
 });
