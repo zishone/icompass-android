@@ -60,6 +60,7 @@ angular.module('iComPAsS.controllers')
     PatientDetailService.get_doctor_prescriptions($stateParams.patientId).then(function(data) {
       $scope.hideLoading();
 
+      $scope.prescriptions = data;
     })
     .finally(function(){
       // Stop the ion-refresher from spinning
@@ -68,6 +69,8 @@ angular.module('iComPAsS.controllers')
 
     PatientDetailService.get_esas_results($stateParams.patientId).then(function(data) {
       $scope.hideLoading();
+
+      console.log(data);
     })
     .finally(function(){
       // Stop the ion-refresher from spinning

@@ -9,15 +9,18 @@
     </div>
 
     <div class="tabs tabs-striped tabs-top">
-      <a class="tab-item" ng-class="classes.basic_info_tab" ng-click="showBasicInfo()">
+      <a class="tab-item" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
         <i class="icon ion-person"></i>
       </a>
-      <a class="tab-item" ng-class="classes.more_tab" ng-click="showMore()">
-        <i class="icon ion-more"></i>
+      <a class="tab-item" ng-class="{ active: isSet(2) }" ng-click="setTab(2)">
+        Prescriptions
+      </a>
+      <a class="tab-item" ng-class="{ active: isSet(3) }" ng-click="setTab(3)">
+        ESAS Results
       </a>
     </div>
 
-    <div class="card" ng-class="classes.basic_info">
+    <div class="card" ng-show="isSet(1)">
       <div class="item item-divider bg-orange light">
         Personal Info
       </div>
@@ -32,6 +35,20 @@
             </div>
           </ion-item>
         </ion-list>
+      </div>
+    </div>
+
+    <div ng-show="isSet(2)">
+      <div class="card" ng-repeat="prescription in prescriptions">
+        <div class="item item-divider bg-orange light text-center">
+          {{prescription.fullname}}
+        </div>
+        <div class="item item-text-wrap">
+          {{prescription.prescription}}
+        </div>
+        <div class="item item-divider text-right">
+          {{prescription.dateadded}}
+        </div>
       </div>
     </div>
   </ion-content>
