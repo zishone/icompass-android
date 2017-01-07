@@ -58,4 +58,33 @@ angular.module('iComPAsS.controllers')
   $scope.isPatient = function(){
     return AuthService.role() === USER_ROLES.patient;
   };
+
+  $scope.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
+  $scope.pain_types = ['Sharp', 'Stabbing', 'Pricking', 'Burning', 'Boring', 'Splitting', 'Aching', 'Shooting', 'Throbbing', 'Crushing', 'Cutting', 'Cutting', 'Numbing', 'Tiring', 'Stretching/Tugging', 'Pressing'];
+
+  $scope.setColor = function(body_part_id, counter){
+    var color;
+    var opacity;
+
+    switch (counter) {
+      case 1:
+        color = '#FFFF00';
+        opacity = '0.8';
+        break;
+      case 2:
+        color = '#FFA500';
+        opacity = '0.8';
+        break;
+      case 3:
+        color = '#FF0000';
+        opacity = '0.8';
+        break;
+      default:
+        color = '#000000';
+        opacity = '0.0';
+    }
+
+    document.getElementById(body_part_id).setAttribute('fill', color);
+    document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+  };
 });

@@ -7,8 +7,7 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <!-- materialize css -->
-    <!-- <link type="text/css" rel="stylesheet" href="lib/materialize/css/materialize.css"  media="screen,projection"/> -->
+
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above -->
     <!-- <link href="css/ionic.app.css" rel="stylesheet"> -->
 
@@ -19,9 +18,16 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- materialize js -->
-    <!-- <script type="text/javascript" src="lib/materialize/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="lib/materialize/js/materialize.min.js"></script> -->
+    <!-- angular-translate:js -->
+    <script src="lib/angular-translate/angular-translate.js"></script>
+    <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+
+    <!-- momentjs -->
+    <script src="lib/moment/moment.js" charset="utf-8"></script>
+
+    <!-- angular-chart.js -->
+    <script src="lib/chart.js/dist/Chart.min.js" charset="utf-8"></script>
+    <script src="lib/angular-chart.js/dist/angular-chart.min.js" charset="utf-8"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
@@ -75,9 +81,8 @@
     <script src="js/controllers/changePassword.controller.js" charset="utf-8"></script>
     <script src="js/controllers/takeEsas.controller.js" charset="utf-8"></script>
 
-    <!-- angular-translate:js -->
-    <script src="lib/angular-translate/angular-translate.js"></script>
-    <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+
+
   </head>
 
   <body ng-app="iComPAsS" ng-controller="AppCtrl">

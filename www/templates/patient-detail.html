@@ -55,10 +55,70 @@
     <div ng-show="isSet(3)">
       <div class="card">
         <div class="item item-divider bg-orange light text-center">
-          Summary
+          Pain Summary
         </div>
         <div class="item item-text-wrap">
-
+          <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick" height="450px"></canvas>
+        </div>
+      </div>
+      <div class="card" ng-repeat="result in results">
+        <div class="item item-divider bg-orange light text-center">
+          {{result.dateanswered}}
+        </div>
+        <div class="item item-text-wrap">
+          <div class="row">
+            <div class="col col-80">Pain</div>
+            <div class="col">{{result.pain_result.pain}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Tiredness</div>
+            <div class="col">{{result.pain_result.tiredness}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Nausea</div>
+            <div class="col">{{result.pain_result.nausea}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Anxiety</div>
+            <div class="col">{{result.pain_result.anxiety}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Depression</div>
+            <div class="col">{{result.pain_result.depression}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Drowsiness</div>
+            <div class="col">{{result.pain_result.drowsiness}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Appetite</div>
+            <div class="col">{{result.pain_result.apetite}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Wellbeing</div>
+            <div class="col">{{result.pain_result.well_being}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Shortness of Breath</div>
+            <div class="col">{{result.pain_result.shortness_of_breath}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Other: {{result.pain_result.other.name}}</div>
+            <div class="col">{{result.pain_result.other.value}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Pain Types</div>
+          </div>
+          <div class="row">
+            <ul class="unordered-lists padding-left">
+              <li ng-repeat="pain_type in result.pain_type">{{pain_types[pain_type]}}</li>
+            </ul>
+          </div>
+          <br>
+          <div class="row">
+            <div ng-include="'templates/body-diagram/anterior.html'"></div>
+            <div ng-include="'templates/body-diagram/posterior.html'"></div>
+          </div>
         </div>
       </div>
     </div>

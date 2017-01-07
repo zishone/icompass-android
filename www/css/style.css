@@ -97,6 +97,14 @@
   height: 100%;
 }
 
+.unordered-lists{
+  list-style: none;
+  list-style-type: disc;
+}
+
+.padding-left{
+  padding-left: 15%;
+}
 /*@media only screen and (min-device-width: 700px) {
   *{
     font-size: 4vw !important;

@@ -88,32 +88,6 @@ angular.module('iComPAsS.controllers')
     "foot_sole_r": 0
   };
 
-  $scope.setColor = function(body_part_id, counter){
-    var color;
-    var opacity;
-
-    switch (counter) {
-      case 1:
-        color = '#FFFF00';
-        opacity = '0.8';
-        break;
-      case 2:
-        color = '#FFA500';
-        opacity = '0.8';
-        break;
-      case 3:
-        color = '#FF0000';
-        opacity = '0.8';
-        break;
-      default:
-        color = '#000000';
-        opacity = '0.0';
-    }
-
-    document.getElementById(body_part_id).setAttribute('fill', color);
-    document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
-  };
-
   $scope.anteriorColorSwitch = function(body_part_id){
     if(front[body_part_id] === undefined){
       front[body_part_id] = 1;
@@ -121,10 +95,8 @@ angular.module('iComPAsS.controllers')
       front[body_part_id] += 1;
       front[body_part_id] %= 4;
     }
-
+    
     $scope.setColor(body_part_id, front[body_part_id]);
-
-    console.log(front);
   };
 
   $scope.posteriorColorSwitch = function(body_part_id){
@@ -136,7 +108,5 @@ angular.module('iComPAsS.controllers')
     }
 
     $scope.setColor(body_part_id, back[body_part_id]);
-
-    console.log(back);
   };
 });
