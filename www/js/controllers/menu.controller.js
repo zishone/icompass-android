@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MenuCtrl', function($scope, $interval, MenuService, SYNC) {
+.controller('MenuCtrl', function($scope, MenuService, SYNC) {
   $scope.populateMenu = function(){
     $scope.menuList = MenuService.get_menu_list();
     MenuService.get_unread_count().then(function(data) {
@@ -8,8 +8,6 @@ angular.module('iComPAsS.controllers')
         if($scope.menuList[i].text === "Messages"){
           if (data.data.attributes.number_of_unread > 0) {
             $scope.menuList[i].text += " (" + data.data.attributes.number_of_unread + ")";
-
-            $scope.notify('1' + data.data.attributes.number_of_unread, 'New Message!', 'You have ' + data.data.attributes.number_of_unread + ' unread messages.', 'messages');
           }
           break;
         }
@@ -18,12 +16,4 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.populateMenu();
-
-  document.addEventListener('deviceready', function () {
-    cordova.plugins.backgroundMode.onactivate = function () {
-        $interval(function() {
-          $scope.populateMenu();
-        }, SYNC.interval);
-    };
-  }, false);
 });

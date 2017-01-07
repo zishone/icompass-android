@@ -1,7 +1,10 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MessagesCtrl', function($scope, MessagesService){
+.controller('MessagesCtrl', function($scope, $ionicHistory, MessagesService){
   $scope.showLoading();
+
+  console.log($ionicHistory.currentView());
+
 
   $scope.tab = 1;
 

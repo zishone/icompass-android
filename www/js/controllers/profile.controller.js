@@ -1,7 +1,9 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ProfileCtrl', function($scope, $ionicLoading, ProfileService){
+.controller('ProfileCtrl', function($scope, $ionicLoading, $ionicHistory, ProfileService){
   $scope.showLoading();
+
+  console.log($ionicHistory.viewHistory());
 
   $scope.tab = 1;
 
