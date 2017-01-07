@@ -45,10 +45,10 @@ angular.module('iComPAsS.controllers')
     "knee_r": 0,
     "anterior_ankle_r": 0,
     "anterior_ankle_l": 0,
-    "anterior_ankle_r_1_": 0,
+    "anterior_leg_r": 0,
     "foot_r": 0,
     "foot_l": 0,
-    "anterior_ankle_l_1_": 0
+    "anterior_leg_l": 0
   };
   var back = {
     "posterior_head_l": 0,
