@@ -7,7 +7,7 @@ angular.module('iComPAsS.controllers')
     $scope.patient_detail = {};
 
     PatientDetailService.get_patient_detail($stateParams.patientId).then(function(data) {
-      $scope.hideLoading();
+      // $scope.hideLoading();
 
       $scope.patient_detail = {
         'image': data.meta.profile_pic,
@@ -58,7 +58,7 @@ angular.module('iComPAsS.controllers')
     });
 
     PatientDetailService.get_doctor_prescriptions($stateParams.patientId).then(function(data) {
-      $scope.hideLoading();
+      // $scope.hideLoading();
 
       $scope.prescriptions = data;
     })
@@ -71,7 +71,7 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       $scope.labels = [];
-      $scope.series = ['Pain', 'Tiredness', 'Nausea', 'Anxiety', 'Depression', 'Drowsiness', 'Lack of Appetite', 'Wellbeing', 'Shortness of Breath'];
+      $scope.series= ['Pain', 'Tiredness', 'Nausea', 'Anxiety', 'Depression', 'Drowsiness', 'Lack of Appetite', 'Wellbeing', 'Shortness of Breath'];
       $scope.data = [[],[],[],[],[],[],[],[],[]];
 
       for (var i = 0; i < data.length; i++) {
@@ -120,19 +120,13 @@ angular.module('iComPAsS.controllers')
                 'year': 'MMM YYYY',
               }
             }
-          }],
+          }]
         }
       };
 
-      console.log(data);
-
-      $scope.results = data;
-
-      for (var j = 0; j < $scope.results.length; j++) {
-        $scope.results[j].diagram = JSON.parse($scope.results[j].diagram);
-        $scope.results[j].pain_result = JSON.parse($scope.results[j].pain_result);
-        $scope.results[j].pain_type = JSON.parse($scope.results[j].pain_type);
-      }
+      $scope.esas_results = data;
+      $scope.esas_results_reversed = $scope.esas_results.slice(0);
+      $scope.esas_results_reversed.reverse();
     })
     .finally(function(){
       // Stop the ion-refresher from spinning

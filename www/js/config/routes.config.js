@@ -104,6 +104,16 @@ angular.module('iComPAsS.config')
     }
   })
 
+  .state('menu.esas-result-detail', {
+    url: '/esas-result-detail/:patientId/:result_index',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/esas-result-detail.html',
+        controller: 'EsasResultDetailCtrl'
+      }
+    }
+  })
+
   .state('menu.instructions', {
     url: '/instructions',
     views: {
