@@ -1,0 +1,27 @@
+<ion-view>
+  <ion-content class="bg-orange">
+    <div class="text-center logo">
+      <img src="img/icon.png" alt=""/>
+    </div>
+    <h1 class="light text-center">iComPAsS</h1>
+    <h4 class="light text-center">Internet-based Computerized Patient Assessment System</h4>
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input curve-top center login-input">
+          <span class="input-label curve">Username</span>
+          <input type="text" ng-model="loginData.username">
+        </label>
+        <label class="item item-input curve-bottom center login-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item item-borderless bg-orange logInButton">
+          <button class="button button-block bg-light-orange curve-all logInButton" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+    <div class="text-center">
+      <a href="#/forgot-password" class="light">Forgot Password?</a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -105,6 +105,10 @@
 .padding-left{
   padding-left: 15%;
 }
+
+.pain-result-card{
+  height: 50vh;
+}
 /*@media only screen and (min-device-width: 700px) {
   *{
     font-size: 4vw !important;

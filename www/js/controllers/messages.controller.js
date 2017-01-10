@@ -3,8 +3,6 @@ angular.module('iComPAsS.controllers')
 .controller('MessagesCtrl', function($scope, MessagesService){
   $scope.showLoading();
 
-  $scope.tab = 1;
-
   $scope.populateMessages = function(){
     MessagesService.get_received_messages().then(function(data) {
       $scope.hideLoading();

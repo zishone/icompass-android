@@ -9,6 +9,7 @@
     "angular-translate-loader-static-files": "^2.12.0",
     "chart.js": "^2.4.0",
     "angular-chart.js": "^1.1.1",
-    "moment": "^2.17.1"
+    "moment": "^2.17.1",
+    "angularjs-slider": "^6.0.0"
   }
 }

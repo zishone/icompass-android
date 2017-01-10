@@ -1,0 +1,63 @@
+<ion-view view-title="Profile">
+  <ion-content class="bg-light-orange">
+    <!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateProfile()"></ion-refresher> -->
+
+    <div class="bg-orange item-thumbnail-left">
+      <img src="{{user_profile.image}}" alt=""/>
+      <h3 class="light">{{user_profile.fullname}}</h3>
+      <br>
+    </div>
+
+    <div class="tabs tabs-striped tabs-top">
+      <a class="tab-item" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
+        <i class="icon ion-person"></i>
+      </a>
+      <a class="tab-item" ng-class="{ active: isSet(2) }" ng-click="setTab(2)">
+        <i class="icon ion-more"></i>
+      </a>
+    </div>
+
+    <div class="card" ng-show="isSet(1)">
+      <div class="item item-divider bg-orange light">
+        Personal Info
+      </div>
+      <div class="item item-text-wrap">
+        <ion-list >
+          <ion-item class="row item-borderless" ng-repeat="info in user_profile.basic_info">
+            <div class="col col-33 padding-vertical">
+              <h3>{{info.label}}:</h3>
+            </div>
+            <div class="col padding-vertical">
+              {{info.data}}
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+
+    <div ng-show="isSet(2)">
+      <div class="card" ng-repeat="info in user_profile.more">
+        <div class="item item-divider bg-orange light">
+          <span class="text">{{info.label}}</span>
+        </div>
+        <div class="item item-text-wrap">
+          <div class="row" ng-repeat="sub_info in info.data track by $index">
+            <div class="row" ng-if="info.label !== 'Weight'">
+              <div class="col">
+                <span class="text">{{sub_info}}</span>
+              </div>
+            </div>
+            <div class="row" ng-if="info.label === 'Weight'">
+              <div class="col col-33">
+                <span class="text">{{sub_info.weight}} kg</span>
+              </div>
+              <div class="col col-67">
+                <span class="text">{{sub_info.date}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

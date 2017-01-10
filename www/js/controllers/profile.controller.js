@@ -3,8 +3,6 @@ angular.module('iComPAsS.controllers')
 .controller('ProfileCtrl', function($scope, ProfileService){
   $scope.showLoading();
 
-  $scope.tab = 1;
-
   $scope.populateProfile = function(){
     $scope.user_profile = {};
 

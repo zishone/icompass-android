@@ -1,6 +1,8 @@
 angular.module('iComPAsS.controllers')
 
 .controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, AuthService, API, USER_ROLES) {
+  $scope.profile_pic_src = API.profile_pic_src;
+  $scope.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
 
   $scope.doLogout = function() {
     console.log('Doing logout');
@@ -40,8 +42,10 @@ angular.module('iComPAsS.controllers')
       cssClass: 'alert-popup'
     });
   };
-
-  $scope.tab = 1;
+  $scope.setTabsToOne = function() {
+    $scope.tab = 1;
+  };
+  $scope.setTabsToOne();
 
   $scope.setTab = function(newTab){
     $scope.tab = newTab;
@@ -59,8 +63,6 @@ angular.module('iComPAsS.controllers')
     return AuthService.role() === USER_ROLES.patient;
   };
 
-  $scope.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
-  $scope.pain_types = ['Sharp', 'Stabbing', 'Pricking', 'Burning', 'Boring', 'Splitting', 'Aching', 'Shooting', 'Throbbing', 'Crushing', 'Cutting', 'Cutting', 'Numbing', 'Tiring', 'Stretching/Tugging', 'Pressing'];
 
   $scope.setColor = function(body_part_id, counter){
     var color;

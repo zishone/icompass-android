@@ -1,6 +1,169 @@
 <ion-view view-title="Take ESAS">
   <ion-content class="bg-light-orange">
-    <div ng-include="'templates/body-diagram/anterior.html'"></div>
-    <div ng-include="'templates/body-diagram/posterior.html'"></div>
+    <div ng-show="isSet(1)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="row pain-result-card">
+            <div class="col">
+              <rzslider rz-slider-model="esas_result.pain_result.pain" rz-slider-options="pain_slider.options"></rzslider>
+            </div>
+            <div class="col">
+              <h1>Pain</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isSet(2)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="row pain-result-card">
+            <div class="col">
+              <rzslider rz-slider-model="esas_result.pain_result.tiredness" rz-slider-options="pain_slider.options"></rzslider>
+            </div>
+            <div class="col">
+              <h1>Tiredness</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isSet(3)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="row pain-result-card">
+            <div class="col">
+              <rzslider rz-slider-model="esas_result.pain_result.nausea" rz-slider-options="pain_slider.options"></rzslider>
+            </div>
+            <div class="col">
+              <h1>Nausea</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isSet(4)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="row pain-result-card">
+            <div class="col">
+              <rzslider rz-slider-model="esas_result.pain_result.anxiety" rz-slider-options="pain_slider.options"></rzslider>
+            </div>
+            <div class="col">
+              <h1>Anxiety</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isSet(5)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="row pain-result-card">
+            <div class="col">
+              <rzslider rz-slider-model="esas_result.pain_result.depression" rz-slider-options="pain_slider.options"></rzslider>
+            </div>
+            <div class="col">
+              <h1>Depression</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isSet(6)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="row pain-result-card">
+            <div class="col">
+              <rzslider rz-slider-model="esas_result.pain_result.lack_of_apetite" rz-slider-options="pain_slider.options"></rzslider>
+            </div>
+            <div class="col">
+              <h1>Lack of Apetite</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isSet(7)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="row pain-result-card">
+            <div class="col">
+              <rzslider rz-slider-model="esas_result.pain_result.wellbeing" rz-slider-options="pain_slider.options"></rzslider>
+            </div>
+            <div class="col">
+              <h1>Wellbeing</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isSet(8)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="row pain-result-card">
+            <div class="col">
+              <rzslider rz-slider-model="esas_result.pain_result.shortness_of_breath" rz-slider-options="pain_slider.options"></rzslider>
+            </div>
+            <div class="col">
+              <h1>Shortness of Breath</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isSet(9)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <h1>Other Symptoms</h1>
+          <div class="list" ng-repeat="other_symptoms in esas_result.pain_result.other_symptoms">
+            <label class="item"></label>
+            <label class="item item-input curve-top center login-input">
+              <span class="input-label">Symptom:</span>
+              <input type="text" ng-model="other_symptoms.key">
+            </label>
+            <label class="item">
+              <rzslider rz-slider-model="other_symptoms.value" rz-slider-options="other_symptoms_slider.options"></rzslider>
+            </label>
+          </div>
+          </span>
+        </div>
+      </div>
+      <button type="button" name="button" class="button bg-orange curve-all light" ng-click="addSymptom()">Add Symptom</button>
+      <button type="button" name="button" class="button button-assertive curve-all" ng-click="removeSymptom()">Remove Symptom</button>
+    </div>
+    <div ng-show="isSet(10)">
+      <div ng-include="'templates/body-diagram/anterior.html'"></div>
+    </div>
+    <div ng-show="isSet(11)">
+      <div ng-include="'templates/body-diagram/posterior.html'"></div>
+    </div>
+    <div ng-show="isSet(12)">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <ion-list>
+            <ion-item ng-repeat="pain_type in pain_types track by $index" item="item">
+              <label class="checkbox">
+                <input type="checkbox" ng-model="checked" ng-click="addPainType($index + 1, checked); $event.stopPropagation();">
+              </label>
+              {{pain_type}}
+            </ion-item>
+          </ion-list>
+        </div>
+      </div>
+    </div>
   </ion-content>
+  <ion-footer-bar align-title="center" class="bg-orange">
+    <div class="buttons">
+      <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 1" ng-click="setTab(tab - 1)">Previous</a>
+    </div>
+    <span class="title">
+      <rzslider rz-slider-model="tab"
+          rz-slider-options="progress.options" style="margin-top:12px"></rzslider>
+    </span>
+    <div class="buttons">
+      <a class="button bg-light-orange curve-all" type="button" href="" ng-if="tab < 12" ng-click="setTab(tab + 1)">Next</a>
+      <a class="button bg-light-orange curve-all" type="button" href="" ng-if="tab === 12" ng-click="submitEsas()">Submit</a>
+    </div>
+  </ion-footer-bar>
 </ion-view>

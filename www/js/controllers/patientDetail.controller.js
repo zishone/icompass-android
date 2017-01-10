@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('PatientDetailCtrl', function($scope, $stateParams, PatientDetailService){
+.controller('PatientDetailCtrl', function($scope, $stateParams, PatientDetailService, TakeEsasService){
   $scope.showLoading();
 
   $scope.populatePatientDetail = function(){
@@ -70,59 +70,60 @@ angular.module('iComPAsS.controllers')
     PatientDetailService.get_esas_results($stateParams.patientId).then(function(data) {
       $scope.hideLoading();
 
-      $scope.labels = [];
-      $scope.series= ['Pain', 'Tiredness', 'Nausea', 'Anxiety', 'Depression', 'Drowsiness', 'Lack of Appetite', 'Wellbeing', 'Shortness of Breath'];
-      $scope.data = [[],[],[],[],[],[],[],[],[]];
+      $scope.chart = {
+        labels: [],
+        series: TakeEsasService.get_pain_results(),
+        data: [[],[],[],[],[],[],[],[],[]],
+        options: {
+          animation: false,
+          legend: {
+            display: true,
+            position: 'bottom'
+          },
+          elements: {
+            line: {
+              tension: 0,
+              fill: false
+            }
+          },
+          scales: {
+            lineArc: false,
+            xAxes: [{
+              ticks:{
+                minRotation: 90
+              },
+              type: 'time',
+              time: {
+                displayFormats: {
+                  'millisecond': 'MMM YYYY',
+                  'second': 'MMM YYYY',
+                  'minute': 'MMM YYYY',
+                  'hour': 'MMM YYYY',
+                  'day': 'MMM YYYY',
+                  'week': 'MMM YYYY',
+                  'month': 'MMM YYYY',
+                  'quarter': 'MMM YYYY',
+                  'year': 'MMM YYYY',
+                }
+              }
+            }]
+          }
+        }
+      };
 
       for (var i = 0; i < data.length; i++) {
         var date = new Date(data[i].dateanswered);
-        $scope.labels.push(date.getUTCDate() + ' ' + $scope.months[date.getMonth()] + ' ' + date.getFullYear());
-        $scope.data[0].push(JSON.parse(data[i].pain_result).pain);
-        $scope.data[1].push(JSON.parse(data[i].pain_result).tiredness);
-        $scope.data[2].push(JSON.parse(data[i].pain_result).nausea);
-        $scope.data[3].push(JSON.parse(data[i].pain_result).anxiety);
-        $scope.data[4].push(JSON.parse(data[i].pain_result).depression);
-        $scope.data[5].push(JSON.parse(data[i].pain_result).drowsiness);
-        $scope.data[6].push(JSON.parse(data[i].pain_result).apetite);
-        $scope.data[7].push(JSON.parse(data[i].pain_result).well_being);
-        $scope.data[8].push(JSON.parse(data[i].pain_result).shortness_of_breath);
+        $scope.chart.labels.push(date.getUTCDate() + ' ' + $scope.months[date.getMonth()] + ' ' + date.getFullYear());
+        $scope.chart.data[0].push(JSON.parse(data[i].pain_result).pain);
+        $scope.chart.data[1].push(JSON.parse(data[i].pain_result).tiredness);
+        $scope.chart.data[2].push(JSON.parse(data[i].pain_result).nausea);
+        $scope.chart.data[3].push(JSON.parse(data[i].pain_result).anxiety);
+        $scope.chart.data[4].push(JSON.parse(data[i].pain_result).depression);
+        $scope.chart.data[5].push(JSON.parse(data[i].pain_result).drowsiness);
+        $scope.chart.data[6].push(JSON.parse(data[i].pain_result).apetite);
+        $scope.chart.data[7].push(JSON.parse(data[i].pain_result).well_being);
+        $scope.chart.data[8].push(JSON.parse(data[i].pain_result).shortness_of_breath);
       }
-
-      $scope.options = {
-        legend: {
-          display: true,
-          position: 'bottom',
-          fullWidth: true
-        },
-        elements: {
-          line: {
-            tension: 0,
-            fill: false
-          }
-        },
-        scales: {
-          lineArc: false,
-          xAxes: [{
-            ticks:{
-              minRotation: 90
-            },
-            type: 'time',
-            time: {
-              displayFormats: {
-          	    'millisecond': 'MMM YYYY',
-                'second': 'MMM YYYY',
-                'minute': 'MMM YYYY',
-                'hour': 'MMM YYYY',
-                'day': 'MMM YYYY',
-                'week': 'MMM YYYY',
-                'month': 'MMM YYYY',
-                'quarter': 'MMM YYYY',
-                'year': 'MMM YYYY',
-              }
-            }
-          }]
-        }
-      };
 
       $scope.esas_results = data;
       $scope.esas_results_reversed = $scope.esas_results.slice(0);
