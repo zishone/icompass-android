@@ -10,7 +10,6 @@ angular.module('iComPAsS.services')
   var submit_esas = function(esas_result){
     return $q(function(resolve, reject) {
       var data = esas_result;
-      console.log(JSON.stringify(data));
       $http.post(API.src + 'esas/submit', data)
       .then(function successCallback(response) {
         resolve('Submission Success.');

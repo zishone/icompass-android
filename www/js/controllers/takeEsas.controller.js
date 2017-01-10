@@ -179,7 +179,7 @@ angular.module('iComPAsS.controllers')
     });
   };
   $scope.removeSymptom = function() {
-    $scope.esas_result.pain_result.other_symptoms.splice($scope.esas_result.pain_result.other_symptoms.lenght - 1, 1);
+    $scope.esas_result.pain_result.other_symptoms.splice(-1, 1);
   };
 
   $scope.pain_types = TakeEsasService.get_pain_types();
@@ -193,8 +193,6 @@ angular.module('iComPAsS.controllers')
     }else{
       $scope.esas_result.pain_types.splice($scope.esas_result.pain_types.indexOf(tempObj), 1);
     }
-
-    console.log($scope.esas_result.pain_types);
   };
 
   $scope.submitEsas = function() {
@@ -206,8 +204,6 @@ angular.module('iComPAsS.controllers')
       $scope.alertPopup('Success!', 'Have a great day!');
     }, function(err) {
       $scope.hideLoading();
-
-      console.error(this.props.url, status, err.toString());
 
       $scope.alertPopup('Submission Failed!', 'Please try again!');
     });
