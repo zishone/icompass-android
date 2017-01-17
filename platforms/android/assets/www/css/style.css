@@ -86,12 +86,6 @@
   text-decoration: none;
 }
 
-/*spinner design*/
-.spinner svg {
-  stroke: #FF8300;
-  fill: #FF8300;
-}
-
 .body-diagram{
   width: 100%;
   height: 100%;
@@ -109,33 +103,19 @@
 .pain-result-card{
   height: 50vh;
 }
-/*@media only screen and (min-device-width: 700px) {
-  *{
-    font-size: 4vw !important;
 
-  }
+#spinnerGif{
+  position: relative;
+  top: 40vh;
+}
 
-  .menu.menu-left{
-  	width: 450px !important;
+@media only screen and (min-width: 768px) {
+  #ionNavView{
+    width: 50%;
+    height: 50vh;
   }
-  .menu-open .menu-content{
-  	transform: translate3d(400px, 0px, 0px) !important;
+  #spinnerGif{
+    position: relative;
+    top: 20vh; left: -25%;
   }
-
-  .mynavbar{
-    height: 55px !important;
-    font-size: 1.1em !important;
-  }
-}*/
-
-/*@media only screen and (min-device-width: 600px) {
-  .logo {
-    display: none;
-  }
-
-  .logInButton {
-    width: 97%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}*/
+}​

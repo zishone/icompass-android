@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="viewport" id="viewport" content="initial-scale=1, maximum-scale=2, user-scalable=no, width=device-width">
     <title>iComPAsS</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -87,11 +87,13 @@
     <script src="js/controllers/changePassword.controller.js" charset="utf-8"></script>
     <script src="js/controllers/takeEsas.controller.js" charset="utf-8"></script>
 
-
-
+    <script type="text/javascript">
+      var initialScale = (screen.width>=768)? 2 : 1;
+      document.getElementById("viewport").setAttribute("content","initial-scale=" + initialScale + ", maximum-scale=2, user-scalable=no, width=device-width");
+    </script>
   </head>
 
   <body ng-app="iComPAsS" ng-controller="AppCtrl" class="platform-android platform-cordova platform-webview">
-    <ion-nav-view></ion-nav-view>
+    <ion-nav-view id="ionNavView"></ion-nav-view>
   </body>
 </html>

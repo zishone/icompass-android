@@ -1,8 +1,9 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MessageDetailCtrl', function($scope, $stateParams, MessageDetailService){
+.controller('MessageDetailCtrl', function($scope, $stateParams, MessageDetailService, $ionicHistory){
   $scope.showLoading();
 
+  console.log($ionicHistory.viewHistory());
 
   $scope.populateMessageDetail = function(){
     MessageDetailService.get_message($stateParams.messageId).then(function(data) {

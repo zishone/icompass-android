@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, AuthService, API, USER_ROLES) {
+.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, $ionicPlatform, AuthService, API, USER_ROLES) {
   $scope.profile_pic_src = API.profile_pic_src;
   $scope.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
 
@@ -89,4 +89,23 @@ angular.module('iComPAsS.controllers')
     document.getElementById(body_part_id).setAttribute('fill', color);
     document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
   };
+
+  $ionicPlatform.registerBackButtonAction(function(event) {
+    $scope.hideLoading();
+
+    if($scope.tab > 1){
+      $scope.setTab($scope.tab - 1);
+    }else if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
+      $ionicHistory.nextViewOptions({
+        disableBack: true
+      });
+      $state.go('menu.profile').then(function() {
+        $scope.clearBackView();
+      });
+    }else if ($ionicHistory.viewHistory().histories.ion2.cursor > 0) {
+      $ionicHistory.goBack();
+    }else{
+      navigator.app.exitApp();
+    }
+  }, 100);
 });
