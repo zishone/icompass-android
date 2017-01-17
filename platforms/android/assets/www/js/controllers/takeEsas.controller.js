@@ -157,13 +157,13 @@ angular.module('iComPAsS.controllers')
     }
   };
 
-  $scope.addOtherSymptom = function() {
+  $scope.addSymptom = function() {
     $scope.esas_result.pain_result.other_symptoms.push({
       key: '',
       value: 0
     });
   };
-  $scope.removeOtherSymptom = function() {
+  $scope.removeSymptom = function() {
     $scope.esas_result.pain_result.other_symptoms.splice(-1, 1);
   };
 
