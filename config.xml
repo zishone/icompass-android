@@ -19,6 +19,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="orientation" value="portrait" />
     <preference name="loadUrlTimeoutValue" value="700000" />
+    <preference name="EnableViewportScale" value="true" />
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>

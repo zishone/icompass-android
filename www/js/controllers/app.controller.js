@@ -25,7 +25,7 @@ angular.module('iComPAsS.controllers')
   $scope.showLoading = function(){
     $ionicLoading.show({
       template: '<div style="height:100vh;width:100vw;">' +
-                  '<img src="img/spinner.gif" alt="Loading..." width="100px" style="position:relative;top:40vh"/>' +
+                  '<img src="img/spinner.gif" alt="Loading..." width="100px" id="spinnerGif"/>' +
                 '</div>',
       noBackdrop: true
     });

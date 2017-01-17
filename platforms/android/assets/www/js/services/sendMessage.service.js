@@ -16,7 +16,7 @@ angular.module('iComPAsS.services')
       };
       $http.post(API.src + 'messages', data)
       .then(function successCallback(response) {
-        resolve('Sending success.');
+        resolve('Sending Success.');
       }, function errorCallback(response) {
         reject('Sending Failed.');
       });

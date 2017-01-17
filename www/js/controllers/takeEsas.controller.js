@@ -8,6 +8,7 @@ angular.module('iComPAsS.controllers')
       nausea: 0,
       anxiety: 0,
       depression: 0,
+      drowsiness: 0,
       lack_of_apetite: 0,
       wellbeing: 0,
       shortness_of_breath: 0,
@@ -133,7 +134,7 @@ angular.module('iComPAsS.controllers')
   $scope.progress = {
     options: {
       floor: 1,
-      ceil: 12,
+      ceil: 4,
       showTicks: true,
       hidePointerLabels: true,
       hideLimitLabels: true,
@@ -142,22 +143,6 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.pain_slider = {
-    options: {
-        showSelectionBar: true,
-        getSelectionBarColor: function(value) {
-          if (value <= 3)
-            return 'yellow';
-          if (value <= 6)
-            return 'orange';
-          return 'red';
-      },
-      vertical: true,
-      floor: 0,
-      ceil: 10,
-    }
-  };
-
-  $scope.other_symptoms_slider = {
     options: {
         showSelectionBar: true,
         getSelectionBarColor: function(value) {

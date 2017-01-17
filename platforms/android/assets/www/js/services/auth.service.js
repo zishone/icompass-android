@@ -50,7 +50,7 @@ angular.module('iComPAsS.services')
       $http.post(API.src + 'auth', data)
       .then(function successCallback(response) {
         storeUserCredentials(response.data.id + ' ' + response.data.data.user_type + ' ' +  response.data.meta.token);
-        resolve('Login success.');
+        resolve('Login Success.');
       }, function errorCallback(response) {
         reject('Login Failed.');
       });
