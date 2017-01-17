@@ -1,10 +1,7 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MessagesCtrl', function($scope, MessagesService, $ionicHistory){
+.controller('MessagesCtrl', function($scope, MessagesService){
   $scope.showLoading();
-
-  console.log($ionicHistory.viewHistory());
-
 
   $scope.populateMessages = function(){
     MessagesService.get_received_messages().then(function(data) {
