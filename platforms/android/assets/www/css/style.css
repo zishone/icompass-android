@@ -118,4 +118,7 @@
     position: relative;
     top: 20vh; left: -25%;
   }
+  .alert-popup {
+    position: fixed;
+  }
 }​
