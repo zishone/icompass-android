@@ -2,15 +2,12 @@
   <ion-content class="bg-light-orange">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populatePrescriptions()"></ion-refresher>
 
-    <div class="card" ng-repeat="prescription in prescriptions">
+    <div class="card">
       <div class="item item-divider bg-orange light text-center">
-        {{prescription.fullname}}
+        As of today
       </div>
       <div class="item item-text-wrap">
-        {{prescription.prescription}}
-      </div>
-      <div class="item item-divider text-right">
-        {{prescription.dateadded}}
+        {{prescription}}
       </div>
     </div>
   </ion-content>

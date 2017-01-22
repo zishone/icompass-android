@@ -51,16 +51,8 @@ angular.module('iComPAsS.controllers')
           },
         ]
       };
-    })
-    .finally(function(){
-      // Stop the ion-refresher from spinning
-      $scope.$broadcast('scroll.refreshComplete');
-    });
 
-    PatientDetailService.get_doctor_prescriptions($stateParams.patientId).then(function(data) {
-      // $scope.hideLoading();
-
-      $scope.prescriptions = data;
+      $scope.prescription = data.profile.prescript;
     })
     .finally(function(){
       // Stop the ion-refresher from spinning

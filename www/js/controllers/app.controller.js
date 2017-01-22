@@ -1,7 +1,6 @@
 angular.module('iComPAsS.controllers')
 
 .controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, $ionicPlatform, AuthService, API, USER_ROLES) {
-  $scope.profile_pic_src = API.profile_pic_src;
   $scope.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
 
   $scope.doLogout = function() {

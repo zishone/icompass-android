@@ -9,7 +9,7 @@
     <div class="card" ng-repeat="doctor in assigned_doctors | filter:search">
       <a href="#/menu/doctor-detail/{{doctor.doc_id}}" class="noline">
         <div class="item item-text-wrap item-avatar item-icon-right">
-          <img ng-src="{{profile_pic_src + doctor.image + '.jpg'}}">
+          <img ng-src="{{doctor.image}}">
           <h2>{{doctor.fullname}}</h2>
           <p>{{doctor.specialty}}</p>
 
