@@ -26,13 +26,13 @@ angular.module('iComPAsS.services')
     isAuthenticated = true;
     authToken = 'Bearer ' + token.split(' ')[2];
 
-    if (user_type == 1) {
+    if (user_type == USER_ROLES.admin) {
       role = USER_ROLES.admin;
     }
-    if (user_type == 2) {
+    if (user_type == USER_ROLES.patient) {
       role = USER_ROLES.patient;
     }
-    if (user_type == 3) {
+    if (user_type == USER_ROLES.doctor) {
       role = USER_ROLES.doctor;
     }
 

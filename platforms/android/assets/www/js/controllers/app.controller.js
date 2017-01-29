@@ -6,6 +6,11 @@ angular.module('iComPAsS.controllers')
   $scope.doLogout = function() {
     console.log('Doing logout');
 
+    //remove OneSignal tags
+    if (window.plugins && window.plugins.OneSignal) {
+      window.plugins.OneSignal.sendTags({user_id: null, user_type: null});
+    }
+
     // Destroy saved credentials
     AuthService.logout();
 

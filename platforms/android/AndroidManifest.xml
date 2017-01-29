@@ -18,6 +18,7 @@
                 <category android:name="com.ionicframework.icompass310354" />
             </intent-filter>
         </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     </application>
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="24" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
