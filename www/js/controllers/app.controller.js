@@ -85,8 +85,11 @@ angular.module('iComPAsS.controllers')
         opacity = '0.0';
     }
 
-    document.getElementById(body_part_id).setAttribute('fill', color);
-    document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+    try {
+      document.getElementById(body_part_id).setAttribute('fill', color);
+      document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+    }
+    catch(err) {}
   };
 
   $ionicPlatform.registerBackButtonAction(function(event) {

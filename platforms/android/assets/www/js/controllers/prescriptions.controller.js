@@ -1,13 +1,13 @@
 angular.module('iComPAsS.controllers')
 
-.controller('PrescriptionsCtrl', function($scope, PrescriptionsService){
+.controller('PrescriptionsCtrl', function($scope, ProfileService){
   $scope.showLoading();
 
   $scope.populatePrescriptions = function(){
-    PrescriptionsService.get_patient_prescriptions().then(function(data) {
+    ProfileService.get_patient_profile().then(function(data) {
       $scope.hideLoading();
 
-      $scope.prescriptions = data;
+      $scope.prescription = data.profile.prescript;
     })
     .finally(function(){
       // Stop the ion-refresher from spinning

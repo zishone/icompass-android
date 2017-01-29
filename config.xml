@@ -50,4 +50,5 @@
     <plugin name="cordova-plugin-statusbar" spec="~2.2.1" />
     <plugin name="cordova-plugin-device" spec="~1.1.4" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+    <plugin name="onesignal-cordova-plugin" spec="~2.0.11" />
 </widget>

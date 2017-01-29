@@ -32,6 +32,14 @@ module.exports = [
         "clobbers": [
             "navigator.splashscreen"
         ]
+    },
+    {
+        "id": "onesignal-cordova-plugin.OneSignal",
+        "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+        "pluginId": "onesignal-cordova-plugin",
+        "clobbers": [
+            "OneSignal"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -43,7 +51,8 @@ module.exports.metadata =
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-plugin-console": "1.0.5",
     "cordova-plugin-splashscreen": "4.0.1",
-    "cordova-plugin-crosswalk-webview": "2.2.0"
+    "cordova-plugin-crosswalk-webview": "2.2.0",
+    "onesignal-cordova-plugin": "2.0.11"
 };
 // BOTTOM OF METADATA
 });

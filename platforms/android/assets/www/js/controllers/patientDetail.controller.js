@@ -51,16 +51,8 @@ angular.module('iComPAsS.controllers')
           },
         ]
       };
-    })
-    .finally(function(){
-      // Stop the ion-refresher from spinning
-      $scope.$broadcast('scroll.refreshComplete');
-    });
 
-    PatientDetailService.get_doctor_prescriptions($stateParams.patientId).then(function(data) {
-      // $scope.hideLoading();
-
-      $scope.prescriptions = data;
+      $scope.prescription = data.profile.prescript;
     })
     .finally(function(){
       // Stop the ion-refresher from spinning
@@ -110,7 +102,7 @@ angular.module('iComPAsS.controllers')
           }
         }
       };
-
+      console.log(data);
       for (var i = 0; i < data.length; i++) {
         var date = new Date(data[i].dateanswered);
         $scope.chart.labels.push(date.getUTCDate() + ' ' + $scope.months[date.getMonth()] + ' ' + date.getFullYear());

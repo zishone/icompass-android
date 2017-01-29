@@ -1,7 +1,6 @@
 angular.module('iComPAsS.controllers')
 
 .controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, $ionicPlatform, AuthService, API, USER_ROLES) {
-  $scope.profile_pic_src = API.profile_pic_src;
   $scope.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
 
   $scope.doLogout = function() {
@@ -86,8 +85,11 @@ angular.module('iComPAsS.controllers')
         opacity = '0.0';
     }
 
-    document.getElementById(body_part_id).setAttribute('fill', color);
-    document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+    try {
+      document.getElementById(body_part_id).setAttribute('fill', color);
+      document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+    }
+    catch(err) {}
   };
 
   $ionicPlatform.registerBackButtonAction(function(event) {

@@ -55,6 +55,10 @@
                         {
                             "xml": "<preference name=\"android-minSdkVersion\" value=\"16\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -71,8 +75,34 @@
                             "count": 1
                         }
                     ],
-                    "/manifest/application": [],
-                    "/manifest": []
+                    "/manifest/application": [
+                        {
+                            "xml": "<amazon:enable-feature android:name=\"com.amazon.device.messaging\" android:required=\"false\" xmlns:amazon=\"http://schemas.amazon.com/apk/res/android\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.onesignal.ADMMessageHandler\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.ionicframework.icompass310354\" /></intent-filter></receiver>",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"com.amazon.device.messaging.permission.RECEIVE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<permission android:name=\"com.ionicframework.icompass310354.permission.RECEIVE_ADM_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.ionicframework.icompass310354.permission.RECEIVE_ADM_MESSAGE\" />",
+                            "count": 1
+                        }
+                    ]
                 }
             }
         }
@@ -102,6 +132,9 @@
             "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
             "XWALK_MODE": "lite",
             "XWALK_MULTIPLEAPK": "true",
+            "PACKAGE_NAME": "com.ionicframework.icompass310354"
+        },
+        "onesignal-cordova-plugin": {
             "PACKAGE_NAME": "com.ionicframework.icompass310354"
         }
     },
@@ -139,6 +172,14 @@
             "clobbers": [
                 "navigator.splashscreen"
             ]
+        },
+        {
+            "id": "onesignal-cordova-plugin.OneSignal",
+            "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+            "pluginId": "onesignal-cordova-plugin",
+            "clobbers": [
+                "OneSignal"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -148,6 +189,7 @@
         "ionic-plugin-keyboard": "2.2.1",
         "cordova-plugin-console": "1.0.5",
         "cordova-plugin-splashscreen": "4.0.1",
-        "cordova-plugin-crosswalk-webview": "2.2.0"
+        "cordova-plugin-crosswalk-webview": "2.2.0",
+        "onesignal-cordova-plugin": "2.0.11"
     }
 }
