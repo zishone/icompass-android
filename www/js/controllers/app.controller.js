@@ -6,6 +6,11 @@ angular.module('iComPAsS.controllers')
   $scope.doLogout = function() {
     console.log('Doing logout');
 
+    //remove OneSignal tags
+    if (window.plugins && window.plugins.OneSignal) {
+      window.plugins.OneSignal.sendTags({user_id: null, user_type: null});
+    }
+
     // Destroy saved credentials
     AuthService.logout();
 
@@ -85,8 +90,11 @@ angular.module('iComPAsS.controllers')
         opacity = '0.0';
     }
 
-    document.getElementById(body_part_id).setAttribute('fill', color);
-    document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+    try {
+      document.getElementById(body_part_id).setAttribute('fill', color);
+      document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+    }
+    catch(err) {}
   };
 
   $ionicPlatform.registerBackButtonAction(function(event) {

@@ -20,13 +20,13 @@ angular.module('iComPAsS.controllers')
       $scope.esas_result.reverse();
       $scope.result_index = $stateParams.result_index;
 
-      //set diagramc olors
-      for (var j = 0; j < $scope.esas_result[$scope.result_index].diagram.front.length; j++) {
-        $scope.setColor($scope.esas_result[$scope.result_index].diagram.front[j].key, $scope.esas_result[$scope.result_index].diagram.front[j].value);
+      //set diagram colors
+      for (var anterior in $scope.esas_result[$scope.result_index].diagram.anterior) {
+        $scope.setColor(anterior, $scope.esas_result[$scope.result_index].diagram.anterior[anterior]);
       }
 
-      for (var k = 0; k < $scope.esas_result[$scope.result_index].diagram.back.length; k++) {
-        $scope.setColor($scope.esas_result[$scope.result_index].diagram.front[k].key, $scope.esas_result[$scope.result_index].diagram.front[k].value);
+      for (var posterior in $scope.esas_result[$scope.result_index].diagram.posterior) {
+        $scope.setColor(posterior, $scope.esas_result[$scope.result_index].diagram.posterior[posterior]);
       }
     })
     .finally(function(){

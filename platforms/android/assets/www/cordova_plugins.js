@@ -32,6 +32,17 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+<<<<<<< HEAD
+=======
+    },
+    {
+        "id": "onesignal-cordova-plugin.OneSignal",
+        "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+        "pluginId": "onesignal-cordova-plugin",
+        "clobbers": [
+            "OneSignal"
+        ]
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
     }
 ];
 module.exports.metadata = 
@@ -43,7 +54,13 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.1",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
+<<<<<<< HEAD
     "ionic-plugin-keyboard": "2.2.1"
+=======
+    "ionic-plugin-keyboard": "2.2.1",
+    "onesignal-cordova-plugin": "2.0.11",
+    "cordova-plugin-googleplayservices": "19.0.3"
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
 };
 // BOTTOM OF METADATA
 });

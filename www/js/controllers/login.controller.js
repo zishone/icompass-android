@@ -29,6 +29,10 @@ angular.module('iComPAsS.controllers')
 
         $scope.alertPopup('Sorry!', 'Android verion of iComPAsS is not available to this type of user.');
       }else{
+        // add OneSignal tags
+        if (window.plugins && window.plugins.OneSignal) {
+          window.plugins.OneSignal.sendTags({user_id: AuthService.userID(), user_type: AuthService.role()});
+        }
         //redirect to profile
         $state.go('menu.profile', {}, {reload: true}).then(function(){
           $scope.clearBackView();

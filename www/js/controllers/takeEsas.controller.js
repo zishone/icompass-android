@@ -16,7 +16,7 @@ angular.module('iComPAsS.controllers')
     },
     diagrams: [
       {
-        front: {
+        anterior: {
           "anterior_head_r": 0,
           "anterior_head_l": 0,
           "face_r": 0,
@@ -67,7 +67,7 @@ angular.module('iComPAsS.controllers')
         }
       },
       {
-        back: {
+        posterior: {
           "posterior_head_l": 0,
           "posterior_head_r": 0,
           "nape_l": 0,

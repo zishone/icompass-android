@@ -102,7 +102,7 @@ angular.module('iComPAsS.controllers')
           }
         }
       };
-
+      console.log(data);
       for (var i = 0; i < data.length; i++) {
         var date = new Date(data[i].dateanswered);
         $scope.chart.labels.push(date.getUTCDate() + ' ' + $scope.months[date.getMonth()] + ' ' + date.getFullYear());

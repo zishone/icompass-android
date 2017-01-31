@@ -251,7 +251,7 @@ Email Address: jacobporci@gmail.com
     width: 50%;
     height: 50vh;
   }
-  #spinnerGif{
+  img#spinnerGif{
     position: relative;
     top: 20vh; left: -25%;
   }

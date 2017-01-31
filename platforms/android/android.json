@@ -54,6 +54,13 @@
                         },
                         {
                             "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+<<<<<<< HEAD
+=======
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
                             "count": 1
                         }
                     ]
@@ -70,6 +77,41 @@
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
                             "count": 1
                         }
+<<<<<<< HEAD
+=======
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"com.amazon.device.messaging.permission.RECEIVE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<permission android:name=\"com.ionicframework.icompass310354.permission.RECEIVE_ADM_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.ionicframework.icompass310354.permission.RECEIVE_ADM_MESSAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<amazon:enable-feature android:name=\"com.amazon.device.messaging\" android:required=\"false\" xmlns:amazon=\"http://schemas.amazon.com/apk/res/android\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.onesignal.ADMMessageHandler\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.ionicframework.icompass310354\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
+                            "count": 1
+                        }
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
                     ]
                 }
             }
@@ -77,6 +119,16 @@
     },
     "installed_plugins": {
         "cordova-plugin-console": {
+<<<<<<< HEAD
+            "PACKAGE_NAME": "com.ionicframework.icompass310354"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "XWALK_VERSION": "22+",
+            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+            "XWALK_MODE": "lite",
+            "XWALK_MULTIPLEAPK": "true",
+=======
             "PACKAGE_NAME": "com.ionicframework.icompass310354"
         },
         "cordova-plugin-crosswalk-webview": {
@@ -94,12 +146,29 @@
             "PACKAGE_NAME": "com.ionicframework.icompass310354"
         },
         "cordova-plugin-statusbar": {
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
+            "PACKAGE_NAME": "com.ionicframework.icompass310354"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.icompass310354"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.icompass310354"
+        },
+<<<<<<< HEAD
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.ionicframework.icompass310354"
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.icompass310354"
         },
         "ionic-plugin-keyboard": {
+=======
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.ionicframework.icompass310354"
+        },
+        "cordova-plugin-googleplayservices": {
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
             "PACKAGE_NAME": "com.ionicframework.icompass310354"
         }
     },
@@ -137,6 +206,17 @@
                 "cordova.plugins.Keyboard"
             ],
             "runs": true
+<<<<<<< HEAD
+=======
+        },
+        {
+            "id": "onesignal-cordova-plugin.OneSignal",
+            "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+            "pluginId": "onesignal-cordova-plugin",
+            "clobbers": [
+                "OneSignal"
+            ]
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
         }
     ],
     "plugin_metadata": {
@@ -146,6 +226,12 @@
         "cordova-plugin-splashscreen": "4.0.1",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-whitelist": "1.3.1",
+<<<<<<< HEAD
         "ionic-plugin-keyboard": "2.2.1"
+=======
+        "ionic-plugin-keyboard": "2.2.1",
+        "onesignal-cordova-plugin": "2.0.11",
+        "cordova-plugin-googleplayservices": "19.0.3"
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
     }
 }
