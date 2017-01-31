@@ -1,17 +1,17 @@
 <ion-view view-title="List of Doctors">
-  <ion-content class="bg-light-orange">
+  <ion-content class="bg-grey">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateListOfDoctors()"></ion-refresher>
 
     <div class="bar bar-header item-input-inset">
       <input type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
     </div>
 
-    <div class="card" ng-repeat="doctor in assigned_doctors | filter:search">
+    <div class="#" ng-repeat="doctor in assigned_doctors | filter:search">
       <a href="#/menu/doctor-detail/{{doctor.doc_id}}" class="noline">
         <div class="item item-text-wrap item-avatar item-icon-right">
           <img ng-src="{{doctor.image}}">
           <h2>{{doctor.fullname}}</h2>
-          <p>{{doctor.specialty}}</p>
+          <p class="Roboto-light">{{doctor.specialty}}</p>
 
           <i class="icon ion-chevron-right icon-accessory"></i>
         </div>

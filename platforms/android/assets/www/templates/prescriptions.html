@@ -1,16 +1,13 @@
 <ion-view view-title="Prescriptions">
-  <ion-content class="bg-light-orange">
+  <ion-content class="bg-grey">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populatePrescriptions()"></ion-refresher>
 
-    <div class="card" ng-repeat="prescription in prescriptions">
-      <div class="item item-divider bg-orange light text-center">
-        {{prescription.fullname}}
+    <div class="card">
+      <div class="item item-divider bg-white text-black light text-center">
+        As of today
       </div>
-      <div class="item item-text-wrap">
-        {{prescription.prescription}}
-      </div>
-      <div class="item item-divider text-right">
-        {{prescription.dateadded}}
+      <div class="item item-text-wrap Roboto-light">
+        {{prescription}}
       </div>
     </div>
   </ion-content>
