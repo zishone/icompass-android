@@ -1,7 +1,7 @@
 <ion-view view-title="Take ESAS">
-  <ion-content class="bg-light-orange">
+  <ion-content class="bg-grey">
     <div ng-show="isSet(1)">
-      <div class="card">
+      <div class="#">
         <div class="item item-divider text-center">
           Pain
         </div>
@@ -9,7 +9,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.pain" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="card">
+      <div class="#">
         <div class="item item-divider text-center">
           Nausea
         </div>
@@ -17,7 +17,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.nausea" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="card">
+      <div class="#">
         <div class="item item-divider text-center">
           Anxiety
         </div>
@@ -25,7 +25,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.anxiety" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="card">
+      <div class="#">
         <div class="item item-divider text-center">
           Depression
         </div>
@@ -33,7 +33,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.depression" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="card">
+      <div class="#">
         <div class="item item-divider text-center">
           Drowsiness
         </div>
@@ -41,7 +41,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.drowsiness" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="card">
+      <div class="#">
         <div class="item item-divider text-center">
           Lack of Apetite
         </div>
@@ -49,7 +49,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.lack_of_apetite" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="card">
+      <div class="#">
         <div class="item item-divider text-center">
           Wellbeing
         </div>
@@ -57,7 +57,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.wellbeing" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="card">
+      <div class="#">
         <div class="item item-divider text-center">
           Shortness of Breath
         </div>
@@ -65,7 +65,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.shortness_of_breath" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="card" ng-repeat="other_symptoms in esas_result.pain_result.other_symptoms">
+      <div class="#" ng-repeat="other_symptoms in esas_result.pain_result.other_symptoms">
         <div class="item item-divider text-center">
           <label class="item item-input">
             <span class="input-label">Enter Symptom:</span>
@@ -76,6 +76,7 @@
           <rzslider rz-slider-model="other_symptoms.value" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
+      <br>
       <button type="button" name="button" class="button bg-orange curve-all light" ng-click="addSymptom()">Add Symptom</button>
       <button type="button" name="button" class="button button-assertive curve-all" ng-click="removeSymptom()" ng-if="esas_result.pain_result.other_symptoms.length > 0">Remove Symptom</button>
     </div>
