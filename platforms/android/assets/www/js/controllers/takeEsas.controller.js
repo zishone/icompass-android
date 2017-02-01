@@ -9,7 +9,7 @@ angular.module('iComPAsS.controllers')
       anxiety: 0,
       depression: 0,
       drowsiness: 0,
-      lack_of_apetite: 0,
+      lack_of_appetite: 0,
       wellbeing: 0,
       shortness_of_breath: 0,
       other_symptoms: []

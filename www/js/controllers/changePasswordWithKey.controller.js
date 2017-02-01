@@ -9,12 +9,10 @@ angular.module('iComPAsS.controllers')
     if($scope.password.new === $scope.password.confirm_new){
       ChangePasswordWithKeyService.change_password($scope.password).then(function(data) {
         $scope.hideLoading();
-        
+
         $scope.alertPopup('Success!', 'You have changed your password.');
 
-        $state.go('login').then(function(){
-          $scope.clearBackView();
-        });
+        $scope.disableBackStateGo('login');
       }, function(err) {
         $scope.hideLoading();
 

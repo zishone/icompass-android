@@ -112,9 +112,9 @@ angular.module('iComPAsS.controllers')
         $scope.chart.data[3].push(JSON.parse(data[i].pain_result).anxiety);
         $scope.chart.data[4].push(JSON.parse(data[i].pain_result).depression);
         $scope.chart.data[5].push(JSON.parse(data[i].pain_result).drowsiness);
-        $scope.chart.data[6].push(JSON.parse(data[i].pain_result).apetite);
-        $scope.chart.data[7].push(JSON.parse(data[i].pain_result).well_being);
-        $scope.chart.data[8].push(JSON.parse(data[i].pain_result).shortness_of_breath);
+        $scope.chart.data[6].push(JSON.parse(data[i].pain_result).appetite);
+        $scope.chart.data[7].push(JSON.parse(data[i].pain_result).wellBeing);
+        $scope.chart.data[8].push(JSON.parse(data[i].pain_result).shortBreath);
       }
 
       $scope.esas_results = data;

@@ -19,9 +19,12 @@
         <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
         <param name="onload" value="true" />
     </feature>
+<<<<<<< HEAD
+=======
     <feature name="OneSignalPush">
         <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
     </feature>
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
     <name>iComPAsS</name>
     <description>
         An Ionic Framework and Cordova project.

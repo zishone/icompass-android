@@ -36,7 +36,6 @@
         <splash density="port-xxxhdpi" src="resources\android\splash\drawable-port-xxxhdpi-screen.png" />
     </platform>
     <icon src="resources\android\icon\drawable-xhdpi-icon.png" />
-    <plugin name="cordova-plugin-console" spec="~1.0.4" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
     <engine name="android" spec="~6.0.0" />
     <plugin name="cordova-plugin-crosswalk-webview" spec="~2.2.0">
@@ -50,6 +49,10 @@
     <plugin name="cordova-plugin-statusbar" spec="~2.2.1" />
     <plugin name="cordova-plugin-device" spec="~1.1.4" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+<<<<<<< HEAD
+    <plugin name="cordova-plugin-console" spec="~1.0.5" />
+=======
     <plugin name="onesignal-cordova-plugin" spec="~2.0.11" />
     <plugin name="cordova-plugin-googleplayservices" spec="~19.0.3" />
+>>>>>>> 26f9daf54639967b3b78ab28cf41891c2621abb4
 </widget>

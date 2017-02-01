@@ -21,12 +21,12 @@ angular.module('iComPAsS.controllers')
       $scope.result_index = $stateParams.result_index;
 
       //set diagram colors
-      for (var anterior in $scope.esas_result[$scope.result_index].diagram.anterior) {
-        $scope.setColor(anterior, $scope.esas_result[$scope.result_index].diagram.anterior[anterior]);
+      for (var anterior in $scope.esas_result[$scope.result_index].diagram[0].anterior) {
+        $scope.setColor(anterior, $scope.esas_result[$scope.result_index].diagram[0].anterior[anterior]);
       }
 
-      for (var posterior in $scope.esas_result[$scope.result_index].diagram.posterior) {
-        $scope.setColor(posterior, $scope.esas_result[$scope.result_index].diagram.posterior[posterior]);
+      for (var posterior in $scope.esas_result[$scope.result_index].diagram[1].posterior) {
+        $scope.setColor(posterior, $scope.esas_result[$scope.result_index].diagram[1].posterior[posterior]);
       }
     })
     .finally(function(){

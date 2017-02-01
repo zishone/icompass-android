@@ -1,49 +1,110 @@
-/* Empty. Add your own CSS if you like */
+/*
+Theme Name: BCI-Android
+Description: BCI-Android Designs
+Author: Anthony Jacob R. Porciuncula
+Co-authors: Garces, Zishran Julbert D.
+            Fernandez, Gabriel S.
+            Pineda, Cerjeff S.
+Email Address: jacobporci@gmail.com
+*/
 
-/*iComPAsS color scheme*/
-.bg-orange,
-.bar.bg-orange{
-  background-color: #FF8300;
-}
 
-.text-orange{
-  color: #FF8300;
+.Roboto-light{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300 !important;
 }
+.Roboto-regular{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400 !important;
+}
+/*COLORS*/
+  /*BACKGROUND COLORS*/
+  .bg-orange,
+  .bar.bg-orange{
+    background-color: #ff6d00;
+  }
+  .bg-white{
+    background: #ffffff;
+  }
+  .bg-grey{
+  	background-color: #eeeeee;
+  }
 
-.bg-light-orange{
-	background-color: #FFFFDE;
-}
+  .bg-light-orange{
+  	background-color: #FFFFDE;
+  }
+  /*BACKGROUND COLORS*/
 
-.text-light-orange{
-  color: #FFFFDE;
-}
+  /*TEXT-COLORS*/
+  .text-orange{
+    color: #ff6d00;
+  }
+  .text-grey{
+    color: rgba(0,0,0,0.6);
+  }
+  .text-black{
+    color: black;
+  }
+  .text-dark-grey{
+    color: #555;
+  }
+  .text-light-orange{
+    color: #FFFFDE;
+  }
+  .text-light-orange{
+    color: #FFFFDE;
+  }
+  .text-white{
+    color: #ffffff;
+  }
+  /*TEXT-COLORS*/
+/*COLORS*/
 
-/* Horizontally align on ion-content */
-.center {
-    margin-left: auto;
-    margin-right: auto;
-}
+/*GENERAL STYLES*/
+  /*ALIGNMENT*/
+  .center {
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .right {
+    float: right;
+  }
+  /*ALIGNMENT*/
 
-.right {
-  float: right;
-}
+  /*SHADOWS*/
+  .text-shadow{
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+  }
+  .circle-shadow{
+    box-shadow: 10px -10px rgba(0,0,0,0.6);
+  }
+  /*SHADOWS*/
 
-/* login form design */
-.login-input{
-  width: 92%;
-}
+  .larger {
+      font-size: larger;
+  }
+  .hidden{
+    display: none;
+  }
+/*GENERAL STYLES*/
 
-.curve-top{
-  border-radius: 6px 6px 0px 0px;
-}
+          /* login form design */
+          .login-input{
+            width: 92%;
+          }
 
-.curve-bottom{
-  border-radius: 0px 0px 6px 6px;
-}
+          .curve-top{
+            border-radius: 6px 6px 0px 0px;
+          }
 
-.curve-all{
-  border-radius: 6px 6px 6px 6px;
-}
+          .curve-bottom{
+            border-radius: 0px 0px 6px 6px;
+          }
+
+          .curve-all{
+            border-radius: 6px 6px 6px 6px;
+          }
+          /* login form design */
 
 /*Alert popup design*/
 .popup-head{
@@ -64,32 +125,111 @@
   background-color: #a2a2a2;
 }
 
-/*Profile Tabs Design*/
-.tabs.tabs-top{
-  position: relative;
-  top: 0%;
-  color: black;
-}
+/*PROFILE STYLE*/
+  /*PROFILE TOP
+    -profile picture
+    -profile name
+  */
+  .profile-header{
+    text-align: center;
+  }
+  .profile-main{
+    width: 100%;
+    text-align: center;
+    padding-top: 5%;
+    margin-bottom: 5%;
+  }
+  .profile-main img{
+    width: 30%;
+    border-radius: 200px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+  }
+  .profile-name{
+    text-align: center;
+    padding-top: 35%;
+  }
+  /*PROFILE TOP*/
+
+  /*PROFILE-TAB*/
+  .tabs.tabs-top{
+    position: relative;
+    top: 0%;
+    color: black;
+  }
+  .tab-item{
+    max-width: none;
+    width: 50% !important;
+    font-size: 19px;
+    /*color: rgba(0,0,0,0.6);*/
+  }
+  .tab-item.active{
+    color: white;
+    /*text-shadow: 1px 1px 5px rgba(0,0,0,0.2);*/
+  }
+
+  .profile-tab>.tab-item i{
+    /*font-size: 2em;*/
+    color: black;
+  }
+  .profile-tab{
+    z-index: -1;
+    /*height: 100px;*/
+  }
+  .profile-tab a.active{
+    background-color: #ff6d00 !important;
+    border: none !important;
+    box-shadow: 5px 0px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+  }
+  .profile-tab .left.active{
+    box-shadow: 5px 0px 10px rgba(0,0,0,0.3);
+  }
+  .profile-tab .right.active{
+    box-shadow: -5px 0px 10px rgba(0,0,0,0.3);
+  }
+  .profile-tab a{
+    background-color: #b8b8b8 !important;
+    margin: 0 !important;
+    opacity: 10;
+  }
+  .profile-tab h3{
+    vertical-align: middle;
+  }
+  /*PROFILE-TAB*/
+
+  /*PROFILE-CARDS*/
+  .card-header{
+    font-size: 20px !important;
+  }
+  .profile .list{
+    padding: 0 8%;
+  }
+  /*PROFILE-CARDS*/
+/*PROFILE STYLE*/
 
 /*Make fonts larger*/
-.larger {
-    font-size: larger;
-}
 
-/*Hide things*/
-.hidden{
-  display: none;
-}
 
 /*Remove anchor tag underline*/
 .noline{
   text-decoration: none;
 }
 
-.body-diagram{
-  width: 100%;
-  height: 100%;
-}
+
+/*ESAS*/
+  /*ESAS BODY DIAGRAM*/
+  .body-diagram{
+    width: 100%;
+    height: 100%;
+  }
+  /*ESAS BODY DIAGRAM*/
+
+  /*ESAS PAIN TEST*/
+  .pain-result-card{
+    height: 50vh;
+  }
+  /*ESAS PAIN TEST*/
+/*ESAS*/
 
 .unordered-lists{
   list-style: none;
@@ -100,9 +240,10 @@
   padding-left: 15%;
 }
 
-.pain-result-card{
-  height: 50vh;
+.full-height{
+  height: 100%;
 }
+
 
 #spinnerGif{
   position: relative;
