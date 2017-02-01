@@ -29,9 +29,14 @@ Email Address: jacobporci@gmail.com
   .bg-grey{
   	background-color: #eeeeee;
   }
-
   .bg-light-orange{
   	background-color: #FFFFDE;
+  }
+  .bg-blue{
+    background-color: #0db9f0;
+  }
+  .bg-transparent{
+    background-color: transparent;
   }
   /*BACKGROUND COLORS*/
 
@@ -163,7 +168,7 @@ Email Address: jacobporci@gmail.com
     /*color: rgba(0,0,0,0.6);*/
   }
   .tab-item.active{
-    color: white;
+    /*color: white;*/
     /*text-shadow: 1px 1px 5px rgba(0,0,0,0.2);*/
   }
 
@@ -230,7 +235,12 @@ Email Address: jacobporci@gmail.com
   }
   /*ESAS PAIN TEST*/
 /*ESAS*/
-
+/*PATIENT DETAILS*/
+  .patient-details>.tabs-top.tabs-striped .tab-item.active{
+    background-color: #ff6d00 !important;
+    color: white !important;
+  }
+/*PATIENT DETAILS*/
 .unordered-lists{
   list-style: none;
   list-style-type: disc;
