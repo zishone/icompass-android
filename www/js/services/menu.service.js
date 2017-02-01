@@ -40,11 +40,11 @@ angular.module('iComPAsS.services')
             'text': 'Change Password',
             'url': '#/menu/change-password'
           },
-          {
-            'icon': 'ion-ios-book',
-            'text': 'Instructions',
-            'url': '#/menu/instructions'
-          },
+          // {
+          //   'icon': 'ion-ios-book',
+          //   'text': 'Instructions',
+          //   'url': '#/menu/instructions'
+          // },
           {
             'icon': 'ion-ios-help',
             'text': 'Help',

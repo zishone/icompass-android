@@ -60,7 +60,7 @@ Email Address: jacobporci@gmail.com
     color: #FFFFDE;
   }
   .text-white{
-    color: #ffffff;
+    color: #ffffff !important;
   }
   /*TEXT-COLORS*/
 /*COLORS*/
@@ -75,16 +75,38 @@ Email Address: jacobporci@gmail.com
     float: right;
   }
   /*ALIGNMENT*/
-
+  /*BORDER*/
+  .border-bot-white{
+    border-bottom: 3px solid white !important;
+  }
+  /*BORDER*/
+  /*FONT-SIZE*/
+  .font-sixteen{
+    font-size: 16px !important;
+  }
+  /*FONT-SIZE*/
   /*SHADOWS*/
   .text-shadow{
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.05);
   }
   .circle-shadow{
     box-shadow: 10px -10px rgba(0,0,0,0.6);
   }
+  .button-shadow{
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.05);
+  }
   /*SHADOWS*/
-
+  /*WIDTH*/
+  .width-ninety{
+    width: 90%;
+  }
+  .width-eighty{
+    width: 80%;
+  }
+  .width-eightyfive{
+    width: 86%;
+  }
+  /*WIDTH*/
   .larger {
       font-size: larger;
   }
@@ -132,8 +154,6 @@ Email Address: jacobporci@gmail.com
 
 /*PROFILE STYLE*/
   /*PROFILE TOP
-    -profile picture
-    -profile name
   */
   .profile-header{
     text-align: center;
@@ -142,7 +162,7 @@ Email Address: jacobporci@gmail.com
     width: 100%;
     text-align: center;
     padding-top: 5%;
-    margin-bottom: 5%;
+    /*margin-bottom: 5%;*/
   }
   .profile-main img{
     width: 30%;
@@ -183,14 +203,16 @@ Email Address: jacobporci@gmail.com
   .profile-tab a.active{
     background-color: #ff6d00 !important;
     border: none !important;
-    box-shadow: 5px 0px 10px rgba(0,0,0,0.3);
+    box-shadow: 3px 0px 5px rgba(0,0,0,0.1);
     z-index: 100;
   }
   .profile-tab .left.active{
-    box-shadow: 5px 0px 10px rgba(0,0,0,0.3);
+    font-weight: 400 !important;
+    box-shadow: 3px 0px 5px rgba(0,0,0,0.1);
   }
   .profile-tab .right.active{
-    box-shadow: -5px 0px 10px rgba(0,0,0,0.3);
+    font-weight: 400 !important;
+    box-shadow: -3px 0px 5px rgba(0,0,0,0.1);
   }
   .profile-tab a{
     background-color: #b8b8b8 !important;
