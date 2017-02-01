@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('LoginCtrl', function($scope, $state, AuthService, USER_ROLES) {
+.controller('LoginCtrl', function($scope, $state, $ionicHistory, AuthService, USER_ROLES) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -34,9 +34,10 @@ angular.module('iComPAsS.controllers')
           window.plugins.OneSignal.sendTags({user_id: AuthService.userID(), user_type: AuthService.role()});
         }
         //redirect to profile
-        $state.go('menu.profile', {}, {reload: true}).then(function(){
-          $scope.clearBackView();
+        $ionicHistory.nextViewOptions({
+          disableBack: true
         });
+        $state.go('menu.profile', {}, {reload: true});
       }
 
       // Clear loginData

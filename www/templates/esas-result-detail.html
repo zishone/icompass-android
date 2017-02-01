@@ -31,29 +31,23 @@
         </div>
         <div class="row">
           <div class="col col-80">Appetite</div>
-          <div class="col">{{esas_result[result_index].pain_result.apetite}}</div>
+          <div class="col">{{esas_result[result_index].pain_result.appetite}}</div>
         </div>
         <div class="row">
           <div class="col col-80">Wellbeing</div>
-          <div class="col">{{esas_result[result_index].pain_result.well_being}}</div>
+          <div class="col">{{esas_result[result_index].pain_result.wellBeing}}</div>
         </div>
         <div class="row">
           <div class="col col-80">Shortness of Breath</div>
-          <div class="col">{{esas_result[result_index].pain_result.shortness_of_breath}}</div>
-        </div>
-        <!-- if not array then no loop -->
-        <div class="row" ng-show="!Array.isArray(esas_result[result_index].pain_result.other_symptoms)">
-          <div class="col col-80">Others: {{esas_result[result_index].pain_result.other.name}}</div>
-          <div class="col">{{esas_result[result_index].pain_result.other.value}}</div>
+          <div class="col">{{esas_result[result_index].pain_result.shortBreath}}</div>
         </div>
         <!-- if array then loop -->
-        <div class="row" ng-show="Array.isArray(esas_result[result_index].pain_result.other_symptoms)">
+        <div class="row">
           <div class="col col-80">Other Symptoms:</div>
         </div>
-        <div class="row padding-left" ng-show="Array.isArray(esas_result[result_index].pain_result.other_symptoms)" ng-repeat="other in esas_result[result_index].pain_result.other_symptoms">
-          <div class="col col-25"></div>
-          <div class="col col-50">{{Object.keys(other)[0]}}</div>
-          <div class="col">{{other[Object.keys(other)[0]]}}</div>
+        <div class="row padding-left" ng-repeat="other in esas_result[result_index].pain_result.other_symptoms">
+          <div class="col col-75">{{other.key}}</div>
+          <div class="col">{{other.value}}</div>
         </div>
 
         <div class="row">

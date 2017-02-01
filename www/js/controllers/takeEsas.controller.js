@@ -1,6 +1,7 @@
 angular.module('iComPAsS.controllers')
 
 .controller('TakeEsasCtrl', function($scope, TakeEsasService){
+  $scope.esas_enabled = true;
   $scope.esas_result = {
     pain_result: {
       pain: 0,
@@ -9,7 +10,7 @@ angular.module('iComPAsS.controllers')
       anxiety: 0,
       depression: 0,
       drowsiness: 0,
-      lack_of_apetite: 0,
+      lack_of_appetite: 0,
       wellbeing: 0,
       shortness_of_breath: 0,
       other_symptoms: []
@@ -134,7 +135,7 @@ angular.module('iComPAsS.controllers')
   $scope.progress = {
     options: {
       floor: 1,
-      ceil: 4,
+      ceil: 5,
       showTicks: true,
       hidePointerLabels: true,
       hideLimitLabels: true,
@@ -182,6 +183,8 @@ angular.module('iComPAsS.controllers')
 
   $scope.submitEsas = function() {
     $scope.showLoading();
+
+    console.log($scope.esas_result);
 
     TakeEsasService.submit_esas($scope.esas_result).then(function(data) {
       $scope.hideLoading();
