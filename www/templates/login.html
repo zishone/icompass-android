@@ -3,25 +3,22 @@
     <div class="text-center logo">
       <img src="img/icon.png" alt=""/>
     </div>
-    <h1 class="light text-center">iComPAsS</h1>
-    <h4 class="light text-center">Internet-based Computerized Patient Assessment System</h4>
+    <h1 class="light text-center Roboto-light">iComPAsS</h1>
+    <h4 class="light text-center Roboto-light center width-ninety">Internet-based Computerized Patient Assessment System</h4>
+    <br>
     <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input curve-top center login-input">
-          <span class="input-label curve">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input curve-bottom center login-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item item-borderless bg-orange logInButton">
-          <button class="button button-block bg-light-orange curve-all logInButton" type="submit">Log in</button>
-        </label>
+      <div class="list text-center">
+          <h4 class="text-white Roboto-light">Username</h4>
+          <input class="font-sixteen Roboto-light text-white text-center center width-eighty bg-transparent border-bot-white" type="text" ng-model="loginData.username">
+          <h4 class="text-white Roboto-light">Password</h4>
+          <input class="font-sixteen text-white text-center center width-eighty bg-transparent border-bot-white" type="password" ng-model="loginData.password">
+          <br>
+          <button class="button bg-white text-dark-grey button-shadow width-eighty logInButton Roboto" type="submit">Log In</button>
       </div>
     </form>
+    <br>
     <div class="text-center">
-      <a href="#/forgot-password" class="light">Forgot Password?</a>
+      <a href="#/forgot-password" class="light Roboto-light">Forgot Password?</a>
     </div>
   </ion-content>
 </ion-view>

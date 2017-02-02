@@ -1,8 +1,8 @@
 <ion-view view-title="Patient's Detail">
-  <ion-content class="bg-light-orange">
+  <ion-content class="bg-grey patient-detail">
     <!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="populatePatientDetail()"></ion-refresher> -->
 
-    <div class="bg-orange item-thumbnail-left">
+    <div class="bg-white item-thumbnail-left">
       <img src="{{patient_detail.image}}" alt=""/>
       <h3 class="light">{{patient_detail.fullname}}</h3>
       <br>
@@ -10,7 +10,7 @@
 
     <div class="tabs tabs-striped tabs-top">
       <a class="tab-item" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
-        <i class="icon ion-person"></i>
+        Personal
       </a>
       <a class="tab-item" ng-class="{ active: isSet(2) }" ng-click="setTab(2)">
         Prescriptions
@@ -20,17 +20,17 @@
       </a>
     </div>
 
-    <div class="card" ng-show="isSet(1)">
-      <div class="item item-divider bg-orange light">
+    <div class="#" ng-show="isSet(1)">
+      <div class="item item-divider bg-white text-black light">
         Personal Info
       </div>
       <div class="item item-text-wrap">
         <ion-list >
           <ion-item class="row item-borderless" ng-repeat="info in patient_detail.basic_info">
-            <div class="col col-33 padding-vertical">
+            <div class="col col-40 padding-vertical">
               <h3>{{info.label}}:</h3>
             </div>
-            <div class="col padding-vertical">
+            <div class="col padding-vertical Roboto-light">
               {{info.data}}
             </div>
           </ion-item>
@@ -39,19 +39,19 @@
     </div>
 
     <div ng-show="isSet(2)">
-      <div class="card">
-        <div class="item item-divider bg-orange light text-center">
+      <div class="#">
+        <div class="item item-divider bg-white text-black light text-center">
           As of today
         </div>
-        <div class="item item-text-wrap">
+        <div class="item item-text-wrap Roboto-light">
           {{prescription}}
         </div>
       </div>
     </div>
 
     <div ng-show="isSet(3)">
-      <div class="card">
-        <div class="item item-divider bg-orange light text-center">
+      <div class="#">
+        <div class="item item-divider bg-white light text-center">
           Pain Summary
         </div>
         <div class="item item-text-wrap">
