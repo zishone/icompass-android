@@ -1,10 +1,10 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ListOfDoctorsCtrl', function($scope, ListOfDoctorsService){
+.controller('ListOfDoctorsCtrl', function($scope, UsersService){
   $scope.showLoading();
 
   $scope.populateListOfDoctors = function(){
-    ListOfDoctorsService.get_assigned_doctors().then(function(data) {
+    UsersService.get_assigned_doctors().then(function(data) {
       $scope.hideLoading();
 
       $scope.assigned_doctors = data;

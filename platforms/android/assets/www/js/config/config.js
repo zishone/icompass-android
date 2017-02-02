@@ -1,1 +1,1 @@
-angular.module('iComPAsS.config', ['pascalprecht.translate']);
+angular.module('iComPAsS.config', []);

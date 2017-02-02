@@ -1,16 +1,16 @@
 angular.module('iComPAsS.controllers')
 
-.controller('SendMessageCtrl', function($scope, $state, $stateParams, SendMessageService, DoctorDetailService, PatientDetailService){
+.controller('SendMessageCtrl', function($scope, $state, $stateParams, MessagesService, UsersService){
   $scope.showLoading();
 
   if($scope.isDoctor()){
-    PatientDetailService.get_patient_detail($stateParams.recipientId).then(function(data) {
+    UsersService.get_patient_detail($stateParams.recipientId).then(function(data) {
       $scope.hideLoading();
 
       $scope.setRecipient(data);
     });
   }else if($scope.isPatient()) {
-    PatientDetailService.get_patient_detail($stateParams.recipientId).then(function(data) {
+    UsersService.get_patient_detail($stateParams.recipientId).then(function(data) {
       $scope.hideLoading();
 
       $scope.setRecipient(data);
@@ -29,7 +29,7 @@ angular.module('iComPAsS.controllers')
   $scope.sendMessage = function(){
     $scope.showLoading();
 
-    SendMessageService.send_message($stateParams.recipientId, $scope.messageData.message).then(function(){
+    MessagesService.send_message($stateParams.recipientId, $scope.messageData.message).then(function(){
       $scope.hideLoading();
 
       $scope.alertPopup('Success!', 'Sent!');

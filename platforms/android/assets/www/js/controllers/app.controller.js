@@ -1,7 +1,7 @@
 angular.module('iComPAsS.controllers')
 
-.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, $ionicPlatform, AuthService, API, USER_ROLES) {
-  $scope.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
+.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, $ionicPlatform, $ionicScrollDelegate, AuthService, API, USER_ROLES, APP_CONST) {
+  $scope.months = APP_CONST.months;
 
   $scope.doLogout = function() {
     console.log('Doing logout');
@@ -15,15 +15,15 @@ angular.module('iComPAsS.controllers')
     AuthService.logout();
 
     // Change state into login
-    $state.go('login').then(function(){
-      $scope.clearBackView();
-      $window.location.reload();
+    $state.go('login', {}, {reload: true}).then(function(){
+      $ionicHistory.clearHistory();
     });
   };
 
-  $scope.clearBackView = function(){
-    $ionicHistory.clearCache();
-    $ionicHistory.clearHistory();
+  $scope.disableBackStateGo = function(state) {
+    $state.go(state, {}, {reload: true}).then(function(){
+      $ionicHistory.clearHistory();
+    });
   };
 
   $scope.showLoading = function(){
@@ -67,6 +67,9 @@ angular.module('iComPAsS.controllers')
     return AuthService.role() === USER_ROLES.patient;
   };
 
+  $scope.scrollTop = function() {
+    $ionicScrollDelegate.scrollTop();
+  };
 
   $scope.setColor = function(body_part_id, counter){
     var color;
@@ -98,17 +101,10 @@ angular.module('iComPAsS.controllers')
   };
 
   $ionicPlatform.registerBackButtonAction(function(event) {
-    $scope.hideLoading();
-
     if($scope.tab > 1){
       $scope.setTab($scope.tab - 1);
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
-      $ionicHistory.nextViewOptions({
-        disableBack: true
-      });
-      $state.go('menu.profile').then(function() {
-        $scope.clearBackView();
-      });
+      $scope.disableBackStateGo('menu.profile');
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor > 0) {
       $ionicHistory.goBack();
     }else{

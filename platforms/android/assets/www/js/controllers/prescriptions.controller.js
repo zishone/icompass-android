@@ -1,10 +1,10 @@
 angular.module('iComPAsS.controllers')
 
-.controller('PrescriptionsCtrl', function($scope, ProfileService){
+.controller('PrescriptionsCtrl', function($scope, UsersService){
   $scope.showLoading();
 
   $scope.populatePrescriptions = function(){
-    ProfileService.get_patient_profile().then(function(data) {
+    UsersService.get_patient_profile().then(function(data) {
       $scope.hideLoading();
 
       $scope.prescription = data.profile.prescript;

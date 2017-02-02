@@ -1,12 +1,12 @@
 angular.module('iComPAsS.controllers')
 
-.controller('DoctorDetailCtrl', function($scope, $stateParams, DoctorDetailService){
+.controller('DoctorDetailCtrl', function($scope, $stateParams, UsersService){
   $scope.showLoading();
 
   $scope.populateDoctorDetail = function() {
     $scope.doctor_detail = {};
 
-    DoctorDetailService.get_doctor_detail($stateParams.doctorId).then(function(data) {
+    UsersService.get_doctor_detail($stateParams.doctorId).then(function(data) {
       $scope.hideLoading();
 
       $scope.doctor_detail.image = data.meta.profile_pic;

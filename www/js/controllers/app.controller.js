@@ -1,7 +1,7 @@
 angular.module('iComPAsS.controllers')
 
-.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, $ionicPlatform, $ionicScrollDelegate, AuthService, API, USER_ROLES) {
-  $scope.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
+.controller('AppCtrl', function($scope, $window, $state, $ionicHistory, $ionicLoading, $ionicPopup, $ionicPlatform, $ionicScrollDelegate, AuthService, API, USER_ROLES, APP_CONST) {
+  $scope.months = APP_CONST.months;
 
   $scope.doLogout = function() {
     console.log('Doing logout');
@@ -15,17 +15,15 @@ angular.module('iComPAsS.controllers')
     AuthService.logout();
 
     // Change state into login
-    $ionicHistory.nextViewOptions({
-      disableBack: true
+    $state.go('login', {}, {reload: true}).then(function(){
+      $ionicHistory.clearHistory();
     });
-    $state.go('login', {}, {reload: true});
   };
 
   $scope.disableBackStateGo = function(state) {
-    $ionicHistory.nextViewOptions({
-      disableBack: true
+    $state.go(state, {}, {reload: true}).then(function(){
+      $ionicHistory.clearHistory();
     });
-    $state.go(state, {}, {reload: true});
   };
 
   $scope.showLoading = function(){

@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('EsasResultDetailCtrl', function($scope, $stateParams, PatientDetailService, TakeEsasService){
+.controller('EsasResultDetailCtrl', function($scope, $stateParams, EsasService){
   $scope.showLoading();
 
   $scope.populateEsasResultDetail = function(){

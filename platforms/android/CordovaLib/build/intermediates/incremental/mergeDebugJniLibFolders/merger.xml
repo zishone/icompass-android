@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Jacob\Dropbox\4Y2T\THESIS\bci-android\platforms\android\CordovaLib\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Users\Jacob\Dropbox\4Y2T\THESIS\bci-android\platforms\android\CordovaLib\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\DevZi\dev-env\projects\ionic-projects\compassion\platforms\android\CordovaLib\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Users\DevZi\dev-env\projects\ionic-projects\compassion\platforms\android\CordovaLib\src\debug\jniLibs"/></dataSet></merger>

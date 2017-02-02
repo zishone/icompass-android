@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('TakeEsasCtrl', function($scope, TakeEsasService){
+.controller('TakeEsasCtrl', function($scope, EsasService){
   $scope.esas_enabled = true;
   $scope.esas_result = {
     pain_result: {
@@ -111,25 +111,17 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.anteriorColorSwitch = function(body_part_id){
-    if($scope.esas_result.diagrams[0].front[body_part_id] === undefined){
-      $scope.esas_result.diagrams[0].front[body_part_id] = 1;
-    }else{
-      $scope.esas_result.diagrams[0].front[body_part_id] += 1;
-      $scope.esas_result.diagrams[0].front[body_part_id] %= 4;
-    }
+    $scope.esas_result.diagrams[0].anterior[body_part_id] += 1;
+    $scope.esas_result.diagrams[0].anterior[body_part_id] %= 4;
 
-    $scope.setColor(body_part_id, $scope.esas_result.diagrams[0].front[body_part_id]);
+    $scope.setColor(body_part_id, $scope.esas_result.diagrams[0].anterior[body_part_id]);
   };
 
   $scope.posteriorColorSwitch = function(body_part_id){
-    if($scope.esas_result.diagrams[1].back[body_part_id] === undefined){
-      $scope.esas_result.diagrams[1].back[body_part_id] = 1;
-    }else{
-      $scope.esas_result.diagrams[1].back[body_part_id] += 1;
-      $scope.esas_result.diagrams[1].back[body_part_id] %= 4;
-    }
+    $scope.esas_result.diagrams[1].posterior[body_part_id] += 1;
+    $scope.esas_result.diagrams[1].posterior[body_part_id] %= 4;
 
-    $scope.setColor(body_part_id, $scope.esas_result.diagrams[1].back[body_part_id]);
+    $scope.setColor(body_part_id, $scope.esas_result.diagrams[1].posterior[body_part_id]);
   };
 
   $scope.progress = {
@@ -168,7 +160,7 @@ angular.module('iComPAsS.controllers')
     $scope.esas_result.pain_result.other_symptoms.splice(-1, 1);
   };
 
-  $scope.pain_types = TakeEsasService.get_pain_types();
+  $scope.pain_types = EsasService.get_pain_types();
 
   $scope.addPainType = function(pain_type, checked){
     var tempObj = {
@@ -186,7 +178,7 @@ angular.module('iComPAsS.controllers')
 
     console.log($scope.esas_result);
 
-    TakeEsasService.submit_esas($scope.esas_result).then(function(data) {
+    EsasService.submit_esas($scope.esas_result).then(function(data) {
       $scope.hideLoading();
 
       $scope.alertPopup('Success!', 'Have a great day!');

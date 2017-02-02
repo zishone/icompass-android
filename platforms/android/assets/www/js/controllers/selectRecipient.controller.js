@@ -1,10 +1,10 @@
 angular.module('iComPAsS.controllers')
 
-.controller('SelectRecipientCtrl', function($scope, $state, ListOfPatientsService, ListOfDoctorsService){
+.controller('SelectRecipientCtrl', function($scope, $state, UsersService){
   $scope.showLoading();
 
   $scope.populateListOfPatients = function(){
-    ListOfPatientsService.get_assigned_patients().then(function(data) {
+    UsersService.get_assigned_patients().then(function(data) {
       $scope.hideLoading();
 
       $scope.assigned_patients = data;
@@ -18,7 +18,7 @@ angular.module('iComPAsS.controllers')
   $scope.populateListOfPatients();
 
   $scope.populateListOfDoctors = function(){
-    ListOfDoctorsService.get_assigned_doctors().then(function(data) {
+    UsersService.get_assigned_doctors().then(function(data) {
       $scope.hideLoading();
 
       $scope.assigned_doctors = data;

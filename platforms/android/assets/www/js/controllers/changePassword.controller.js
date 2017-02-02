@@ -1,15 +1,15 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ChangePasswordCtrl', function($scope, ChangePasswordService){
+.controller('ChangePasswordCtrl', function($scope, PasswordService){
   $scope.password = {};
 
   $scope.doChangePassword = function() {
     $scope.showLoading();
 
     if($scope.password.new === $scope.password.confirm_new){
-      ChangePasswordService.change_password($scope.password).then(function(data) {
+      PasswordService.change_password($scope.password).then(function(data) {
         $scope.hideLoading();
-        
+
         $scope.alertPopup('Success!', 'You have changed your password.');
       }, function(err) {
         $scope.hideLoading();

@@ -125,14 +125,14 @@
   </ion-content>
   <ion-footer-bar align-title="center" class="bg-orange">
     <div class="buttons">
-      <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 1" ng-click="setTab(tab - 1); scrollTop()">Previous</a>
+      <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 1" ng-click="setTab(esas_result.pain_result.pain === 0 && esas_result.pain_result.pain > 3? 3 : tab - 1); scrollTop()">Previous</a>
     </div>
     <span class="title">
       <rzslider rz-slider-model="tab - 2"
           rz-slider-options="progress.options" style="margin-top:12px" ng-show="tab > 2"></rzslider>
     </span>
     <div class="buttons">
-      <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(tab + 1); scrollTop()">Next</a>
+      <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(esas_result.pain_result.pain === 0? 7 : tab + 1); scrollTop()">Next</a>
     </div>
   </ion-footer-bar>
 </ion-view>

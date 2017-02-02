@@ -1,12 +1,12 @@
 angular.module('iComPAsS.controllers')
 
-.controller('PatientDetailCtrl', function($scope, $stateParams, PatientDetailService, TakeEsasService){
+.controller('PatientDetailCtrl', function($scope, $stateParams, UsersService, EsasService){
   $scope.showLoading();
 
   $scope.populatePatientDetail = function(){
     $scope.patient_detail = {};
 
-    PatientDetailService.get_patient_detail($stateParams.patientId).then(function(data) {
+    UsersService.get_patient_detail($stateParams.patientId).then(function(data) {
       // $scope.hideLoading();
 
       $scope.patient_detail = {
@@ -59,12 +59,12 @@ angular.module('iComPAsS.controllers')
       $scope.$broadcast('scroll.refreshComplete');
     });
 
-    PatientDetailService.get_esas_results($stateParams.patientId).then(function(data) {
+    EsasService.get_esas_results($stateParams.patientId).then(function(data) {
       $scope.hideLoading();
 
       $scope.chart = {
         labels: [],
-        series: TakeEsasService.get_pain_results(),
+        series: EsasService.get_pain_results(),
         data: [[],[],[],[],[],[],[],[],[]],
         options: {
           animation: false,

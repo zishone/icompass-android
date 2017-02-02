@@ -168,7 +168,7 @@ angular.module('iComPAsS.config')
     views: {
       'menuContent': {
         templateUrl: 'templates/sent-message-detail.html',
-        controller: 'MessageDetailCtrl'
+        controller: 'SentMessageDetailCtrl'
       }
     }
   })

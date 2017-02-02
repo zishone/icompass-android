@@ -1,13 +1,13 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ProfileCtrl', function($scope, ProfileService){
+.controller('ProfileCtrl', function($scope, UsersService){
   $scope.showLoading();
 
   $scope.populateProfile = function(){
     $scope.user_profile = {};
 
     if($scope.isPatient()){
-      ProfileService.get_patient_profile().then(function(data) {
+      UsersService.get_patient_profile().then(function(data) {
         $scope.hideLoading();
 
         $scope.user_profile = $scope.getBasicInfo(data);
@@ -42,7 +42,7 @@ angular.module('iComPAsS.controllers')
         $scope.$broadcast('scroll.refreshComplete');
       });
     }else if($scope.isDoctor()){
-      ProfileService.get_doctor_profile().then(function(data) {
+      UsersService.get_doctor_profile().then(function(data) {
         $scope.hideLoading();
 
         $scope.user_profile = $scope.getBasicInfo(data);

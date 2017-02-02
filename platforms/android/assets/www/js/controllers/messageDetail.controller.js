@@ -1,16 +1,16 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MessageDetailCtrl', function($scope, $stateParams, MessageDetailService){
+.controller('MessageDetailCtrl', function($scope, $stateParams, MessagesService){
   $scope.showLoading();
 
   $scope.populateMessageDetail = function(){
-    MessageDetailService.get_message($stateParams.messageId).then(function(data) {
+    MessagesService.get_message($stateParams.messageId).then(function(data) {
       $scope.hideLoading();
 
       $scope.message = data;
 
       //set message status to seen
-      MessageDetailService.seen_message($stateParams.messageId).then(function(){
+      MessagesService.seen_message($stateParams.messageId).then(function(){
         $scope.populateMenu();
       });
     })

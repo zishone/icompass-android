@@ -1,6 +1,6 @@
 angular.module('iComPAsS.services')
 
-.factory('TakeEsasService', function($http, $q, API){
+.factory('EsasService', function($http, $q, API){
   // $http.defaults.cache = true;
 
 
@@ -26,6 +26,14 @@ angular.module('iComPAsS.services')
     get_pain_types: function() {
       return pain_types;
     },
-    submit_esas: submit_esas
+    submit_esas: submit_esas,
+    get_esas_results: function(patientId) {
+      return $http.get(API.src + 'patients/esas/results/' + patientId)
+      .then(function successCallback(response) {
+        return response.data;
+      }, function errorCallback(response) {
+        console.log(response.statusText);
+      });
+    }
   };
 });

@@ -2,6 +2,9 @@
 Theme Name: BCI-Android
 Description: BCI-Android Designs
 Author: Anthony Jacob R. Porciuncula
+Co-authors: Garces, Zishran Julbert D.
+            Fernandez, Gabriel S.
+            Pineda, Cerjeff S.
 Email Address: jacobporci@gmail.com
 */
 
@@ -235,6 +238,10 @@ Email Address: jacobporci@gmail.com
 
 .padding-left{
   padding-left: 15%;
+}
+
+.full-height{
+  height: 100%;
 }
 
 

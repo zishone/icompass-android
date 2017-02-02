@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MessageDetailCtrl', function($scope, $stateParams, MessagesService){
+.controller('SentMessageDetailCtrl', function($scope, $stateParams, MessagesService){
   $scope.showLoading();
 
   $scope.populateMessageDetail = function(){
@@ -8,11 +8,6 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       $scope.message = data;
-
-      //set message status to seen
-      MessagesService.seen_message($stateParams.messageId).then(function(){
-        $scope.populateMenu();
-      });
     })
     .finally(function(){
       // Stop the ion-refresher from spinning
