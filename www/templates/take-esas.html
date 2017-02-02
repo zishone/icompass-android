@@ -3,22 +3,26 @@
     <div ng-show="!esas_enabled" class="bg-orange full-height">
       <h1 class="light text-center">Not Enabled</h1>
     </div>
-    <div ng-show="isSet(1) && esas_enabled"  class="bg-orange full-height">
-      <h1 class="light text-center">ESAS Enabled Please Choose Language</h1>
+    <div class="card bg-white" ng-show="isSet(1) && esas_enabled">
+      <h4 class="item item-divider light bg-white text-black text-center">ESAS Enabled Please Choose Language</h4>
       <div class="text-center">
-        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(tab + 1)">English</button>
-        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(tab + 1)">Tagalog</button>
+        <br>
+        <button class="button margin-left-right width-thirty bg-blue text-white Roboto-light" ng-click="setTab(tab + 1)">English</button>
+        <button class="button margin-left-right width-thirty bg-blue text-white Roboto-light" ng-click="setTab(tab + 1)">Tagalog</button>
       </div>
+      <br>
     </div>
-    <div ng-show="isSet(2) && esas_enabled" class="bg-orange full-height">
-      <h1 class="light text-center">Do You Feel Any Pain?</h1>
+    <div ng-show="isSet(2) && esas_enabled" class="card">
+      <h1 class="item item-divider light bg-white text-black text-center">Do You Feel Any Symptoms?</h1>
       <div class="text-center">
-        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(tab + 1)">Yes</button>
-        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(7)">No</button>
+        <br>
+        <button class="button margin-left-right width-twenty bg-blue text-white Roboto-light" ng-click="setTab(tab + 1)">Yes</button>
+        <button class="button margin-left-right width-twenty bg-blue text-white Roboto-light" ng-click="setTab(7)">No</button>
       </div>
+      <br>
     </div>
     <div ng-show="isSet(3) && esas_enabled">
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider text-center bg-white">
           Pain
         </div>
@@ -26,7 +30,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.pain" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider text-center bg-white">
           Nausea
         </div>
@@ -34,7 +38,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.nausea" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider text-center bg-white">
           Anxiety
         </div>
@@ -42,7 +46,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.anxiety" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider text-center bg-white">
           Depression
         </div>
@@ -50,7 +54,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.depression" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider text-center bg-white">
           Drowsiness
         </div>
@@ -58,7 +62,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.drowsiness" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider text-center bg-white">
           Lack of Apetite
         </div>
@@ -66,7 +70,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.lack_of_appetite" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider text-center bg-white">
           Wellbeing
         </div>
@@ -74,7 +78,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.wellbeing" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider text-center bg-white">
           Shortness of Breath
         </div>
@@ -82,7 +86,7 @@
           <rzslider rz-slider-model="esas_result.pain_result.shortness_of_breath" rz-slider-options="pain_slider.options"></rzslider>
         </div>
       </div>
-      <div class="#" ng-repeat="other_symptoms in esas_result.pain_result.other_symptoms">
+      <div class="card card-width" ng-repeat="other_symptoms in esas_result.pain_result.other_symptoms">
         <div class="item item-divider text-center">
           <label class="item item-input col-12">
             <span class="input-label">Enter Symptom:</span>
@@ -98,6 +102,7 @@
       <button type="button" name="button" class="button bg-blue  curve-all light" ng-click="addSymptom()">Add Symptom</button>
       <button type="button" name="button" class="button button-assertive curve-all" ng-click="removeSymptom()" ng-if="esas_result.pain_result.other_symptoms.length > 0">Remove Symptom</button>
       </div>
+      <br>
     </div>
     <div ng-show="isSet(4)">
       <div class="card">
@@ -125,16 +130,16 @@
       <button class="button button-block bg-light-orange curve-all" ng-click="submitEsas()">Submit ESAS</button>
     </div>
   </ion-content>
-  <ion-footer-bar align-title="center" class="bg-orange">
+  <ion-footer-bar align-title="center" class="bg-white shadow-bottom">
     <div class="buttons">
-      <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 1" ng-click="setTab(esas_result.pain_result.pain === 0 && esas_result.pain_result.pain > 3? 3 : tab - 1); scrollTop()">Previous</a>
+      <a class="button bg-orange text-white" type="button" href="" ng-show="tab > 1" ng-click="setTab(esas_result.pain_result.pain === 0 && esas_result.pain_result.pain > 3? 3 : tab - 1); scrollTop()">Previous</a>
     </div>
     <span class="title">
       <rzslider rz-slider-model="tab - 2"
           rz-slider-options="progress.options" style="margin-top:12px" ng-show="tab > 2"></rzslider>
     </span>
     <div class="buttons">
-      <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(esas_result.pain_result.pain === 0? 7 : tab + 1); scrollTop()">Next</a>
+      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(esas_result.pain_result.pain === 0? 7 : tab + 1); scrollTop()">Next</a>
     </div>
   </ion-footer-bar>
 </ion-view>

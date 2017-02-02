@@ -4,7 +4,7 @@
 
     <div class="bg-white item-thumbnail-left">
       <img src="{{patient_detail.image}}" alt=""/>
-      <h3 class="light">{{patient_detail.fullname}}</h3>
+      <h3 class="text-black">{{patient_detail.fullname}}</h3>
       <br>
     </div>
 
@@ -20,7 +20,7 @@
       </a>
     </div>
 
-    <div class="#" ng-show="isSet(1)">
+    <div class="card card-width" ng-show="isSet(1)">
       <div class="item item-divider bg-white text-black light">
         Personal Info
       </div>
@@ -39,7 +39,7 @@
     </div>
 
     <div ng-show="isSet(2)">
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider bg-white text-black light text-center">
           As of today
         </div>
@@ -50,7 +50,7 @@
     </div>
 
     <div ng-show="isSet(3)">
-      <div class="#">
+      <div class="card card-width">
         <div class="item item-divider bg-white light text-center">
           Pain Summary
         </div>

@@ -1,14 +1,14 @@
 <ion-view view-title="Doctor's Detail">
   <ion-content class="bg-grey">
     <!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateDoctorDetail()"></ion-refresher> -->
-
+    <div class="card width-card">
     <div class="bg-white item-thumbnail-left">
       <img src="{{doctor_detail.image}}" alt=""/>
       <h3 class="light text-black">{{doctor_detail.fullname}}</h3>
       <br>
     </div>
 
-    <div class="#" ng-repeat="info in doctor_detail.info">
+    <div class="card card-width" ng-repeat="info in doctor_detail.info">
       <div class="item item-divider bg-white text-black light">
         {{info.label}}
       </div>
@@ -16,5 +16,6 @@
         {{info.data}}
       </div>
     </div>
+  </div>
   </ion-content>
 </ion-view>
