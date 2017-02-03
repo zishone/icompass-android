@@ -4,9 +4,9 @@ angular.module('iComPAsS.controllers')
   $scope.showLoading();
 
   $scope.populateEsasResultDetail = function(){
-    $scope.pain_types = TakeEsasService.get_pain_types();
+    $scope.pain_types = EsasService.get_pain_types();
 
-    PatientDetailService.get_esas_results($stateParams.patientId).then(function(data) {
+    EsasService.get_esas_results($stateParams.patientId).then(function(data) {
       $scope.hideLoading();
 
       $scope.esas_result = data;
