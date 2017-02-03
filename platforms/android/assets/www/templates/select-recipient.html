@@ -1,12 +1,12 @@
 <ion-view view-title="Select Recipient">
-  <ion-content class="bg-light-orange">
+  <ion-content class="bg-grey">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateRecipients()"></ion-refresher>
 
-    <div class="bar bar-header item-input-inset">
-      <input type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
+    <div class="bg-white item-input-inset">
+      <input class="bg-grey" type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
     </div>
 
-    <div class="card" ng-repeat="patient in assigned_patients | filter:search" ng-show="isDoctor()">
+    <div class="#" ng-repeat="patient in assigned_patients | filter:search" ng-show="isDoctor()">
       <a href="#/menu/send-message/{{patient.p_id}}" class="noline">
         <div class="item item-text-wrap item-avatar item-icon-right">
           <img ng-src="{{patient.image}}">
@@ -17,7 +17,7 @@
       </a>
     </div>
 
-    <div class="card" ng-repeat="doctor in assigned_doctors | filter:search" ng-show="isPatient()">
+    <div class="card card-width" ng-repeat="doctor in assigned_doctors | filter:search" ng-show="isPatient()">
       <a href="#/menu/send-message/{{doctor.doc_id}}" class="noline">
         <div class="item item-text-wrap item-avatar item-icon-right">
           <img ng-src="{{doctor.image}}">

@@ -34,9 +34,7 @@ angular.module('iComPAsS.controllers')
           window.plugins.OneSignal.sendTags({user_id: AuthService.userID(), user_type: AuthService.role()});
         }
         //redirect to profile
-        $state.go('menu.profile', {}, {reload: true}).then(function(){
-          $ionicHistory.clearHistory();
-        });
+        $scope.disableBackStateGo('menu.profile');
       }
 
       // Clear loginData

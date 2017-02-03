@@ -20,14 +20,16 @@ Email Address: jacobporci@gmail.com
 /*COLORS*/
   /*BACKGROUND COLORS*/
   .bg-orange,
-  .bar.bg-orange{
-    background-color: #ff6d00;
+  .bar.bg-orange,
+  .bar,
+  .patient-details.tab-item.active{
+    background-color: #ff6d00 !important;
   }
   .bg-white{
-    background: #ffffff;
+    background: #ffffff !important;
   }
   .bg-grey{
-  	background-color: #eeeeee;
+  	background-color: #f2f2f2;
   }
   .bg-light-orange{
   	background-color: #FFFFDE;
@@ -95,8 +97,18 @@ Email Address: jacobporci@gmail.com
   .button-shadow{
     box-shadow: 0px 3px 5px rgba(0,0,0,0.05);
   }
+  .shadow-bottom{
+      box-shadow: 0px -1px 5px rgba(0,0,0,0.05);
+  }
   /*SHADOWS*/
   /*WIDTH*/
+  .card-width{
+    width: 100% !important;
+    margin: 20px auto !important;
+  }
+  .width-full{
+    width: 100%;
+  }
   .width-ninety{
     width: 90%;
   }
@@ -105,6 +117,16 @@ Email Address: jacobporci@gmail.com
   }
   .width-eightyfive{
     width: 86%;
+  }
+  .width-thirty{
+    width: 30%;
+  }
+  .width-twenty{
+    width: 15%;
+  }
+  .margin-left-right{
+    margin-left: 1%;
+    margin-right: 1%;
   }
   /*WIDTH*/
   .larger {
@@ -232,6 +254,11 @@ Email Address: jacobporci@gmail.com
     padding: 0 8%;
   }
   /*PROFILE-CARDS*/
+  /*TABS*/
+  .patient-details.item.active{
+    background:
+  }
+  /*TABS*/
 /*PROFILE STYLE*/
 
 /*Make fonts larger*/
@@ -273,7 +300,7 @@ Email Address: jacobporci@gmail.com
 }
 
 .full-height{
-  height: 100%;
+  height: 100vh;
 }
 
 
