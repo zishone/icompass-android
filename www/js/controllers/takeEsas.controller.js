@@ -6,11 +6,22 @@ angular.module('iComPAsS.controllers')
   UsersService.get_patient_profile().then(function(data) {
     $scope.hideLoading();
 
-    $scope.esas_enabled = data.profile.esas_enabled;
+    // $scope.esas_enabled = data.profile.esas_enabled;
+    $scope.esas_enabled = 1;
+
   });
 
   EsasService.get_esas_translations().then(function(data) {
     $scope.translations = data;
+    $scope.translations.symptoms_question = {
+      english: "Do You Feel Any Symptoms?",
+      tagalog: "Nakakaramdam ka ba ng kahit anong simptomas?"
+    };
+    $scope.translations.drowsiness = {
+      english: "Drowsiness",
+      tagalog: "Antukin"
+    };
+    console.log(data);
   });
 
   $scope.esas_result = {

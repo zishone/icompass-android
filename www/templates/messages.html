@@ -1,5 +1,5 @@
 <ion-view view-title="Messages">
-  <ion-content class="bg-light-orange">
+  <ion-content class="bg-grey">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateEveryMessages()"></ion-refresher>
 
     <div class="tabs tabs-striped tabs-top"  ng-show="isDoctor()">
@@ -11,20 +11,20 @@
       </a>
     </div>
 
-    <div class="bar bar-header item-input-inset">
-      <input type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
+    <div class="bg-white item-input-inset">
+      <input class="bg-grey" type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
     </div>
 
     <ion-list ng-show="isSet(1)">
       <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in received_messages | filter:search" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
         <span ng-if="message.is_read">
           <h2>{{message.fullname}}</h2>
-          <p>{{message.message}}</p>
+          <p class="Roboto-light">{{message.message}}</p>
         </span>
         <span ng-if="message.is_read === 0">
           <strong>
             <h2>{{message.fullname}}</h2>
-            <p>{{message.message}}</p>
+            <p class="Roboto-light">{{message.message}}</p>
           </strong>
         </span>
         <i class="icon ion-chevron-right icon-accessory"></i>
@@ -39,10 +39,10 @@
       </ion-item>
     </ion-list>
   </ion-content>
-  <ion-footer-bar align-title="center" class="bg-orange" ng-show="isDoctor()">
+  <ion-footer-bar align-title="center" class="bg-white shadow-bottom" ng-show="isDoctor()">
     <span class="title"></span>
     <div class="buttons">
-      <a class="button bg-light-orange curve-all" type="button" href="#/menu/select-recipient">Send Message</a>
+      <a class="button bg-blue text-white Roboto-light" type="button" href="#/menu/select-recipient">Send Message</a>
     </div>
   </ion-footer-bar>
 </ion-view>
