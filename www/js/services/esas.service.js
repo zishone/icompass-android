@@ -27,6 +27,14 @@ angular.module('iComPAsS.services')
       return pain_types;
     },
     submit_esas: submit_esas,
+    get_esas_translations: function() {
+      return $http.get(API.src + '/esas/translations')
+      .then(function successCallback(response) {
+        return response.data;
+      }, function errorCallback(response) {
+        console.log(response.statusText);
+      });
+    },
     get_esas_results: function(patientId) {
       return $http.get(API.src + 'patients/esas/results/' + patientId)
       .then(function successCallback(response) {

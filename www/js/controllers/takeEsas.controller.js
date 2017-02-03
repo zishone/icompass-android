@@ -1,7 +1,18 @@
 angular.module('iComPAsS.controllers')
 
-.controller('TakeEsasCtrl', function($scope, EsasService){
-  $scope.esas_enabled = true;
+.controller('TakeEsasCtrl', function($scope, UsersService, EsasService){
+  $scope.showLoading();
+
+  UsersService.get_patient_profile().then(function(data) {
+    $scope.hideLoading();
+
+    $scope.esas_enabled = data.profile.esas_enabled;
+  });
+
+  EsasService.get_esas_translations().then(function(data) {
+    $scope.translations = data;
+  });
+
   $scope.esas_result = {
     pain_result: {
       pain: 0,
@@ -110,6 +121,10 @@ angular.module('iComPAsS.controllers')
     pain_types: []
   };
 
+  $scope.setLanguage = function(language) {
+    $scope.language = language;
+  };
+
   $scope.anteriorColorSwitch = function(body_part_id){
     $scope.esas_result.diagrams[0].anterior[body_part_id] += 1;
     $scope.esas_result.diagrams[0].anterior[body_part_id] %= 4;
@@ -127,7 +142,7 @@ angular.module('iComPAsS.controllers')
   $scope.progress = {
     options: {
       floor: 1,
-      ceil: 5,
+      ceil: 7,
       showTicks: true,
       hidePointerLabels: true,
       hideLimitLabels: true,
@@ -146,8 +161,12 @@ angular.module('iComPAsS.controllers')
           return 'red';
       },
       floor: 0,
-      ceil: 10,
+      ceil: 10
     }
+  };
+
+  $scope.enableSliders = function() {
+    $scope.pain_slider.readOnly = false;
   };
 
   $scope.addSymptom = function() {
@@ -175,8 +194,6 @@ angular.module('iComPAsS.controllers')
 
   $scope.submitEsas = function() {
     $scope.showLoading();
-
-    console.log($scope.esas_result);
 
     EsasService.submit_esas($scope.esas_result).then(function(data) {
       $scope.hideLoading();

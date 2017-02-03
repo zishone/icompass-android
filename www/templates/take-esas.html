@@ -1,26 +1,26 @@
 <ion-view view-title="Take ESAS">
   <ion-content class="bg-grey">
-    <div ng-show="!esas_enabled" class="bg-orange full-height">
+    <div ng-if="!esas_enabled" class="bg-orange full-height">
       <h1 class="light text-center">Not Enabled</h1>
     </div>
-    <div ng-show="isSet(1) && esas_enabled"  class="bg-orange full-height">
-      <h1 class="light text-center">ESAS Enabled Please Choose Language</h1>
+    <div ng-if="isSet(1) && esas_enabled"  class="bg-orange full-height">
+      <h1 class="light text-center">Please Choose Language</h1>
       <div class="text-center">
-        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(tab + 1)">English</button>
-        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(tab + 1)">Tagalog</button>
+        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(tab + 1); scrollTop(); setLanguage('english')">English</button>
+        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(tab + 1); scrollTop(); setLanguage('tagalog')">Tagalog</button>
       </div>
     </div>
-    <div ng-show="isSet(2) && esas_enabled" class="bg-orange full-height">
+    <div ng-if="isSet(2) && esas_enabled" class="bg-orange full-height">
       <h1 class="light text-center">Do You Feel Any Pain?</h1>
       <div class="text-center">
-        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(tab + 1)">Yes</button>
-        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(7)">No</button>
+        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(tab + 1); scrollTop()">Yes</button>
+        <button class="button button-block bg-light-orange curve-all" ng-click="setTab(7); scrollTop()">No</button>
       </div>
     </div>
-    <div ng-show="isSet(3) && esas_enabled">
+    <div ng-if="isSet(3) && esas_enabled">
       <div class="#">
         <div class="item item-divider text-center bg-white">
-          Pain
+          {{translations.pain[language]}}
         </div>
         <div class="item item-text-wrap">
           <rzslider rz-slider-model="esas_result.pain_result.pain" rz-slider-options="pain_slider.options"></rzslider>
@@ -28,7 +28,7 @@
       </div>
       <div class="#">
         <div class="item item-divider text-center bg-white">
-          Nausea
+          {{translations.nausea[language]}}
         </div>
         <div class="item item-text-wrap">
           <rzslider rz-slider-model="esas_result.pain_result.nausea" rz-slider-options="pain_slider.options"></rzslider>
@@ -36,7 +36,7 @@
       </div>
       <div class="#">
         <div class="item item-divider text-center bg-white">
-          Anxiety
+          {{translations.anxiety[language]}}
         </div>
         <div class="item item-text-wrap">
           <rzslider rz-slider-model="esas_result.pain_result.anxiety" rz-slider-options="pain_slider.options"></rzslider>
@@ -44,7 +44,7 @@
       </div>
       <div class="#">
         <div class="item item-divider text-center bg-white">
-          Depression
+          {{translations.depression[language]}}
         </div>
         <div class="item item-text-wrap">
           <rzslider rz-slider-model="esas_result.pain_result.depression" rz-slider-options="pain_slider.options"></rzslider>
@@ -52,7 +52,7 @@
       </div>
       <div class="#">
         <div class="item item-divider text-center bg-white">
-          Drowsiness
+          {{translations.drowsiness[language]}}
         </div>
         <div class="item item-text-wrap">
           <rzslider rz-slider-model="esas_result.pain_result.drowsiness" rz-slider-options="pain_slider.options"></rzslider>
@@ -60,7 +60,7 @@
       </div>
       <div class="#">
         <div class="item item-divider text-center bg-white">
-          Lack of Apetite
+          {{translations.lack_of_appetite[language]}}
         </div>
         <div class="item item-text-wrap">
           <rzslider rz-slider-model="esas_result.pain_result.lack_of_appetite" rz-slider-options="pain_slider.options"></rzslider>
@@ -68,7 +68,7 @@
       </div>
       <div class="#">
         <div class="item item-divider text-center bg-white">
-          Wellbeing
+          {{translations.wellbeing[language]}}
         </div>
         <div class="item item-text-wrap">
           <rzslider rz-slider-model="esas_result.pain_result.wellbeing" rz-slider-options="pain_slider.options"></rzslider>
@@ -76,7 +76,7 @@
       </div>
       <div class="#">
         <div class="item item-divider text-center bg-white">
-          Shortness of Breath
+          {{translations.shortness_of_breath[language]}}
         </div>
         <div class="item item-text-wrap">
           <rzslider rz-slider-model="esas_result.pain_result.shortness_of_breath" rz-slider-options="pain_slider.options"></rzslider>
@@ -99,42 +99,104 @@
       <button type="button" name="button" class="button button-assertive curve-all" ng-click="removeSymptom()" ng-if="esas_result.pain_result.other_symptoms.length > 0">Remove Symptom</button>
       </div>
     </div>
-    <div ng-show="isSet(4)">
+    <div ng-if="isSet(4)">
       <div class="card">
         <div class="item item-text-wrap">
-          <ion-list>
-            <ion-item ng-repeat="pain_type in pain_types track by $index" item="item">
-              <label class="checkbox">
-                <input type="checkbox" ng-model="checked" ng-click="addPainType(pain_type, checked); $event.stopPropagation();">
-              </label>
+          <div class="list">
+            <ion-checkbox ng-repeat="pain_type in pain_types track by $index"
+                          ng-model="checked"
+                          ng-click="addPainType(pain_type, checked); $event.stopPropagation();">
               {{pain_type}}
-            </ion-item>
-          </ion-list>
+            </ion-checkbox>
+          </div>
         </div>
       </div>
     </div>
-    <div ng-show="isSet(5) && esas_enabled">
+    <div ng-if="isSet(5) && esas_enabled">
       <div ng-include="'templates/body-diagram/anterior.html'"></div>
     </div>
-    <div ng-show="isSet(6) && esas_enabled">
+    <div ng-if="isSet(6) && esas_enabled">
       <div ng-include="'templates/body-diagram/posterior.html'"></div>
     </div>
-    <div ng-show="isSet(7) && esas_enabled" class="bg-orange full-height">
+    <div ng-if="isSet(7) && esas_enabled" class="bg-orange full-height">
       <h1 class="light text-center">Almost Done!</h1>
+      <div class="card">
+        <div class="item item-text-wrap bg-orange light">
+          <div class="row">
+            <div class="col col-80">{{translations.pain[language]}}</div>
+            <div class="col">{{esas_result.pain_result.pain}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">Tiredness</div>
+            <div class="col">{{esas_result.pain_result.tiredness}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">{{translations.nausea[language]}}</div>
+            <div class="col">{{esas_result.pain_result.nausea}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">{{translations.anxiety[language]}}</div>
+            <div class="col">{{esas_result.pain_result.anxiety}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">{{translations.depression[language]}}</div>
+            <div class="col">{{esas_result.pain_result.depression}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">{{translations.drowsiness[language]}}</div>
+            <div class="col">{{esas_result.pain_result.drowsiness}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">{{translations.lack_of_appetite[language]}}</div>
+            <div class="col">{{esas_result.pain_result.lack_of_appetite}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">{{translations.wellbeing[language]}}</div>
+            <div class="col">{{esas_result.pain_result.wellbeing}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-80">{{translations.shortness_of_breath[language]}}</div>
+            <div class="col">{{esas_result.pain_result.shortness_of_breath}}</div>
+          </div>
+          <!-- if array then loop -->
+          <div class="row">
+            <div class="col col-80">{{translations.other_symptoms[language]}}:</div>
+          </div>
+          <div class="row padding-left" ng-repeat="other in esas_result.pain_result.other_symptoms">
+            <div class="col col-75">{{other.key}}</div>
+            <div class="col">{{other.value}}</div>
+          </div>
 
-      <button class="button button-block bg-light-orange curve-all" ng-click="submitEsas()">Submit ESAS</button>
+          <div class="row">
+            <div class="col col-80">{{translations.pain_types_most_painful[language]}}: </div>
+          </div>
+          <div class="row">
+            <ul class="unordered-lists padding-left">
+              <li ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}}</li>
+            </ul>
+          </div>
+          <br>
+          <div class="row" ng-init="bodyInit()">
+          <div ng-include="'templates/body-diagram/anterior.html'"></div>
+          <div ng-include="'templates/body-diagram/posterior.html'"></div>
+        </div>
+
+        </div>
+      </div>
+
     </div>
   </ion-content>
   <ion-footer-bar align-title="center" class="bg-orange">
     <div class="buttons">
-      <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 1" ng-click="setTab(esas_result.pain_result.pain === 0 && esas_result.pain_result.pain > 3? 3 : tab - 1); scrollTop()">Previous</a>
+      <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 1" ng-click="setTab(esas_result.pain_result.pain === 0 && tab > 3? 3 : tab - 1); scrollTop()">Back</a>
     </div>
     <span class="title">
-      <rzslider rz-slider-model="tab - 2"
-          rz-slider-options="progress.options" style="margin-top:12px" ng-show="tab > 2"></rzslider>
+      <rzslider rz-slider-model="tab"
+          rz-slider-options="progress.options" style="margin-top:12px" ng-show="esas_enabled"></rzslider>
     </span>
     <div class="buttons">
       <a class="button bg-light-orange curve-all" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(esas_result.pain_result.pain === 0? 7 : tab + 1); scrollTop()">Next</a>
+      <a class="button bg-light-orange curve-all" type="button" href="" ng-if="tab === 7" ng-click="submitEsas()">Submit</a>
     </div>
   </ion-footer-bar>
 </ion-view>
