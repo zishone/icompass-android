@@ -3,21 +3,21 @@
     <div ng-show="!esas_enabled" class="bg-orange full-height">
       <h1 class="light text-center">Not Enabled</h1>
     </div>
-    <div class="card bg-white" ng-show="isSet(1) && esas_enabled">
+    <div class="card card-width bg-white" ng-show="isSet(1) && esas_enabled">
       <h4 class="item item-divider light bg-white text-black text-center">ESAS Enabled Please Choose Language</h4>
       <div class="text-center">
         <br>
-        <button class="button margin-left-right width-thirty bg-blue text-white Roboto-light" ng-click="setTab(tab + 1)">English</button>
-        <button class="button margin-left-right width-thirty bg-blue text-white Roboto-light" ng-click="setTab(tab + 1)">Tagalog</button>
+        <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1)">English</button>
+        <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1)">Tagalog</button>
       </div>
       <br>
     </div>
-    <div ng-show="isSet(2) && esas_enabled" class="card">
+    <div ng-show="isSet(2) && esas_enabled" class="card card-width">
       <h1 class="item item-divider light bg-white text-black text-center">Do You Feel Any Symptoms?</h1>
       <div class="text-center">
         <br>
-        <button class="button margin-left-right width-twenty bg-blue text-white Roboto-light" ng-click="setTab(tab + 1)">Yes</button>
-        <button class="button margin-left-right width-twenty bg-blue text-white Roboto-light" ng-click="setTab(7)">No</button>
+        <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(tab + 1)">Yes</button>
+        <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(7)">No</button>
       </div>
       <br>
     </div>
@@ -106,7 +106,7 @@
     </div>
     <div ng-show="isSet(4)">
       <div class="card">
-        <div class="item item-text-wrap">
+        <div class="item ">
           <ion-list>
             <ion-item ng-repeat="pain_type in pain_types track by $index" item="item">
               <label class="checkbox">
@@ -118,16 +118,15 @@
         </div>
       </div>
     </div>
-    <div ng-show="isSet(5) && esas_enabled">
+    <div class="margin-body" ng-show="isSet(5) && esas_enabled">
       <div ng-include="'templates/body-diagram/anterior.html'"></div>
     </div>
-    <div ng-show="isSet(6) && esas_enabled">
+    <div class="margin-body" ng-show="isSet(6) && esas_enabled">
       <div ng-include="'templates/body-diagram/posterior.html'"></div>
     </div>
-    <div ng-show="isSet(7) && esas_enabled" class="bg-orange full-height">
-      <h1 class="light text-center">Almost Done!</h1>
-
-      <button class="button button-block bg-light-orange curve-all" ng-click="submitEsas()">Submit ESAS</button>
+    <div ng-show="isSet(7) && esas_enabled" class="card card-width bg-white full-height">
+      <h1 class="text-black text-center">Almost Done!</h1>
+      <button class="button width-thirty bg-blue curve-all text-white" ng-click="submitEsas()">Submit ESAS</button>
     </div>
   </ion-content>
   <ion-footer-bar align-title="center" class="bg-white shadow-bottom">
