@@ -23,6 +23,9 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.disableBackStateGo = function(state) {
+    $ionicHistory.nextViewOptions({
+      disableBack: true
+    });
     $state.go(state, {}, {reload: true}).then(function(){
       $ionicHistory.clearCache();
       $ionicHistory.clearHistory();
@@ -104,7 +107,7 @@ angular.module('iComPAsS.controllers')
   };
 
   $ionicPlatform.registerBackButtonAction(function(event) {
-    if($scope.tab > 1 && $state.current.name === "menu.patient-detail"){
+    if($scope.tab > 1 && state.current.name === "menu.take-esas"){
       $scope.setTab($scope.tab - 1);
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
       $scope.disableBackStateGo('menu.profile');

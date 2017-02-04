@@ -21,10 +21,6 @@ angular.module('iComPAsS', ['ionic', 'chart.js', 'rzModule', 'iComPAsS.constants
       StatusBar.styleDefault();
     }
 
-    //for tablet scaling
-    var initialScale = (screen.width>=768)? 2 : 1;
-    document.getElementById("viewport").setAttribute("content","initial-scale=" + initialScale + ", maximum-scale=2, user-scalable=no, width=device-width");
-
     //onsignal notification
     if (window.plugins && window.plugins.OneSignal) {
       window.plugins.OneSignal

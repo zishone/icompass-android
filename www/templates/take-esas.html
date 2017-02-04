@@ -3,28 +3,28 @@
     <div ng-if="!esas_enabled" class="bg-orange full-height">
       <h1 class="light text-center">Not Enabled</h1>
     </div>
-    <div class="card bg-white" ng-show="isSet(1) && esas_enabled">
+    <div class="card card-width bg-white" ng-show="isSet(1) && esas_enabled">
       <h4 class="item item-divider light bg-white text-black text-center">ESAS Enabled Please Choose Language</h4>
       <div class="text-center">
         <br>
-        <button class="button margin-left-right width-thirty bg-blue text-white Roboto-light" ng-click="setTab(tab + 1); setLanguage('english')">English</button>
-        <button class="button margin-left-right width-thirty bg-blue text-white Roboto-light" ng-click="setTab(tab + 1); setLanguage('tagalog')">Tagalog</button>
+        <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('english')">English</button>
+        <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('tagalog')">Tagalog</button>
+      </div>
+      <br>
+    </div>
+    <div ng-show="isSet(2) && esas_enabled" class="card card-width">
+      <h1 class="item item-divider light bg-white text-black text-center">Do You Feel Any Symptoms?</h1>
+      <div class="text-center">
+        <br>
+        <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(tab + 1)">Yes</button>
+        <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(7)">No</button>
       </div>
       <br>
     </div>
 
-    <div ng-show="isSet(2) && esas_enabled" class="card">
-      <h1 class="item item-divider light bg-white text-black text-center">Do You Feel Any Symptoms?</h1>
-      <div class="text-center">
-        <br>
-        <button class="button margin-left-right width-twenty bg-blue text-white Roboto-light" ng-click="setTab(tab + 1); scrollTop()">Yes</button>
-        <button class="button margin-left-right width-twenty bg-blue text-white Roboto-light" ng-click="setTab(7); scrollTop()">No</button>
-      </div>
-      <br>
-    </div>
     <div ng-show="isSet(3) && esas_enabled">
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white">
+        <div class="item item-divider text-center bg-white text-black">
           {{translations.pain[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -181,51 +181,51 @@
         </div>
       </div>
     </div>
-    <div ng-if="isSet(5) && esas_enabled">
+    <div class="margin-body" ng-show="isSet(5) && esas_enabled">
       <div ng-include="'templates/body-diagram/anterior.html'"></div>
     </div>
-    <div ng-if="isSet(6) && esas_enabled">
+    <div class="margin-body" ng-show="isSet(6) && esas_enabled">
       <div ng-include="'templates/body-diagram/posterior.html'"></div>
     </div>
-    <div ng-if="isSet(7) && esas_enabled" class="bg-orange full-height">
-      <h1 class="light text-center">Almost Done!</h1>
-      <div class="card">
-        <div class="item item-text-wrap bg-orange light">
+    <div ng-if="isSet(7) && esas_enabled" class="bg-grey full-height">
+      <div class="card card-width">
+        <div class="item item-divider bg-white text-black text-center">Almost Done!</div>
+        <div class="item item-text-wrap bg-white text-black">
           <div class="row">
             <div class="col col-80">{{translations.pain[language]}}</div>
-            <div class="col">{{esas_result.pain_result.pain}}</div>
+            <div class="col Roboto-light">{{esas_result.pain_result.pain}}</div>
           </div>
           <div class="row">
             <div class="col col-80">{{translations.tiredness[language]}}</div>
-            <div class="col">{{esas_result.pain_result.tiredness}}</div>
+            <div class="col Roboto-light">{{esas_result.pain_result.tiredness}}</div>
           </div>
           <div class="row">
             <div class="col col-80">{{translations.nausea[language]}}</div>
-            <div class="col">{{esas_result.pain_result.nausea}}</div>
+            <div class="col Roboto-light">{{esas_result.pain_result.nausea}}</div>
           </div>
           <div class="row">
             <div class="col col-80">{{translations.anxiety[language]}}</div>
-            <div class="col">{{esas_result.pain_result.anxiety}}</div>
+            <div class="col Roboto-light">{{esas_result.pain_result.anxiety}}</div>
           </div>
           <div class="row">
             <div class="col col-80">{{translations.drowsiness[language]}}</div>
-            <div class="col">{{esas_result.pain_result.drowsiness}}</div>
+            <div class="col Roboto-light">{{esas_result.pain_result.drowsiness}}</div>
           </div>
           <div class="row">
             <div class="col col-80">{{translations.depression[language]}}</div>
-            <div class="col">{{esas_result.pain_result.depression}}</div>
+            <div class="col Roboto-light">{{esas_result.pain_result.depression}}</div>
           </div>
           <div class="row">
             <div class="col col-80">{{translations.lack_of_appetite[language]}}</div>
-            <div class="col">{{esas_result.pain_result.lack_of_appetite}}</div>
+            <div class="col Roboto-light">{{esas_result.pain_result.lack_of_appetite}}</div>
           </div>
           <div class="row">
             <div class="col col-80">{{translations.wellbeing[language]}}</div>
-            <div class="col">{{esas_result.pain_result.wellbeing}}</div>
+            <div class="col Roboto-light">{{esas_result.pain_result.wellbeing}}</div>
           </div>
           <div class="row">
             <div class="col col-80">{{translations.shortness_of_breath[language]}}</div>
-            <div class="col">{{esas_result.pain_result.shortness_of_breath}}</div>
+            <div class="col Roboto-light">{{esas_result.pain_result.shortness_of_breath}}</div>
           </div>
           <!-- if array then loop -->
           <div class="row">
@@ -233,7 +233,7 @@
           </div>
           <div class="row padding-left" ng-repeat="other in esas_result.pain_result.other_symptoms">
             <div class="col col-75">{{other.key}}</div>
-            <div class="col">{{other.value}}</div>
+            <div class="col Roboto-light">{{other.value}}</div>
           </div>
 
           <div class="row">
@@ -241,7 +241,7 @@
           </div>
           <div class="row">
             <ul class="unordered-lists padding-left">
-              <li ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}}</li>
+              <li class="Roboto-light" ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}}</li>
             </ul>
           </div>
           <br>
@@ -252,7 +252,6 @@
 
         </div>
       </div>
-
     </div>
   </ion-content>
   <ion-footer-bar align-title="center" class="bg-white shadow-bottom">
@@ -265,7 +264,7 @@
     </span>
     <div class="buttons">
       <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(esas_result.pain_result.pain === 0? 7 : tab + 1); scrollTop()">Next</a>
-      <a class="button bg-orange text-white" type="button" href="" ng-if="tab === 7" ng-click="submitEsas()">Submit</a>
+      <a class="button bg-blue text-white" type="button" href="" ng-if="tab === 7" ng-click="submitEsas()">Submit</a>
     </div>
   </ion-footer-bar>
 </ion-view>
