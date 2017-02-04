@@ -3,13 +3,10 @@ angular.module('iComPAsS.controllers')
 .controller('TakeEsasCtrl', function($scope, $state, UsersService, EsasService){
   $scope.showLoading();
 
-  console.log($state.current.name === "menu.take-esas");
-
   UsersService.get_patient_profile().then(function(data) {
     $scope.hideLoading();
 
     // $scope.esas_enabled = data.profile.esas_enabled;
-    console.log(data.profile.esas_enabled);
     $scope.esas_enabled = 1;
 
   });
@@ -213,6 +210,22 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.pain_types = EsasService.get_pain_types();
+
+  $scope.skipToReview = function(){
+    $scope.esas_result.pain_result = {
+      pain: 0,
+      tiredness: 0,
+      nausea: 0,
+      anxiety: 0,
+      depression: 0,
+      drowsiness: 0,
+      lack_of_appetite: 0,
+      wellbeing: 0,
+      shortness_of_breath: 0,
+      other_symptoms: []
+    };
+    $scope.setTab(7);
+  };
 
   $scope.addPainType = function(pain_type, checked){
     var tempObj = {

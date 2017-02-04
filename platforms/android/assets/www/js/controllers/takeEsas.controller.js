@@ -3,8 +3,6 @@ angular.module('iComPAsS.controllers')
 .controller('TakeEsasCtrl', function($scope, $state, UsersService, EsasService){
   $scope.showLoading();
 
-  console.log($state.current.name === "menu.take-esas");
-
   UsersService.get_patient_profile().then(function(data) {
     $scope.hideLoading();
 
@@ -17,13 +15,32 @@ angular.module('iComPAsS.controllers')
     $scope.translations = data;
     $scope.translations.symptoms_question = {
       english: "Do You Feel Any Symptoms?",
-      tagalog: "Nakakaramdam ka ba ng kahit anong simptomas?"
+      tagalog: "Nakakaramdam ka ba ng kahit anong sintomas?"
     };
     $scope.translations.drowsiness = {
       english: "Drowsiness",
       tagalog: "Antukin"
     };
-    console.log(data);
+    $scope.translations.yes = {
+      english: "Yes",
+      tagalog: "Oo"
+    };
+    $scope.translations.no = {
+      english: "No",
+      tagalog: "Hindi"
+    };
+    $scope.translations.enter = {
+      english: "Enter symptom:",
+      tagalog: "Magpasok ng sintomas:"
+    };
+    $scope.translations.review = {
+      english: "Review",
+      tagalog: "Suriin"
+    };
+    $scope.translations.submit = {
+      english: "Submit",
+      tagalog: "i-Sumite"
+    };
   });
 
   $scope.esas_result = {
@@ -193,6 +210,22 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.pain_types = EsasService.get_pain_types();
+
+  $scope.skipToReview = function(){
+    $scope.esas_result.pain_result = {
+      pain: 0,
+      tiredness: 0,
+      nausea: 0,
+      anxiety: 0,
+      depression: 0,
+      drowsiness: 0,
+      lack_of_appetite: 0,
+      wellbeing: 0,
+      shortness_of_breath: 0,
+      other_symptoms: []
+    };
+    $scope.setTab(7);
+  };
 
   $scope.addPainType = function(pain_type, checked){
     var tempObj = {

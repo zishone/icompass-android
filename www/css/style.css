@@ -81,6 +81,9 @@ Email Address: jacobporci@gmail.com
   .border-bot-white{
     border-bottom: 2px solid white !important;
   }
+  .border-bot-white:focus{
+    border-bottom: 3px solid white !important;
+  }
   .border-circle{
     border-radius: 100px;
   }
@@ -97,6 +100,9 @@ Email Address: jacobporci@gmail.com
   }
   .font-eighteen{
     font-size: 18px !important;
+  }
+  .font-twenty{
+    font-size: 24px !important;
   }
   /*FONT-SIZE*/
   /*SHADOWS*/
@@ -159,6 +165,9 @@ Email Address: jacobporci@gmail.com
   /*PADDING*/
   .padding-top{
     padding-top: 10%;
+  }
+  .padding-top-sm{
+    padding-top: 5%;
   }
 /*PADDING*/
   .larger {
