@@ -151,6 +151,8 @@ angular.module('iComPAsS.controllers')
     pain_types: []
   };
 
+  $scope.tagalog_pain_types = [];
+
   $scope.setLanguage = function(language) {
     $scope.language = language;
   };
@@ -209,9 +211,28 @@ angular.module('iComPAsS.controllers')
     $scope.esas_result.pain_result.other_symptoms.splice(-1, 1);
   };
 
-  $scope.pain_types = EsasService.get_pain_types();
+  $scope.zeroPain = function(){
+    $scope.esas_result.pain_result.pain = 0;
+    $scope.esas_result.pain_types = [];
+    $scope.checked_sharp = false;
+    $scope.checked_stabbing = false;
+    $scope.checked_pricking = false;
+    $scope.checked_burning = false;
+    $scope.checked_boring = false;
+    $scope.checked_splitting = false;
+    $scope.checked_aching = false;
+    $scope.checked_shooting = false;
+    $scope.checked_throbbing = false;
+    $scope.checked_crushing = false;
+    $scope.checked_cutting = false;
+    $scope.checked_numbing = false;
+    $scope.checked_tiring = false;
+    $scope.checked_stretching = false;
+    $scope.checked_pressing = false;
+    $scope.setTab(7);
+  };
 
-  $scope.skipToReview = function(){
+  $scope.noSymptoms = function(){
     $scope.esas_result.pain_result = {
       pain: 0,
       tiredness: 0,
@@ -224,10 +245,10 @@ angular.module('iComPAsS.controllers')
       shortness_of_breath: 0,
       other_symptoms: []
     };
-    $scope.setTab(7);
+    $scope.zeroPain();
   };
 
-  $scope.addPainType = function(pain_type, checked){
+  $scope.addPainType = function(pain_type, tagalog_pain_type, checked){
     var tempObj = {
       type: pain_type
     };
@@ -236,6 +257,17 @@ angular.module('iComPAsS.controllers')
     }else{
       $scope.esas_result.pain_types.splice($scope.esas_result.pain_types.indexOf(tempObj), 1);
     }
+
+    var tagalog_tempObj = {
+      type: tagalog_pain_type
+    };
+    if(checked){
+      $scope.tagalog_pain_types.push(tagalog_tempObj);
+    }else{
+      $scope.tagalog_pain_types.splice($scope.esas_result.pain_types.indexOf(tagalog_tempObj), 1);
+    }
+
+    console.log(checked);
   };
 
   $scope.submitEsas = function() {
