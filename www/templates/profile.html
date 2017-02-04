@@ -5,17 +5,17 @@
     <div class="bg-grey profile-header">
       <div class="profile-main">
         <img src="{{user_profile.image}}" alt=""/>
-        <h3 class="text-black text-shadow">{{user_profile.fullname}}</h3>
+        <h3 class="text-black text-shadow Raleway">{{user_profile.fullname}}</h3>
       </div>
       <br>
     </div>
 
     <div class="profile-tab tabs tabs-striped tabs-top">
-      <a class="left tab-item text-white Roboto-light" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
+      <a class="left tab-item text-white Raleway-light" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
         Personal
         <!-- <i class="icon ion-person"></i> -->
       </a>
-      <a class="right tab-item text-white Roboto-light" ng-class="{ active: isSet(2) }" ng-click="setTab(2)">
+      <a class="right tab-item text-white Raleway-light" ng-class="{ active: isSet(2) }" ng-click="setTab(2)">
         More Details
         <!-- <i class="icon ion-more"></i> -->
       </a>
@@ -23,7 +23,7 @@
 
     <div class="card card-width" ng-show="isSet(1)">
       <div class="item item-divider bg-white text-black light">
-        <h2 class="bold text-black text-center margin-botop card-header Roboto-regular">Personal Information</h2>
+        <h2 class="bold text-black text-center margin-botop card-header Raleway">Personal Information</h2>
       </div>
       <div class="item item-text-wrap">
         <ion-list >
@@ -42,7 +42,7 @@
     <div ng-show="isSet(2)">
       <div class="card card-width" ng-repeat="info in user_profile.more">
         <div class="item item-divider bg-white text-black light">
-          <span class="text text-black card-header">{{info.label}}</span>
+          <span class="text text-black card-header Raleway">{{info.label}}</span>
         </div>
         <div class="item item-text-wrap">
           <div class="row" ng-repeat="sub_info in info.data track by $index">
