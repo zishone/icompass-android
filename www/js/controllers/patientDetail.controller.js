@@ -102,10 +102,9 @@ angular.module('iComPAsS.controllers')
           }
         }
       };
-      console.log(data);
       for (var i = 0; i < data.length; i++) {
-        var date = new Date(data[i].dateanswered);
-        $scope.chart.labels.push(date.getUTCDate() + ' ' + $scope.months[date.getMonth()] + ' ' + date.getFullYear());
+        var date = moment(data[i].dateanswered);
+        $scope.chart.labels.push(date.format("D MMM YYYY"));
         $scope.chart.data[0].push(JSON.parse(data[i].pain_result).pain);
         $scope.chart.data[1].push(JSON.parse(data[i].pain_result).tiredness);
         $scope.chart.data[2].push(JSON.parse(data[i].pain_result).nausea);

@@ -16,20 +16,14 @@ angular.module('iComPAsS.controllers')
 
     // Change state into login
     $state.go('login', {}, {reload: true}).then(function(){
-      $ionicHistory.clearCache();
-      $ionicHistory.clearHistory();
+      $scope.clearBackView();
       $window.location.reload();
     });
   };
 
-  $scope.disableBackStateGo = function(state) {
-    $ionicHistory.nextViewOptions({
-      disableBack: true
-    });
-    $state.go(state, {}, {reload: true}).then(function(){
-      $ionicHistory.clearCache();
-      $ionicHistory.clearHistory();
-    });
+  $scope.clearBackView = function() {
+    $ionicHistory.clearCache();
+    $ionicHistory.clearHistory();
   };
 
   $scope.showLoading = function(){
@@ -100,8 +94,10 @@ angular.module('iComPAsS.controllers')
     }
 
     try {
-      document.getElementById(body_part_id).setAttribute('fill', color);
-      document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+      for (var i = 0; i < document.getElementsByClassName(body_part_id).length; i++) {
+        document.getElementsByClassName(body_part_id)[i].setAttribute('fill', color);
+        document.getElementsByClassName(body_part_id)[i].setAttribute('fill-opacity', opacity);
+      }
     }
     catch(err) {}
   };
@@ -110,7 +106,12 @@ angular.module('iComPAsS.controllers')
     if($scope.tab > 1 && state.current.name === "menu.take-esas"){
       $scope.setTab($scope.tab - 1);
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
-      $scope.disableBackStateGo('menu.profile');
+      $ionicHistory.nextViewOptions({
+        disableBack: true
+      });
+      $state.go('menu.profile').then(function functionName() {
+        $scope.clearBackView();
+      });
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor > 0) {
       $ionicHistory.goBack();
     }else{

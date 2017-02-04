@@ -34,7 +34,9 @@ angular.module('iComPAsS.controllers')
           window.plugins.OneSignal.sendTags({user_id: AuthService.userID(), user_type: AuthService.role()});
         }
         //redirect to profile
-        $scope.disableBackStateGo('menu.profile');
+        $scope.go('menu.profile').then(function() {
+          $scope.clearBackView();
+        });
       }
 
       // Clear loginData

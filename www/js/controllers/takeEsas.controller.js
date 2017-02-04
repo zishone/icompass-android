@@ -7,6 +7,7 @@ angular.module('iComPAsS.controllers')
     $scope.hideLoading();
 
     // $scope.esas_enabled = data.profile.esas_enabled;
+    console.log(data.profile.esas_enabled);
     $scope.esas_enabled = 1;
 
   });
@@ -15,11 +16,31 @@ angular.module('iComPAsS.controllers')
     $scope.translations = data;
     $scope.translations.symptoms_question = {
       english: "Do You Feel Any Symptoms?",
-      tagalog: "Nakakaramdam ka ba ng kahit anong simptomas?"
+      tagalog: "Nakakaramdam ka ba ng kahit anong sintomas?"
     };
     $scope.translations.drowsiness = {
       english: "Drowsiness",
       tagalog: "Antukin"
+    };
+    $scope.translations.yes = {
+      english: "Yes",
+      tagalog: "Oo"
+    };
+    $scope.translations.no = {
+      english: "No",
+      tagalog: "Hindi"
+    };
+    $scope.translations.enter = {
+      english: "Enter symptom:",
+      tagalog: "Magpasok ng sintomas:"
+    };
+    $scope.translations.review = {
+      english: "Review",
+      tagalog: "Suriin"
+    };
+    $scope.translations.submit = {
+      english: "Submit",
+      tagalog: "i-Sumite"
     };
   });
 
@@ -204,7 +225,7 @@ angular.module('iComPAsS.controllers')
 
   $scope.submitEsas = function() {
     $scope.showLoading();
-    
+
     EsasService.submit_esas($scope.esas_result).then(function(data) {
       $scope.hideLoading();
 

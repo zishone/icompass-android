@@ -13,11 +13,11 @@
       <br>
     </div>
     <div ng-show="isSet(2) && esas_enabled" class="card card-width">
-      <h1 class="item item-divider light bg-white text-black text-center">Do You Feel Any Symptoms?</h1>
+      <h1 class="item item-divider light bg-white text-black text-center">{{translations.symptoms_question[language]}}</h1>
       <div class="text-center">
         <br>
-        <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(tab + 1)">Yes</button>
-        <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(7)">No</button>
+        <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(tab + 1)">{{translations.yes[language]}}</button>
+        <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(7)">{{translations.no[language]}}</button>
       </div>
       <br>
     </div>
@@ -98,7 +98,7 @@
       <div class="card card-width" ng-repeat="other_symptoms in esas_result.pain_result.other_symptoms">
         <div class="item item-divider text-center">
           <label class="item item-input col-12">
-            <span class="input-label">Enter Symptom:</span>
+            <span class="input-label">{{translations.enter[language]}}</span>
             <input type="text" ng-model="other_symptoms.key">
           </label>
         </div>
@@ -187,9 +187,9 @@
     <div class="margin-body" ng-show="isSet(6) && esas_enabled">
       <div ng-include="'templates/body-diagram/posterior.html'"></div>
     </div>
-    <div ng-if="isSet(7) && esas_enabled" class="bg-grey full-height">
+    <div ng-show="isSet(7) && esas_enabled" class="bg-grey full-height">
       <div class="card card-width">
-        <div class="item item-divider bg-white text-black text-center">Almost Done!</div>
+        <div class="item item-divider bg-white text-black text-center">{{translations.review[language]}}</div>
         <div class="item item-text-wrap bg-white text-black">
           <div class="row">
             <div class="col col-80">{{translations.pain[language]}}</div>
@@ -237,7 +237,7 @@
           </div>
 
           <div class="row">
-            <div class="col col-80">{{translations.paint_types_most_painful[language]}}: </div>
+            <div class="col">{{translations.paint_types_most_painful[language]}}: </div>
           </div>
           <div class="row">
             <ul class="unordered-lists padding-left">
@@ -245,10 +245,10 @@
             </ul>
           </div>
           <br>
-          <!-- <div class="row" ng-init="bodyInit()">
-          <div ng-include="'templates/body-diagram/anterior.html'"></div>
-          <div ng-include="'templates/body-diagram/posterior.html'"></div> -->
-        </div>
+          <div class="row" ng-click="$event.stopPropagation()">
+            <div ng-include="'templates/body-diagram/anterior.html'"></div>
+            <div ng-include="'templates/body-diagram/posterior.html'"></div>
+          </div>
 
         </div>
       </div>
@@ -256,15 +256,15 @@
   </ion-content>
   <ion-footer-bar align-title="center" class="bg-white shadow-bottom">
     <div class="buttons">
-      <a class="button bg-orange text-white" type="button" href="" ng-show="tab > 1" ng-click="setTab(esas_result.pain_result.pain === 0 && tab > 3? 3 : tab - 1); scrollTop()">Back</a>
+      <a class="button bg-orange text-white" type="button" href="" ng-show="tab > 1" ng-click="setTab(esas_result.pain_result.pain === 0 && tab > 3? 3 : tab - 1); scrollTop()">&nbsp;&nbsp;<ion-icon class="icon ion-arrow-left-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
     </div>
     <span class="title">
       <rzslider rz-slider-model="tab"
           rz-slider-options="progress.options" style="margin-top:12px" ng-show="esas_enabled"></rzslider>
     </span>
     <div class="buttons">
-      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(esas_result.pain_result.pain === 0? 7 : tab + 1); scrollTop()">Next</a>
-      <a class="button bg-blue text-white" type="button" href="" ng-if="tab === 7" ng-click="submitEsas()">Submit</a>
+      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(esas_result.pain_result.pain === 0? 7 : tab + 1); scrollTop()">&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;</a>
+      <a class="button bg-blue text-white" type="button" href="" ng-if="tab === 7" ng-click="submitEsas()">{{translations.submit[language]}}</a>
     </div>
   </ion-footer-bar>
 </ion-view>
