@@ -87,8 +87,8 @@ Email Address: jacobporci@gmail.com
   .border-bot-black{
     border-bottom: 2px solid #f2f2f2 !important;
   }
-  .border-bot-black.active{
-    border-bottom: 2px solid black !important;
+  .border-bot-black:focus{
+    border-bottom: 3px solid #ff6d00 !important;
   }
   /*BORDER*/
   /*FONT-SIZE*/
