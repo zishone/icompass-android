@@ -16,13 +16,21 @@ angular.module('iComPAsS.controllers')
 
     // Change state into login
     $state.go('login', {}, {reload: true}).then(function(){
+<<<<<<< HEAD
       scope.clearBackView();
+=======
+      $scope.clearBackView();
+>>>>>>> 79b0d6722bfe755943c891843a7fbbf12ea363eb
       $window.location.reload();
     });
   };
 
+<<<<<<< HEAD
 
   $scope.clearBackView = function(){
+=======
+  $scope.clearBackView = function() {
+>>>>>>> 79b0d6722bfe755943c891843a7fbbf12ea363eb
     $ionicHistory.clearCache();
     $ionicHistory.clearHistory();
   };
@@ -95,8 +103,10 @@ angular.module('iComPAsS.controllers')
     }
 
     try {
-      document.getElementById(body_part_id).setAttribute('fill', color);
-      document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+      for (var i = 0; i < document.getElementsByClassName(body_part_id).length; i++) {
+        document.getElementsByClassName(body_part_id)[i].setAttribute('fill', color);
+        document.getElementsByClassName(body_part_id)[i].setAttribute('fill-opacity', opacity);
+      }
     }
     catch(err) {}
   };
@@ -108,8 +118,13 @@ angular.module('iComPAsS.controllers')
       $ionicHistory.nextViewOptions({
         disableBack: true
       });
+<<<<<<< HEAD
       $state.go('menu.profile').then(function() {
         scope.clearBackView();
+=======
+      $state.go('menu.profile').then(function functionName() {
+        $scope.clearBackView();
+>>>>>>> 79b0d6722bfe755943c891843a7fbbf12ea363eb
       });
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor > 0) {
       $ionicHistory.goBack();
