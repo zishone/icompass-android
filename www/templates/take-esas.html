@@ -256,14 +256,14 @@
   </ion-content>
   <ion-footer-bar align-title="center" class="bg-white shadow-bottom">
     <div class="buttons">
-      <a class="button bg-orange text-white" type="button" href="" ng-show="tab > 1" ng-click="setTab(esas_result.pain_result.pain === 0 && tab > 3? 3 : tab - 1); scrollTop()">&nbsp;&nbsp;<ion-icon class="icon ion-arrow-left-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
+      <a class="button bg-orange text-white" type="button" href="" ng-show="tab > 1" ng-click="setTab(esas_result.pain_result.pain === 0 && tab > 3? 3 : tab - 1); scrollTop()">&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-left-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
     </div>
     <span class="title">
       <rzslider rz-slider-model="tab"
           rz-slider-options="progress.options" style="margin-top:12px" ng-show="esas_enabled"></rzslider>
     </span>
     <div class="buttons">
-      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(esas_result.pain_result.pain === 0? 7 : tab + 1); scrollTop()">&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;</a>
+      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="setTab(esas_result.pain_result.pain === 0? 7 : tab + 1); scrollTop()">&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
       <a class="button bg-blue text-white" type="button" href="" ng-if="tab === 7" ng-click="submitEsas()">{{translations.submit[language]}}</a>
     </div>
   </ion-footer-bar>
