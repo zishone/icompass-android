@@ -106,6 +106,7 @@ angular.module('iComPAsS.controllers')
   };
 
   $ionicPlatform.registerBackButtonAction(function(event) {
+    $scope.setTab(1);
     if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
       $ionicHistory.nextViewOptions({
         disableBack: true
