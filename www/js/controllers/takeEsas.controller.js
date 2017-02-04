@@ -21,7 +21,6 @@ angular.module('iComPAsS.controllers')
       english: "Drowsiness",
       tagalog: "Antukin"
     };
-    console.log(data);
   });
 
   $scope.esas_result = {
