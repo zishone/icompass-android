@@ -1,7 +1,7 @@
 <ion-view view-title="Doctor's Detail">
   <ion-content class="bg-grey">
     <!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateDoctorDetail()"></ion-refresher> -->
-
+    <div class="card card-width">
     <div class="bg-white item-thumbnail-left">
       <img src="{{doctor_detail.image}}" alt=""/>
       <h3 class="light text-black">{{doctor_detail.fullname}}</h3>
@@ -16,5 +16,6 @@
         {{info.data}}
       </div>
     </div>
+  </div>
   </ion-content>
 </ion-view>

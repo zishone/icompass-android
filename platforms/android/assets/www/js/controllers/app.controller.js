@@ -16,12 +16,15 @@ angular.module('iComPAsS.controllers')
 
     // Change state into login
     $state.go('login', {}, {reload: true}).then(function(){
+      $ionicHistory.clearCache();
       $ionicHistory.clearHistory();
+      $window.location.reload();
     });
   };
 
   $scope.disableBackStateGo = function(state) {
     $state.go(state, {}, {reload: true}).then(function(){
+      $ionicHistory.clearCache();
       $ionicHistory.clearHistory();
     });
   };
