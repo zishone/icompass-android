@@ -16,13 +16,15 @@ angular.module('iComPAsS.controllers')
 
     // Change state into login
     $state.go('login', {}, {reload: true}).then(function(){
-      scope.clearBackView();
+
+      $scope.clearBackView();
+
       $window.location.reload();
     });
   };
 
 
-  $scope.clearBackView = function(){
+  $scope.clearBackView = function() {
     $ionicHistory.clearCache();
     $ionicHistory.clearHistory();
   };
@@ -95,16 +97,16 @@ angular.module('iComPAsS.controllers')
     }
 
     try {
-      document.getElementById(body_part_id).setAttribute('fill', color);
-      document.getElementById(body_part_id).setAttribute('fill-opacity', opacity);
+      for (var i = 0; i < document.getElementsByClassName(body_part_id).length; i++) {
+        document.getElementsByClassName(body_part_id)[i].setAttribute('fill', color);
+        document.getElementsByClassName(body_part_id)[i].setAttribute('fill-opacity', opacity);
+      }
     }
     catch(err) {}
   };
 
   $ionicPlatform.registerBackButtonAction(function(event) {
-    if($scope.tab > 1 && state.current.name === "menu.take-esas"){
-      $scope.setTab($scope.tab - 1);
-    }else if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
+    if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
       $ionicHistory.nextViewOptions({
         disableBack: true
       });
