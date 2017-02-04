@@ -16,20 +16,15 @@ angular.module('iComPAsS.controllers')
 
     // Change state into login
     $state.go('login', {}, {reload: true}).then(function(){
-      $ionicHistory.clearCache();
-      $ionicHistory.clearHistory();
+      scope.clearBackView();
       $window.location.reload();
     });
   };
 
-  $scope.disableBackStateGo = function(state) {
-    $ionicHistory.nextViewOptions({
-      disableBack: true
-    });
-    $state.go(state, {}, {reload: true}).then(function(){
-      $ionicHistory.clearCache();
-      $ionicHistory.clearHistory();
-    });
+
+  $scope.clearBackView = function(){
+    $ionicHistory.clearCache();
+    $ionicHistory.clearHistory();
   };
 
   $scope.showLoading = function(){
@@ -110,7 +105,12 @@ angular.module('iComPAsS.controllers')
     if($scope.tab > 1 && state.current.name === "menu.take-esas"){
       $scope.setTab($scope.tab - 1);
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
-      $scope.disableBackStateGo('menu.profile');
+      $ionicHistory.nextViewOptions({
+        disableBack: true
+      });
+      $state.go('menu.profile').then(function() {
+        scope.clearBackView();
+      });
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor > 0) {
       $ionicHistory.goBack();
     }else{

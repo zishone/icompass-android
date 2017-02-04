@@ -1,7 +1,9 @@
 angular.module('iComPAsS.controllers')
 
-.controller('TakeEsasCtrl', function($scope, UsersService, EsasService){
+.controller('TakeEsasCtrl', function($scope, $state, UsersService, EsasService){
   $scope.showLoading();
+
+  console.log($state.current.name === "menu.take-esas");
 
   UsersService.get_patient_profile().then(function(data) {
     $scope.hideLoading();

@@ -12,7 +12,9 @@ angular.module('iComPAsS.controllers')
 
         $scope.alertPopup('Success!', 'You have changed your password.');
 
-        $scope.disableBackStateGo('login');
+        $state.go('login').then(function() {
+          scope.clearBackView();
+        });
       }, function(err) {
         $scope.hideLoading();
 

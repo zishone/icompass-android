@@ -2,8 +2,8 @@
   <ion-content class="bg-grey">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateListOfDoctors()"></ion-refresher>
 
-    <div class="bar bar-header item-input-inset">
-      <input type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
+    <div class="bg-white item-input-inset">
+      <input class="bg-grey" type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
     </div>
 
     <div class="#" ng-repeat="doctor in assigned_doctors | filter:search">
