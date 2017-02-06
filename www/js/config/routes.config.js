@@ -64,6 +64,16 @@ angular.module('iComPAsS.config')
     }
   })
 
+  .state('menu.take-phq', {
+    url: '/take-phq',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/take-phq.html',
+        controller: 'TakePhqCtrl'
+      }
+    }
+  })
+
   .state('menu.list-of-doctors', {
     url: '/list-of-doctors',
     views: {

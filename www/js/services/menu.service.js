@@ -26,6 +26,11 @@ angular.module('iComPAsS.services')
             'url': '#/menu/take-esas'
           },
           {
+            'icon': 'ion-ios-body',
+            'text': 'Take PHQ',
+            'url': '#/menu/take-phq'
+          },
+          {
             'icon': 'ion-ios-people',
             'text': 'List of Doctors',
             'url': '#/menu/list-of-doctors'
