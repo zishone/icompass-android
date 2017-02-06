@@ -2,9 +2,11 @@
 Theme Name: BCI-Android
 Description: BCI-Android Designs
 Author: Anthony Jacob R. Porciuncula
+Logo by: Judith Ann S. Talania
 Co-authors: Garces, Zishran Julbert D.
             Fernandez, Gabriel S.
             Pineda, Cerjeff S.
+
 Email Address: jacobporci@gmail.com
 */
 
@@ -111,6 +113,12 @@ textarea{
   }
   /*BORDER*/
   /*FONT-SIZE*/
+  .font-twelve{
+    font-size: 12px !important;
+  }
+  .font-fifteen{
+    font-size: 14.5px !important;
+  }
   .font-sixteen{
     font-size: 16px !important;
   }
@@ -118,9 +126,14 @@ textarea{
     font-size: 18px !important;
   }
   .font-twenty{
-    font-size: 24px !important;
+    font-size: 20px !important;
   }
   /*FONT-SIZE*/
+  /*FONT-WEIGHT*/
+  .fw-400{
+    font-weight: 400 !important;
+  }
+  /*FONT-WEIGHT*/
   /*SHADOWS*/
   .text-shadow{
     text-shadow: 1px 1px 5px rgba(0,0,0,0.05);
@@ -154,6 +167,9 @@ textarea{
   }
   .width-eightyfive{
     width: 86%;
+  }
+  .width-seventy{
+    width: 70%;
   }
   .width-thirty{
     width: 30%;
@@ -292,11 +308,11 @@ textarea{
     z-index: 100;
   }
   .profile-tab .left.active{
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     box-shadow: 3px 0px 5px rgba(0,0,0,0.1);
   }
   .profile-tab .right.active{
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     box-shadow: -3px 0px 5px rgba(0,0,0,0.1);
   }
   .profile-tab a{
@@ -384,3 +400,25 @@ textarea{
     position: fixed;
   }
 }​
+
+#instructions-paintype{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.margin-instructions{
+  margin-top: 110px;
+}
+.yellow{
+  color: yellow;
+}
+.orange{
+  color: orange;
+}
+.red{
+  color: red
+}
+.white{
+  color: white;
+}
