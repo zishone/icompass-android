@@ -8,7 +8,9 @@ Co-authors: Garces, Zishran Julbert D.
 Email Address: jacobporci@gmail.com
 */
 
-
+textarea{
+  resize: none;
+}
 .Roboto-light{
   font-family: 'Roboto', sans-serif;
   font-weight: 300 !important;
@@ -16,6 +18,14 @@ Email Address: jacobporci@gmail.com
 .Roboto-regular{
   font-family: 'Roboto', sans-serif;
   font-weight: 400 !important;
+}
+.Raleway-light{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300 !important;
+}
+.Raleway, .title{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600 !important;
 }
 /*COLORS*/
   /*BACKGROUND COLORS*/
@@ -81,14 +91,23 @@ Email Address: jacobporci@gmail.com
   .border-bot-white{
     border-bottom: 2px solid white !important;
   }
+  .border-bot-white:focus{
+    border-bottom: 3px solid white !important;
+  }
   .border-circle{
     border-radius: 100px;
   }
   .border-bot-black{
     border-bottom: 2px solid #f2f2f2 !important;
   }
-  .border-bot-black.active{
-    border-bottom: 2px solid black !important;
+  .border-bot-black:focus{
+    border-bottom: 3px solid #ff6d00 !important;
+  }
+  .border-all{
+    border: .5px solid rgba(0,0,0,0.1);
+  }
+  .border-all:focus{
+    border: 2px solid #ff6d00;
   }
   /*BORDER*/
   /*FONT-SIZE*/
@@ -97,6 +116,9 @@ Email Address: jacobporci@gmail.com
   }
   .font-eighteen{
     font-size: 18px !important;
+  }
+  .font-twenty{
+    font-size: 24px !important;
   }
   /*FONT-SIZE*/
   /*SHADOWS*/
@@ -160,6 +182,12 @@ Email Address: jacobporci@gmail.com
   .padding-top{
     padding-top: 10%;
   }
+  .padding-top-sm{
+    padding-top: 5%;
+  }
+  .padding-all{
+    padding: 3% 3%;
+  }
 /*PADDING*/
   .larger {
       font-size: larger;
@@ -168,7 +196,9 @@ Email Address: jacobporci@gmail.com
     display: none;
   }
 /*GENERAL STYLES*/
-
+    .line-height{
+      line-height: 2.5;
+    }
           /* login form design */
           .login-input{
             width: 92%;
@@ -262,11 +292,11 @@ Email Address: jacobporci@gmail.com
     z-index: 100;
   }
   .profile-tab .left.active{
-    font-weight: 400 !important;
+    font-weight: 600 !important;
     box-shadow: 3px 0px 5px rgba(0,0,0,0.1);
   }
   .profile-tab .right.active{
-    font-weight: 400 !important;
+    font-weight: 600 !important;
     box-shadow: -3px 0px 5px rgba(0,0,0,0.1);
   }
   .profile-tab a{
