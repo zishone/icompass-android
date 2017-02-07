@@ -105,6 +105,13 @@ angular.module('iComPAsS.controllers')
     catch(err) {}
   };
 
+  $scope.preventClick = function(e) {
+    if (e.target.tagName === 'polygon') {
+      console.log(e.target.tagName);
+      return;
+    }
+  };
+
   $ionicPlatform.registerBackButtonAction(function(event) {
     if ($state.current.name === "menu.profile") {
       navigator.app.exitApp();

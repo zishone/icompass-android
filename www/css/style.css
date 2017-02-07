@@ -366,6 +366,7 @@ textarea{
   height: 100vh;
 }
 
+/*tablet scaling issue fix*/
 #spinnerGif{
   position: relative;
   top: 40vh;
