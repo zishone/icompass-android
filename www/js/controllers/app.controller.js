@@ -110,9 +110,7 @@ angular.module('iComPAsS.controllers')
       navigator.app.exitApp();
     }
 
-    if ($scope.tab > 1) {
-      $scope.setTab(1);
-    }else if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
+    if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
       $ionicHistory.nextViewOptions({
         disableBack: true
       });
