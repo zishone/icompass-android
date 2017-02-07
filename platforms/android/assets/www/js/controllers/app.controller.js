@@ -105,24 +105,22 @@ angular.module('iComPAsS.controllers')
     catch(err) {}
   };
 
+  $scope.goHome = function() {
+    $ionicHistory.nextViewOptions({
+      disableBack: true
+    });
+    $state.go('menu.profile').then(function() {
+      $scope.clearBackView();
+    });
+  };
+
   $ionicPlatform.registerBackButtonAction(function(event) {
     if ($state.current.name === "menu.profile") {
       navigator.app.exitApp();
     }
 
-<<<<<<< HEAD
-    if ($scope.tab > 1) {
-      $scope.setTab(1);
-    }else if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
-=======
     if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
->>>>>>> e0deec84483cbae49589a6b99477fd7eddb4c6fb
-      $ionicHistory.nextViewOptions({
-        disableBack: true
-      });
-      $state.go('menu.profile').then(function() {
-        scope.clearBackView();
-      });
+      $scope.goHome();
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor > 0) {
       $ionicHistory.goBack();
     }else{

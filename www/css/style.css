@@ -382,7 +382,27 @@ textarea{
   height: 100vh;
 }
 
-#instructions-paintype{
+/*tablet scaling issue fix*/
+#spinnerGif{
+  position: relative;
+  top: 40vh;
+}
+
+@media only screen and (min-width: 768px) {
+  #ionNavView{
+    width: 50%;
+    height: 50vh;
+  }
+  img#spinnerGif{
+    position: relative;
+    top: 20vh; left: -25%;
+  }
+  .popup-container {
+    position: fixed;
+  }
+}​
+
+.instructions-paintype{
   position: fixed;
   bottom: 0;
   right: 0;
@@ -404,8 +424,16 @@ textarea{
   color: white;
 }
 
+.body-diagram-cover{
+  position: absolute;
+  height: 60%;
+  width: 90%;
+}
+
+
+
 /* when hiding the picture */
-.animate.ng-hide-add         { animation:0.5s lightSpeedOut ease; }
+/*.animate.ng-hide-add         { animation:0.5s lightSpeedOut ease; }*/
 
 /* when showing the picture */
 .animate.ng-hide-remove      { animation:0.5s flipInX ease; }
@@ -447,8 +475,8 @@ textarea{
   }
 }
 
-/* light speed out */
-@keyframes lightSpeedOut {
+/*light speed out */
+/*@keyframes lightSpeedOut {
   0% {
     opacity: 1;
   }
@@ -471,25 +499,4 @@ textarea{
     transform: translate3d(100%, 0, 0) skewX(30deg);
     opacity: 0;
   }
-}
-
-
-/*tablet scaling issue fix*/
-#spinnerGif{
-  position: relative;
-  top: 40vh;
-}
-
-@media only screen and (min-width: 768px) {
-  #ionNavView{
-    width: 50%;
-    height: 50vh;
-  }
-  img#spinnerGif{
-    position: relative;
-    top: 20vh; left: -25%;
-  }
-  .popup-container {
-    position: fixed;
-  }
-}​
+}*/

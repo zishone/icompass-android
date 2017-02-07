@@ -1,5 +1,5 @@
 <ion-view view-title="Take ESAS">
-  <div id="instructions-paintype" style="margin-top: 45px;" ng-show="isSet(3) && esas_enabled">
+  <div class="instructions-paintype" style="margin-top: 45px;" ng-show="isSet(3) && esas_enabled">
     <div class="item item-divider text-center bg-white text-black">
       <h2 class="Raleway font-fifteen">On a scale of 0 to 10
         how do you feel NOW?</h2>
@@ -8,7 +8,7 @@
       <br>Tap the Next arrow when you're finished.</h3>
     </div>
   </div>
-    <div id="instructions-paintype" style="margin-top: 33px;" ng-show="(isSet(5) || isSet(6)) && esas_enabled">
+    <div class="instructions-paintype" style="margin-top: 33px;" ng-show="(isSet(5) || isSet(6)) && esas_enabled">
     <!-- <div id="instructions-paintype" style="margin-top: 45px;"> -->
       <div class="item item-divider text-center bg-white text-black">
         <h2 class="Raleway font-fifteen padding-all">Tap on the part of your body
@@ -272,6 +272,7 @@
           <div class="row" ng-disabled="true">
             <div ng-include="'templates/body-diagram/anterior.html'"></div>
             <div ng-include="'templates/body-diagram/posterior.html'"></div>
+            <div class="body-diagram-cover"></div>
           </div>
 
         </div>
@@ -287,8 +288,8 @@
           rz-slider-options="progress.options" style="margin-top:12px" ng-show="esas_enabled"></rzslider>
     </span>
     <div class="buttons">
-      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 2 && tab < 7" ng-click="esas_result.pain_result.pain === 0? zeroPain() : setTab(tab + 1); scrollTop()">&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
-      <a class="button bg-blue text-white" type="button" href="" ng-if="tab === 7" ng-click="submitEsas()">{{translations.submit[language]}}</a>
+      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 2 && tab < progress.options.ceil" ng-click="esas_result.pain_result.pain === 0? zeroPain() : setTab(tab + 1); scrollTop()">&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
+      <a class="button bg-blue text-white" type="button" href="" ng-if="tab === progress.options.ceil" ng-click="submitEsas()">{{translations.submit[language]}}</a>
     </div>
   </ion-footer-bar>
 </ion-view>
