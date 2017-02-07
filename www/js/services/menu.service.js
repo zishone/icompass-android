@@ -26,7 +26,7 @@ angular.module('iComPAsS.services')
             'url': '#/menu/take-esas'
           },
           {
-            'icon': 'ion-ios-body',
+            'icon': 'ion-help',
             'text': 'Take PHQ',
             'url': '#/menu/take-phq'
           },
@@ -51,7 +51,7 @@ angular.module('iComPAsS.services')
           //   'url': '#/menu/instructions'
           // },
           {
-            'icon': 'ion-ios-help',
+            'icon': 'ion-information-circled',
             'text': 'Help',
             'url': '#/menu/help'
           },
@@ -79,7 +79,7 @@ angular.module('iComPAsS.services')
             'url': '#/menu/change-password'
           },
           {
-            'icon': 'ion-ios-help',
+            'icon': 'ion-information-circled',
             'text': 'Help',
             'url': '#/menu/help'
           },

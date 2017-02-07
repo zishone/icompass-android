@@ -105,11 +105,13 @@ angular.module('iComPAsS.controllers')
     catch(err) {}
   };
 
-  $scope.preventClick = function(e) {
-    if (e.target.tagName === 'polygon') {
-      console.log(e.target.tagName);
-      return;
-    }
+  $scope.goHome = function() {
+    $ionicHistory.nextViewOptions({
+      disableBack: true
+    });
+    $state.go('menu.profile').then(function() {
+      scope.clearBackView();
+    });
   };
 
   $ionicPlatform.registerBackButtonAction(function(event) {
@@ -117,15 +119,8 @@ angular.module('iComPAsS.controllers')
       navigator.app.exitApp();
     }
 
-    if ($scope.tab > 1) {
-      $scope.setTab(1);
-    }else if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
-      $ionicHistory.nextViewOptions({
-        disableBack: true
-      });
-      $state.go('menu.profile').then(function() {
-        scope.clearBackView();
-      });
+    if ($ionicHistory.viewHistory().histories.ion2.cursor === 0 && $state.current.name !== "menu.profile") {
+      $scope.goHome();
     }else if ($ionicHistory.viewHistory().histories.ion2.cursor > 0) {
       $ionicHistory.goBack();
     }else{
