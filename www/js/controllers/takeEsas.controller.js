@@ -294,6 +294,8 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       $scope.alertPopup('Success!', 'Have a great day!');
+
+      $scope.goHome();
     }, function(err) {
       $scope.hideLoading();
 
