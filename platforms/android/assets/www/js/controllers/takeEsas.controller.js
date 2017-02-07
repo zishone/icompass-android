@@ -151,6 +151,24 @@ angular.module('iComPAsS.controllers')
     pain_types: []
   };
 
+  $scope.checked = {
+    sharp: false,
+    stabbing: false,
+    pricking: false,
+    burning: false,
+    boring: false,
+    splitting: false,
+    aching: false,
+    shooting: false,
+    throbbing: false,
+    crushing: false,
+    cutting: false,
+    numbing: false,
+    tiring: false,
+    stretching: false,
+    pressing: false
+  };
+
   $scope.tagalog_pain_types = [];
 
   $scope.setLanguage = function(language) {
@@ -214,21 +232,21 @@ angular.module('iComPAsS.controllers')
   $scope.zeroPain = function(){
     $scope.esas_result.pain_result.pain = 0;
     $scope.esas_result.pain_types = [];
-    $scope.checked_sharp = false;
-    $scope.checked_stabbing = false;
-    $scope.checked_pricking = false;
-    $scope.checked_burning = false;
-    $scope.checked_boring = false;
-    $scope.checked_splitting = false;
-    $scope.checked_aching = false;
-    $scope.checked_shooting = false;
-    $scope.checked_throbbing = false;
-    $scope.checked_crushing = false;
-    $scope.checked_cutting = false;
-    $scope.checked_numbing = false;
-    $scope.checked_tiring = false;
-    $scope.checked_stretching = false;
-    $scope.checked_pressing = false;
+
+    for (var anterior in $scope.esas_result.diagrams[0].anterior) {
+      $scope.esas_result.diagrams[0].anterior[anterior] = 0;
+      $scope.setColor(anterior, $scope.esas_result.diagrams[0].anterior[anterior]);
+    }
+
+    for (var posterior in $scope.esas_result.diagrams[1].posterior) {
+      $scope.esas_result.diagrams[1].posterior[posterior] = 0;
+      $scope.setColor(posterior, $scope.esas_result.diagrams[1].posterior[posterior]);
+    }
+
+    for (var pain_type in $scope.checked) {
+      $scope.checked[pain_type] = false;
+    }
+
     $scope.setTab(7);
   };
 
@@ -267,7 +285,6 @@ angular.module('iComPAsS.controllers')
       $scope.tagalog_pain_types.splice($scope.esas_result.pain_types.indexOf(tagalog_tempObj), 1);
     }
 
-    console.log(checked);
   };
 
   $scope.submitEsas = function() {

@@ -1,4 +1,27 @@
 <ion-view view-title="Take ESAS">
+  <div id="instructions-paintype" style="margin-top: 45px;" ng-show="isSet(3) && esas_enabled">
+    <div class="item item-divider text-center bg-white text-black">
+      <h2 class="Raleway font-fifteen">On a scale of 0 to 10
+        how do you feel NOW?</h2>
+        <!-- <br> -->
+      <h3 class="Roboto-light font-fifteen">Drag the pointer to move left and right the scale
+      <br>Tap the Next arrow when you're finished.</h3>
+    </div>
+  </div>
+    <div id="instructions-paintype" style="margin-top: 33px;" ng-show="(isSet(5) || isSet(6)) && esas_enabled">
+    <!-- <div id="instructions-paintype" style="margin-top: 45px;"> -->
+      <div class="item item-divider text-center bg-white text-black">
+        <h2 class="Raleway font-fifteen padding-all">Tap on the part of your body
+          where you feel pain</h2>
+          <!-- <br> -->
+          <div class="width-seventy margin-auto text-left">
+            <h4 class="Roboto-light font-fifteen">&nbsp;<ion-icon class="ion-record yellow"></ion-icon>&nbsp;&nbsp;Tap <b>once</b> for Mild Pain</h5>
+            <h4 class="Roboto-light font-fifteen">&nbsp;<ion-icon class="ion-record orange"></ion-icon>&nbsp;&nbsp;Tap <b>twice</b> for Moderate Pain</h4>
+            <h4 class="Roboto-light font-fifteen">&nbsp;<ion-icon class="ion-record red"></ion-icon>&nbsp;&nbsp;Tap <b>thrice</b> for Severe Pain</h4>
+            <h4 class="Roboto-light font-fifteen">&nbsp;<ion-icon class="ion-record white"></ion-icon>&nbsp;&nbsp;Tap <b>four times</b> to reset</h4>
+          </div>
+      </div>
+    </div>
   <ion-content class="bg-grey">
     <div ng-if="!esas_enabled" class="bg-orange full-height">
       <h1 class="light text-center">Not Enabled</h1>
@@ -21,10 +44,10 @@
       </div>
       <br>
     </div>
+    <div style="margin-top: 90px;" ng-show="isSet(3) && esas_enabled">
 
-    <div ng-show="isSet(3) && esas_enabled">
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white text-black">
+        <div class="Raleway item item-divider text-center bg-white text-black">
           {{translations.pain[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -32,7 +55,7 @@
         </div>
       </div>
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white">
+        <div class="Raleway item item-divider text-center bg-white">
           {{translations.tiredness[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -40,7 +63,7 @@
         </div>
       </div>
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white">
+        <div class="Raleway item item-divider text-center bg-white">
           {{translations.nausea[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -48,7 +71,7 @@
         </div>
       </div>
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white">
+        <div class="Raleway item item-divider text-center bg-white">
           {{translations.anxiety[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -56,7 +79,7 @@
         </div>
       </div>
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white">
+        <div class="Raleway item item-divider text-center bg-white">
           {{translations.drowsiness[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -64,7 +87,7 @@
         </div>
       </div>
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white">
+        <div class="Raleway item item-divider text-center bg-white">
           {{translations.depression[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -72,7 +95,7 @@
         </div>
       </div>
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white">
+        <div class="Raleway item item-divider text-center bg-white">
           {{translations.lack_of_appetite[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -80,7 +103,7 @@
         </div>
       </div>
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white">
+        <div class="Raleway item item-divider text-center bg-white">
           {{translations.wellbeing[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -88,7 +111,7 @@
         </div>
       </div>
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white">
+        <div class="Raleway item item-divider text-center bg-white">
           {{translations.shortness_of_breath[language]}}
         </div>
         <div class="item item-text-wrap">
@@ -117,74 +140,74 @@
       <div class="card">
         <div class="item item-text-wrap">
           <div class="list">
-            <ion-checkbox ng-model="checked_sharp"
-                          ng-click="addPainType(translations.sharp['english'], translations.sharp['tagalog'], checked_sharp); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.sharp"
+                          ng-click="addPainType(translations.sharp['english'], translations.sharp['tagalog'], checked.sharp); $event.stopPropagation();">
               {{translations.sharp[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_stabbing"
-                          ng-click="addPainType(translations.stabbing['english'], translations.stabbing['tagalog'], checked_stabbing); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.stabbing"
+                          ng-click="addPainType(translations.stabbing['english'], translations.stabbing['tagalog'], checked.stabbing); $event.stopPropagation();">
               {{translations.stabbing[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_pricking"
-                          ng-click="addPainType(translations.pricking['english'], translations.pricking['tagalog'], checked_pricking); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.pricking"
+                          ng-click="addPainType(translations.pricking['english'], translations.pricking['tagalog'], checked.pricking); $event.stopPropagation();">
               {{translations.pricking[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_burning"
-                          ng-click="addPainType(translations.burning['english'], translations.burning['tagalog'], checked_burning); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.burning"
+                          ng-click="addPainType(translations.burning['english'], translations.burning['tagalog'], checked.burning); $event.stopPropagation();">
               {{translations.burning[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_boring"
-                          ng-click="addPainType(translations.boring['english'], translations.boring['tagalog'], checked_boring); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.boring"
+                          ng-click="addPainType(translations.boring['english'], translations.boring['tagalog'], checked.boring); $event.stopPropagation();">
               {{translations.boring[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_splitting"
-                          ng-click="addPainType(translations.splitting['english'], translations.splitting['tagalog'], checked_splitting); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.splitting"
+                          ng-click="addPainType(translations.splitting['english'], translations.splitting['tagalog'], checked.splitting); $event.stopPropagation();">
               {{translations.splitting[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_aching"
-                          ng-click="addPainType(translations.aching['english'], translations.aching['tagalog'], checked_aching); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.aching"
+                          ng-click="addPainType(translations.aching['english'], translations.aching['tagalog'], checked.aching); $event.stopPropagation();">
               {{translations.aching[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_shooting"
-                          ng-click="addPainType(translations.shooting['english'], translations.shooting['tagalog'], checked_shooting); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.shooting"
+                          ng-click="addPainType(translations.shooting['english'], translations.shooting['tagalog'], checked.shooting); $event.stopPropagation();">
               {{translations.shooting[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_throbbing"
-                          ng-click="addPainType(translations.throbbing['english'], translations.throbbing['tagalog'], checked_throbbing); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.throbbing"
+                          ng-click="addPainType(translations.throbbing['english'], translations.throbbing['tagalog'], checked.throbbing); $event.stopPropagation();">
               {{translations.throbbing[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_crushing"
-                          ng-click="addPainType(translations.crushing['english'], translations.crushing['tagalog'], checked_crushing); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.crushing"
+                          ng-click="addPainType(translations.crushing['english'], translations.crushing['tagalog'], checked.crushing); $event.stopPropagation();">
               {{translations.crushing[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_cutting"
-                          ng-click="addPainType(translations.cutting['english'], translations.cutting['tagalog'], checked_cutting); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.cutting"
+                          ng-click="addPainType(translations.cutting['english'], translations.cutting['tagalog'], checked.cutting); $event.stopPropagation();">
               {{translations.cutting[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_numbing"
-                          ng-click="addPainType(translations.numbing['english'], translations.numbing['tagalog'], checked_numbing); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.numbing"
+                          ng-click="addPainType(translations.numbing['english'], translations.numbing['tagalog'], checked.numbing); $event.stopPropagation();">
               {{translations.numbing[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_tiring"
-                          ng-click="addPainType(translations.tiring['english'], translations.tiring['tagalog'], checked_tiring); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.tiring"
+                          ng-click="addPainType(translations.tiring['english'], translations.tiring['tagalog'], checked.tiring); $event.stopPropagation();">
               {{translations.tiring[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_stretching"
-                          ng-click="addPainType(translations.stretching['english'], translations.stretching['tagalog'], checked_stretching); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.stretching"
+                          ng-click="addPainType(translations.stretching['english'], translations.stretching['tagalog'], checked.stretching); $event.stopPropagation();">
               {{translations.stretching[language]}}
             </ion-checkbox>
-            <ion-checkbox ng-model="checked_pressing"
-                          ng-click="addPainType(translations.pressing['english'], translations.pressing['tagalog'], checked_pressing); $event.stopPropagation();">
+            <ion-checkbox ng-model="checked.pressing"
+                          ng-click="addPainType(translations.pressing['english'], translations.pressing['tagalog'], checked.pressing); $event.stopPropagation();">
               {{translations.pressing[language]}}
             </ion-checkbox>
           </div>
         </div>
       </div>
     </div>
-    <div class="margin-body" ng-show="isSet(5) && esas_enabled">
+    <div class="margin-body margin-instructions" ng-show="isSet(5) && esas_enabled">
       <div ng-include="'templates/body-diagram/anterior.html'"></div>
     </div>
-    <div class="margin-body" ng-show="isSet(6) && esas_enabled">
+    <div class="margin-body margin-instructions" ng-show="isSet(6) && esas_enabled">
       <div ng-include="'templates/body-diagram/posterior.html'"></div>
     </div>
     <div ng-show="isSet(7) && esas_enabled" class="bg-grey full-height">
