@@ -425,9 +425,12 @@ textarea{
 }
 
 .body-diagram-cover{
+  /*background-color: red;*/
   position: absolute;
-  height: 60%;
-  width: 90%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 
