@@ -382,6 +382,7 @@ textarea{
   height: 100vh;
 }
 
+/*tablet scaling issue fix*/
 #spinnerGif{
   position: relative;
   top: 40vh;
@@ -401,7 +402,7 @@ textarea{
   }
 }​
 
-#instructions-paintype{
+.instructions-paintype{
   position: fixed;
   bottom: 0;
   right: 0;
@@ -423,28 +424,19 @@ textarea{
   color: white;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.body-diagram-cover{
+  /*background-color: red;*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
 
 
 
 /* when hiding the picture */
-.animate.ng-hide-add         { animation:0.5s lightSpeedOut ease; }
+/*.animate.ng-hide-add         { animation:0.5s lightSpeedOut ease; }*/
 
 /* when showing the picture */
 .animate.ng-hide-remove      { animation:0.5s flipInX ease; }
@@ -486,8 +478,8 @@ textarea{
   }
 }
 
-/* light speed out */
-@keyframes lightSpeedOut {
+/*light speed out */
+/*@keyframes lightSpeedOut {
   0% {
     opacity: 1;
   }
@@ -510,4 +502,4 @@ textarea{
     transform: translate3d(100%, 0, 0) skewX(30deg);
     opacity: 0;
   }
-}
+}*/
