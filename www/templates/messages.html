@@ -18,13 +18,12 @@
     <ion-list ng-show="isSet(1)">
       <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in received_messages | filter:search" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
         <span ng-if="message.is_read">
-          <h2>{{message.fullname}}</h2>
+          <h2 class="Roboto-light">{{message.fullname}}</h2>
           <p class="Roboto-light">{{message.message}}</p>
         </span>
         <span ng-if="!message.is_read">
-            <small>Not Seen Yet</small>
             <h2>{{message.fullname}}</h2>
-            <p class="Roboto-light">{{message.message}}</p>
+            <p>{{message.message}}</p>
         </span>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
