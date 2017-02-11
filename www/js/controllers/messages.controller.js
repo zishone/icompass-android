@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MessagesCtrl', function($scope, $interval, MessagesService){
+.controller('MessagesCtrl', function($scope, $interval, MessagesService, APP_CONST){
   $scope.showLoading();
 
   $scope.populateMessages = function(){
@@ -37,7 +37,7 @@ angular.module('iComPAsS.controllers')
     $scope.populateSentMessages();
   };
 
-  $interval(function() {
-    $scope.populateEveryMessages();
-  }, APP_CONST.sync_interval);
+  // $interval(function() {
+  //   $scope.populateEveryMessages();
+  // }, APP_CONST.sync_interval);
 });
