@@ -115,7 +115,7 @@ angular.module('iComPAsS.controllers')
     });
   };
 
-  $scope.animate = "animate"
+  $scope.animate = "animate";
   $scope.backAnimate = function() {
     $scope.animate = "animate-back";
   };
