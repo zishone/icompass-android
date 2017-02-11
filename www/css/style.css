@@ -439,76 +439,147 @@ textarea{
   width: 100%;
 }
 
-
+/*phq animations*/
+.animate{
+  position: absolute;
+  width: 100%;
+}
 
 /* when hiding the picture */
-/*.animate.ng-hide-add         { animation:0.5s lightSpeedOut ease; }*/
+.animate.ng-hide-add         { animation: 0.5s slideout ease; }
 
 /* when showing the picture */
-.animate.ng-hide-remove      { animation:0.5s flipInX ease; }
+.animate.ng-hide-remove      { animation: 0.5s slidein ease; }
 
-/* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
-/* flip in */
-@keyframes flipInX {
-  0% {
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transition-timing-function: ease-in;
-    opacity: 0;
-  }
-
-  40% {
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transition-timing-function: ease-in;
-    transition-timing-function: ease-in;
-  }
-
-  60% {
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    opacity: 1;
-  }
-
-  80% {
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-  }
-
-  100% {
-    transform: perspective(400px);
-    transform: perspective(400px);
-    transform: perspective(400px);
-  }
+@keyframes slidein {
+  0% { left: 100vw }
+  100% { left: 0vw }
 }
 
-/*light speed out */
-/*@keyframes lightSpeedOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate3d(100%, 0, 0) skewX(30deg);
-    transform: translate3d(100%, 0, 0) skewX(30deg);
-    opacity: 0;
-  }
+/* Firefox < 16 */
+@-moz-keyframes slidein {
+  % { left: 100vw }
+100% { left: 0vw }
 }
 
-@keyframes lightSpeedOut {
-  0% {
-    opacity: 1;
-  }
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes slidein {
+  0% { left: 100vw }
+  100% { left: 0vw }
+}
 
-  100% {
-    transform: translate3d(100%, 0, 0) skewX(30deg);
-    transform: translate3d(100%, 0, 0) skewX(30deg);
-    transform: translate3d(100%, 0, 0) skewX(30deg);
-    opacity: 0;
-  }
-}*/
+/* Internet Explorer */
+@-ms-keyframes slidein {
+  0% { left: 100vw }
+  100% { left: 0vw }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes slidein {
+  0% { left: 100vw }
+  100% { left: 0vw }
+}
+
+
+@keyframes slideout {
+  0% { left: 0vw }
+  100% { left: -100vw }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes slideout {
+  0% { left: 0vw }
+  100% { left: -100vw }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes slideout {
+  0% { left: 0vw }
+  100% { left: -100vw }
+}
+
+/* Internet Explorer */
+@-ms-keyframes slideout {
+  0% { left: 0vw }
+  100% { left: -100vw }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes slideout {
+  0% { left: 0vw }
+  100% { left: -100vw }
+}
+
+.animate-back{
+  position: absolute;
+  width: 100%;
+}
+
+/* when hiding the picture */
+.animate-back.ng-hide-add         { animation: 0.5s slideoutback ease; }
+
+/* when showing the picture */
+.animate-back.ng-hide-remove      { animation: 0.5s slideinback ease; }
+
+@keyframes slideinback {
+  0% { left: -100vw }
+  100% { left: 0vw }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes slideinback {
+  % { left: -100vw }
+100% { left: 0vw }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes slideinback {
+  0% { left: -100vw }
+  100% { left: 0vw }
+}
+
+/* Internet Explorer */
+@-ms-keyframes slideinback {
+  0% { left: -100vw }
+  100% { left: 0vw }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes slideinback {
+  0% { left: -100vw }
+  100% { left: 0vw }
+}
+
+
+@keyframes slideoutback {
+  0% { left: 0vw }
+  100% { left: 100vw }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes slideoutback {
+  0% { left: 0vw }
+  100% { left: 100vw }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes slideoutback {
+  0% { left: 0vw }
+  100% { left: 100vw }
+}
+
+/* Internet Explorer */
+@-ms-keyframes slideoutback {
+  0% { left: 0vw }
+  100% { left: 100vw }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes slideoutback {
+  0% { left: 0vw }
+  100% { left: 100vw }
+}
+/*phq animations end*/
 
 .video-container {
 position: relative;
