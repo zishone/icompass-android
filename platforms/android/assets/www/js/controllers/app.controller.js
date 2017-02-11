@@ -110,11 +110,7 @@ angular.module('iComPAsS.controllers')
       disableBack: true
     });
     $state.go('menu.profile').then(function() {
-<<<<<<< HEAD
-      scope.clearBackView();
-=======
       $scope.clearBackView();
->>>>>>> 3367aa28d812cd38edb82968250d93f45ee8fe46
     });
   };
 

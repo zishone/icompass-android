@@ -3,9 +3,11 @@
     <div ng-show="!phq_enabled" class="animate">
       PHQ Not Enabled
     </div>
-    <div ng-show="isSet(1) && phq_enabled" class="animate">
-      <h2>Over the last 2 weeks, how often have you been bothered by any of the following problems?</h2>
-      <a class="button bg-orange text-white" type="button" href="" ng-click="setTab(tab + 1); scrollTop()">Start</a>
+    <div ng-show="isSet(1) && phq_enabled" class="card card-width animate text-center">
+      <br>
+      <h4 class="Roboto-light width-ninety margin-auto text-left">Over the last 2 weeks, how often have you been bothered by any of the following problems?</h4>
+      <br>
+      <a class="text-center button bg-orange text-white" type="button" href="" ng-click="setTab(tab + 1); scrollTop()">Start</a>
     </div>
     <div ng-show="isSet(2) && phq_enabled" class="animate">
       <div class="list">
