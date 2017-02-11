@@ -13,5 +13,9 @@
         {{message.datesent}}
       </div>
     </div>
+
+    <span ng-if="message.is_read">
+      <h1>Seen</h1>
+    </span>
   </ion-content>
 </ion-view>

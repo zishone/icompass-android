@@ -214,8 +214,7 @@
           rz-slider-options="progress.options" style="margin-top:12px" ng-show="phq_enabled" class="animate"></rzslider>
     </span>
     <div class="buttons">
-      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 1 && tab < 11" ng-click="setTab(tab + 1); scrollTop()">&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
-      <a class="button bg-blue text-white" type="button" href="" ng-if="tab === 11" ng-click="submitPhq()">Submit</a>
+      <a class="button bg-blue text-white" type="button" href="" ng-disabled="tab !== 11" ng-click="submitPhq()">Submit</a>
     </div>
   </ion-footer-bar>
 </ion-view>
