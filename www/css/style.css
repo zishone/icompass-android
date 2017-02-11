@@ -581,6 +581,11 @@ textarea{
 }
 /*phq animations end*/
 
+/*remove pointer for progress*/
+/*.progress .rz-pointer.rz-pointer-min {
+  display: none;
+}*/
+
 .video-container {
 position: relative;
 padding-bottom: 56.25%;

@@ -196,7 +196,11 @@ angular.module('iComPAsS.controllers')
       showTicks: true,
       hidePointerLabels: true,
       hideLimitLabels: true,
-      readOnly: true
+      readOnly: true,
+      showSelectionBar: true,
+      getSelectionBarColor: function(value) {
+        return 'blue';
+      }
     }
   };
 
