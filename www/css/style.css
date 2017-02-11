@@ -159,6 +159,9 @@ textarea{
   .width-full{
     width: 100%;
   }
+  .width-nfive{
+    width: 95%;
+  }
   .width-ninety{
     width: 90%;
   }
@@ -192,6 +195,9 @@ textarea{
   }
   .margin-auto{
     margin: auto
+  }
+  .margin-left-sm{
+    margin-left: 5% !important;
   }
   /*MARGIN*/
   /*PADDING*/
