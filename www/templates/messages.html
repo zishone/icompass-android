@@ -31,8 +31,14 @@
 
     <ion-list ng-show="isSet(2)">
       <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in sent_messages" type="item-text-wrap" href="#/menu/sent-message-detail/{{message.id}}">
-        <h2>{{message.fullname}}</h2>
-        <p>{{message.message}}</p>
+        <span ng-if="message.is_read">
+          <h2 class="Roboto-light">{{message.fullname}}</h2>
+          <p class="Roboto-light">{{message.message}}</p>
+        </span>
+        <span ng-if="!message.is_read">
+            <h2>{{message.fullname}}</h2>
+            <p>{{message.message}}</p>
+        </span>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
