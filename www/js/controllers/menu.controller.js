@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('MenuCtrl', function($scope, MenuService) {
+.controller('MenuCtrl', function($scope, $interval, MenuService, APP_CONST) {
   $scope.populateMenu = function(){
     $scope.menuList = MenuService.get_menu_list();
     MenuService.get_unread_count().then(function(data) {
@@ -16,4 +16,8 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.populateMenu();
+
+  $interval(function() {
+    $scope.populateMenu();
+  }, APP_CONST.sync_interval);
 });

@@ -13,6 +13,8 @@ angular.module('iComPAsS.controllers')
       MessagesService.seen_message($stateParams.messageId).then(function(){
         $scope.populateMenu();
       });
+
+      $scope.populateMenu();
     })
     .finally(function(){
       // Stop the ion-refresher from spinning

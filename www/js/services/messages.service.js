@@ -1,6 +1,6 @@
 angular.module('iComPAsS.services')
 
-.factory('MessagesService', function($http, API){
+.factory('MessagesService', function($http, $q, API){
   // $http.defaults.cache = true;
 
   var send_message = function(receiver, message){

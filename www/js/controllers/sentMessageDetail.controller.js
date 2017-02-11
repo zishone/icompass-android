@@ -8,6 +8,8 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       $scope.message = data;
+
+      $scope.populateMenu();
     })
     .finally(function(){
       // Stop the ion-refresher from spinning
