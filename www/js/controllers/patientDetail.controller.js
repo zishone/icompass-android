@@ -102,9 +102,10 @@ angular.module('iComPAsS.controllers')
           }
         }
       };
+
       for (var i = 0; i < data.length; i++) {
         var date = moment(data[i].Date, "YYYY-MM-DD");
-        $scope.chart.labels.push(date);
+        $scope.chart.labels.push(date.format("YYYY-MM-DD"));
         $scope.chart.data[0].push(JSON.parse(data[i].pain_result).pain);
         $scope.chart.data[1].push(JSON.parse(data[i].pain_result).tiredness);
         $scope.chart.data[2].push(JSON.parse(data[i].pain_result).nausea);
