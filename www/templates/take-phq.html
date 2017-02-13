@@ -8,7 +8,7 @@
     <div ng-show="!phq_enabled">
       PHQ Not Enabled
     </div>
-    <div ng-show="isSet(1) && phq_enabled" class="card card-width">
+    <div ng-show="isSet(1) && phq_enabled" class="card card-width" ng-class="animate">
       <h4 class="item item-divider light bg-white text-black text-center">Please Choose Language</h4>
       <div class="text-center">
         <br>
@@ -17,7 +17,7 @@
       </div>
       <br>
     </div>
-    <div ng-show="isSet(2) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(2) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_1[language]}}
@@ -31,7 +31,7 @@
           </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(3) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(3) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_2[language]}}
@@ -45,7 +45,7 @@
           </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(4) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(4) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_3[language]}}
@@ -60,7 +60,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(5) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(5) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_4[language]}}
@@ -75,7 +75,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(6) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(6) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_5[language]}}
@@ -90,7 +90,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(7) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(7) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_6[language]}}
@@ -105,7 +105,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(8) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(8) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_7[language]}}
@@ -120,7 +120,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(9) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(9) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_8[language]}}
@@ -135,7 +135,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(10) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(10) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_9[language]}}
