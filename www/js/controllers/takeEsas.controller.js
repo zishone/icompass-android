@@ -3,6 +3,7 @@ angular.module('iComPAsS.controllers')
 .controller('TakeEsasCtrl', function($scope, $state, UsersService, EsasService){
   $scope.showLoading();
 
+  //checks if enabled
   UsersService.get_patient_profile().then(function(data) {
     $scope.hideLoading();
 
@@ -11,38 +12,7 @@ angular.module('iComPAsS.controllers')
 
   });
 
-  EsasService.get_esas_translations().then(function(data) {
-    $scope.translations = data;
-    $scope.translations.symptoms_question = {
-      english: "Do You Feel Any Symptoms?",
-      tagalog: "Nakakaramdam ka ba ng kahit anong sintomas?"
-    };
-    $scope.translations.drowsiness = {
-      english: "Drowsiness",
-      tagalog: "Antukin"
-    };
-    $scope.translations.yes = {
-      english: "Yes",
-      tagalog: "Oo"
-    };
-    $scope.translations.no = {
-      english: "No",
-      tagalog: "Hindi"
-    };
-    $scope.translations.enter = {
-      english: "Enter symptom:",
-      tagalog: "Magpasok ng sintomas:"
-    };
-    $scope.translations.review = {
-      english: "Review",
-      tagalog: "Suriin"
-    };
-    $scope.translations.submit = {
-      english: "Submit",
-      tagalog: "i-Sumite"
-    };
-  });
-
+  //instantiatize esas_results
   $scope.esas_result = {
     pain_result: {
       pain: 0,
@@ -151,6 +121,7 @@ angular.module('iComPAsS.controllers')
     pain_types: []
   };
 
+  //instantiatize chekcboxes
   $scope.checked = {
     sharp: false,
     stabbing: false,
@@ -171,9 +142,7 @@ angular.module('iComPAsS.controllers')
 
   $scope.tagalog_pain_types = [];
 
-  $scope.setLanguage = function(language) {
-    $scope.language = language;
-  };
+  $scope.translations = EsasService.get_esas_translations();
 
   $scope.anteriorColorSwitch = function(body_part_id){
     $scope.esas_result.diagrams[0].anterior[body_part_id] += 1;
@@ -189,6 +158,7 @@ angular.module('iComPAsS.controllers')
     $scope.setColor(body_part_id, $scope.esas_result.diagrams[1].posterior[body_part_id]);
   };
 
+  //slider options
   $scope.progress = {
     options: {
       floor: 1,
@@ -219,10 +189,7 @@ angular.module('iComPAsS.controllers')
     }
   };
 
-  $scope.enableSliders = function() {
-    $scope.pain_slider.readOnly = false;
-  };
-
+  // for other symptoms
   $scope.addSymptom = function() {
     $scope.esas_result.pain_result.other_symptoms.push({
       key: '',
@@ -233,9 +200,11 @@ angular.module('iComPAsS.controllers')
     $scope.esas_result.pain_result.other_symptoms.splice(-1, 1);
   };
 
+  //reset pain questions
   $scope.zeroPain = function(){
     $scope.esas_result.pain_result.pain = 0;
     $scope.esas_result.pain_types = [];
+    $scope.tagalog_pain_types = [];
 
     for (var anterior in $scope.esas_result.diagrams[0].anterior) {
       $scope.esas_result.diagrams[0].anterior[anterior] = 0;
@@ -254,6 +223,7 @@ angular.module('iComPAsS.controllers')
     $scope.setTab(7);
   };
 
+  // reset symptoms if no symptoms
   $scope.noSymptoms = function(){
     $scope.esas_result.pain_result = {
       pain: 0,
@@ -270,6 +240,7 @@ angular.module('iComPAsS.controllers')
     $scope.zeroPain();
   };
 
+  //for the checkboxes
   $scope.addPainType = function(pain_type, tagalog_pain_type, checked){
     var tempObj = {
       type: pain_type

@@ -115,6 +115,18 @@ angular.module('iComPAsS.controllers')
     });
   };
 
+  $scope.animate = "animate";
+  $scope.backAnimate = function() {
+    $scope.animate = "animate-back";
+  };
+  $scope.forwardAnimate = function() {
+    $scope.animate = "animate";
+  };
+
+  $scope.setLanguage = function(language) {
+    $scope.language = language;
+  };
+
   $ionicPlatform.registerBackButtonAction(function(event) {
     if ($state.current.name === "menu.profile") {
       navigator.app.exitApp();

@@ -123,6 +123,10 @@ angular.module('iComPAsS.controllers')
     $scope.animate = "animate";
   };
 
+  $scope.setLanguage = function(language) {
+    $scope.language = language;
+  };
+
   $ionicPlatform.registerBackButtonAction(function(event) {
     if ($state.current.name === "menu.profile") {
       navigator.app.exitApp();

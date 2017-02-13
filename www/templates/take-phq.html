@@ -1,20 +1,26 @@
 <ion-view view-title="Take PHQ">
+  <div class="instructions" style="margin-top: 45px;" ng-show="tab > 1 && tab < 11">
+    <div class="item item-divider text-center bg-white text-black">
+      <h3 class="Roboto-light font-fifteen" ng-bind-html="translations.two_weeks[language]"></h3>
+    </div>
+  </div>
   <ion-content class="bg-grey">
     <div ng-show="!phq_enabled">
       PHQ Not Enabled
     </div>
     <div ng-show="isSet(1) && phq_enabled" class="card card-width" ng-class="animate">
-      <br>
-      <h4 class="Roboto-light width-ninety margin-auto text-left">Over the <u>last 2 weeks</u>, how often have you been bothered by any of the following problems?</h4>
-      <br>
-      <div class="row">
-        <a class="button bg-orange text-white margin-auto col-90 border-circle font-eighteen Roboto-light" type="button" href="" ng-click="setTab(tab + 1); scrollTop(); forwardAnimate(); scrollTop()">Start</a>
+      <h4 class="item item-divider light bg-white text-black text-center">Please Choose Language</h4>
+      <div class="text-center">
+        <br>
+        <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('en'); forwardAnimate(); setChoices()">English</button>
+        <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('tl'); forwardAnimate(); setChoices()">Tagalog</button>
       </div>
+      <br>
     </div>
-    <div ng-show="isSet(2) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(2) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
-          1. Little interest or pleasure in doing things:
+          {{translations.question_1[language]}}
         </div>
           <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                      ng-model="phq_result.question_1"
@@ -25,10 +31,10 @@
           </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(3) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(3) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
-          2. Feeling down, depressed, or hopeless:
+          {{translations.question_2[language]}}
         </div>
           <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                      ng-model="phq_result.question_2"
@@ -39,10 +45,10 @@
           </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(4) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(4) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
-          3. Trouble falling or staying asleep, or sleeping too much:
+          {{translations.question_3[language]}}
         </div>
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
@@ -54,10 +60,10 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(5) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(5) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
-          4. Feeling tired or having little energy:
+          {{translations.question_4[language]}}
         </div>
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
@@ -69,10 +75,10 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(6) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(6) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
-          5. Poor appetite or overeating:
+          {{translations.question_5[language]}}
         </div>
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
@@ -84,10 +90,10 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(7) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(7) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
-          6. Feeling bad about yourself or that you are a failure or have let yourself or your family down:
+          {{translations.question_6[language]}}
         </div>
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
@@ -99,10 +105,10 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(8) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(8) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
-          7. Trouble concentrating on things, such as reading the newspaper or watching television:
+          {{translations.question_7[language]}}
         </div>
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
@@ -114,10 +120,10 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(9) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(9) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
-          8. Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual:
+          {{translations.question_8[language]}}
         </div>
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
@@ -129,10 +135,10 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(10) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(10) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
-          9. If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?
+          {{translations.question_9[language]}}
         </div>
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
@@ -150,55 +156,55 @@
           <h4>Review</h4>
         </div>
         <div class="item item-divider bg-white">
-          1. Little interest or pleasure in doing things:
+          {{translations.question_1[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_1].text}}
           </div>
         </div>
         <div class="item item-divider bg-white">
-          2. Feeling down, depressed, or hopeless:
+          {{translations.question_2[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_2].text}}
           </div>
         </div>
         <div class="item item-divider bg-white">
-          3. Trouble falling or staying asleep, or sleeping too much:
+          {{translations.question_3[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_3].text}}
           </div>
         </div>
         <div class="item item-divider bg-white">
-          4. Feeling tired or having little energy:
+          {{translations.question_4[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_4].text}}
           </div>
         </div>
         <div class="item item-divider bg-white">
-          5. Poor appetite or overeating:
+          {{translations.question_5[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_5].text}}
           </div>
         </div>
         <div class="item item-divider bg-white">
-          6. Feeling bad about yourself or that you are a failure or have let yourself or your family down:
+          {{translations.question_6[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_6].text}}
           </div>
         </div>
         <div class="item item-divider bg-white">
-          7. Trouble concentrating on things, such as reading the newspaper or watching television:
+          {{translations.question_7[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_7].text}}
           </div>
         </div>
         <div class="item item-divider bg-white">
-          8. Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual:
+          {{translations.question_8[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_8].text}}
           </div>
         </div>
         <div class="item item-divider bg-white">
-          9. If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?
+          {{translations.question_9[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_9].text}}
           </div>
@@ -216,7 +222,7 @@
           rz-slider-options="progress.options" style="margin-top:12px" ng-show="phq_enabled"></rzslider>
     </span>
     <div class="buttons">
-      <a class="button bg-blue text-white" type="button" href="" ng-disabled="tab !== progress.options.ceil" ng-click="submitPhq()">Submit</a>
+      <a class="button bg-blue text-white" type="button" href="" ng-disabled="tab !== progress.options.ceil" ng-click="submitPhq()" ng-if="tab !== 1">{{translations.submit[language]}}</a>
     </div>
   </ion-footer-bar>
 </ion-view>

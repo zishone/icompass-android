@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'iComPAsS.controllers' is found in controllers.js
 // 'iComPAsS.sevices' is found in services.js
-angular.module('iComPAsS', ['ionic', 'chart.js', 'rzModule', 'iComPAsS.constants', 'iComPAsS.config', 'iComPAsS.services', 'iComPAsS.controllers'])
+angular.module('iComPAsS', ['ionic', 'chart.js', 'rzModule', 'ngSanitize', 'iComPAsS.constants', 'iComPAsS.config', 'iComPAsS.services', 'iComPAsS.controllers'])
 
 .run(function($ionicPlatform, $ionicPopup) {
   $ionicPlatform.ready(function() {
