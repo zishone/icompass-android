@@ -24,6 +24,22 @@ angular.module('iComPAsS.services')
       "en": "Nearly every day",
       "tl": "Halos araw-araw"
     },
+    // "choice_1a": {
+    //   "en": "Not difficult at all",
+    //   "tl": "Hinding-hindi Pinahirapan"
+    // },
+    // "choice_2a": {
+    //   "en": "Somewhat difficult",
+    //   "tl": "Medyo Pinahirapan"
+    // },
+    // "choice_3a": {
+    //   "en": "Very difficult",
+    //   "tl": "Masyadong Pinahirapan"
+    // },
+    // "choice_4a": {
+    //   "en": "Extremely difficult",
+    //   "tl": "Labis na Pinahirapan"
+    // },
     "question_1": {
       "en": "1. Little interest or pleasure in doing things:",
       "tl": "1. Di gaanong interesado o nasisiyahan sa paggawa ng mga bagay:"

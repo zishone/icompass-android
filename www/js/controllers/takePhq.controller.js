@@ -16,7 +16,7 @@ angular.module('iComPAsS.controllers')
       readOnly: true,
       showSelectionBar: true,
       getSelectionBarColor: function(value) {
-        return 'blue';
+        return '#00E676';
       }
     }
   };
@@ -42,7 +42,6 @@ angular.module('iComPAsS.controllers')
       }
     ];
   };
-
   $scope.submitPhq = function() {
     $scope.showLoading();
 

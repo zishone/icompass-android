@@ -4,9 +4,10 @@ angular.module('iComPAsS.controllers')
   $scope.password = {};
 
   $scope.doChangePassword = function() {
-    $scope.showLoading();
 
     if($scope.password.new === $scope.password.confirm_new){
+      $scope.showLoading();
+
       PasswordService.change_password_with_key($scope.password).then(function(data) {
         $scope.hideLoading();
 
@@ -22,7 +23,6 @@ angular.module('iComPAsS.controllers')
         $scope.alertPopup('Something went wrong!', 'Please check your secret key.');
       });
     }else{
-      $scope.hideLoading();
       $scope.alertPopup('Something went wrong!', 'New passwords did not match.');
     }
   };
