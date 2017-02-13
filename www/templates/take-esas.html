@@ -1,5 +1,5 @@
 <ion-view view-title="Take ESAS">
-  <div class="instructions-paintype" style="margin-top: 45px;" ng-show="isSet(3) && esas_enabled">
+  <div class="instructions" style="margin-top: 45px;" ng-show="isSet(3) && esas_enabled">
     <div class="item item-divider text-center bg-white text-black">
       <h2 class="Raleway font-fifteen">{{translations.scale[language]}}</h2>
         <!-- <br> -->
@@ -7,7 +7,7 @@
       <br>{{translations.tap_next[language]}}</h3>
     </div>
   </div>
-    <div class="instructions-paintype" style="margin-top: 33px;" ng-show="(isSet(5) || isSet(6)) && esas_enabled">
+    <div class="instructions" style="margin-top: 33px;" ng-show="(isSet(5) || isSet(6)) && esas_enabled">
     <!-- <div id="instructions-paintype" style="margin-top: 45px;"> -->
       <div class="item item-divider text-center bg-white text-black">
         <h2 class="Raleway font-fifteen padding-all">{{translations.tap_body[language]}}</h2>
@@ -25,7 +25,7 @@
       <h1 class="light text-center">Not Enabled</h1>
     </div>
     <div class="card card-width bg-white" ng-show="isSet(1) && esas_enabled">
-      <h4 class="item item-divider light bg-white text-black text-center">ESAS Enabled Please Choose Language</h4>
+      <h4 class="item item-divider light bg-white text-black text-center">Please Choose Language</h4>
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('en')">English</button>

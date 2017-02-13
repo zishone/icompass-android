@@ -21,23 +21,27 @@ angular.module('iComPAsS.controllers')
     }
   };
 
-  $scope.choices = [
-    {
-      text: "Not at all",
-      value: 0
-    },
-    {
-      text: "Several days",
-      value: 1
-    },
-    {
-      text: "More than half the days",
-      value: 2
-    },{
-      text: "Nearly every day",
-      value: 3
-    }
-  ];
+  $scope.translations = PhqService.get_phq_translations();
+
+  $scope.setChoices = function(){
+    $scope.choices = [
+      {
+        text: $scope.translations.choice_1[$scope.language],
+        value: 0
+      },
+      {
+        text: $scope.translations.choice_2[$scope.language],
+        value: 1
+      },
+      {
+        text: $scope.translations.choice_3[$scope.language],
+        value: 2
+      },{
+        text: $scope.translations.choice_4[$scope.language],
+        value: 3
+      }
+    ];
+  };
 
   $scope.submitPhq = function() {
     $scope.showLoading();

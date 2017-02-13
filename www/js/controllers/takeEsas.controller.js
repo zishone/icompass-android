@@ -144,10 +144,6 @@ angular.module('iComPAsS.controllers')
 
   $scope.translations = EsasService.get_esas_translations();
 
-  $scope.setLanguage = function(language) {
-    $scope.language = language;
-  };
-
   $scope.anteriorColorSwitch = function(body_part_id){
     $scope.esas_result.diagrams[0].anterior[body_part_id] += 1;
     $scope.esas_result.diagrams[0].anterior[body_part_id] %= 4;
