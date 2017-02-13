@@ -31,6 +31,11 @@ angular.module('iComPAsS.services')
             'url': '#/menu/take-phq'
           },
           {
+            'icon': 'ion-arrow-shrink',
+            'text': 'Take Pain Detect',
+            'url': '#/menu/take-pain-detect'
+          },
+          {
             'icon': 'ion-ios-people',
             'text': 'List of Doctors',
             'url': '#/menu/list-of-doctors'

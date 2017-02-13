@@ -33,8 +33,8 @@ angular.module('iComPAsS.services')
       "tl": "2. Feeling down, nalulumbay, o walang pag-asa:"
     },
     "question_3": {
-      "en": "3. Trouble bumabagsak o manatili tulog, o natutulog masyadong maraming:",
-      "tl": "3. Trouble falling or staying asleep, or sleeping too much:"
+      "en": "3. Trouble falling or staying asleep, or sleeping too much:",
+      "tl": "3. Trouble bumabagsak o manatili tulog, o natutulog masyadong maraming:"
     },
     "question_4": {
       "en": "4. Feeling tired or having little energy:",

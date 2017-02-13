@@ -10,11 +10,14 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       $scope.esas_result = data;
+      for (var i = 0; i < $scope.esas_results.length; i++) {
+        $scope.esas_result[i].dateanswered = moment($scope.esas_result[i].dateanswered).format("MMMM DD, YYYY");
+      }
 
-      for (var i = 0; i < $scope.esas_result.length; i++) {
-        $scope.esas_result[i].diagram = JSON.parse($scope.esas_result[i].diagram);
-        $scope.esas_result[i].pain_result = JSON.parse($scope.esas_result[i].pain_result);
-        $scope.esas_result[i].pain_type = JSON.parse($scope.esas_result[i].pain_type);
+      for (var j = 0; j < $scope.esas_result.length; j++) {
+        $scope.esas_result[j].diagram = JSON.parse($scope.esas_result[j].diagram);
+        $scope.esas_result[j].pain_result = JSON.parse($scope.esas_result[j].pain_result);
+        $scope.esas_result[j].pain_type = JSON.parse($scope.esas_result[j].pain_type);
       }
 
       $scope.esas_result.reverse();

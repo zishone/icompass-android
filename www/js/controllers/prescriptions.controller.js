@@ -6,7 +6,7 @@ angular.module('iComPAsS.controllers')
   $scope.populatePrescriptions = function(){
     UsersService.get_patient_profile().then(function(data) {
       $scope.hideLoading();
-
+      
       $scope.prescription = data.profile.prescript;
     })
     .finally(function(){

@@ -49,10 +49,7 @@ angular.module('iComPAsS.controllers')
       cssClass: 'alert-popup'
     });
   };
-  $scope.setTabsToOne = function() {
-    $scope.tab = 1;
-  };
-  $scope.setTabsToOne();
+  $scope.tab = 1;
 
   $scope.setTab = function(newTab){
     $scope.tab = newTab;
