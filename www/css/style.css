@@ -13,7 +13,7 @@ Email Address: jacobporci@gmail.com
 textarea{
   resize: none;
 }
-.Roboto-light{
+.Roboto-light, .light{
   font-family: 'Roboto', sans-serif;
   font-weight: 300 !important;
 }

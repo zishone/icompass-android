@@ -106,6 +106,7 @@ angular.module('iComPAsS.controllers')
   };
 
   $scope.goHome = function() {
+    $scope.setTab(1);
     $ionicHistory.nextViewOptions({
       disableBack: true
     });
