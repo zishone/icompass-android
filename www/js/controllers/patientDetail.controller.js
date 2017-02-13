@@ -118,6 +118,9 @@ angular.module('iComPAsS.controllers')
       }
 
       $scope.esas_results = data;
+      for (var j = 0; j < $scope.esas_results.length; j++) {
+        $scope.esas_results[j].dateanswered = moment($scope.esas_results[j].dateanswered).format("MMMM DD, YYYY");
+      }
       $scope.esas_results_reversed = $scope.esas_results.slice(0);
       $scope.esas_results_reversed.reverse();
     })

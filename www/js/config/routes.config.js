@@ -74,6 +74,16 @@ angular.module('iComPAsS.config')
     }
   })
 
+  .state('menu.take-pain-detect', {
+    url: '/take-pain-detect',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/take-pain-detect.html',
+        controller: 'TakePainDetectCtrl'
+      }
+    }
+  })
+
   .state('menu.list-of-doctors', {
     url: '/list-of-doctors',
     views: {
@@ -197,7 +207,8 @@ angular.module('iComPAsS.config')
     url: '/help',
     views: {
       'menuContent': {
-        templateUrl: 'templates/help.html'
+        templateUrl: 'templates/help.html',
+        controller: 'HelpCtrl'
       }
     }
   });

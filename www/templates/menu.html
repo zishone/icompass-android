@@ -15,7 +15,7 @@
   <ion-side-menu side="left">
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="{{menuItem.url}}" ng-repeat="menuItem in menuList" ng-click="setTabsToOne()">
+        <ion-item menu-close href="{{menuItem.url}}" ng-repeat="menuItem in menuList" ng-click="setTab(1)">
           <ion-icon class="icon {{menuItem.icon}} larger"></ion-icon>
           &nbsp;
           {{menuItem.text}}

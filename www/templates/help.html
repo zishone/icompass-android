@@ -1,10 +1,78 @@
 <ion-view view-title="Help">
   <ion-content class="bg-light-orange">
     <span ng-if="isPatient()">
-      <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen="false"></iframe></div>
+      <ion-list>
+        <ion-item class="item-stable"
+                  ng-click="toggleGroup('video_1')"
+                  ng-class="{active: isGroupShown('video_1')}">
+            <i class="icon" ng-class="isGroupShown('video_1') ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          Video 1
+        </ion-item>
+        <ion-item class="item-accordion"
+                  ng-show="isGroupShown('video_1')">
+          <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen="false"></iframe></div>
+        </ion-item>
+        <ion-item class="item-stable"
+                  ng-click="toggleGroup('video_2')"
+                  ng-class="{active: isGroupShown('video_2')}">
+            <i class="icon" ng-class="isGroupShown('video_2') ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          Video 2
+        </ion-item>
+        <ion-item class="item-accordion"
+                  ng-show="isGroupShown('video_2')">
+          <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen="false"></iframe></div>
+        </ion-item>
+        <ion-item class="item-stable"
+                  ng-click="toggleGroup('video_3')"
+                  ng-class="{active: isGroupShown('video_3')}">
+            <i class="icon" ng-class="isGroupShown('video_3') ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          Video 3
+        </ion-item>
+        <ion-item class="item-accordion"
+                  ng-show="isGroupShown('video_3')">
+          <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen="false"></iframe></div>
+        </ion-item>
+      </ion-list>
     </span>
-    <span ng-if="isPatient()">
-      <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen="false"></iframe></div>
+    <span ng-if="isDoctor()">
+      <ion-list>
+        <ion-item class="item-stable"
+                  ng-click="toggleGroup('video_1')"
+                  ng-class="{active: isGroupShown('video_1')}">
+            <i class="icon" ng-class="isGroupShown('video_1') ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          Video 1
+        </ion-item>
+        <ion-item class="item-accordion"
+                  ng-show="isGroupShown('video_1')">
+          <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen="false"></iframe></div>
+        </ion-item>
+        <ion-item class="item-stable"
+                  ng-click="toggleGroup('video_2')"
+                  ng-class="{active: isGroupShown('video_2')}">
+            <i class="icon" ng-class="isGroupShown('video_2') ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          Video 2
+        </ion-item>
+        <ion-item class="item-accordion"
+                  ng-show="isGroupShown('video_2')">
+          <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen="false"></iframe></div>
+        </ion-item>
+        <ion-item class="item-stable"
+                  ng-click="toggleGroup('video_3')"
+                  ng-class="{active: isGroupShown('video_3')}">
+            <i class="icon" ng-class="isGroupShown('video_3') ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          Video 3
+        </ion-item>
+        <ion-item class="item-accordion"
+                  ng-show="isGroupShown('video_3')">
+          <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen="false"></iframe></div>
+        </ion-item>
+      </ion-list>
     </span>
   </ion-content>
 </ion-view>

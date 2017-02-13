@@ -11,5 +11,5 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
       $scope.alertPopup('Fail!', 'Something went wrong.');
     });
-  }
+  };
 });

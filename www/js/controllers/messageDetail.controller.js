@@ -9,6 +9,8 @@ angular.module('iComPAsS.controllers')
 
       $scope.message = data;
 
+      $scope.message.datesent = moment($scope.message.datesent).format("MMMM DD, YYYY");
+
       //set message status to seen
       MessagesService.seen_message($stateParams.messageId).then(function(){
         $scope.populateMenu();

@@ -1,0 +1,59 @@
+<ion-view view-title="Take Paint Detect">
+  <ion-content class="bg-grey">
+    <div ng-show="!pain_detect_enabled">
+      Pain Detect Not Enabled
+    </div>
+    <div ng-show="isSet(1) && pain_detect_enabled" class="card card-width">
+      <h4 class="item item-divider light bg-white text-black text-center">Please Choose Language</h4>
+      <div class="text-center">
+        <br>
+        <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('en');">English</button>
+        <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('tl');">Tagalog</button>
+      </div>
+      <br>
+    </div>
+    <div ng-show="isSet(2) && pain_detect_enabled">
+      <h1>Detecting</h1>
+    </div>
+    <div ng-show="isSet(3) && pain_detect_enabled">
+      <h1>Nadedetect ko na</h1>
+    </div>
+    <div ng-show="isSet(4) && pain_detect_enabled">
+      <h1>Ayan na</h1>
+    </div>
+    <div ng-show="isSet(5) && pain_detect_enabled">
+      <h1>Ayun! Detected</h1>
+    </div>
+    <div ng-show="isSet(6) && pain_detect_enabled">
+
+    </div>
+    <div ng-show="isSet(7) && pain_detect_enabled">
+
+    </div>
+    <div ng-show="isSet(8) && pain_detect_enabled">
+
+    </div>
+    <div ng-show="isSet(9) && pain_detect_enabled">
+
+    </div>
+    <div ng-show="isSet(10) && pain_detect_enabled">
+
+    </div>
+    <div ng-show="isSet(11) && pain_detect_enabled">
+
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bg-white shadow-bottom">
+    <div class="buttons">
+      <a class="button bg-orange text-white" type="button" href="" ng-show="tab > 1" ng-click="setTab(tab - 1); scrollTop()">&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-left-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    </div>
+    <span class="title progress">
+      <rzslider rz-slider-model="tab"
+          rz-slider-options="progress.options" style="margin-top:12px" ng-show="pain_detect_enabled"></rzslider>
+    </span>
+    <div class="buttons">
+      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 1 && tab < 5" ng-click="setTab(tab + 1); scrollTop()">&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
+      <a class="button bg-blue text-white" type="button" href="" ng-if="tab > 4" ng-disabled="tab !== progress.options.ceil" ng-click="submitPainDetect()">Submit</a>
+    </div>
+  </ion-footer-bar>
+</ion-view>

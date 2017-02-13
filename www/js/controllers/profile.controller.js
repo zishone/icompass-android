@@ -16,6 +16,7 @@ angular.module('iComPAsS.controllers')
         var weights = [];
         for (var i = 0; i < data.profile.weights.length; i++) {
           weights.push(JSON.parse(data.profile.weights[i]));
+          weights[i].date = moment(weights[i].date).format("MMMM DD, YYYY");
         }
 
         $scope.user_profile.more = [
@@ -83,7 +84,7 @@ angular.module('iComPAsS.controllers')
           },
           {
             'label': 'Birthday',
-            'data': data.profile.bday
+            'data': moment(data.profile.bday).format("MMMM DD, YYYY")
           },
           {
             'label': 'Age',
