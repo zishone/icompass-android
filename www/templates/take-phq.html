@@ -1,6 +1,6 @@
 <ion-view view-title="Take PHQ">
   <div class="instructions" style="margin-top: 45px;" ng-show="tab > 1 && tab < 11">
-    <div class="item item-divider text-center bg-white text-black">
+    <div class="item item-divider text-center bg-white dark">
       <h3 class="Roboto-light font-fifteen" ng-bind-html="translations.two_weeks[language]"></h3>
     </div>
   </div>
@@ -9,7 +9,7 @@
       PHQ Not Enabled
     </div>
     <div ng-show="isSet(1) && phq_enabled" class="card card-width" ng-class="animate">
-      <h4 class="item item-divider light bg-white text-black text-center">Please Choose Language</h4>
+      <h4 class="item item-divider light bg-white dark text-center">Please Choose Language</h4>
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('en'); forwardAnimate(); setChoices()">English</button>

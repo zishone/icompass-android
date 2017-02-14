@@ -61,7 +61,7 @@ textarea{
   .text-grey{
     color: rgba(0,0,0,0.6);
   }
-  .text-black{
+  .dark{
     color: black;
   }
   .text-dark-grey{
@@ -115,6 +115,12 @@ textarea{
   /*FONT-SIZE*/
   .font-twelve{
     font-size: 12px !important;
+  }
+  .font-thirteen{
+    font-size: 13.5px !important;
+  }
+  .font-fourteen{
+    font-size: 14px !important;
   }
   .font-fifteen{
     font-size: 14.5px !important;
@@ -189,6 +195,9 @@ textarea{
   }
   .margin-body{
     padding: 5% 10%;
+  }
+  .margin-bot-none{
+    margin-bottom: 0;
   }
   .margin-top-none{
     margin-top: 0;

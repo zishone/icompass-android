@@ -5,7 +5,7 @@
     <div class="bg-grey profile-header">
       <div class="profile-main">
         <img src="{{user_profile.image}}" alt=""/>
-        <h3 class="text-black text-shadow Raleway font-eighteen">{{user_profile.fullname}}</h3>
+        <h3 class="dark text-shadow Raleway font-eighteen">{{user_profile.fullname}}</h3>
       </div>
       <br>
     </div>
@@ -22,8 +22,8 @@
     </div>
 
     <div class="card card-width" ng-show="isSet(1)">
-      <div class="item item-divider bg-white text-black light">
-        <h2 class="bold text-black text-center margin-botop card-header Raleway">Personal Information</h2>
+      <div class="item item-divider bg-white dark light">
+        <h2 class="bold dark text-center margin-botop card-header Raleway">Personal Information</h2>
       </div>
       <div class="item item-text-wrap">
         <ion-list >
@@ -41,8 +41,8 @@
 
     <div ng-show="isSet(2)">
       <div class="card card-width" ng-repeat="info in user_profile.more">
-        <div class="item item-divider bg-white text-black light">
-          <span class="text text-black card-header Raleway">{{info.label}}</span>
+        <div class="item item-divider bg-white dark light">
+          <span class="text dark card-header Raleway">{{info.label}}</span>
         </div>
         <div class="item item-text-wrap">
           <div class="row" ng-repeat="sub_info in info.data track by $index">
