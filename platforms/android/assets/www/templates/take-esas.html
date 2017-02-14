@@ -25,7 +25,7 @@
       <h1 class="light text-center">Not Enabled</h1>
     </div>
     <div class="card card-width bg-white" ng-show="isSet(1) && esas_enabled">
-      <h4 class="item item-divider light bg-white text-black text-center">Please Choose Language</h4>
+      <h4 class="item item-divider light bg-white text-black text-center Raleway">Please Choose Language</h4>
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('en')">English</button>
@@ -34,7 +34,7 @@
       <br>
     </div>
     <div ng-show="isSet(2) && esas_enabled" class="card card-width">
-      <h1 class="item item-divider light bg-white text-black text-center">{{translations.symptoms_question[language]}}</h1>
+      <h5 class="bg-white text-black text-center Raleway font-sixteen">{{translations.symptoms_question[language]}}</h5>
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(tab + 1)">{{translations.yes[language]}}</button>

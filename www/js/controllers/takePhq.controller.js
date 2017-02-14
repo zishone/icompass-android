@@ -16,7 +16,7 @@ angular.module('iComPAsS.controllers')
       readOnly: true,
       showSelectionBar: true,
       getSelectionBarColor: function(value) {
-        return '#00E676';
+        return '#40C4FF';
       }
     }
   };
