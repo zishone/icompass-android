@@ -1,21 +1,19 @@
 <ion-view view-title="Take ESAS">
   <div class="instructions" style="margin-top: 45px;" ng-show="isSet(3) && esas_enabled">
     <div class="item item-divider text-center bg-white dark">
-      <h2 class="Raleway font-sixteen" ng-bind-html="translations.scale[language]"></h2>
+      <h2 class="Raleway font-fifteen" ng-bind-html="translations.scale[language]"></h2>
       <h3 class="Roboto-light font-thirteen" ng-bind-html="translations.drag[language]"></h3>
       <h3 class="Roboto-light font-thirteen margin-bot-none" ng-bind-html="translations.tap_next[language]"></h3>
     </div>
   </div>
     <div class="instructions" style="margin-top: 33px;" ng-show="(isSet(5) || isSet(6)) && esas_enabled">
-    <!-- <div id="instructions-paintype" style="margin-top: 45px;"> -->
-      <div class="item item-divider text-center bg-white dark">
-        <h2 class="Raleway font-fifteen padding-all">{{translations.tap_body[language]}}</h2>
-          <!-- <br> -->
+      <div class="item item-divider text-center bg-white dark width-full">
+        <h2 class="Raleway font-twelve padding-all">{{translations.tap_body[language]}}</h2>
           <div class="col-90 margin-auto text-left">
-            <h4 class="Roboto-light font-fifteen">&nbsp;<ion-icon class="ion-record yellow"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_once[language]"></span></h5>
-            <h4 class="Roboto-light font-fifteen">&nbsp;<ion-icon class="ion-record orange"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_twice[language]"></span></h4>
-            <h4 class="Roboto-light font-fifteen">&nbsp;<ion-icon class="ion-record red"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_thrice[language]"></span></h4>
-            <h4 class="Roboto-light font-fifteen">&nbsp;<ion-icon class="ion-record white"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_four[language]"></span></h4>
+            <h4 class="Roboto-light font-twelve">&nbsp;<ion-icon class="ion-record yellow"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_once[language]"></span></h5>
+            <h4 class="Roboto-light font-twelve">&nbsp;<ion-icon class="ion-record orange"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_twice[language]"></span></h4>
+            <h4 class="Roboto-light font-twelve">&nbsp;<ion-icon class="ion-record red"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_thrice[language]"></span></h4>
+            <h4 class="Roboto-light font-twelve">&nbsp;<ion-icon class="ion-record white"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_four[language]"></span></h4>
           </div>
       </div>
     </div>
@@ -24,7 +22,7 @@
       <h1 class="light text-center">Not Enabled</h1>
     </div>
     <div class="card card-width bg-white" ng-show="isSet(1) && esas_enabled">
-      <h4 class="item item-divider light bg-white dark text-center Raleway">Please Choose Language</h4>
+      <h4 class="item item-divider bg-white dark text-center Raleway">Please Choose Language</h4>
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('en')">English</button>
@@ -33,7 +31,7 @@
       <br>
     </div>
     <div ng-show="isSet(2) && esas_enabled" class="card card-width">
-      <h5 class="bg-white dark text-center Raleway font-sixteen">{{translations.symptoms_question[language]}}</h5>
+      <h5 class="item item-divider bg-white dark text-center Raleway font-sixteen">{{translations.symptoms_question[language]}}</h5>
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-twenty bg-blue text-white" ng-click="setTab(tab + 1)">{{translations.yes[language]}}</button>
