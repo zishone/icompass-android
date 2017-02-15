@@ -86,7 +86,7 @@ textarea{
       margin-right: auto;
   }
   .right {
-    float: right;
+    float: right !important;
   }
   /*ALIGNMENT*/
   /*BORDER*/
@@ -359,10 +359,14 @@ textarea{
   }
   /*PROFILE-CARDS*/
   /*TABS*/
+  .message-tab{
+    margin-top: -1px;
+  }
   .patient-tab a.active, .message-tab a.active{
     background-color: #ff6d00 !important;
     color: white;
-    border-bottom: 2px solid white !important;
+    border-bottom: none !important;
+    /*border-bottom: 10px solid white !important;*/
     font-weight: 500 !important;
   }
   /*TABS*/

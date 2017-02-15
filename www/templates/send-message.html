@@ -4,13 +4,15 @@
       <div class="card card-width">
         <ion-item class="width-ninety item-remove-animate item-avatar item-icon-right bg-light-orange" type="item-text-wrap" href="#/menu/select-recipient">
           <img ng-src="{{recipient.image}}">
-          <h2 class="line-height">{{recipient.fullname}}</h2>
+          <h2 class="line-height Raleway font-twenty">{{recipient.fullname}}</h2>
           <i class="icon ion-close icon-accessory"></i>
         </ion-item>
         <label class="item text-center">
-          <textarea class="bg-white border-all padding-all width-full Roboto-light" rows="8" placeholder="Write Message..." ng-model="messageData.message" required></textarea>
+          <textarea class="bg-white border-all padding-all width-full Roboto-light font-sixteen" rows="8" placeholder="Write Message..." ng-model="messageData.message" required></textarea>
           <br>
-          <button class="button width-thirty margin-auto bg-blue text-white" type="submit">Send</button>
+          <div class="row">
+            <button class="button margin-auto bg-blue text-white Roboto-light border-circle col col-50" type="submit">Send</button>
+          </div>
         </label>
       </div>
     </form>
