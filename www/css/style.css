@@ -220,6 +220,16 @@ textarea{
     padding: 3% 3%;
   }
 /*PADDING*/
+/*BUTTON*/
+.button-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.messages.bar{
+  padding: 0 !important;
+}
+/*BUTTON*/
   .larger {
       font-size: larger;
   }

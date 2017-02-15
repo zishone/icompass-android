@@ -10,7 +10,7 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       $scope.esas_result = data;
-      for (var i = 0; i < $scope.esas_results.length; i++) {
+      for (var i = 0; i < $scope.esas_result.length; i++) {
         $scope.esas_result[i].dateanswered = moment($scope.esas_result[i].dateanswered).format("MMMM DD, YYYY");
       }
 

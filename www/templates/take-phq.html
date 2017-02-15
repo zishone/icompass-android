@@ -150,7 +150,22 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(11) && phq_enabled" ng-class="animate">
+    <div ng-show="isSet(11) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
+      <div class="card card-width">
+        <div class="width-ninety margin-auto item-divider bg-white font-twenty">
+          {{translations.question_10[language]}}
+        </div>
+
+        <ion-radio ng-repeat="choice in choices_a"  ng-value="choice.value"
+                   ng-model="phq_result.question_10"
+                   ng-click="setTab(tab + 1); scrollTop(); forwardAnimate()" name="question_10">
+          <div class="Raleway-light">
+            {{choice.text}}
+          </div>
+        </ion-radio>
+      </div>
+    </div>
+    <div ng-show="isSet(12) && phq_enabled" ng-class="animate">
       <div class="card card-width">
         <div class="item-divider text-center bg-white">
           <h4>Review</h4>
@@ -209,7 +224,12 @@
             {{choices[phq_result.question_9].text}}
           </div>
         </div>
-
+        <div class="item item-divider bg-white">
+          {{translations.question_10[language]}}
+          <div class="item margin-left-sm Roboto-light">
+            {{choices_a[phq_result.question_10].text}}
+          </div>
+        </div>
       </div>
     </div>
   </ion-content>

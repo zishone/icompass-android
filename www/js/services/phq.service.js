@@ -24,22 +24,22 @@ angular.module('iComPAsS.services')
       "en": "Nearly every day",
       "tl": "Halos araw-araw"
     },
-    // "choice_1a": {
-    //   "en": "Not difficult at all",
-    //   "tl": "Hinding-hindi Pinahirapan"
-    // },
-    // "choice_2a": {
-    //   "en": "Somewhat difficult",
-    //   "tl": "Medyo Pinahirapan"
-    // },
-    // "choice_3a": {
-    //   "en": "Very difficult",
-    //   "tl": "Masyadong Pinahirapan"
-    // },
-    // "choice_4a": {
-    //   "en": "Extremely difficult",
-    //   "tl": "Labis na Pinahirapan"
-    // },
+    "choice_1a": {
+      "en": "Not difficult at all",
+      "tl": "Hinding-hindi Pinahirapan"
+    },
+    "choice_2a": {
+      "en": "Somewhat difficult",
+      "tl": "Medyo Pinahirapan"
+    },
+    "choice_3a": {
+      "en": "Very difficult",
+      "tl": "Masyadong Pinahirapan"
+    },
+    "choice_4a": {
+      "en": "Extremely difficult",
+      "tl": "Labis na Pinahirapan"
+    },
     "question_1": {
       "en": "1. Little interest or pleasure in doing things:",
       "tl": "1. Di gaanong interesado o nasisiyahan sa paggawa ng mga bagay:"
@@ -73,8 +73,12 @@ angular.module('iComPAsS.services')
       "tl": "8. Pagkilos o pagsasalita ng mabagal na maaring napansin ng ibang tao? O ang kabaligtaran — pagiging alumpihit o di mapakali kaya ikot nang ikot nang higit sa karaniwan:"
     },
     "question_9": {
-      "en": "9. If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",
-      "tl": "9. Kung may tsinekan kang anumang mga problema, gaano ka pinahirapan ng mga problemang ito na gawin ang iyong trabaho, asikasuhin ang mga bagay sa bahay, o makisama sa ibang tao?"
+      "en": "9. Thoughts that you would be better off dead, or of hurting yourself in some way?",
+      "tl": "9. Gusto nang mamatay?"
+    },
+    "question_10": {
+      "en": "10. If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",
+      "tl": "10. Kung may tsinekan kang anumang mga problema, gaano ka pinahirapan ng mga problemang ito na gawin ang iyong trabaho, asikasuhin ang mga bagay sa bahay, o makisama sa ibang tao?"
     },
     "submit": {
       "en": "Submit",
