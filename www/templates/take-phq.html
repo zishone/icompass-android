@@ -150,7 +150,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(11) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
+    <!-- <div ng-show="isSet(11) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_10[language]}}
@@ -164,8 +164,8 @@
           </div>
         </ion-radio>
       </div>
-    </div>
-    <div ng-show="isSet(12) && phq_enabled" ng-class="animate">
+    </div> -->
+    <div ng-show="isSet(11) && phq_enabled" ng-class="animate">
       <div class="card card-width">
         <div class="item-divider text-center bg-white">
           <h4>Review</h4>
@@ -222,12 +222,6 @@
           {{translations.question_9[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_9].text}}
-          </div>
-        </div>
-        <div class="item item-divider bg-white">
-          {{translations.question_10[language]}}
-          <div class="item margin-left-sm Roboto-light">
-            {{choices_a[phq_result.question_10].text}}
           </div>
         </div>
       </div>

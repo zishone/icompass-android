@@ -9,7 +9,7 @@ angular.module('iComPAsS.controllers')
   $scope.progress = {
     options: {
       floor: 1,
-      ceil: 12,
+      ceil: 11,
       showTicks: true,
       hidePointerLabels: true,
       hideLimitLabels: true,
