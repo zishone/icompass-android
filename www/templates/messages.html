@@ -2,7 +2,7 @@
   <ion-content class="bg-grey messages">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateEveryMessages()"></ion-refresher>
 
-    <div class="tabs tabs-striped tabs-top"  ng-show="isDoctor()">
+    <div class="message-tab tabs tabs-striped tabs-top"  ng-show="isDoctor()">
       <a class="tab-item" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
         Inbox
       </a>
@@ -16,7 +16,7 @@
     </div>
 
     <ion-list ng-show="isSet(1)">
-      <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in received_messages | filter:search" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
+      <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="message in received_messages | filter:search" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
         <span ng-if="message.is_read">
           <h2 class="Roboto-light">{{message.fullname}}</h2>
           <p class="Roboto-light">{{message.message}}</p>
@@ -30,7 +30,7 @@
     </ion-list>
 
     <ion-list ng-show="isSet(2)">
-      <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in sent_messages" type="item-text-wrap" href="#/menu/sent-message-detail/{{message.id}}">
+      <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="message in sent_messages" type="item-text-wrap" href="#/menu/sent-message-detail/{{message.id}}">
         <span ng-if="message.is_read">
           <h2 class="Roboto-light">{{message.fullname}}</h2>
           <p class="Roboto-light">{{message.message}}</p>

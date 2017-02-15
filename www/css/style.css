@@ -359,8 +359,11 @@ textarea{
   }
   /*PROFILE-CARDS*/
   /*TABS*/
-  .patient-details.item.active{
-    background:
+  .patient-tab a.active, .message-tab a.active{
+    background-color: #ff6d00 !important;
+    color: white;
+    border-bottom: 2px solid white !important;
+    font-weight: 500 !important;
   }
   /*TABS*/
 /*PROFILE STYLE*/
