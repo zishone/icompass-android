@@ -268,6 +268,8 @@ angular.module('iComPAsS.controllers')
     EsasService.submit_esas($scope.esas_result).then(function(data) {
       $scope.hideLoading();
 
+      $scope.noSymptoms();
+
       $scope.alertPopup('Success!', 'Have a great day!');
 
       $scope.goHome();
