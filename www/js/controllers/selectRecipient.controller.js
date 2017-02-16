@@ -1,44 +1,20 @@
 angular.module('iComPAsS.controllers')
 
-.controller('SelectRecipientCtrl', function($scope, $state, UsersService){
+.controller('SelectRecipientCtrl', function($scope, $state, MessagesService){
   $scope.showLoading();
 
-  $scope.populateListOfPatients = function(){};
-  $scope.populateListOfDoctors = function(){};
+  $scope.populateRecipients = function(){
+    MessagesService.get_recipients().then(function(data) {
+      $scope.hideLoading();
 
-  if($scope.isDoctor()){
-    $scope.populateListOfPatients = function(){
-      UsersService.get_assigned_patients().then(function(data) {
-        $scope.hideLoading();
-
-        $scope.assigned_patients = data;
-      })
-      .finally(function(){
-        // Stop the ion-refresher from spinning
-        $scope.$broadcast('scroll.refreshComplete');
-      });
-    };
-
-    $scope.populateListOfPatients();
-  }else if($scope.isPatient()){
-    $scope.populateListOfDoctors = function(){
-      UsersService.get_assigned_doctors().then(function(data) {
-        $scope.hideLoading();
-
-        $scope.assigned_doctors = data;
-      })
-      .finally(function(){
-        // Stop the ion-refresher from spinning
-        $scope.$broadcast('scroll.refreshComplete');
-      });
-    };
-
-    $scope.populateListOfDoctors();
-  }
-
-  $scope.populateRecipients = function() {
-    $scope.populateListOfPatients();
-    $scope.populateListOfDoctors();
+      $scope.recipients = data;
+    })
+    .finally(function(){
+      // Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    });
   };
 
+
+  $scope.populateRecipients();
 });
