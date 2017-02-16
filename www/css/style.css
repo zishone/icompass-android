@@ -88,6 +88,9 @@ textarea{
   .right {
     float: right !important;
   }
+  .overflow{
+    overflow: auto;
+  }
   /*ALIGNMENT*/
   /*BORDER*/
   .border-bot-white{
@@ -291,8 +294,9 @@ textarea{
     /*margin-bottom: 5%;*/
   }
   .profile-main img{
-    width: 30%;
-    border-radius: 200px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
   }
   .profile-name{
