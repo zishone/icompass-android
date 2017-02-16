@@ -56,6 +56,14 @@ angular.module('iComPAsS.services')
         console.log(response.statusText);
       });
     },
+    get_recipients: function() {
+      return $http.get(API.src + 'messages/recipients')
+      .then(function successCallback(response) {
+        return response.data;
+      }, function errorCallback(response) {
+        console.log(response.statusText);
+      });
+    },
     send_message: send_message
   };
 });
