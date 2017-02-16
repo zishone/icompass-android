@@ -1,6 +1,6 @@
 <ion-view view-title="Take PHQ">
   <div class="instructions" style="margin-top: 45px;" ng-show="tab > 1 && tab < 11">
-    <div class="item item-divider text-center bg-white text-black">
+    <div class="item item-divider text-center bg-white dark">
       <h3 class="Roboto-light font-fifteen" ng-bind-html="translations.two_weeks[language]"></h3>
     </div>
   </div>
@@ -8,8 +8,8 @@
     <div ng-show="!phq_enabled">
       PHQ Not Enabled
     </div>
-    <div ng-show="isSet(1) && phq_enabled" class="card card-width">
-      <h4 class="item item-divider light bg-white text-black text-center">Please Choose Language</h4>
+    <div ng-show="isSet(1) && phq_enabled" class="card card-width" ng-class="animate">
+      <h4 class="item item-divider light bg-white dark text-center">Please Choose Language</h4>
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('en'); forwardAnimate(); setChoices()">English</button>
@@ -17,7 +17,7 @@
       </div>
       <br>
     </div>
-    <div ng-show="isSet(2) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(2) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_1[language]}}
@@ -31,7 +31,7 @@
           </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(3) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(3) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_2[language]}}
@@ -45,7 +45,7 @@
           </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(4) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(4) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_3[language]}}
@@ -60,7 +60,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(5) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(5) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_4[language]}}
@@ -75,7 +75,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(6) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(6) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_5[language]}}
@@ -90,7 +90,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(7) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(7) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_6[language]}}
@@ -105,7 +105,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(8) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(8) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_7[language]}}
@@ -120,7 +120,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(9) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(9) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_8[language]}}
@@ -135,7 +135,7 @@
         </ion-radio>
       </div>
     </div>
-    <div ng-show="isSet(10) && phq_enabled" ng-class="animate" style="margin-top: 90px;">
+    <div ng-show="isSet(10) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
       <div class="card card-width">
         <div class="width-ninety margin-auto item-divider bg-white font-twenty">
           {{translations.question_9[language]}}
@@ -150,6 +150,21 @@
         </ion-radio>
       </div>
     </div>
+    <!-- <div ng-show="isSet(11) && phq_enabled" ng-class="animate" style="margin-top: 55px;">
+      <div class="card card-width">
+        <div class="width-ninety margin-auto item-divider bg-white font-twenty">
+          {{translations.question_10[language]}}
+        </div>
+
+        <ion-radio ng-repeat="choice in choices_a"  ng-value="choice.value"
+                   ng-model="phq_result.question_10"
+                   ng-click="setTab(tab + 1); scrollTop(); forwardAnimate()" name="question_10">
+          <div class="Raleway-light">
+            {{choice.text}}
+          </div>
+        </ion-radio>
+      </div>
+    </div> -->
     <div ng-show="isSet(11) && phq_enabled" ng-class="animate">
       <div class="card card-width">
         <div class="item-divider text-center bg-white">
@@ -209,7 +224,6 @@
             {{choices[phq_result.question_9].text}}
           </div>
         </div>
-
       </div>
     </div>
   </ion-content>

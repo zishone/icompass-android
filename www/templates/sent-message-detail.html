@@ -1,21 +1,18 @@
 <ion-view view-title="Sent Message Detail">
-  <ion-content class="bg-light-orange">
+  <ion-content class="bg-grey">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateSentMessageDetail()"></ion-refresher>
 
-    <div class="card">
-      <div class="item item-text-wrap">
-        <h2>{{message.fullname}}: </h2>
-        <hr>
+    <div class="card card-width">
+      <div class="item bg-white">
+        <h2 class="Roboto">{{message.fullname}}: </h2>
         <br>
-        <h3>{{message.message}}</h3>
+        <h2 class="Roboto-light">{{message.message}}</h2>
       </div>
-      <div class="item item-divider text-right">
+      <div class="item item-divider text-right bg-white">
         {{message.datesent}}
       </div>
     </div>
 
-    <span ng-if="message.is_read">
-      <h1>Seen</h1>
-    </span>
+
   </ion-content>
 </ion-view>

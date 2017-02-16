@@ -16,7 +16,7 @@ angular.module('iComPAsS.controllers')
       readOnly: true,
       showSelectionBar: true,
       getSelectionBarColor: function(value) {
-        return 'blue';
+        return '#40C4FF';
       }
     }
   };
@@ -36,18 +36,39 @@ angular.module('iComPAsS.controllers')
       {
         text: $scope.translations.choice_3[$scope.language],
         value: 2
-      },{
+      },
+      {
         text: $scope.translations.choice_4[$scope.language],
         value: 3
       }
     ];
-  };
 
+    $scope.choices_a = [
+      {
+        text: $scope.translations.choice_1a[$scope.language],
+        value: 0
+      },
+      {
+        text: $scope.translations.choice_2a[$scope.language],
+        value: 1
+      },
+      {
+        text: $scope.translations.choice_3a[$scope.language],
+        value: 2
+      },{
+        text: $scope.translations.choice_4a[$scope.language],
+        value: 3
+      }
+    ];
+  };
   $scope.submitPhq = function() {
+    console.log($scope.phq_result);
     $scope.showLoading();
 
     PhqService.submit_phq($scope.phq_result).then(function(data) {
       $scope.hideLoading();
+
+      $scope.phq_result = {};
 
       $scope.alertPopup('Success!', 'Have a great day!');
 

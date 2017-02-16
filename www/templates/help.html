@@ -1,5 +1,5 @@
 <ion-view view-title="Help">
-  <ion-content class="bg-light-orange">
+  <ion-content class="bg-grey">
     <span ng-if="isPatient()">
       <ion-list>
         <ion-item class="item-stable"
@@ -7,11 +7,11 @@
                   ng-class="{active: isGroupShown('video_1')}">
             <i class="icon" ng-class="isGroupShown('video_1') ? 'ion-minus' : 'ion-plus'"></i>
           &nbsp;
-          Video 1
+          Take ESAS Tutorial
         </ion-item>
         <ion-item class="item-accordion"
                   ng-show="isGroupShown('video_1')">
-          <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen="false"></iframe></div>
+          <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/bIwjEKmModY?ecver=2" frameborder="0" allowfullscreen="false"></iframe></div>
         </ion-item>
         <ion-item class="item-stable"
                   ng-click="toggleGroup('video_2')"

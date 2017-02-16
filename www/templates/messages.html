@@ -1,8 +1,8 @@
 <ion-view view-title="Messages">
-  <ion-content class="bg-grey">
+  <ion-content class="bg-grey messages">
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateEveryMessages()"></ion-refresher>
 
-    <div class="tabs tabs-striped tabs-top"  ng-show="isDoctor()">
+    <div class="message-tab tabs tabs-striped tabs-top shadow-bottom"  ng-show="isDoctor()">
       <a class="tab-item" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
         Inbox
       </a>
@@ -16,7 +16,7 @@
     </div>
 
     <ion-list ng-show="isSet(1)">
-      <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in received_messages | filter:search" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
+      <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="message in received_messages | filter:search" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
         <span ng-if="message.is_read">
           <h2 class="Roboto-light">{{message.fullname}}</h2>
           <p class="Roboto-light">{{message.message}}</p>
@@ -30,23 +30,28 @@
     </ion-list>
 
     <ion-list ng-show="isSet(2)">
-      <ion-item class="item-remove-animate item-icon-right bg-light-orange" ng-repeat="message in sent_messages" type="item-text-wrap" href="#/menu/sent-message-detail/{{message.id}}">
+      <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="message in sent_messages" type="item-text-wrap" href="#/menu/sent-message-detail/{{message.id}}">
         <span ng-if="message.is_read">
+          <p class="Roboto-light right">{{message.datesent}}</p>
           <h2 class="Roboto-light">{{message.fullname}}</h2>
           <p class="Roboto-light">{{message.message}}</p>
+          <!-- <h5 class="Roboto-light text-right">{{message.datesent}}</h5> -->
+          <h5 class="Roboto-light text-right">Seen</h5>
         </span>
         <span ng-if="!message.is_read">
+        <p class="Roboto-light right">{{message.datesent}}</p>
             <h2>{{message.fullname}}</h2>
             <p>{{message.message}}</p>
+            <h5 class="Roboto-light text-right">Delivered</h5>
         </span>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
   </ion-content>
-  <ion-footer-bar align-title="center" class="bg-white shadow-bottom" ng-show="isDoctor()">
-    <span class="title"></span>
-    <div class="buttons">
-      <a class="button bg-blue text-white Roboto-light" type="button" href="#/menu/select-recipient">Compose Message</a>
-    </div>
+  <ion-footer-bar align-title="center" class="bg-white shadow-bottom shadow-bottom" style="padding: 0;" ng-show="isDoctor()">
+    <!-- <span class="title"></span> -->
+    <!-- <div class="buttons"> -->
+      <a class="button width-full button-bottom bg-blue light Roboto-light font-sixteen" type="button" href="#/menu/select-recipient">Compose Message</a>
+    <!-- </div> -->
   </ion-footer-bar>
 </ion-view>

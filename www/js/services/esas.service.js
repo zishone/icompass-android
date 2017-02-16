@@ -42,27 +42,27 @@ angular.module('iComPAsS.services')
     },
     "sharp": {
       "en": "Sharp",
-      "tl": "Matalim"
+      "tl": "Parang Matalas"
     },
     "stabbing": {
       "en": "Stabbing",
-      "tl": "Sumasaksak"
+      "tl": "Parang sinasaksak"
     },
     "pricking": {
       "en": "Pricking",
-      "tl": "Pagsundot"
+      "tl": "Parang tinutusok"
     },
     "burning": {
       "en": "Burning",
-      "tl": "Umaalab"
+      "tl": "Nakakapaso"
     },
     "boring": {
       "en": "Boring",
-      "tl": "Pagbubutas"
+      "tl": "Parang binubutas"
     },
     "splitting": {
       "en": "Splitting",
-      "tl": "Pagbibiak"
+      "tl": "Parang binibiyak"
     },
     "aching": {
       "en": "Aching",
@@ -70,35 +70,35 @@ angular.module('iComPAsS.services')
     },
     "shooting": {
       "en": "Shooting",
-      "tl": "Pagbabaril"
+      "tl": "Kumukuryente"
     },
     "throbbing": {
       "en": "Throbbing",
-      "tl": "Tumitibok"
+      "tl": "Pumipintig"
     },
     "crushing": {
       "en": "Crushing",
-      "tl": "Nadudurog"
+      "tl": "Parang dinudurog"
     },
     "cutting": {
       "en": "Cutting",
-      "tl": "Nahihiwa"
+      "tl": "Parang hinihiwa"
     },
     "numbing": {
       "en": "Numbing",
-      "tl": "Namamanhid"
+      "tl": "Nangangalay"
     },
     "tiring": {
       "en": "Tiring",
-      "tl": "Napapagod"
+      "tl": "Nangangawit"
     },
     "stretching": {
       "en": "Stretching/Tugging",
-      "tl": "Nahahatak"
+      "tl": "Parang hinihila"
     },
     "pressing": {
       "en": "Pressing",
-      "tl": "Parang Nadidiin"
+      "tl": "Nakadagan"
     },
     "symptoms_question": {
       "en": "Do You Feel Any Symptoms?",
@@ -150,7 +150,7 @@ angular.module('iComPAsS.services')
     },
     "scale": {
       "en": "On a scale of 0 to 10 how do you feel NOW?",
-      "tl": "Sa isang scale of 0 hanggang 10 gaano mo pakiramdam NGAYON?"
+      "tl": "Sa isang scale of 0 hanggang 10 <br> gaano mo pakiramdam NGAYON?"
     },
     "drag": {
       "en": "Drag the pointer to move left and right the scale",

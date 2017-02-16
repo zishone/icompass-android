@@ -1,7 +1,7 @@
 <ion-view view-title="Patient's ESAS Result Detail">
-  <ion-content class="bg-light-orange">
-    <div class="card">
-      <div class="item item-divider bg-orange light text-center">
+  <ion-content class="bg-grey">
+    <div class="card card-width">
+      <div class="item item-divider bg-white dark text-center Raleway font-twenty">
         {{esas_result[result_index].dateanswered}}
       </div>
       <div class="item item-text-wrap">
@@ -41,7 +41,6 @@
           <div class="col col-80">Shortness of Breath</div>
           <div class="col">{{esas_result[result_index].pain_result.shortness_of_breath}}</div>
         </div>
-        <!-- if array then loop -->
         <div class="row">
           <div class="col col-80">Other Symptoms:</div>
         </div>
@@ -55,7 +54,7 @@
         </div>
         <div class="row">
           <ul class="unordered-lists padding-left">
-            <li ng-repeat="pain_type in esas_result[result_index].pain_type">{{pain_types[pain_type]}}</li>
+            <li ng-repeat="pain_type in esas_result[result_index].pain_type">{{pain_type}}</li>
           </ul>
         </div>
         <br>
