@@ -64,6 +64,9 @@ textarea{
   .light{
     color: #FFFFFF !important;
   }
+  .dark{
+    color: #000000 !important;
+  }
   /*TEXT-COLORS*/
 /*COLORS*/
 
@@ -402,7 +405,7 @@ textarea{
   margin-top: -95px;
 }
 .margin-instructions{
-  margin-top: 110px;
+  margin-top: 125px;
 }
 
 
