@@ -7,8 +7,8 @@
       <h4 class="item item-divider light bg-white dark text-center">Click <b>Start</b> to begin</h4>
       <div class="text-center">
         <br>
-        <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('en');">Start</button>
-        <!-- <button class="button margin-left-right width-thirty bg-blue text-white" ng-click="setTab(tab + 1); setLanguage('tl');">Tagalog</button> -->
+        <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('en');">Start</button>
+        <!-- <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('tl');">Tagalog</button> -->
       </div>
       <br>
     </div>
@@ -59,12 +59,12 @@
         <div class="item item-divider text-center bg-white font-eighteen">
           Mark the picture that best describes <br> the course of your pain:
         </div>
-      <div ng-include="'templates/body-diagram/anterior.html'"></div>
+      <div class="width-eighty center" ng-include="'templates/body-diagram/anterior.html'"></div>
     </div>
     </div>
     <div ng-show="isSet(5) && pain_detect_enabled">
       <div class="card card-width">
-        <div ng-include="'templates/body-diagram/posterior.html'"></div>
+        <div class="width-eighty center" ng-include="'templates/body-diagram/posterior.html'"></div>
         <div class="item item-divider text-center bg-white font-eighteen overflow">
           Does your pain radiate to other <br> regions of your body?
         </div>
@@ -72,7 +72,7 @@
     </div>
     <div ng-show="isSet(6) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety margin-auto item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-twenty">
           Do you suffer from a burning sensation (e.g., stinging nettles) in the marked areas?
         </div>
 
@@ -87,7 +87,7 @@
     </div>
     <div ng-show="isSet(7) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety margin-auto item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-twenty">
           Do you have a tingling or prickling sensation in the area of your pain (like crawling ants or electrical tingling)?
         </div>
 
@@ -102,7 +102,7 @@
     </div>
     <div ng-show="isSet(8) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety margin-auto item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-twenty">
           Is light touching (clothing, a blanket) in this area painful?
         </div>
 
@@ -117,7 +117,7 @@
     </div>
     <div ng-show="isSet(9) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety margin-auto item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-twenty">
           Do you have sudden pain attacks in the area of your pain, like electric shocks?
         </div>
 
@@ -132,7 +132,7 @@
     </div>
     <div ng-show="isSet(10) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety margin-auto item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-twenty">
           Is cold or heat (bath water) in this area occasionally painful?
         </div>
 
@@ -147,7 +147,7 @@
     </div>
     <div ng-show="isSet(11) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety margin-auto item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-twenty">
           Do you suffer from a sensation of numbness in the areas that you marked?
         </div>
 
@@ -162,7 +162,7 @@
     </div>
     <div ng-show="isSet(12) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety margin-auto item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-twenty">
           Does slight pressure in this area, e.g., with a finger, trigger pain?
         </div>
 
@@ -250,15 +250,15 @@
   </ion-content>
   <ion-footer-bar align-title="center" class="bg-white shadow-bottom">
     <div class="buttons">
-      <a class="button bg-orange text-white" type="button" href="" ng-show="tab > 1" ng-click="setTab(tab - 1); scrollTop(); backAnimate();">&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-left-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a class="button bg-orange light" type="button" href="" ng-show="tab > 1" ng-click="setTab(tab - 1); scrollTop(); backAnimate();">&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-left-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;</a>
     </div>
     <span class="title progress">
       <rzslider rz-slider-model="tab"
           rz-slider-options="progress.options" style="margin-top:12px" ng-show="pain_detect_enabled"></rzslider>
     </span>
     <div class="buttons">
-      <a class="button  bg-orange text-white" type="button" href="" ng-show="tab > 1 && tab < 6" ng-click="setTab(tab + 1); scrollTop(); forwardAnimate()">&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
-      <a class="button bg-blue text-white" type="button" href="" ng-if="tab > 5" ng-disabled="tab !== progress.options.ceil" ng-click="submitPainDetect()">Submit</a>
+      <a class="button  bg-orange light" type="button" href="" ng-show="tab > 1 && tab < 6" ng-click="setTab(tab + 1); scrollTop(); forwardAnimate()">&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
+      <a class="button bg-blue light" type="button" href="" ng-if="tab > 5" ng-disabled="tab !== progress.options.ceil" ng-click="submitPainDetect()">Submit</a>
     </div>
   </ion-footer-bar>
 </ion-view>

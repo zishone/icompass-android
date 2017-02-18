@@ -3,7 +3,7 @@
     <ion-refresher pulling-text="Pull to refresh..." on-refresh="populateListOfPatients()"></ion-refresher>
 
     <div class="bg-white item-input-inset">
-      <input class="bg-grey" type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
+      <input class="bg-grey width-full" type="text" placeholder=" Search" ng-model="search.fullname" style="padding-left:11px;" />
     </div>
 
     <div class="#" ng-repeat="patient in assigned_patients | filter:search">

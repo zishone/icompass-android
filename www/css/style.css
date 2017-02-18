@@ -55,36 +55,20 @@ textarea{
   /*BACKGROUND COLORS*/
 
   /*TEXT-COLORS*/
-  .text-orange{
-    color: #ff6d00;
-  }
   .text-grey{
     color: rgba(0,0,0,0.6);
   }
-  .dark{
-    color: black;
-  }
-  .text-dark-grey{
+  .dark-grey{
     color: #555;
   }
-  .text-light-orange{
-    color: #FFFFDE;
-  }
-  .text-light-orange{
-    color: #FFFFDE;
-  }
-  .text-white{
-    color: #ffffff !important;
+  .light{
+    color: #FFFFFF !important;
   }
   /*TEXT-COLORS*/
 /*COLORS*/
 
 /*GENERAL STYLES*/
   /*ALIGNMENT*/
-  .center {
-      margin-left: auto;
-      margin-right: auto;
-  }
   .right {
     float: right !important;
   }
@@ -143,6 +127,10 @@ textarea{
     font-weight: 400 !important;
   }
   /*FONT-WEIGHT*/
+  /*Remove anchor tag underline*/
+  .noline{
+    text-decoration: none;
+  }
   /*SHADOWS*/
   .text-shadow{
     text-shadow: 1px 1px 5px rgba(0,0,0,0.05);
@@ -190,8 +178,10 @@ textarea{
     width: 20%;
   }
   /*WIDTH*/
-
   /*MARGIN*/
+  .center {
+    margin:auto;
+  }
   .margin-left-right{
     margin-left: 1%;
     margin-right: 1%;
@@ -204,9 +194,6 @@ textarea{
   }
   .margin-top-none{
     margin-top: 0;
-  }
-  .margin-auto{
-    margin: auto
   }
   .margin-left-sm{
     margin-left: 5% !important;
@@ -224,14 +211,17 @@ textarea{
   }
 /*PADDING*/
 /*BUTTON*/
-.button-bottom{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.messages.bar{
-  padding: 0 !important;
-}
+  .button-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .messages.bar{
+    padding: 0 !important;
+  }
+  .curve-all{
+    border-radius: 6px 6px 6px 6px;
+  }
 /*BUTTON*/
   .larger {
       font-size: larger;
@@ -243,23 +233,11 @@ textarea{
     .line-height{
       line-height: 2.5;
     }
-          /* login form design */
-          .login-input{
-            width: 92%;
-          }
-
-          .curve-top{
-            border-radius: 6px 6px 0px 0px;
-          }
-
-          .curve-bottom{
-            border-radius: 0px 0px 6px 6px;
-          }
-
-          .curve-all{
-            border-radius: 6px 6px 6px 6px;
-          }
-          /* login form design */
+    /* login form design */
+    .login-input{
+      width: 92%;
+    }
+    /* login form design */
 
 /*Alert popup design*/
 .popup-head{
@@ -299,10 +277,6 @@ textarea{
     border-radius: 50%;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
   }
-  .profile-name{
-    text-align: center;
-    padding-top: 35%;
-  }
   /*PROFILE TOP*/
 
   /*PROFILE-TAB*/
@@ -315,15 +289,8 @@ textarea{
     max-width: none;
     width: 50% !important;
     font-size: 19px;
-    /*color: rgba(0,0,0,0.6);*/
   }
-  .tab-item.active{
-    /*color: white;*/
-    /*text-shadow: 1px 1px 5px rgba(0,0,0,0.2);*/
-  }
-
   .profile-tab>.tab-item i{
-    /*font-size: 2em;*/
     color: black;
   }
   .profile-tab{
@@ -349,15 +316,12 @@ textarea{
     margin: 0 !important;
     opacity: 10;
   }
-  .profile-tab h3{
+  /*.profile-tab h3{
     vertical-align: middle;
-  }
+  }*/
   /*PROFILE-TAB*/
 
   /*PROFILE-CARDS*/
-  .card-header{
-    font-size: 20px !important;
-  }
   .profile .list{
     padding: 0 8%;
   }
@@ -370,20 +334,10 @@ textarea{
     background-color: #ff6d00 !important;
     color: white;
     border-bottom: none !important;
-    /*border-bottom: 10px solid white !important;*/
     font-weight: 500 !important;
   }
   /*TABS*/
 /*PROFILE STYLE*/
-
-/*Make fonts larger*/
-
-
-/*Remove anchor tag underline*/
-.noline{
-  text-decoration: none;
-}
-
 
 /*ESAS*/
   /*ESAS BODY DIAGRAM*/
@@ -399,6 +353,7 @@ textarea{
   }
   /*ESAS PAIN TEST*/
 /*ESAS*/
+
 /*PATIENT DETAILS*/
   .patient-details>.tabs-top.tabs-striped .tab-item.active{
     background-color: #ff6d00 !important;
@@ -449,169 +404,150 @@ textarea{
 .margin-instructions{
   margin-top: 110px;
 }
-.yellow{
-  color: yellow;
-}
-.orange{
-  color: orange;
-}
-.red{
-  color: red
-}
-.white{
-  color: white;
-}
 
-.body-diagram-cover{
-  /*background-color: red;*/
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
 
-/*phq animations*/
-.animate{
-  position: absolute;
-  width: 100%;
-}
+/*PHQ ANIMATIONS*/
+  .animate{
+    position: absolute;
+    width: 100%;
+  }
 
-/* when hiding the picture */
-.animate.ng-hide-add         { animation: 0.5s slideout ease; }
+  /* when hiding the picture */
+  .animate.ng-hide-add         { animation: 0.5s slideout ease; }
 
-/* when showing the picture */
-.animate.ng-hide-remove      { animation: 0.5s slidein ease; }
+  /* when showing the picture */
+  .animate.ng-hide-remove      { animation: 0.5s slidein ease; }
 
-@keyframes slidein {
-  0% { left: 100vw }
+  @keyframes slidein {
+    0% { left: 100vw }
+    100% { left: 0vw }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes slidein {
+    % { left: 100vw }
   100% { left: 0vw }
-}
+  }
 
-/* Firefox < 16 */
-@-moz-keyframes slidein {
-  % { left: 100vw }
-100% { left: 0vw }
-}
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes slidein {
+    0% { left: 100vw }
+    100% { left: 0vw }
+  }
 
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes slidein {
-  0% { left: 100vw }
+  /* Internet Explorer */
+  @-ms-keyframes slidein {
+    0% { left: 100vw }
+    100% { left: 0vw }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes slidein {
+    0% { left: 100vw }
+    100% { left: 0vw }
+  }
+
+
+  @keyframes slideout {
+    0% { left: 0vw }
+    100% { left: -100vw }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes slideout {
+    0% { left: 0vw }
+    100% { left: -100vw }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes slideout {
+    0% { left: 0vw }
+    100% { left: -100vw }
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes slideout {
+    0% { left: 0vw }
+    100% { left: -100vw }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes slideout {
+    0% { left: 0vw }
+    100% { left: -100vw }
+  }
+
+  .animate-back{
+    position: absolute;
+    width: 100%;
+  }
+
+  /* when hiding the picture */
+  .animate-back.ng-hide-add         { animation: 0.5s slideoutback ease; }
+
+  /* when showing the picture */
+  .animate-back.ng-hide-remove      { animation: 0.5s slideinback ease; }
+
+  @keyframes slideinback {
+    0% { left: -100vw }
+    100% { left: 0vw }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes slideinback {
+    % { left: -100vw }
   100% { left: 0vw }
-}
+  }
 
-/* Internet Explorer */
-@-ms-keyframes slidein {
-  0% { left: 100vw }
-  100% { left: 0vw }
-}
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes slideinback {
+    0% { left: -100vw }
+    100% { left: 0vw }
+  }
 
-/* Opera < 12.1 */
-@-o-keyframes slidein {
-  0% { left: 100vw }
-  100% { left: 0vw }
-}
+  /* Internet Explorer */
+  @-ms-keyframes slideinback {
+    0% { left: -100vw }
+    100% { left: 0vw }
+  }
 
-
-@keyframes slideout {
-  0% { left: 0vw }
-  100% { left: -100vw }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes slideout {
-  0% { left: 0vw }
-  100% { left: -100vw }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes slideout {
-  0% { left: 0vw }
-  100% { left: -100vw }
-}
-
-/* Internet Explorer */
-@-ms-keyframes slideout {
-  0% { left: 0vw }
-  100% { left: -100vw }
-}
-
-/* Opera < 12.1 */
-@-o-keyframes slideout {
-  0% { left: 0vw }
-  100% { left: -100vw }
-}
-
-.animate-back{
-  position: absolute;
-  width: 100%;
-}
-
-/* when hiding the picture */
-.animate-back.ng-hide-add         { animation: 0.5s slideoutback ease; }
-
-/* when showing the picture */
-.animate-back.ng-hide-remove      { animation: 0.5s slideinback ease; }
-
-@keyframes slideinback {
-  0% { left: -100vw }
-  100% { left: 0vw }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes slideinback {
-  % { left: -100vw }
-100% { left: 0vw }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes slideinback {
-  0% { left: -100vw }
-  100% { left: 0vw }
-}
-
-/* Internet Explorer */
-@-ms-keyframes slideinback {
-  0% { left: -100vw }
-  100% { left: 0vw }
-}
-
-/* Opera < 12.1 */
-@-o-keyframes slideinback {
-  0% { left: -100vw }
-  100% { left: 0vw }
-}
+  /* Opera < 12.1 */
+  @-o-keyframes slideinback {
+    0% { left: -100vw }
+    100% { left: 0vw }
+  }
 
 
-@keyframes slideoutback {
-  0% { left: 0vw }
-  100% { left: 100vw }
-}
+  @keyframes slideoutback {
+    0% { left: 0vw }
+    100% { left: 100vw }
+  }
 
-/* Firefox < 16 */
-@-moz-keyframes slideoutback {
-  0% { left: 0vw }
-  100% { left: 100vw }
-}
+  /* Firefox < 16 */
+  @-moz-keyframes slideoutback {
+    0% { left: 0vw }
+    100% { left: 100vw }
+  }
 
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes slideoutback {
-  0% { left: 0vw }
-  100% { left: 100vw }
-}
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes slideoutback {
+    0% { left: 0vw }
+    100% { left: 100vw }
+  }
 
-/* Internet Explorer */
-@-ms-keyframes slideoutback {
-  0% { left: 0vw }
-  100% { left: 100vw }
-}
+  /* Internet Explorer */
+  @-ms-keyframes slideoutback {
+    0% { left: 0vw }
+    100% { left: 100vw }
+  }
 
-/* Opera < 12.1 */
-@-o-keyframes slideoutback {
-  0% { left: 0vw }
-  100% { left: 100vw }
-}
-/*phq animations end*/
+  /* Opera < 12.1 */
+  @-o-keyframes slideoutback {
+    0% { left: 0vw }
+    100% { left: 100vw }
+  }
+/*PHQ ANIMATIONS*/
+
 
 /*remove pointer for progress*/
 /*.progress .rz-pointer.rz-pointer-min {
@@ -632,4 +568,8 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
+}
+
+.wrap{
+  white-space: normal;
 }
