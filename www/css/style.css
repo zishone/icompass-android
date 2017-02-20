@@ -281,65 +281,11 @@ textarea{
     box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
   }
   /*PROFILE TOP*/
-
-  /*PROFILE-TAB*/
-  .tabs.tabs-top{
-    position: relative;
-    top: 0%;
-    color: black;
-  }
-  .tab-item{
-    max-width: none;
-    width: 50% !important;
-    font-size: 19px;
-  }
-  .profile-tab>.tab-item i{
-    color: black;
-  }
-  .profile-tab{
-    z-index: -1;
-    /*height: 100px;*/
-  }
-  .profile-tab a.active{
-    background-color: #ff6d00 !important;
-    border: none !important;
-    box-shadow: 3px 0px 5px rgba(0,0,0,0.1);
-    z-index: 100;
-  }
-  .profile-tab .left.active{
-    font-weight: 500 !important;
-    box-shadow: 3px 0px 5px rgba(0,0,0,0.1);
-  }
-  .profile-tab .right.active{
-    font-weight: 500 !important;
-    box-shadow: -3px 0px 5px rgba(0,0,0,0.1);
-  }
-  .profile-tab a{
-    background-color: #b8b8b8 !important;
-    margin: 0 !important;
-    opacity: 10;
-  }
-  /*.profile-tab h3{
-    vertical-align: middle;
-  }*/
-  /*PROFILE-TAB*/
-
   /*PROFILE-CARDS*/
   .profile .list{
     padding: 0 8%;
   }
   /*PROFILE-CARDS*/
-  /*TABS*/
-  .message-tab{
-    margin-top: -1px;
-  }
-  .patient-tab a.active, .message-tab a.active{
-    background-color: #ff6d00 !important;
-    color: white;
-    border-bottom: none !important;
-    font-weight: 500 !important;
-  }
-  /*TABS*/
 /*PROFILE STYLE*/
 
 /*ESAS*/
@@ -368,6 +314,60 @@ textarea{
   list-style-type: disc;
 }
 
+  /*TAB*/
+  .tabs.tabs-top{
+    position: relative;
+    top: 0%;
+    color: black;
+  }
+  .tab-item{
+    max-width: none;
+    width: 50% !important;
+    font-size: 19px;
+  }
+  .profile-tab>.tab-item i{
+    color: black;
+  }
+  .profile-tab{
+    z-index: -1;
+    /*height: 100px;*/
+  }
+  .profile-tab a.active, .messages a.active{
+    background-color: #ff6d00 !important;
+    border: none !important;
+    box-shadow: 3px 0px 5px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  .profile-tab .left.active, .messages .tleft.active{
+    font-weight: 500 !important;
+    box-shadow: 3px 0px 5px rgba(0,0,0,0.1);
+  }
+  .profile-tab .right.active, .messages .tright.active{
+    font-weight: 500 !important;
+    box-shadow: -3px 0px 5px rgba(0,0,0,0.1);
+  }
+  .profile-tab a, .messages .tright, .messages .tleft, .patient-detail .tab-item{
+    background-color: #b8b8b8 !important;
+    margin: 0 !important;
+    opacity: 10;
+  }
+  .patient-detail .tab-item{
+    border-left: .05px solid rgba(0,0,0,0.05);
+    border-right: .05px solid rgba(0,0,0,0.05);
+  }
+  .patient-detail .tab-item.active{
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+  }
+  .message-tab{
+    margin-top: -1px;
+  }
+  .patient-tab a.active, .message-tab a.active{
+    background-color: #ff6d00 !important;
+    color: white;
+    border-bottom: none !important;
+    font-weight: 500 !important;
+  }
+  /*-TAB*/
 .padding-left{
   padding-left: 15%;
 }
