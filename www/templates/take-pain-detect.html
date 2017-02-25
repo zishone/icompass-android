@@ -38,14 +38,15 @@
         </div>
       </div>
     </div>
-    <div ng-show="isSet(3) && pain_detect_enabled">
+    <div ng-show="isSet(3) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
         <div class="item item-divider text-center bg-white font-eighteen">
           Mark the picture that best describes <br> the course of your pain:
         </div>
         <ion-radio ng-repeat="radio in radios" ng-value="radio.value"
                    ng-model="pain_detect_result.radio.radio_1"
-                   name="radio_1">
+                   name="radio_1"
+                   ng-click="setTab(tab + 1); scrollTop(); forwardAnimate()">
           <img src="img/{{radio.image}}" alt="">
           <div class="Raleway-light">
             {{radio.text}}
@@ -197,10 +198,9 @@
               {{radios[(pain_detect_result.radio.radio_1).charCodeAt(0) - 97].text}}
             </div>
           </div>
-          <div class="row" ng-disabled="true">
+          <div class="row" ng-disabled="true" style="pointer-events:none;">
             <div ng-include="'templates/body-diagram/anterior.html'"></div>
             <div ng-include="'templates/body-diagram/posterior.html'"></div>
-            <div class="body-diagram-cover"></div>
           </div>
           <div class="item item-divider bg-white">
             Do you suffer from a burning sensation (e.g., stinging nettles) in the marked areas?
@@ -257,7 +257,7 @@
           rz-slider-options="progress.options" style="margin-top:12px" ng-show="pain_detect_enabled"></rzslider>
     </span>
     <div class="buttons">
-      <a class="button  bg-orange light" type="button" href="" ng-show="tab > 1 && tab < 6" ng-click="setTab(tab + 1); scrollTop(); forwardAnimate()">&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
+      <a class="button  bg-orange light" type="button" href="" ng-show="tab > 1 && tab < 6" ng-click="setTab(tab + 1); scrollTop(); forwardAnimate()" ng-disabled="tab === 3">&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-right-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;</a>
       <a class="button bg-blue light" type="button" href="" ng-if="tab > 5" ng-disabled="tab !== progress.options.ceil" ng-click="submitPainDetect()">Submit</a>
     </div>
   </ion-footer-bar>
