@@ -20,6 +20,24 @@ angular.module('iComPAsS.controllers')
       question_5: undefined,
       question_6: undefined,
       question_7: undefined
+    },
+    diagrams: {
+      anterior: {
+        main_area: {
+
+        },
+        radiation: {
+
+        }
+      },
+      posterior: {
+        main_area: {
+
+        },
+        radiation: {
+
+        }
+      }
     }
   };
 
@@ -110,6 +128,26 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       $scope.alertPopup('Success!', 'Have a great day!');
+
+      $scope.pain_detect_result = {
+        sliders: {
+          slider_1: 0,
+          slider_2: 0,
+          slider_3: 0
+        },
+        radio: {
+          radio_1: ''
+        },
+        questions: {
+          question_1: undefined,
+          question_2: undefined,
+          question_3: undefined,
+          question_4: undefined,
+          question_5: undefined,
+          question_6: undefined,
+          question_7: undefined
+        }
+      };
 
       $scope.goHome();
     }, function(err) {
