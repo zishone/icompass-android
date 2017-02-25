@@ -150,7 +150,7 @@ angular.module('iComPAsS.services')
     },
     "scale": {
       "en": "On a scale of 0 to 10 how do you feel NOW?",
-      "tl": "Sa isang scale of 0 hanggang 10 <br> gaano mo pakiramdam NGAYON?"
+      "tl": "Sa isang scale of 0 hanggang 10 gaano mo pakiramdam NGAYON?"
     },
     "drag": {
       "en": "Drag the pointer to move left and right the scale",

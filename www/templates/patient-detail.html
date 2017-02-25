@@ -9,13 +9,13 @@
     </div>
 
     <div class="patient-tab tabs tabs-striped tabs-top">
-      <a class="tab-item Raleway-light" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
+      <a class="tab-item light Raleway-light font-eighteen" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
         Personal
       </a>
-      <a class="tab-item Raleway-light" ng-class="{ active: isSet(2) }" ng-click="setTab(2)">
+      <a class="tab-item light Raleway-light font-eighteen" ng-class="{ active: isSet(2) }" ng-click="setTab(2)">
         Prescriptions
       </a>
-      <a class="tab-item Raleway-light" ng-class="{ active: isSet(3) }" ng-click="setTab(3)">
+      <a class="tab-item light Raleway-light font-eighteen" ng-class="{ active: isSet(3) }" ng-click="setTab(3)">
         ESAS Results
       </a>
     </div>
@@ -28,7 +28,7 @@
         <ion-list >
           <ion-item class="row item-borderless" ng-repeat="info in patient_detail.basic_info">
             <div class="col col-40 padding-vertical">
-              <h3>{{info.label}}:</h3>
+              <h3 class="dark-grey">{{info.label}}:</h3>
             </div>
             <div class="col padding-vertical Roboto-light">
               {{info.data}}

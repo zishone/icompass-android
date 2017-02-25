@@ -11,11 +11,11 @@
     </div>
 
     <div class="profile-tab tabs tabs-striped tabs-top">
-      <a class="left tab-item text-white Raleway-light" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
+      <a class="left tab-item light Raleway-light" ng-class="{ active: isSet(1) }" ng-click="setTab(1)">
         Personal
         <!-- <i class="icon ion-person"></i> -->
       </a>
-      <a class="right tab-item text-white Raleway-light" ng-class="{ active: isSet(2) }" ng-click="setTab(2)">
+      <a class="right tab-item light Raleway-light" ng-class="{ active: isSet(2) }" ng-click="setTab(2)">
         More Details
         <!-- <i class="icon ion-more"></i> -->
       </a>
@@ -23,15 +23,15 @@
 
     <div class="card card-width" ng-show="isSet(1)">
       <div class="item item-divider bg-white dark light">
-        <h2 class="bold dark text-center margin-botop card-header Raleway">Personal Information</h2>
+        <h2 class="bold dark text-center margin-botop font-twenty Raleway">Personal Information</h2>
       </div>
       <div class="item item-text-wrap">
         <ion-list >
           <ion-item class="row item-borderless" ng-repeat="info in user_profile.basic_info">
             <div class="col col-40 padding-vertical">
-              <h2 class="text-dark-grey Roboto-regular">{{info.label}}:</h2>
+              <h2 class="dark-grey Roboto-regular">{{info.label}}:</h2>
             </div>
-            <div class="col padding-vertical text-dark-grey Roboto-light overflow">
+            <div class="col padding-vertical dark-grey Roboto-light overflow">
               {{info.data}}
             </div>
           </ion-item>
