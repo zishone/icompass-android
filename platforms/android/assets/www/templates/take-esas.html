@@ -116,9 +116,9 @@
       </div>
       <div class="card card-width" ng-repeat="other_symptoms in esas_result.pain_result.other_symptoms">
         <div class="item item-divider text-center">
-          <label class="item item-input col-12">
-            <span class="input-label">{{translations.enter[language]}}</span>
-            <input type="text" ng-model="other_symptoms.key">
+          <label class="item item-input width-full">
+            <!-- <span class="input-label">{{translations.enter[language]}}</span> -->
+            <input class="text-center Raleway font-sixteen" type="text" ng-model="other_symptoms.key">
           </label>
         </div>
         <div class="item item-text-wrap">
@@ -127,14 +127,17 @@
       </div>
       <br>
       <div class="text-center">
-      <button type="button" name="button" class="button bg-blue  curve-all light" ng-click="addSymptom()">{{translations.add_symptom[language]}}</button>
-      <button type="button" name="button" class="button button-assertive curve-all" ng-click="removeSymptom()" ng-if="esas_result.pain_result.other_symptoms.length > 0">{{translations.remove_symptom[language]}}</button>
+      <button type="button" name="button" class="button bg-blue curve-all light Raleway-light" ng-click="addSymptom()">{{translations.add_symptom[language]}}</button>
+      <button type="button" name="button" class="button button-assertive curve-all Raleway-light" ng-click="removeSymptom()" ng-if="esas_result.pain_result.other_symptoms.length > 0">{{translations.remove_symptom[language]}}</button>
       </div>
       <br>
     </div>
     <div ng-show="isSet(4)">
-      <div class="card">
-        <div class="item item-text-wrap">
+      <div class="card card-width">
+        <!-- <div class="item item-text-wrap"> -->
+        <div class="item item-divider text-center bg-white">
+          <h3 class="Raleway font-sixteen">Mark all types of pain</h3>
+        </div>
           <div class="list">
             <ion-checkbox ng-model="checked.sharp"
                           ng-click="addPainType(translations.sharp['en'], translations.sharp['tl'], checked.sharp); $event.stopPropagation();">
@@ -197,7 +200,7 @@
               {{translations.pressing[language]}}
             </ion-checkbox>
           </div>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
     <div class="margin-body margin-instructions"  ng-show="isSet(5) && esas_enabled">
@@ -208,7 +211,7 @@
     </div>
     <div ng-show="isSet(7) && esas_enabled" class="bg-grey full-height">
       <div class="card card-width">
-        <div class="item item-divider bg-white dark text-center">{{translations.review[language]}}</div>
+        <div class="item item-divider bg-white dark text-center Raleway font-sixteen">{{translations.review[language]}}</div>
         <div class="item item-text-wrap bg-white dark">
           <div class="row">
             <div class="col col-80">{{translations.pain[language]}}</div>
@@ -247,11 +250,12 @@
             <div class="col Roboto-light">{{esas_result.pain_result.shortness_of_breath}}</div>
           </div>
           <!-- if array then loop -->
+          <br>
           <div class="row">
             <div class="col col-80">{{translations.other_symptoms[language]}}:</div>
           </div>
-          <div class="row padding-left" ng-repeat="other in esas_result.pain_result.other_symptoms">
-            <div class="col col-75">{{other.key}}</div>
+          <div class="row" ng-repeat="other in esas_result.pain_result.other_symptoms">
+            <div class="col col-80 Roboto-light">{{other.key}}</div>
             <div class="col Roboto-light">{{other.value}}</div>
           </div>
 

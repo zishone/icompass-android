@@ -197,19 +197,12 @@ angular.module('iComPAsS.controllers')
     });
     var alertPopup = $ionicPopup.alert({
       title: $scope.translations.add_symptom[$scope.language],
-      template: '<input type="text" ng-model="esas_result.pain_result.other_symptoms[esas_result.pain_result.other_symptoms.length-1].key">',
+      template: '<input type="text" ng-model="esas_result.pain_result.other_symptoms[esas_result.pain_result.other_symptoms.length-1].key" autofocus>',
       scope: $scope,
       cssClass: 'alert-popup',
       buttons: [
         {
-          text: 'Cancel',
-          type: 'button-danger',
-          onTap: function(e) {
-            $scope.removeSymptom();
-          }
-        },
-        {
-          text: '<b>Save</b>',
+          text: '<b class="Raleway-light">Save</b>',
           type: 'button-positive',
           onTap: function(e) {
             if (!$scope.esas_result.pain_result.other_symptoms[$scope.esas_result.pain_result.other_symptoms.length-1].key) {
@@ -218,6 +211,12 @@ angular.module('iComPAsS.controllers')
             } else {
               return $scope.esas_result.pain_result.other_symptoms[$scope.esas_result.pain_result.other_symptoms.length-1].key;
             }
+          }
+        },{
+          text: 'Cancel',
+          type: 'button-danger',
+          onTap: function(e) {
+            $scope.removeSymptom();
           }
         }
       ]

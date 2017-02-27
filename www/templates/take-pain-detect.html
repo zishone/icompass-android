@@ -4,7 +4,7 @@
       Pain Detect Not Enabled
     </div>
     <div ng-show="isSet(1) && pain_detect_enabled" class="card card-width">
-      <h4 class="item item-divider light bg-white dark text-center">Click <b>Start</b> to begin</h4>
+      <h4 class="item item-divider light bg-white dark text-center Raleway-light">Click <b>Start</b> to begin</h4>
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('en');">Start</button>
@@ -40,7 +40,7 @@
     </div>
     <div ng-show="isSet(3) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white font-eighteen">
+        <div class="item item-divider text-center bg-white Raleway font-sixteen">
           Mark the picture that best describes <br> the course of your pain:
         </div>
         <ion-radio ng-repeat="radio in radios" ng-value="radio.value"
@@ -57,7 +57,7 @@
     </div>
     <div ng-show="isSet(4) && pain_detect_enabled">
       <div class="card card-width">
-        <div class="item item-divider text-center bg-white font-eighteen">
+        <div class="item item-divider text-center bg-white Raleway font-sixteen">
           Mark the picture that best describes <br> the course of your pain:
         </div>
       <div class="width-eighty center" ng-include="'templates/body-diagram/anterior.html'"></div>
@@ -66,14 +66,14 @@
     <div ng-show="isSet(5) && pain_detect_enabled">
       <div class="card card-width">
         <div class="width-eighty center" ng-include="'templates/body-diagram/posterior.html'"></div>
-        <div class="item item-divider text-center bg-white font-eighteen overflow">
+        <div class="item item-divider text-center bg-whitefont-sixteen overflow">
           Does your pain radiate to other <br> regions of your body?
         </div>
       </div>
     </div>
     <div ng-show="isSet(6) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety center item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-eighteen">
           Do you suffer from a burning sensation (e.g., stinging nettles) in the marked areas?
         </div>
 
@@ -88,7 +88,7 @@
     </div>
     <div ng-show="isSet(7) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety center item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-eighteen">
           Do you have a tingling or prickling sensation in the area of your pain (like crawling ants or electrical tingling)?
         </div>
 
@@ -103,7 +103,7 @@
     </div>
     <div ng-show="isSet(8) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety center item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-eighteen">
           Is light touching (clothing, a blanket) in this area painful?
         </div>
 
@@ -118,7 +118,7 @@
     </div>
     <div ng-show="isSet(9) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety center item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-eighteen">
           Do you have sudden pain attacks in the area of your pain, like electric shocks?
         </div>
 
@@ -133,7 +133,7 @@
     </div>
     <div ng-show="isSet(10) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety center item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-eighteen">
           Is cold or heat (bath water) in this area occasionally painful?
         </div>
 
@@ -148,7 +148,7 @@
     </div>
     <div ng-show="isSet(11) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety center item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-eighteen">
           Do you suffer from a sensation of numbness in the areas that you marked?
         </div>
 
@@ -163,7 +163,7 @@
     </div>
     <div ng-show="isSet(12) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="width-ninety center item-divider bg-white font-twenty">
+        <div class="width-ninety center item-divider bg-white font-eighteen">
           Does slight pressure in this area, e.g., with a finger, trigger pain?
         </div>
 
@@ -178,7 +178,7 @@
     </div>
     <div ng-show="isSet(13) && pain_detect_enabled">
       <div class="card card-width">
-        <div class="item item-divider bg-white dark text-center">Review</div>
+        <div class="item item-divider bg-white dark text-center Raleway font-sixteen">Review</div>
         <div class="item item-text-wrap bg-white dark">
           <div class="row">
             <div class="col col-80">How would you assess your pain now, at this moment?</div>

@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('TakeEsasCtrl', function($scope, $state, UsersService, EsasService){
+.controller('TakeEsasCtrl', function($scope, $state, $ionicPopup, UsersService, EsasService){
   $scope.showLoading();
 
   //checks if enabled
@@ -194,6 +194,32 @@ angular.module('iComPAsS.controllers')
     $scope.esas_result.pain_result.other_symptoms.push({
       key: '',
       value: 0
+    });
+    var alertPopup = $ionicPopup.alert({
+      title: $scope.translations.add_symptom[$scope.language],
+      template: '<input type="text" ng-model="esas_result.pain_result.other_symptoms[esas_result.pain_result.other_symptoms.length-1].key" autofocus>',
+      scope: $scope,
+      cssClass: 'alert-popup',
+      buttons: [
+        {
+          text: '<b class="Raleway-light">Save</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            if (!$scope.esas_result.pain_result.other_symptoms[$scope.esas_result.pain_result.other_symptoms.length-1].key) {
+              //don't allow the user to close unless he enters wifi password
+              e.preventDefault();
+            } else {
+              return $scope.esas_result.pain_result.other_symptoms[$scope.esas_result.pain_result.other_symptoms.length-1].key;
+            }
+          }
+        },{
+          text: 'Cancel',
+          type: 'button-danger',
+          onTap: function(e) {
+            $scope.removeSymptom();
+          }
+        }
+      ]
     });
   };
   $scope.removeSymptom = function() {
