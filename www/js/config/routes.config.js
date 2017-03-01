@@ -164,6 +164,26 @@ angular.module('iComPAsS.config')
     }
   })
 
+  .state('menu.pain-detect-results', {
+    url: '/pain-detect-results/:patientId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/pain-detect-results.html',
+        controller: 'PainDetectResultsCtrl'
+      }
+    }
+  })
+
+  .state('menu.pain-detect-result-detail', {
+    url: '/pain-detect-result-detail/:patientId/:result_index',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/pain-detect-result-detail.html',
+        controller: 'PainDetectResultDetailCtrl'
+      }
+    }
+  })
+
   .state('menu.instructions', {
     url: '/instructions',
     views: {
