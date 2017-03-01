@@ -8,35 +8,19 @@ angular.module('iComPAsS.controllers')
 
     //remove OneSignal tags
     if (window.plugins && window.plugins.OneSignal) {
-      window.plugins.OneSignal.sendTags({user_id: "null", user_type: "null"}).then(function(tagsSent) {
-        if(tagsSent){
-          // Destroy saved credentials
-          AuthService.logout();
-
-          // Change state into login
-          $state.go('login', {}, {reload: true}).then(function(){
-
-            $scope.clearBackView();
-
-            $window.location.reload();
-          });
-        }else{
-          $scope.alertPopup("Error!", "Log out failed.");
-        }
-
-      });
-    }else{
-      // Destroy saved credentials
-      AuthService.logout();
-
-      // Change state into login
-      $state.go('login', {}, {reload: true}).then(function(){
-
-        $scope.clearBackView();
-
-        $window.location.reload();
-      });
+      window.plugins.OneSignal.sendTags({user_id: "null", user_type: "null"});
     }
+    
+    // Destroy saved credentials
+    AuthService.logout();
+
+    // Change state into login
+    $state.go('login', {}, {reload: true}).then(function(){
+
+      $scope.clearBackView();
+
+      $window.location.reload();
+    });
   };
 
 
