@@ -98,6 +98,14 @@ angular.module('iComPAsS.services')
     submit_phq: submit_phq,
     get_phq_translations: function(){
       return translations;
+    },
+    get_phq_results: function(patientId) {
+      return $http.get(API.src + 'patients/phq/results/' + patientId)
+      .then(function successCallback(response) {
+        return response.data;
+      }, function errorCallback(response) {
+        console.log(response.statusText);
+      });
     }
   };
 });

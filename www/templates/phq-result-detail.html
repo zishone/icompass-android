@@ -1,0 +1,63 @@
+<ion-view view-title="PHQ Result Detail">
+  <ion-content class="bg-grey">
+    <div class="card card-width">
+      <div class="item item-divider bg-white dark text-center Raleway font-twenty">
+        {{phq_result[result_index].dateanswered}}
+      </div>
+      <div class="item item-divider bg-white">
+        {{translations.question_1['en']}}
+        <div class="item margin-left-sm Roboto-light">
+          {{choices[phq_result[result_index].phq_result.question_1].text}}
+        </div>
+      </div>
+      <div class="item item-divider bg-white">
+        {{translations.question_2['en']}}
+        <div class="item margin-left-sm Roboto-light">
+          {{choices[phq_result[result_index].phq_result.question_2].text}}
+        </div>
+      </div>
+      <div class="item item-divider bg-white">
+        {{translations.question_3['en']}}
+        <div class="item margin-left-sm Roboto-light">
+          {{choices[phq_result[result_index].phq_result.question_3].text}}
+        </div>
+      </div>
+      <div class="item item-divider bg-white">
+        {{translations.question_4['en']}}
+        <div class="item margin-left-sm Roboto-light">
+          {{choices[phq_result[result_index].phq_result.question_4].text}}
+        </div>
+      </div>
+      <div class="item item-divider bg-white">
+        {{translations.question_5['en']}}
+        <div class="item margin-left-sm Roboto-light">
+          {{choices[phq_result[result_index].phq_result.question_5].text}}
+        </div>
+      </div>
+      <div class="item item-divider bg-white">
+        {{translations.question_6['en']}}
+        <div class="item margin-left-sm Roboto-light">
+          {{choices[phq_result[result_index].phq_result.question_6].text}}
+        </div>
+      </div>
+      <div class="item item-divider bg-white">
+        {{translations.question_7['en']}}
+        <div class="item margin-left-sm Roboto-light">
+          {{choices[phq_result[result_index].phq_result.question_7].text}}
+        </div>
+      </div>
+      <div class="item item-divider bg-white">
+        {{translations.question_8['en']}}
+        <div class="item margin-left-sm Roboto-light">
+          {{choices[phq_result[result_index].phq_result.question_8].text}}
+        </div>
+      </div>
+      <div class="item item-divider bg-white">
+        {{translations.question_9['en']}}
+        <div class="item margin-left-sm Roboto-light">
+          {{choices_a[phq_result[result_index].phq_result.question_9].text}}
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

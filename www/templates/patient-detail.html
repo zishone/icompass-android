@@ -16,7 +16,7 @@
         Prescriptions
       </a>
       <a class="tab-item light Raleway-light font-eighteen" ng-class="{ active: isSet(3) }" ng-click="setTab(3)">
-        ESAS Results
+        Assessments
       </a>
     </div>
 
@@ -50,18 +50,17 @@
     </div>
 
     <div ng-show="isSet(3)">
-      <div class="card card-width">
-        <div class="item item-divider bg-white light text-center">
-          Pain Summary
-        </div>
-        <div class="item item-text-wrap">
-          <canvas id="line" class="chart chart-line" chart-data="chart.data" chart-labels="chart.labels" chart-series="chart.series" chart-options="chart.options" chart-dataset-override="datasetOverride" chart-click="onClick" height="400px"></canvas>
-        </div>
-      </div>
       <ion-list>
-        <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="result in esas_results_reversed" type="item-text-wrap" href="#/menu/esas-result-detail/{{result.patient_id}}/{{$index}}">
-          {{result.dateanswered}}
-
+        <ion-item class="item-remove-animate item-icon-right bg-grey" type="item-text-wrap" href="#/menu/esas-results/{{patientId}}">
+          ESAS Results
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+        <ion-item class="item-remove-animate item-icon-right bg-grey" type="item-text-wrap" href="#/menu/phq-results/{{patientId}}">
+          PHQ Results
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+        <ion-item class="item-remove-animate item-icon-right bg-grey" type="item-text-wrap" href="#/menu/pain-detect-results/{{patientId}}">
+          Pain Detect Results
           <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>
       </ion-list>

@@ -71,6 +71,10 @@ angular.module('iComPAsS.controllers')
     $ionicScrollDelegate.scrollTop();
   };
 
+  $scope.scrollBottom = function() {
+    $ionicScrollDelegate.scrollBottom();
+  };
+
   $scope.setColor = function(body_part_id, counter){
     var color;
     var opacity;

@@ -1,0 +1,12 @@
+<ion-view view-title="PHQ Results">
+  <ion-content class="bg-grey">
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="populatePhqResults()"></ion-refresher>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="result in phq_results_reversed" type="item-text-wrap" href="#/menu/phq-result-detail/{{result.patient_id}}/{{$index}}">
+        {{result.dateanswered}}
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

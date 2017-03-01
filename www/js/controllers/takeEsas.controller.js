@@ -216,6 +216,7 @@ angular.module('iComPAsS.controllers')
               //don't allow the user to close unless he enters wifi password
               e.preventDefault();
             } else {
+              $scope.scrollBottom();
               return $scope.esas_result.pain_result.other_symptoms[$scope.esas_result.pain_result.other_symptoms.length-1].key;
             }
           }

@@ -141,7 +141,7 @@
           {{translations.question_9[language]}}
         </div>
 
-        <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
+        <ion-radio ng-repeat="choice in choices_a"  ng-value="choice.value"
                    ng-model="phq_result.question_9"
                    ng-click="setTab(tab + 1); scrollTop(); forwardAnimate()" name="question_9">
           <div class="Raleway-light">
@@ -221,7 +221,7 @@
         <div class="item item-divider bg-white">
           {{translations.question_9[language]}}
           <div class="item margin-left-sm Roboto-light">
-            {{choices[phq_result.question_9].text}}
+            {{choices_a[phq_result.question_9].text}}
           </div>
         </div>
       </div>

@@ -124,12 +124,42 @@ angular.module('iComPAsS.config')
     }
   })
 
+  .state('menu.esas-results', {
+    url: '/esas-results/:patientId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/esas-results.html',
+        controller: 'EsasResultsCtrl'
+      }
+    }
+  })
+
   .state('menu.esas-result-detail', {
     url: '/esas-result-detail/:patientId/:result_index',
     views: {
       'menuContent': {
         templateUrl: 'templates/esas-result-detail.html',
         controller: 'EsasResultDetailCtrl'
+      }
+    }
+  })
+
+  .state('menu.phq-results', {
+    url: '/phq-results/:patientId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/phq-results.html',
+        controller: 'PhqResultsCtrl'
+      }
+    }
+  })
+
+  .state('menu.phq-result-detail', {
+    url: '/phq-result-detail/:patientId/:result_index',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/phq-result-detail.html',
+        controller: 'PhqResultDetailCtrl'
       }
     }
   })
