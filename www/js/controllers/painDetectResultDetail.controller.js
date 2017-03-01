@@ -4,7 +4,7 @@ angular.module('iComPAsS.controllers')
   $scope.showLoading();
 
   $scope.populatePainDetectResultDetail = function(){
-
+    $scope.hideLoading();
   };
 
   $scope.populatePainDetectResultDetail();

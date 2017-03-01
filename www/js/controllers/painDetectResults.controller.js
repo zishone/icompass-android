@@ -6,7 +6,7 @@ angular.module('iComPAsS.controllers')
   $scope.patientId = $stateParams.patientId;
 
   $scope.populatePainDetectResults = function() {
-
+    $scope.hideLoading();
   };
 
   $scope.populatePainDetectResults();
