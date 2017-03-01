@@ -243,23 +243,39 @@ textarea{
     /* login form design */
 
 /*Alert popup design*/
+.popup{
+  box-shadow: 0px 5px 5px 3px rgba(0,0,0,0.1);
+}
+.popup-head h3{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600 !important;
+  color: #ffffff;
+}
 .popup-head{
-  background-color: #FFFFDE;
+    background-color: #ff6d00;
 }
-.popup-body{
-  background-color: #FFFFDE;
+.popup-buttons, .popup-body{
+  background-color: #ffffff;
 }
-.popup-buttons{
-  background-color: #FFFFDE;
+.popup-body input:focus{
+  color: #555 !important;
+  border: 2px solid #ff6d00;
+  padding: 0 5px;
 }
 .popup-buttons .button{
-  background-color: #FF8300;
-  border-radius: 6px 6px 6px 6px;
+  border-radius: 6px;
 }
-.popup-buttons .button.button-positive.activated {
+.popup-buttons .button.button-positive{
   border-color: #a2a2a2;
-  background-color: #a2a2a2;
+  background-color: #0db9f0;
 }
+.popup-buttons .button-danger{
+  background-color: #ef473a;
+  color: #ffffff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300 !important;
+}
+
 /*Alert popup design*/
 
 /*PROFILE STYLE*/

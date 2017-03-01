@@ -1,7 +1,7 @@
 <ion-view view-title="Take PHQ">
   <div class="instructions" style="margin-top: 45px;" ng-show="tab > 1 && tab < 11">
     <div class="item item-divider text-center bg-white dark">
-      <h3 class="Roboto-light font-fifteen" ng-bind-html="translations.two_weeks[language]"></h3>
+      <h3 class="Roboto-light font-sixteen" ng-bind-html="translations.two_weeks[language]"></h3>
     </div>
   </div>
   <ion-content class="bg-grey">
@@ -9,11 +9,11 @@
       PHQ Not Enabled
     </div>
     <div ng-show="isSet(1) && phq_enabled" class="card card-width" ng-class="animate">
-      <h4 class="item item-divider light bg-white dark text-center">Please Choose Language</h4>
+      <h4 class="item item-divider bg-white dark text-center Raleway font-sixteen">Please Choose Language</h4>
       <div class="text-center">
         <br>
-        <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('en'); forwardAnimate(); setChoices()">English</button>
-        <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('tl'); forwardAnimate(); setChoices()">Tagalog</button>
+        <button class="button margin-left-right width-thirty bg-blue light Raleway-light" ng-click="setTab(tab + 1); setLanguage('en'); forwardAnimate(); setChoices()">English</button>
+        <button class="button margin-left-right width-thirty bg-blue light Raleway-light" ng-click="setTab(tab + 1); setLanguage('tl'); forwardAnimate(); setChoices()">Tagalog</button>
       </div>
       <br>
     </div>
@@ -167,10 +167,8 @@
     </div> -->
     <div ng-show="isSet(11) && phq_enabled" ng-class="animate">
       <div class="card card-width">
-        <div class="item-divider text-center bg-white">
-          <h4>Review</h4>
-        </div>
-        <div class="item item-divider bg-white">
+        <div class="item item-divider bg-white dark text-center Raleway font-sixteen">Review</div>
+        <div class="item item-divider item-text-wrap bg-white">
           {{translations.question_1[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_1].text}}
@@ -182,7 +180,7 @@
             {{choices[phq_result.question_2].text}}
           </div>
         </div>
-        <div class="item item-divider bg-white">
+        <div class="item item-divider item-text-wrap bg-white">
           {{translations.question_3[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_3].text}}
@@ -200,25 +198,25 @@
             {{choices[phq_result.question_5].text}}
           </div>
         </div>
-        <div class="item item-divider bg-white">
+        <div class="item item-divider item-text-wrap bg-white">
           {{translations.question_6[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_6].text}}
           </div>
         </div>
-        <div class="item item-divider bg-white">
+        <div class="item item-divider item-text-wrap bg-white">
           {{translations.question_7[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_7].text}}
           </div>
         </div>
-        <div class="item item-divider bg-white">
+        <div class="item item-divider item-text-wrap bg-white">
           {{translations.question_8[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices[phq_result.question_8].text}}
           </div>
         </div>
-        <div class="item item-divider bg-white">
+        <div class="item item-divider item-text-wrap bg-white">
           {{translations.question_9[language]}}
           <div class="item margin-left-sm Roboto-light">
             {{choices_a[phq_result.question_9].text}}
