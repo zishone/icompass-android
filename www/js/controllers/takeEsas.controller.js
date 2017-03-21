@@ -8,7 +8,7 @@ angular.module('iComPAsS.controllers')
     $scope.hideLoading();
 
     // $scope.esas_enabled = data.profile.esas_enabled;
-    $scope.esas_enabled = 1;
+    $scope.esas_enabled = 0;
 
   });
 
