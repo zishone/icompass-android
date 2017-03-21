@@ -5,8 +5,16 @@
     </div>
   </div>
   <ion-content class="bg-grey">
-    <div ng-show="!phq_enabled">
-      PHQ Not Enabled
+    <div ng-show="!phq_enabled" class="bg-white full-height">
+      <h1 class="text-orange text-center Raleway"><br><br>PHQ<br>
+                                          is<br>
+                                          not<br>
+                                          enabled.</h1>
+      <div class="text-center logo">
+        <img src="img/esas.png" height="150px" width="auto" alt=""/>
+        <br><br>
+        <a class="text-center button bg-blue light Raleway-light" href="">GO BACK</a>
+      </div>
     </div>
     <div ng-show="isSet(1) && phq_enabled" class="card card-width" ng-class="animate">
       <h4 class="item item-divider bg-white dark text-center Raleway font-sixteen">Please Choose Language</h4>

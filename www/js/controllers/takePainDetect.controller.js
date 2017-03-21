@@ -111,6 +111,9 @@ angular.module('iComPAsS.controllers')
     }
   };
 
+  
+  $scope.translations = PainDetectService.get_pain_detect_translations();
+
   $scope.progress = {
     options: {
       floor: 1,

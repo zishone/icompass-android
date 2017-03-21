@@ -19,8 +19,16 @@
       </div>
     </div>
   <ion-content class="bg-grey">
-    <div ng-if="!esas_enabled" class="bg-orange full-height">
-      <h1 class="light text-center">Not Enabled</h1>
+    <div ng-if="!esas_enabled" class="bg-white full-height">
+      <h1 class="text-orange text-center Raleway"><br><br>ESAS<br>
+                                          is<br>
+                                          not<br>
+                                          enabled.</h1>
+      <div class="text-center logo">
+        <img src="img/esas.png" height="150px" width="auto" alt=""/>
+        <br><br>
+        <a class="text-center button bg-blue light Raleway-light" href="">GO BACK</a>
+      </div>
     </div>
     <div class="card card-width bg-white" ng-show="isSet(1) && esas_enabled">
       <h4 class="item item-divider bg-white dark text-center Raleway">Please Choose Language</h4>
