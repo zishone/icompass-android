@@ -74,12 +74,12 @@
 
       </ion-radio>
     </div>
-    <div class="margin-paindetect-instructions" ng-show="isSet(4) && pain_detect_enabled">
+    <div class="margin-paindetect-instructions" ng-show="isSet(4) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
       <div class="width-eighty center" ng-include="'templates/body-diagram/anterior.html'"></div>
     </div>
     </div>
-    <div class="margin-paindetect-instructions" ng-show="isSet(5) && pain_detect_enabled">
+    <div class="margin-paindetect-instructions" ng-show="isSet(5) && pain_detect_enabled" ng-class="animate">
       <div class="card card-width">
         <div class="width-eighty center" ng-include="'templates/body-diagram/posterior.html'"></div>
       </div>
