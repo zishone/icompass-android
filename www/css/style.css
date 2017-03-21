@@ -432,10 +432,10 @@ textarea{
   }
 
   /* when hiding the picture */
-  .animate.ng-hide-add         { animation: 0.5s slideout ease; }
+  .animate.ng-hide-add         { animation: 0.5s slideout; }
 
   /* when showing the picture */
-  .animate.ng-hide-remove      { animation: 0.5s slidein ease; }
+  .animate.ng-hide-remove      { animation: 0.5s slidein; }
 
   @keyframes slidein {
     0% { left: 100vw }

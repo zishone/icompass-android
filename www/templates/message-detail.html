@@ -8,7 +8,7 @@
       </div>
       <div class="item item-text-wrap">
         <!-- <h3 class="Roboto-light">{{message.message}}</h3> -->
-        <{{message.message}}
+        <span ng-bind-html="message.message"></span>
       </div>
       <div class="bg-white item item-divider text-right">
         {{message.datesent}}
