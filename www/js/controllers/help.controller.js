@@ -19,6 +19,9 @@ angular.module('iComPAsS.controllers')
 
   $scope.gotoYoutube= function(link) {
     console.log(link);
-    navigator.app.loadUrl(link, {openExternal: true});
+    //opens inapp browser
+    window.open(link,'_self');
+    //opens system browser
+    window.open(link,'_system');
   };
 });
