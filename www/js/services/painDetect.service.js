@@ -7,12 +7,12 @@ angular.module('iComPAsS.services')
       "tl": "Tapikin ang bahagi ng iyong katawan na kung saan sa tingin mo masakit"
     },
     "tap_once": {
-      "en": "Tap <b>once</b> for Severe Pain",
-      "tl": "Tapikin <b>isang beses</b> para sa Severe Pain"
+      "en": "Tap <b>once</b> for the Main Pain",
+      "tl": "Tapikin <b>isang beses</b> para sa Main Pain"
     },
     "tap_twice": {
-      "en": "Tap <b>twice</b> for Mild Pain",
-      "tl": "Tapikin <b>dalawang beses</b> para sa Mild Pain"
+      "en": "Tap <b>twice</b> for Radiating Pain",
+      "tl": "Tapikin <b>dalawang beses</b> para sa Radiating Pain"
     },
     "tap_thrice": {
       "en": "Tap <b>three times</b> to reset",
