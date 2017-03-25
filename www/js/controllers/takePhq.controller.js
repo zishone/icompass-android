@@ -21,6 +21,12 @@ angular.module('iComPAsS.controllers')
     }
   };
 
+  $scope.gotoReview = false;
+
+  $scope.almostFinished = function() {
+    $scope.gotoReview = true;
+  };
+
   $scope.translations = PhqService.get_phq_translations();
 
   $scope.setChoices = function(){

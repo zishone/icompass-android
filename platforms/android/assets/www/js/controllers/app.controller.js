@@ -10,7 +10,7 @@ angular.module('iComPAsS.controllers')
     if (window.plugins && window.plugins.OneSignal) {
       window.plugins.OneSignal.sendTags({user_id: "null", user_type: "null"});
     }
-
+    
     // Destroy saved credentials
     AuthService.logout();
 
@@ -21,6 +21,7 @@ angular.module('iComPAsS.controllers')
 
       $window.location.reload();
     });
+
   };
 
 
