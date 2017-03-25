@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+
+
 var fs = require('fs');
 var path = require('path');
 
@@ -82,4 +85,4 @@ module.exports = function(ctx) {
   });
 
   return deferred.promise;
-}
+};
