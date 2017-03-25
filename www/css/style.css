@@ -34,8 +34,14 @@ textarea{
   .bg-orange,
   .bar.bg-orange,
   .bar,
-  .patient-details.tab-item.active{
-    background-color: #ff6d00 !important;
+  .patient-details.tab-item.active,
+  .rzslider .rz-pointer{
+    /*background-color: #ff6d00 !important;*/
+    background-color: #f59f4a !important;
+  }
+  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before{
+    background: #f59f4a !important;
+    border-color: #f59f4a !important;
   }
   .bg-white{
     background: #ffffff !important;
@@ -47,11 +53,19 @@ textarea{
   	background-color: #FFFFDE;
   }
   .bg-blue{
-    background-color: #0db9f0;
+    /*background-color: #0db9f0;*/
+    background-color: #f59f4a;
   }
   .bg-transparent{
     background-color: transparent;
   }
+  .bg-red{
+  background-color: #ef473a;
+  }
+  .bg-dark-grey{
+    background-color: #9E9E9E;
+  }
+
   /*BACKGROUND COLORS*/
 
   /*TEXT-COLORS*/
@@ -68,7 +82,8 @@ textarea{
     color: #000000 !important;
   }
   .text-orange{
-    color: #ff6d00 !important;
+    /*color: #ff6d00 !important;*/
+    color: #f59f4a !important;
   }
   /*TEXT-COLORS*/
 /*COLORS*/
@@ -96,13 +111,15 @@ textarea{
     border-bottom: 2px solid #f2f2f2 !important;
   }
   .border-bot-black:focus{
-    border-bottom: 3px solid #ff6d00 !important;
+    /*border-bottom: 3px solid #ff6d00 !important;*/
+    border-bottom: 3px solid #f59f4a !important;
   }
   .border-all{
     border: .5px solid rgba(0,0,0,0.1);
   }
   .border-all:focus{
-    border: 2px solid #ff6d00;
+    /*border: 2px solid #ff6d00;*/
+    border: 2px solid #f59f4a;
   }
   /*BORDER*/
   /*FONT-SIZE*/
@@ -255,14 +272,16 @@ textarea{
   color: #ffffff;
 }
 .popup-head{
-    background-color: #ff6d00;
+    /*background-color: #ff6d00;*/
+    background-color: #f59f4a;
 }
 .popup-buttons, .popup-body{
   background-color: #ffffff;
 }
 .popup-body input:focus{
   color: #555 !important;
-  border: 2px solid #ff6d00;
+  /*border: 2px solid #ff6d00;*/
+  border: 2px solid #f59f4a;
   padding: 0 5px;
 }
 .popup-buttons .button{
@@ -324,7 +343,8 @@ textarea{
 
 /*PATIENT DETAILS*/
   .patient-details>.tabs-top.tabs-striped .tab-item.active{
-    background-color: #ff6d00 !important;
+    /*background-color: #ff6d00 !important;*/
+    background-color: #f59f4a !important;
     color: white !important;
   }
 /*PATIENT DETAILS*/
@@ -352,7 +372,8 @@ textarea{
     /*height: 100px;*/
   }
   .profile-tab a.active, .messages a.active{
-    background-color: #ff6d00 !important;
+    /*background-color: #ff6d00 !important;*/
+    background-color: #f59f4a !important;
     border: none !important;
     box-shadow: 3px 0px 5px rgba(0,0,0,0.1);
     z-index: 100;
@@ -381,7 +402,8 @@ textarea{
     margin-top: -1px;
   }
   .patient-tab a.active, .message-tab a.active{
-    background-color: #ff6d00 !important;
+    /*background-color: #ff6d00 !important;*/
+    background-color: #f59f4a !important;
     color: white;
     border-bottom: none !important;
     font-weight: 500 !important;
