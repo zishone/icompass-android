@@ -172,7 +172,7 @@ angular.module('iComPAsS.controllers')
       readOnly: true,
       showSelectionBar: true,
       getSelectionBarColor: function(value) {
-        return '#40C4FF';
+        return '#2ecc71';
       }
     }
   };
