@@ -15,7 +15,7 @@
       <input class="bg-grey" type="text" placeholder=" Search" ng-model="search.fullname" style="width:100%; padding-left:11px;" />
     </div>
 
-    <ion-list ng-show="isSet(1)">
+    <ion-list ng-if="isSet(1)">
       <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="message in received_messages | filter:search" type="item-text-wrap" href="#/menu/message-detail/{{message.id}}">
         <span ng-if="message.is_read">
           <h2 class="Roboto-light">{{message.fullname}}</h2>
@@ -29,8 +29,8 @@
       </ion-item>
     </ion-list>
 
-    <ion-list ng-show="isSet(2)">
-      <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="message in sent_messages" type="item-text-wrap" href="#/menu/sent-message-detail/{{message.id}}">
+    <ion-list ng-if="isSet(2)">
+      <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="message in sent_messages | filter:search" type="item-text-wrap" href="#/menu/sent-message-detail/{{message.id}}">
         <span ng-if="message.is_read">
           <p class="Roboto-light right">{{message.datesent}}</p>
           <h2 class="Roboto-light">{{message.fullname}}</h2>
