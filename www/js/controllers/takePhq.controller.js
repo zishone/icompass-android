@@ -27,6 +27,10 @@ angular.module('iComPAsS.controllers')
     $scope.gotoReview = true;
   };
 
+  $scope.notAlmostFinished = function() {
+    $scope.gotoReview = false;
+  };
+
   $scope.translations = PhqService.get_phq_translations();
 
   $scope.setChoices = function(){
