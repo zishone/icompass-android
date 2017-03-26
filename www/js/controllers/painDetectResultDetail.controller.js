@@ -22,6 +22,8 @@ angular.module('iComPAsS.controllers')
       $scope.result_index = $stateParams.result_index;
       console.log($scope.pain_detect_result[$scope.result_index]);
 
+      var radiating = false;
+
       //set diagram colors
       for (var anterior in $scope.pain_detect_result[$scope.result_index].pd_diagrams[0].anterior) {
         var num;
@@ -33,6 +35,7 @@ angular.module('iComPAsS.controllers')
             num = 3;
             break;
           case 2:
+            radiating = true;
             num = 1;
             break;
           default:
@@ -51,6 +54,7 @@ angular.module('iComPAsS.controllers')
             num2 = 3;
             break;
           case 2:
+            radiating = true;
             num2 = 1;
             break;
           default:

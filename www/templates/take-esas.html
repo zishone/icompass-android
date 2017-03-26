@@ -20,7 +20,7 @@
     </div>
   <ion-content class="bg-grey">
     <div ng-if="!esas_enabled" class="bg-white full-height">
-      <h1 class="text-orange text-center Raleway"><br><br>ESAS<br>
+      <h1 class="text-orange text-center Raleway"><br>ESAS<br>
                                           is<br>
                                           not<br>
                                           enabled.</h1>
@@ -35,7 +35,7 @@
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('english')">English</button>
-        <button class="button margin-left-right width-thirty bg-dark-grey light" ng-click="setTab(tab + 1); setLanguage('tagalog')">Tagalog</button>
+        <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('tl')">Tagalog</button>
       </div>
       <br>
     </div>
@@ -212,10 +212,10 @@
         <!-- </div> -->
       </div>
     </div>
-    <div class="margin-body margin-instructions"  ng-show="isSet(5) && esas_enabled">
+    <div class="margin-body margin-instructions bg-white"  ng-show="isSet(5) && esas_enabled">
       <div ng-include="'templates/body-diagram/anterior.html'"></div>
     </div>
-    <div class="margin-body margin-instructions" ng-show="isSet(6) && esas_enabled">
+    <div class="margin-body margin-instructions bg-white" ng-show="isSet(6) && esas_enabled">
       <div ng-include="'templates/body-diagram/posterior.html'"></div>
     </div>
     <div ng-show="isSet(7) && esas_enabled" class="bg-grey full-height">
@@ -273,12 +273,23 @@
           <div class="row">
             <div class="col">{{translations.paint_types_most_painful[language]}}: </div>
           </div>
-          <div class="row">
+          <!--<div class="row">
             <ul class="unordered-lists padding-left">
               <li class="Roboto-light" ng-if="language === 'english'" ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}}</li>
               <li class="Roboto-light" ng-if="language === 'tagalog'" ng-repeat="pain_type in tagalog_pain_types">{{pain_type.type}}</li>
             </ul>
+          </div>-->
+
+          <div class="row">
+            <div class="row item item-text-wrap">
+            <span class="Raleway-light" ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}},&nbsp;</span>
+            <!--<ul class="unordered-lists padding-left">
+              <li class="Roboto-light" ng-if="language === 'english'" ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}}</li>
+              <li class="Roboto-light" ng-if="language === 'tagalog'" ng-repeat="pain_type in tagalog_pain_types">{{pain_type.type}}</li>
+            </ul>-->
+            </div>
           </div>
+
           <br>
           <div class="row" ng-disabled="true" style="pointer-events:none;">
             <div ng-include="'templates/body-diagram/anterior.html'"></div>
