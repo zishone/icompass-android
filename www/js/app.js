@@ -21,6 +21,16 @@ angular.module('iComPAsS', ['ionic', 'chart.js', 'rzModule', 'ngSanitize', 'iCom
       StatusBar.styleDefault();
     }
 
+    var notificationOpenedCallback = function(jsonData) {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Notification Opened',
+        template: JSON.stringify(jsonData),
+        cssClass: 'alert-popup'
+      });
+      alert("Notification opened:\n" + JSON.stringify(jsonData));
+      console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+    };
+
     //onsignal notification
     if (window.plugins && window.plugins.OneSignal) {
       window.plugins.OneSignal
@@ -28,11 +38,6 @@ angular.module('iComPAsS', ['ionic', 'chart.js', 'rzModule', 'ngSanitize', 'iCom
       .handleNotificationOpened(notificationOpenedCallback)
       .endInit();
     }
-
-    var notificationOpenedCallback = function(jsonData) {
-      alert("Notification opened:\n" + JSON.stringify(jsonData));
-      console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-    };
 
   });
 

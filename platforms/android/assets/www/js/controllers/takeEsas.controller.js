@@ -8,7 +8,7 @@ angular.module('iComPAsS.controllers')
     $scope.hideLoading();
 
     $scope.esas_enabled = data.profile.esas_enabled;
-    // $scope.esas_enabled = 0;
+    // $scope.esas_enabled = 1;
 
   });
 
@@ -145,7 +145,9 @@ angular.module('iComPAsS.controllers')
 
   $scope.tagalog_pain_types = [];
 
-  $scope.translations = EsasService.get_esas_translations();
+  EsasService.get_esas_translations().then(function(data) {
+    $scope.translations = data;
+  });
 
   $scope.anteriorColorSwitch = function(body_part_id){
     $scope.esas_result.diagrams[0].anterior[body_part_id] += 1;
@@ -169,6 +171,7 @@ angular.module('iComPAsS.controllers')
       showTicks: true,
       hidePointerLabels: true,
       hideLimitLabels: true,
+      readOnly: true,
       showSelectionBar: true,
       getSelectionBarColor: function(value) {
         return '#2ecc71';
@@ -205,7 +208,7 @@ angular.module('iComPAsS.controllers')
       buttons: [
         {
           text: '<b class="Raleway-light">Save</b>',
-          type: 'button-positive',
+          type: 'bg-blue light',
           onTap: function(e) {
             if (!$scope.esas_result.pain_result.other_symptoms[$scope.esas_result.pain_result.other_symptoms.length-1].key) {
               //don't allow the user to close unless he enters wifi password
@@ -217,7 +220,7 @@ angular.module('iComPAsS.controllers')
           }
         },{
           text: 'Cancel',
-          type: 'button-danger',
+          type: 'bg-dark-grey light',
           onTap: function(e) {
             $scope.removeSymptom();
           }
@@ -291,6 +294,16 @@ angular.module('iComPAsS.controllers')
 
   };
 
+  $scope.gotoReview = false;
+
+  $scope.almostFinished = function() {
+    $scope.gotoReview = true;
+  };
+
+  $scope.notAlmostFinished = function() {
+    $scope.gotoReview = false;
+  };
+
   $scope.submitEsas = function() {
     $scope.showLoading();
 
@@ -298,6 +311,8 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       initializeEsasResult();
+
+      $scope.esas_enabled = 0;
 
       $scope.alertPopup('Success!', 'Have a great day!');
 

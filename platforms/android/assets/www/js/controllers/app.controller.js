@@ -10,7 +10,7 @@ angular.module('iComPAsS.controllers')
     if (window.plugins && window.plugins.OneSignal) {
       window.plugins.OneSignal.sendTags({user_id: "null", user_type: "null"});
     }
-    
+
     // Destroy saved credentials
     AuthService.logout();
 
@@ -127,6 +127,12 @@ angular.module('iComPAsS.controllers')
 
   $scope.setLanguage = function(language) {
     $scope.language = language;
+  };
+
+  var notificationOpenedCallback = function(jsonData) {
+    $scope.alertPopup('Notification opened', JSON.stringify(jsonData));
+    alert("Notification opened:\n" + JSON.stringify(jsonData));
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
   };
 
   $ionicPlatform.registerBackButtonAction(function(event) {
