@@ -89,6 +89,11 @@ textarea{
 /*COLORS*/
 
 /*GENERAL STYLES*/
+  /*MENU*/
+  .menu .item, .menu .item-complex .item-content{
+    padding: 1%;
+  }
+  /*MENU*/
   /*ALIGNMENT*/
   .right {
     float: right !important;
@@ -446,7 +451,7 @@ textarea{
   margin-top: -95px;
 }
 .margin-instructions{
-  margin-top: 125px;
+  margin-top: 165px;
 }
 .margin-paindetect-instructions{
   margin-top: 115px;

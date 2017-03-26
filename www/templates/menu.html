@@ -12,19 +12,25 @@
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left">
+  <ion-side-menu side="left" class="menu">
     <ion-content>
       <ion-list>
         <ion-item menu-close href="{{menuItem.url}}" ng-repeat="menuItem in menuList" ng-click="setTab(1)">
-          <ion-icon class="icon {{menuItem.icon}} larger"></ion-icon>
-          &nbsp;
-          {{menuItem.text}}
+          <div class="row">
+            <ion-icon class="icon {{menuItem.icon}} larger col col-15 text-center"></ion-icon>
+            <div class="col col-80">
+            {{menuItem.text}}
+            </div>
+          </div>
           </span>
         </ion-item>
-        <ion-item menu-close ng-click="doLogout()">
-          <ion-icon class="icon ion-log-out larger"></ion-icon>
-          &nbsp;
-          Logout
+        <ion-item class="menu" menu-close ng-click="doLogout()">
+          <div class="row">
+            <ion-icon class="icon ion-log-out larger col col-15 text-center"></ion-icon>
+            <div class="col col-80">
+            Logout
+            </div>
+          </div>
         </ion-item>
       </ion-list>
     </ion-content>
