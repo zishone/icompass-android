@@ -1,6 +1,6 @@
 angular.module('iComPAsS.controllers')
 
-.controller('ProfileCtrl', function($scope, UsersService){
+.controller('ProfileCtrl', function($scope, $ionicPopup, $ionicHistory, $state, UsersService){
   $scope.showLoading();
 
   $scope.populateProfile = function(){
@@ -9,6 +9,32 @@ angular.module('iComPAsS.controllers')
     if($scope.isPatient()){
       UsersService.get_patient_profile().then(function(data) {
         $scope.hideLoading();
+
+        if (data.profile.esas_enabled || true) {
+          var alertPopup = $ionicPopup.alert({
+            title: 'ESAS Enabled!',
+            template: 'Please take your esas for today.',
+            scope: $scope,
+            cssClass: 'alert-popup',
+            buttons: [
+              {
+                text: '<b class="Raleway-light">Take ESAS</b>',
+                type: 'bg-blue light',
+                onTap: function(e) {
+                  $ionicHistory.nextViewOptions({
+                    disableBack: true
+                  });
+                  $state.go('menu.take-esas').then(function() {
+                    $scope.clearBackView();
+                  });
+                }
+              },{
+                text: 'Later',
+                type: 'bg-dark-grey light'
+              }
+            ]
+          });
+        }
 
         $scope.user_profile = $scope.getBasicInfo(data);
 

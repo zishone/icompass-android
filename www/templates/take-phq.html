@@ -32,7 +32,7 @@
         </div>
           <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                      ng-model="phq_result.question_1"
-                     ng-click="setTab(tab + 1); scrollTop(); forwardAnimate()" name="question_1">
+                     ng-click="setTab(gotoReview? progress.options.ceil : tab + 1); scrollTop(); forwardAnimate()" name="question_1">
             <div class="Raleway-light">
               {{choice.text}}
             </div>
@@ -46,7 +46,7 @@
         </div>
           <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                      ng-model="phq_result.question_2"
-                     ng-click="setTab(gotoReview? 11 : tab + 1); scrollTop(); forwardAnimate()" name="question_2">
+                     ng-click="setTab(gotoReview? progress.options.ceil : tab + 1); scrollTop(); forwardAnimate()" name="question_2">
             <div class="Raleway-light">
               {{choice.text}}
             </div>
@@ -61,7 +61,7 @@
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                    ng-model="phq_result.question_3"
-                   ng-click="setTab(gotoReview? 11 : tab + 1); scrollTop(); forwardAnimate()" name="question_3">
+                   ng-click="setTab(gotoReview? progress.options.ceil : tab + 1); scrollTop(); forwardAnimate()" name="question_3">
           <div class="Raleway-light">
             {{choice.text}}
           </div>
@@ -76,7 +76,7 @@
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                    ng-model="phq_result.question_4"
-                   ng-click="setTab(gotoReview? 11 : tab + 1); scrollTop(); forwardAnimate()" name="question_4">
+                   ng-click="setTab(gotoReview? progress.options.ceil : tab + 1); scrollTop(); forwardAnimate()" name="question_4">
           <div class="Raleway-light">
             {{choice.text}}
           </div>
@@ -91,7 +91,7 @@
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                    ng-model="phq_result.question_5"
-                   ng-click="setTab(gotoReview? 11 : tab + 1); scrollTop(); forwardAnimate()" name="question_5">
+                   ng-click="setTab(gotoReview? progress.options.ceil : tab + 1); scrollTop(); forwardAnimate()" name="question_5">
           <div class="Raleway-light">
             {{choice.text}}
           </div>
@@ -106,7 +106,7 @@
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                    ng-model="phq_result.question_6"
-                   ng-click="setTab(gotoReview? 11 : tab + 1); scrollTop(); forwardAnimate()" name="question_6">
+                   ng-click="setTab(gotoReview? progress.options.ceil : tab + 1); scrollTop(); forwardAnimate()" name="question_6">
           <div class="Raleway-light">
             {{choice.text}}
           </div>
@@ -121,7 +121,7 @@
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                    ng-model="phq_result.question_7"
-                   ng-click="setTab(gotoReview? 11 : tab + 1); scrollTop(); forwardAnimate()" name="question_7">
+                   ng-click="setTab(gotoReview? progress.options.ceil : tab + 1); scrollTop(); forwardAnimate()" name="question_7">
           <div class="Raleway-light">
             {{choice.text}}
           </div>
@@ -136,7 +136,7 @@
 
         <ion-radio ng-repeat="choice in choices"  ng-value="choice.value"
                    ng-model="phq_result.question_8"
-                   ng-click="setTab(gotoReview? 11 : tab + 1); scrollTop(); forwardAnimate()" name="question_8">
+                   ng-click="setTab(gotoReview? progress.options.ceil : tab + 1); scrollTop(); forwardAnimate()" name="question_8">
           <div class="Raleway-light">
             {{choice.text}}
           </div>
@@ -151,7 +151,7 @@
 
         <ion-radio ng-repeat="choice in choices_a"  ng-value="choice.value"
                    ng-model="phq_result.question_9"
-                   ng-click="setTab(gotoReview? 11 : tab + 1); scrollTop(); forwardAnimate()" name="question_9">
+                   ng-click="setTab(gotoReview? progress.options.ceil : tab + 1); scrollTop(); forwardAnimate()" name="question_9">
           <div class="Raleway-light">
             {{choice.text}}
           </div>
@@ -235,7 +235,7 @@
   </ion-content>
   <ion-footer-bar align-title="center" class="bg-white shadow-bottom">
     <div class="buttons">
-      <a class="button bg-orange light" type="button" href="" ng-show="tab > 1" ng-click="setTab(tab - 1); scrollTop(); backAnimate()">&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-left-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a class="button bg-orange light" type="button" href="" ng-show="tab > 1" ng-click="setTab(tab - 1); scrollTop(); backAnimate(); notAlmostFinished();">&nbsp;&nbsp;&nbsp;<ion-icon class="icon ion-arrow-left-b larger"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;</a>
     </div>
     <span class="title progress">
       <rzslider rz-slider-model="tab"

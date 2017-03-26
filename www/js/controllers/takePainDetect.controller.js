@@ -118,6 +118,15 @@ angular.module('iComPAsS.controllers')
   };
   initializePainDetectResult();
 
+  $scope.gotoReview = false;
+
+  $scope.almostFinished = function() {
+    $scope.gotoReview = true;
+  };
+
+  $scope.notAlmostFinished = function() {
+    $scope.gotoReview = false;
+  };
 
   $scope.translations = PainDetectService.get_pain_detect_translations();
 
