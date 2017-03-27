@@ -6,7 +6,7 @@
       <h3 class="Roboto-light font-thirteen margin-bot-none" ng-bind-html="translations.tap_next[language]"></h3>
     </div>
   </div>
-    <div class="instructions" style="margin-top: 40px;" ng-show="(isSet(5) || isSet(6)) && esas_enabled">
+    <div class="instructions" style="margin-top: 40px;" ng-show="(isSet(5) || isSet(6)) && esas_enabled && language==='english'">
       <div class="item item-divider item-text-wrap text-center bg-white dark width-full">
         <h2 class="Raleway font-sixteen" ng-bind-html="translations.diagram_ins_1[language]"></h2>
         <!-- <h2 class="Raleway font-twelve padding-all">{{translations.tap_body[language]}}</h2> -->
@@ -15,6 +15,19 @@
             <h4 class="Roboto-light font-fourteen">&nbsp;<ion-icon style="color: orange" class="ion-record"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_twice[language]"></span></h4>
             <h4 class="Roboto-light font-fourteen">&nbsp;<ion-icon style="color: red" class="ion-record"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_thrice[language]"></span></h4>
             <h4 class="Roboto-light font-fourteen">&nbsp;<ion-icon style="color: white" class="ion-record"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_four[language]"></span></h4>
+          </div>
+      </div>
+    </div>
+    <div class="instructions" style="margin-top: 40px;" ng-show="(isSet(5) || isSet(6)) && esas_enabled && language==='tagalog'">
+      <div class="item item-divider item-text-wrap text-center bg-white dark width-full">
+        <h2 class="Raleway font-thirteen" ng-bind-html="translations.diagram_ins_1[language]"></h2>
+        <!-- <h2 class="Raleway font-twelve padding-all">{{translations.tap_body[language]}}</h2> -->
+          <div class="col-90 center text-left">
+          <!--<div class="col-90 center text-left" style="margin-top: 10px;">-->
+            <h4 class="Roboto-light font-twelve">&nbsp;<ion-icon style="color: yellow" class="ion-record"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_once[language]"></span></h5>
+            <h4 class="Roboto-light font-twelve">&nbsp;<ion-icon style="color: orange" class="ion-record"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_twice[language]"></span></h4>
+            <h4 class="Roboto-light font-twelve">&nbsp;<ion-icon style="color: red" class="ion-record"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_thrice[language]"></span></h4>
+            <h4 class="Roboto-light font-twelve">&nbsp;<ion-icon style="color: white" class="ion-record"></ion-icon>&nbsp;&nbsp;<span ng-bind-html="translations.tap_four[language]"></span></h4>
           </div>
       </div>
     </div>
@@ -35,7 +48,7 @@
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('english')">English</button>
-        <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('tl')">Tagalog</button>
+        <button class="button margin-left-right width-thirty bg-blue light" ng-click="setTab(tab + 1); setLanguage('tagalog')">Tagalog</button>
       </div>
       <br>
     </div>
@@ -282,7 +295,9 @@
 
           <div class="row">
             <div class="row item item-text-wrap">
+              <div class="col col-90">
             <span class="Raleway-light" ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}},&nbsp;</span>
+              </div>
             <!--<ul class="unordered-lists padding-left">
               <li class="Roboto-light" ng-if="language === 'english'" ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}}</li>
               <li class="Roboto-light" ng-if="language === 'tagalog'" ng-repeat="pain_type in tagalog_pain_types">{{pain_type.type}}</li>
