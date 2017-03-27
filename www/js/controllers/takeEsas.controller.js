@@ -1,15 +1,16 @@
 angular.module('iComPAsS.controllers')
 
 .controller('TakeEsasCtrl', function($scope, $state, $ionicPopup, UsersService, EsasService){
-  $scope.showLoading();
+  $scope.$on('$ionicView.enter', function(event, viewData) {
+    $scope.showLoading();
+    //checks if enabled
+    UsersService.get_patient_profile().then(function(data) {
+      $scope.hideLoading();
 
-  //checks if enabled
-  UsersService.get_patient_profile().then(function(data) {
-    $scope.hideLoading();
+      $scope.esas_enabled = data.profile.esas_enabled;
+      // $scope.esas_enabled = 1;
 
-    $scope.esas_enabled = data.profile.esas_enabled;
-    // $scope.esas_enabled = 1;
-
+    });
   });
 
   //instantiatize esas_results

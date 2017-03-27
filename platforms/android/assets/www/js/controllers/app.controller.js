@@ -19,7 +19,6 @@ angular.module('iComPAsS.controllers')
 
       $scope.clearBackView();
 
-      $window.location.reload();
     });
 
   };
