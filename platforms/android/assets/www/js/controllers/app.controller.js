@@ -129,12 +129,6 @@ angular.module('iComPAsS.controllers')
     $scope.language = language;
   };
 
-  var notificationOpenedCallback = function(jsonData) {
-    $scope.alertPopup('Notification opened', JSON.stringify(jsonData));
-    alert("Notification opened:\n" + JSON.stringify(jsonData));
-    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  };
-
   $ionicPlatform.registerBackButtonAction(function(event) {
     if ($state.current.name === "menu.profile") {
       navigator.app.exitApp();
