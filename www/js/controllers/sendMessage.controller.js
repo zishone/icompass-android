@@ -3,19 +3,11 @@ angular.module('iComPAsS.controllers')
 .controller('SendMessageCtrl', function($scope, $state, $stateParams, MessagesService, UsersService){
   $scope.showLoading();
 
-  if($scope.isDoctor()){
-    UsersService.get_patient_detail($stateParams.recipientId).then(function(data) {
-      $scope.hideLoading();
+  UsersService.get_user_detail($stateParams.recipientId).then(function(data) {
+    $scope.hideLoading();
 
-      $scope.setRecipient(data);
-    });
-  }else if($scope.isPatient()) {
-    UsersService.get_patient_detail($stateParams.recipientId).then(function(data) {
-      $scope.hideLoading();
-
-      $scope.setRecipient(data);
-    });
-  }
+    $scope.setRecipient(data);
+  });
 
   $scope.setRecipient = function(data) {
     $scope.recipient = {

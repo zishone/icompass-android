@@ -59,6 +59,14 @@ angular.module('iComPAsS.services')
       }, function errorCallback(response) {
         console.log(response.statusText);
       });
+    },
+    get_user_detail: function(userId) {
+      return $http.get(API.src + 'users/profile/' + userId)
+      .then(function successCallback(response) {
+        return response.data;
+      }, function errorCallback(response) {
+        console.log(response.statusText);
+      });
     }
   };
 });

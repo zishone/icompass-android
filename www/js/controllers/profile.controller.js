@@ -3,6 +3,7 @@ angular.module('iComPAsS.controllers')
 .controller('ProfileCtrl', function($scope, $ionicPopup, $ionicHistory, $state, UsersService){
   $scope.$on('$ionicView.enter', function(event, viewData) {
     $scope.clearBackView();
+    $scope.setTab(1);
   });
 
   $scope.showLoading();
