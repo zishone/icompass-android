@@ -1,5 +1,12 @@
 <ion-view view-title="Pain Detect Results">
   <ion-content class="bg-grey">
-    <h1>Coming Soon...</h1>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="populatePainDetectResults()"></ion-refresher>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right bg-grey" ng-repeat="result in pain_detect_results_reversed" type="item-text-wrap" href="#/menu/pain-detect-result-detail/{{result.patient_id}}/{{$index}}">
+        {{result.dateanswered}}
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

@@ -36,6 +36,14 @@ angular.module('iComPAsS.services')
     submit_pain_detect: submit_pain_detect,
     get_pain_detect_translations: function() {
       return translations;
+    },
+    get_pain_detect_results: function(patientId) {
+      return $http.get(API.src + 'patients/paindetect/results/' + patientId)
+      .then(function successCallback(response) {
+        return response.data;
+      }, function errorCallback(response) {
+        console.log(response.statusText);
+      });
     }
   };
 });
