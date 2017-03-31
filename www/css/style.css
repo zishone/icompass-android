@@ -471,62 +471,62 @@ textarea{
   .animate.ng-hide-remove      { animation: 0.5s slidein; }
 
   @keyframes slidein {
-    0% { left: 100vw }
-    100% { left: 0vw }
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(0vw); }
   }
 
   /* Firefox < 16 */
   @-moz-keyframes slidein {
-    % { left: 100vw }
-  100% { left: 0vw }
+    % { transform: translateX(100vw); }
+  100% { transform: translateX(0vw); }
   }
 
   /* Safari, Chrome and Opera > 12.1 */
   @-webkit-keyframes slidein {
-    0% { left: 100vw }
-    100% { left: 0vw }
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(0vw); }
   }
 
   /* Internet Explorer */
   @-ms-keyframes slidein {
-    0% { left: 100vw }
-    100% { left: 0vw }
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(0vw); }
   }
 
   /* Opera < 12.1 */
   @-o-keyframes slidein {
-    0% { left: 100vw }
-    100% { left: 0vw }
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(0vw); }
   }
 
 
   @keyframes slideout {
-    0% { left: 0vw }
-    100% { left: -100vw }
+    0% { transform: translateX(0vw); }
+    100% { transform: translateX(-100vw); }
   }
 
   /* Firefox < 16 */
   @-moz-keyframes slideout {
-    0% { left: 0vw }
-    100% { left: -100vw }
+    0% { transform: translateX(0vw); }
+    100% { transform: translateX(-100vw); }
   }
 
   /* Safari, Chrome and Opera > 12.1 */
   @-webkit-keyframes slideout {
-    0% { left: 0vw }
-    100% { left: -100vw }
+    0% { transform: translateX(0vw); }
+    100% { transform: translateX(-100vw); }
   }
 
   /* Internet Explorer */
   @-ms-keyframes slideout {
-    0% { left: 0vw }
-    100% { left: -100vw }
+    0% { transform: translateX(0vw); }
+    100% { transform: translateX(-100vw); }
   }
 
   /* Opera < 12.1 */
   @-o-keyframes slideout {
-    0% { left: 0vw }
-    100% { left: -100vw }
+    0% { transform: translateX(0vw); }
+    100% { transform: translateX(-100vw); }
   }
 
   .animate-back{

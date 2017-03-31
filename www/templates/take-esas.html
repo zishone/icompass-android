@@ -292,13 +292,11 @@
               <li class="Roboto-light" ng-if="language === 'tagalog'" ng-repeat="pain_type in tagalog_pain_types">{{pain_type.type}}</li>
             </ul>
           </div>-->
-          <div class="row" ng-if="esas_result.pain_types.length === 0">
-            <div class="col col-80 Roboto-light">N/A</div>
-          </div>
           <div class="row">
+            <div class="col col-80 Roboto-light" ng-if="esas_result.pain_types.length === 0">N/A</div>
             <div class="row item item-text-wrap">
               <div class="col col-90">
-            <span class="Raleway-light" ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}},&nbsp;</span>
+                <span class="Raleway-light" ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}},&nbsp;</span>
               </div>
             <!--<ul class="unordered-lists padding-left">
               <li class="Roboto-light" ng-if="language === 'english'" ng-repeat="pain_type in esas_result.pain_types">{{pain_type.type}}</li>
