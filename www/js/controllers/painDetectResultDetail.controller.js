@@ -26,41 +26,11 @@ angular.module('iComPAsS.controllers')
 
       //set diagram colors
       for (var anterior in $scope.pain_detect_result[$scope.result_index].pd_diagrams[0].anterior) {
-        var num;
-        switch ($scope.pain_detect_result[$scope.result_index].pd_diagrams[0].anterior[anterior]) {
-          case 0:
-            num = 0;
-            break;
-          case 1:
-            num = 3;
-            break;
-          case 2:
-            radiating = true;
-            num = 1;
-            break;
-          default:
-            num = 0;
-        }
-        $scope.setColor(anterior, num);
+        $scope.setColor(anterior, $scope.getPainDetectEquivalent($scope.pain_detect_result[$scope.result_index].pd_diagrams[0].anterior[anterior]));
       }
 
       for (var posterior in $scope.pain_detect_result[$scope.result_index].pd_diagrams[1].posterior) {
-        var num2;
-        switch ($scope.pain_detect_result[$scope.result_index].pd_diagrams[1].posterior[posterior]) {
-          case 0:
-            num2 = 0;
-            break;
-          case 1:
-            num2 = 3;
-            break;
-          case 2:
-            radiating = true;
-            num2 = 1;
-            break;
-          default:
-            num2 = 0;
-        }
-        $scope.setColor(posterior, num2);
+        $scope.setColor(posterior, $scope.getPainDetectEquivalent($scope.pain_detect_result[$scope.result_index].pd_diagrams[1].posterior[posterior]));
       }
 
       $scope.choices = [

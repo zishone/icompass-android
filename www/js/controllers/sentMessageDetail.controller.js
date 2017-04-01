@@ -9,7 +9,7 @@ angular.module('iComPAsS.controllers')
 
       $scope.message = data;
 
-      $scope.message.datesent = moment($scope.message.datesent).format("MMMM DD, YYYY");
+      $scope.message.datesent = moment($scope.message.datesent).format("MMMM DD, YYYY HH:mm");
 
       $scope.populateMenu();
     })
