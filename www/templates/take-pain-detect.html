@@ -78,7 +78,7 @@
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-twenty bg-blue light" ng-click="setTab(tab + 1)">Yes</button>
-        <button class="button margin-left-right width-twenty bg-dark-grey light" ng-click="noPain()">No</button>
+        <button class="button margin-left-right width-twenty bg-dark-grey light" ng-click="forwardAnimate(); noPain()">No</button>
       </div>
       <br>
     </div>
@@ -99,7 +99,7 @@
       <div class="text-center">
         <br>
         <button class="button margin-left-right width-twenty bg-blue light" ng-click="setTab(tab + 1)">Yes</button>
-        <button class="button margin-left-right width-twenty bg-dark-grey light" ng-click="noRadiation()">No</button>
+        <button class="button margin-left-right width-twenty bg-dark-grey light" ng-click="forwardAnimate(); noRadiation()">No</button>
       </div>
       <br>
     </div>
@@ -248,43 +248,43 @@
             <div ng-include="'templates/body-diagram/anterior.html'"></div>
             <div ng-include="'templates/body-diagram/posterior.html'"></div>
           </div>
-          <div class="item item-divider bg-white" ng-click="setTab(6); almostFinished(); backAnimate();">
+          <div class="item item-divider bg-white" ng-click="setTab(10); almostFinished(); backAnimate();">
             Do you suffer from a burning sensation (e.g., stinging nettles) in the marked areas?
             <div class="item margin-left-sm Roboto-light">
               {{choices[pain_detect_result.questions.question_1].text}}
             </div>
           </div>
-          <div class="item item-divider bg-white" ng-click="setTab(7); almostFinished(); backAnimate();">
+          <div class="item item-divider bg-white" ng-click="setTab(11); almostFinished(); backAnimate();">
             Do you have a tingling or prickling sensation in the area of your pain (like crawling ants or electrical tingling)?
             <div class="item margin-left-sm Roboto-light">
               {{choices[pain_detect_result.questions.question_2].text}}
             </div>
           </div>
-          <div class="item item-divider bg-white" ng-click="setTab(8); almostFinished(); backAnimate();">
+          <div class="item item-divider bg-white" ng-click="setTab(12); almostFinished(); backAnimate();">
             Is light touching (clothing, a blanket) in this area painful?
             <div class="item margin-left-sm Roboto-light">
               {{choices[pain_detect_result.questions.question_3].text}}
             </div>
           </div>
-          <div class="item item-divider bg-white" ng-click="setTab(9); almostFinished(); backAnimate();">
+          <div class="item item-divider bg-white" ng-click="setTab(13); almostFinished(); backAnimate();">
             Do you have sudden pain attacks in the area of your pain, like electric shocks?
             <div class="item margin-left-sm Roboto-light">
               {{choices[pain_detect_result.questions.question_4].text}}
             </div>
           </div>
-          <div class="item item-divider bg-white" ng-click="setTab(10); almostFinished(); backAnimate();">
+          <div class="item item-divider bg-white" ng-click="setTab(14); almostFinished(); backAnimate();">
             Is cold or heat (bath water) in this area occasionally painful?
             <div class="item margin-left-sm Roboto-light">
               {{choices[pain_detect_result.questions.question_5].text}}
             </div>
           </div>
-          <div class="item item-divider bg-white" ng-click="setTab(11); almostFinished(); backAnimate();">
+          <div class="item item-divider bg-white" ng-click="setTab(15); almostFinished(); backAnimate();">
             Do you suffer from a sensation of numbness in the areas that you marked?
             <div class="item margin-left-sm Roboto-light">
               {{choices[pain_detect_result.questions.question_6].text}}
             </div>
           </div>
-          <div class="item item-divider bg-white" ng-click="setTab(12); almostFinished(); backAnimate();">
+          <div class="item item-divider bg-white" ng-click="setTab(16); almostFinished(); backAnimate();">
             Does slight pressure in this area, e.g., with a finger, trigger pain?
             <div class="item margin-left-sm Roboto-light">
               {{choices[pain_detect_result.questions.question_7].text}}

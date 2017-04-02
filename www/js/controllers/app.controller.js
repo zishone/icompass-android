@@ -147,6 +147,10 @@ angular.module('iComPAsS.controllers')
     return num2;
   };
 
+  $scope.openLink= function(link) {
+    window.open(link,'_self');
+  };
+
   $ionicPlatform.registerBackButtonAction(function(event) {
     if ($state.current.name === "menu.profile") {
       navigator.app.exitApp();

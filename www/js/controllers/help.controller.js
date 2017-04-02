@@ -16,12 +16,4 @@ angular.module('iComPAsS.controllers')
   $scope.isGroupShown = function(group) {
     return $scope.shownGroup === group;
   };
-
-  $scope.gotoYoutube= function(link) {
-    console.log(link);
-    //opens inapp browser
-    window.open(link,'_self');
-    //opens system browser
-    window.open(link,'_system');
-  };
 });

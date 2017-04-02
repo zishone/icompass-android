@@ -46,6 +46,10 @@ angular.module('iComPAsS.controllers')
                 }
               }
             }]
+          },
+          zoom: {
+            enabled: true,
+            mode: 'x'
           }
         }
       };

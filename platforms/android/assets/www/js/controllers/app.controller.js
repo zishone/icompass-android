@@ -128,6 +128,29 @@ angular.module('iComPAsS.controllers')
     $scope.language = language;
   };
 
+  $scope.getPainDetectEquivalent = function(num) {
+    var num2;
+    switch (num) {
+      case 0:
+        num2 = 0;
+        break;
+      case 1:
+        num2 = 3;
+        break;
+      case 2:
+        num2 = 1;
+        break;
+      default:
+        num2 = 0;
+    }
+
+    return num2;
+  };
+
+  $scope.openLink= function(link) {
+    window.open(link,'_self');
+  };
+
   $ionicPlatform.registerBackButtonAction(function(event) {
     if ($state.current.name === "menu.profile") {
       navigator.app.exitApp();

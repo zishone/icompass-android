@@ -39,6 +39,10 @@ angular.module('iComPAsS', ['ionic', 'chart.js', 'rzModule', 'ngSanitize', 'iCom
       .endInit();
     }
 
+    if (window.cordova && window.cordova.InAppBrowser) {
+      window.open = window.cordova.InAppBrowser.open;
+    }
+
   });
 
 });
