@@ -94,7 +94,7 @@ angular.module('iComPAsS.services')
       return menuList;
     },
     get_unread_count: function(){
-      return $http.get(API.src + 'messages/unread')
+      return $http.get(API.src + API.messages_unread)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {

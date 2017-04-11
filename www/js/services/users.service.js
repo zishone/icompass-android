@@ -5,7 +5,7 @@ angular.module('iComPAsS.services')
 
   return {
     get_user_profile: function() {
-      return $http.get(API.src + 'users/profile/' + AuthService.userID())
+      return $http.get(API.src + API.users_profile + AuthService.userID())
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -13,7 +13,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_patient_profile: function() {
-      return $http.get(API.src + 'patients/profile/' + AuthService.userID())
+      return $http.get(API.src + API.patients_profile + AuthService.userID())
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -21,7 +21,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_doctor_profile: function() {
-      return $http.get(API.src + 'doctors/profile/' + AuthService.userID())
+      return $http.get(API.src + API.doctors_profile + AuthService.userID())
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -29,7 +29,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_doctor_detail: function(doctorId) {
-      return $http.get(API.src + 'doctors/profile/' + doctorId)
+      return $http.get(API.src + API.doctors_profile + doctorId)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -37,7 +37,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_assigned_doctors: function() {
-      return $http.get(API.src + 'patients/assigned_doctors/' + AuthService.userID())
+      return $http.get(API.src + API.patients_assigned_doctors + AuthService.userID())
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -45,7 +45,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_assigned_patients: function() {
-      return $http.get(API.src + 'doctors/assigned_patients/' + AuthService.userID())
+      return $http.get(API.src + API.doctors_assigned_patients + AuthService.userID())
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -53,7 +53,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_patient_detail: function(patientId) {
-      return $http.get(API.src + 'patients/profile/' + patientId)
+      return $http.get(API.src + API.patients_profile + patientId)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -61,7 +61,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_user_detail: function(userId) {
-      return $http.get(API.src + 'users/profile/' + userId)
+      return $http.get(API.src + API.users_profile + userId)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {

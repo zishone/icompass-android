@@ -207,7 +207,7 @@ angular.module('iComPAsS.services')
     },
     submit_esas: submit_esas,
     get_esas_translations: function() {
-      return $http.get(API.src + 'esas/translations/')
+      return $http.get(API.src + API.esas_translations)
       .then(function successCallback(response) {
         response.data.symptoms_question = {
           "english": "Are you feeling any of this symptoms?",
@@ -277,7 +277,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_esas_results: function(patientId) {
-      return $http.get(API.src + 'patients/esas/results/' + patientId)
+      return $http.get(API.src + API.patient_esas_results + patientId)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {

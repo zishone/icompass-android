@@ -14,7 +14,7 @@ angular.module('iComPAsS.services')
           }
         }
       };
-      $http.post(API.src + 'messages', data)
+      $http.post(API.src + API.messages, data)
       .then(function successCallback(response) {
         resolve('Sending Success.');
       }, function errorCallback(response) {
@@ -25,7 +25,7 @@ angular.module('iComPAsS.services')
 
   return {
     get_received_messages: function() {
-      return $http.get(API.src + 'messages/received/?page_limit=99999')
+      return $http.get(API.src + API.messages_received + '?page_limit=99999')
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -33,7 +33,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_sent_messages: function() {
-      return $http.get(API.src + 'messages/sent')
+      return $http.get(API.src + API.messages_sent)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
@@ -41,7 +41,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_message: function(messageId) {
-      return $http.get(API.src + 'messages/message/' + messageId)
+      return $http.get(API.src + API.messages_message + messageId)
       .then(function successCallback(response) {
         return response.data[0];
       }, function errorCallback(response) {
@@ -49,7 +49,7 @@ angular.module('iComPAsS.services')
       });
     },
     seen_message: function(messageId) {
-      return $http.put(API.src + 'messages/' + messageId + '/seen')
+      return $http.put(API.src + API.messages + messageId + '/' + API.seen)
       .then(function successCallback(response) {
         return response.data[0];
       }, function errorCallback(response) {
@@ -57,7 +57,7 @@ angular.module('iComPAsS.services')
       });
     },
     get_recipients: function() {
-      return $http.get(API.src + 'messages/recipients')
+      return $http.get(API.src + API.messages_recipients)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {

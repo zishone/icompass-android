@@ -14,7 +14,7 @@ angular.module('iComPAsS.services')
           }
         }
       };
-      $http.post(API.src + 'users/changepassword/', data)
+      $http.post(API.src + API.users_changepassword, data)
       .then(function successCallback(response) {
         resolve('Change Password success.');
       }, function errorCallback(response) {
@@ -29,7 +29,7 @@ angular.module('iComPAsS.services')
         'secret_key': password.key,
         'new_password': password.new
       };
-      $http.post(API.src + 'users/resetpassword/', data)
+      $http.post(API.src + API.users_resetpassword, data)
       .then(function successCallback(response) {
         resolve('Change Password success.');
       }, function errorCallback(response) {
@@ -45,7 +45,7 @@ angular.module('iComPAsS.services')
         'username': username
       };
 
-      return $http.post(API.src + 'users/requestresetpassword/', data)
+      return $http.post(API.src + API.users_requestresetpassword, data)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {

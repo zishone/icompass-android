@@ -23,7 +23,7 @@ angular.module('iComPAsS.services')
   var submit_pain_detect = function(pain_detect_result){
     return $q(function(resolve, reject) {
       var data = pain_detect_result;
-      $http.post(API.src + 'paindetect', data)
+      $http.post(API.src + API.paindetect, data)
       .then(function successCallback(response) {
         resolve('Submission Success.');
       }, function errorCallback(response) {
@@ -38,7 +38,7 @@ angular.module('iComPAsS.services')
       return translations;
     },
     get_pain_detect_results: function(patientId) {
-      return $http.get(API.src + 'patients/paindetect/results/' + patientId)
+      return $http.get(API.src + API.patients_paindetect_results + patientId)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {

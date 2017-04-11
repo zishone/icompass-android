@@ -85,7 +85,7 @@ angular.module('iComPAsS.services')
   var submit_phq = function(phq_result){
     return $q(function(resolve, reject) {
       var data = phq_result;
-      $http.post(API.src + 'phq', data)
+      $http.post(API.src + API.phq, data)
       .then(function successCallback(response) {
         resolve('Submission Success.');
       }, function errorCallback(response) {
@@ -100,7 +100,7 @@ angular.module('iComPAsS.services')
       return translations;
     },
     get_phq_results: function(patientId) {
-      return $http.get(API.src + 'patients/phq/results/' + patientId)
+      return $http.get(API.src + API.patient_phq_results + patientId)
       .then(function successCallback(response) {
         return response.data;
       }, function errorCallback(response) {
