@@ -22,7 +22,7 @@ angular.module('iComPAsS', ['ionic', 'chart.js', 'rzModule', 'ngSanitize', 'iCom
     }
 
     var notificationOpenedCallback = function(jsonData) {
-      alert("Notification opened:\n" + JSON.stringify(jsonData.notification.payload.additionalData.push_type));
+      // alert("Notification opened:\n" + JSON.stringify(jsonData.notification.payload.additionalData.push_type));
 
       switch (jsonData.notification.payload.additionalData.push_type) {
         case ONESIGNAL.message_received:
