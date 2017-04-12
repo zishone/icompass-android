@@ -14,7 +14,7 @@ angular.module('iComPAsS.controllers')
         $scope.phq_results[j].dateanswered = moment($scope.phq_results[j].dateanswered).format("MMMM DD, YYYY");
       }
       $scope.phq_results_reversed = $scope.phq_results.slice(0);
-      $scope.phq_results_reversed.reverse();
+      // $scope.phq_results_reversed.reverse();
     })
     .finally(function(){
       // Stop the ion-refresher from spinning

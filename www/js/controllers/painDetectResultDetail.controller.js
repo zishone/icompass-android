@@ -17,7 +17,7 @@ angular.module('iComPAsS.controllers')
       for (var k = 0; k < $scope.pain_detect_result.length; k++) {
         $scope.pain_detect_result[k].pd_diagrams = JSON.parse($scope.pain_detect_result[k].pd_diagrams);
       }
-      $scope.pain_detect_result.reverse();
+      // $scope.pain_detect_result.reverse();
 
       $scope.result_index = $stateParams.result_index;
       console.log($scope.pain_detect_result[$scope.result_index]);

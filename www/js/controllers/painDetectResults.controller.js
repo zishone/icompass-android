@@ -14,7 +14,7 @@ angular.module('iComPAsS.controllers')
         $scope.pain_detect_results[j].dateanswered = moment($scope.pain_detect_results[j].dateanswered).format("MMMM DD, YYYY");
       }
       $scope.pain_detect_results_reversed = $scope.pain_detect_results.slice(0);
-      $scope.pain_detect_results_reversed.reverse();
+      // $scope.pain_detect_results_reversed.reverse();
     })
     .finally(function(){
       // Stop the ion-refresher from spinning

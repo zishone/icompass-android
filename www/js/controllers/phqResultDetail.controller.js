@@ -53,7 +53,7 @@ angular.module('iComPAsS.controllers')
       for (var j = 0; j < $scope.phq_result.length; j++) {
         $scope.phq_result[j].phq_result = JSON.parse($scope.phq_result[j].phq_result);
       }
-      $scope.phq_result.reverse();
+      // $scope.phq_result.reverse();
 
       $scope.result_index = $stateParams.result_index;
     })

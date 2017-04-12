@@ -8,6 +8,10 @@ angular.module('iComPAsS.controllers')
       $scope.hideLoading();
 
       $scope.received_messages = data.messages;
+
+      // for (var i = 0; i < $scope.received_messages.length; i++) {
+      //   $scope.received_messages[i].datesent = moment($scope.received_messages[i].datesent).format("MMMM DD, YYYY HH:mm A");
+      // }
     })
     .finally(function(){
       // Stop the ion-refresher from spinning
