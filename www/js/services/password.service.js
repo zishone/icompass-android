@@ -16,6 +16,7 @@ angular.module('iComPAsS.services')
       };
       $http.post(API.src + API.users_changepassword, data)
       .then(function successCallback(response) {
+        console.log(response);
         resolve('Change Password success.');
       }, function errorCallback(response) {
         reject('Change Password Failed.');
@@ -31,6 +32,7 @@ angular.module('iComPAsS.services')
       };
       $http.post(API.src + API.users_resetpassword, data)
       .then(function successCallback(response) {
+        console.log(response);
         resolve('Change Password success.');
       }, function errorCallback(response) {
         reject('Change Password Failed.');

@@ -41,6 +41,7 @@
           <div class="col col-75">Shortness of Breath</div>
           <div class="col">{{esas_result[result_index].pain_result.shortness_of_breath}}</div>
         </div>
+        <hr>
         <div class="row">
           <div class="col col-75">Other Symptoms:</div>
         </div>
@@ -48,16 +49,16 @@
           <div class="col col-75">{{other.key}}</div>
           <div class="col">{{other.value}}</div>
         </div>
-
+        <hr>
         <div class="row">
           <div class="col col-75">Pain Types: </div>
         </div>
-        <div class="row">
-          <ul class="unordered-lists padding-left">
-            <li ng-repeat="pain_type in esas_result[result_index].pain_type">{{pain_type}}</li>
+        <div class="row padding-left">
+          <ul class="unordered-lists pain-type-list">
+            <li ng-repeat="pain_type in esas_result[result_index].pain_type track by $index">{{pain_type}}</li>
           </ul>
         </div>
-        <br>
+        <hr>
         <div class="row">
           <div ng-include="'templates/body-diagram/anterior.html'"></div>
           <div ng-include="'templates/body-diagram/posterior.html'"></div>

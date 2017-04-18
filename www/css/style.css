@@ -628,6 +628,19 @@ height: 100%;
   white-space: normal;
 }
 
+.pain-type-list {
+  display: inline;
+  list-style: none;
+}
+
+.pain-type-list li {
+  display: inline;
+}
+
+.pain-type-list li:after {
+  content: ", ";
+}
+
 .inAppBrowserWrap {
   background-color: rgba(0,0,0,0.75);
   color: rgba(235,235,235,1.0);

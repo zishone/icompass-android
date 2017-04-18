@@ -1,11 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.bci.icompass" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.bci.icompass" version="2.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>iComPAsS</name>
-    <description>
-        iComPAsS (Internet-based Computerized Patient Assessment System) is an application made for the UST Hospital - Benavides Cancer Institute.
+    <description>
+
+        iComPAsS (Internet-based Computerized Patient Assessment System) is an application made for the UST Hospital - Benavides Cancer Institute.
+
     </description>
-    <author email="bci.robot@gmail.com" href="">
-      cagz
+    <author email="bci.robot@gmail.com" href="">
+
+      cagz
+
     </author>
     <content src="index.html" />
     <access origin="*" />

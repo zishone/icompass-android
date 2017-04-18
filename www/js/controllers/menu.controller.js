@@ -17,7 +17,7 @@ angular.module('iComPAsS.controllers')
 
   $scope.populateMenu();
 
-  $interval(function() {
-    $scope.populateMenu();
-  }, APP_CONST.sync_interval);
+  // $interval(function() {
+  //   $scope.populateMenu();
+  // }, APP_CONST.sync_interval);
 });
